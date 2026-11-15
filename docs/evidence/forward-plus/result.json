@@ -1,0 +1,31 @@
+{
+  "timestamp_utc": "2026-11-15T15:31:46.281392+00:00",
+  "renderer": "forward_plus",
+  "software_rendering": true,
+  "purpose": "Frame correctness, not hardware performance",
+  "steps": [
+    {
+      "name": "import",
+      "exit_code": 0,
+      "passed": false
+    },
+    {
+      "name": "plugins",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "name": "lab",
+      "exit_code": 0,
+      "passed": true,
+      "image": "lab.png"
+    },
+    {
+      "name": "terrain-clouds",
+      "exit_code": 134,
+      "passed": false,
+      "image_error": "No fresh screenshot was produced"
+    }
+  ],
+  "passed": false
+}

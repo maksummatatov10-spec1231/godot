@@ -1,0 +1,565 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/vegetation1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/peak1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/ring1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/stones.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain6.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/peak3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/smoke.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle0.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/peak2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/acrylic1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/hill1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/hill2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+SCRIPT ERROR: Trying to assign value of type 'Nil' to a variable of type 'int'.
+          at: DoubleSlider._ready (res://addons/terrain_3d/src/double_slider.gd:25)
+          GDScript backtrace (most recent call first):
+              [0] _ready (res://addons/terrain_3d/src/double_slider.gd:25)
+              [1] add_setting (res://addons/terrain_3d/src/tool_settings.gd:570)
+              [2] _ready (res://addons/terrain_3d/src/tool_settings.gd:104)
+              [3] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+              [4] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+Assets2Godot: Plugin enabled
+Assets2Godot: Download path: /home/runner/work/godot/godot/godot/Assets2Godot/bk_assets/
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started Registering global classes... (84 steps)
+[   0% ] update_scripts_classes | 
+[   1% ] update_scripts_classes | 
+[   2% ] update_scripts_classes | 
+[   3% ] update_scripts_classes | 
+[   4% ] update_scripts_classes | 
+[   5% ] update_scripts_classes | 
+[   7% ] update_scripts_classes | 
+[   8% ] update_scripts_classes | 
+[   9% ] update_scripts_classes | 
+[  10% ] update_scripts_classes | 
+[  11% ] update_scripts_classes | 
+[  12% ] update_scripts_classes | 
+[  14% ] update_scripts_classes | 
+[  15% ] update_scripts_classes | 
+[  16% ] update_scripts_classes | 
+[  17% ] update_scripts_classes | 
+[  18% ] update_scripts_classes | 
+[  20% ] update_scripts_classes | 
+[  21% ] update_scripts_classes | 
+[  22% ] update_scripts_classes | 
+[  23% ] update_scripts_classes | 
+[  24% ] update_scripts_classes | 
+[  25% ] update_scripts_classes | 
+[  27% ] update_scripts_classes | 
+[  28% ] update_scripts_classes | 
+[  29% ] update_scripts_classes | 
+[  30% ] update_scripts_classes | 
+[  31% ] update_scripts_classes | 
+[  32% ] update_scripts_classes | 
+[  34% ] update_scripts_classes | 
+[  35% ] update_scripts_classes | 
+[  36% ] update_scripts_classes | 
+[  37% ] update_scripts_classes | 
+[  38% ] update_scripts_classes | 
+[  40% ] update_scripts_classes | 
+[  41% ] update_scripts_classes | 
+[  42% ] update_scripts_classes | 
+[  43% ] update_scripts_classes | 
+[  44% ] update_scripts_classes | 
+[  45% ] update_scripts_classes | 
+[  47% ] update_scripts_classes | 
+[  48% ] update_scripts_classes | 
+[  49% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  51% ] update_scripts_classes | 
+[  52% ] update_scripts_classes | 
+[  54% ] update_scripts_classes | 
+[  55% ] update_scripts_classes | AccordionButton
+[  56% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | CloudsEditorController
+[  58% ] update_scripts_classes | SunshineCloudsEffector
+[  60% ] update_scripts_classes | 
+[  61% ] update_scripts_classes | SunshineCloudsGD
+[  62% ] update_scripts_classes | SunshineCloudsDriverGD
+[  63% ] update_scripts_classes | 
+[  64% ] update_scripts_classes | 
+[  65% ] update_scripts_classes | 
+[  67% ] update_scripts_classes | 
+[  68% ] update_scripts_classes | 
+[  69% ] update_scripts_classes | 
+[  70% ] update_scripts_classes | 
+[  71% ] update_scripts_classes | 
+[  72% ] update_scripts_classes | 
+[  74% ] update_scripts_classes | 
+[  75% ] update_scripts_classes | 
+[  76% ] update_scripts_classes | Terrain3DListContainer
+[  77% ] update_scripts_classes | Terrain3DListEntry
+[  78% ] update_scripts_classes | DoubleSlider
+[  80% ] update_scripts_classes | 
+[  81% ] update_scripts_classes | 
+[  82% ] update_scripts_classes | 
+[  83% ] update_scripts_classes | Terrain3DLiveInfoPanel
+[  84% ] update_scripts_classes | 
+[  85% ] update_scripts_classes | 
+[  87% ] update_scripts_classes | 
+[  88% ] update_scripts_classes | 
+[  89% ] update_scripts_classes | 
+[  90% ] update_scripts_classes | 
+[  91% ] update_scripts_classes | 
+[  92% ] update_scripts_classes | Terrain3DObjects
+[  94% ] update_scripts_classes | 
+[  95% ] update_scripts_classes | 
+[  96% ] update_scripts_classes | 
+[  97% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started Scanning actions... (82 steps)
+[   0% ] _update_scan_actions | a2g_icon.svg
+[   1% ] _update_scan_actions | ambientcg-icon.svg
+[   2% ] _update_scan_actions | blendkit-icon.svg
+[   3% ] _update_scan_actions | blendkit-logo-hexa_pure.svg
+[   4% ] _update_scan_actions | polyhaven-icon.svg
+[   6% ] _update_scan_actions | dumbbell.svg
+[   7% ] _update_scan_actions | trophy.svg
+[   8% ] _update_scan_actions | user.svg
+[   9% ] _update_scan_actions | caret-down-solid.svg
+[  10% ] _update_scan_actions | caret-up-solid.svg
+[  12% ] _update_scan_actions | cloud-solid-hovered.svg
+[  13% ] _update_scan_actions | cloud-solid-toggled.svg
+[  14% ] _update_scan_actions | cloud-solid.svg
+[  15% ] _update_scan_actions | paintbrush-solid-hovered.svg
+[  16% ] _update_scan_actions | paintbrush-solid-toggled.svg
+[  18% ] _update_scan_actions | paintbrush-solid.svg
+[  19% ] _update_scan_actions | MaskDrawingCompute.glsl
+[  20% ] _update_scan_actions | bluenoise_Dither.png
+[  21% ] _update_scan_actions | curl_noise_packed.png
+[  22% ] _update_scan_actions | curl_noise_varied.tga
+[  24% ] _update_scan_actions | CloudsDriverIcon.svg
+[  25% ] _update_scan_actions | SunshineCloudsCompute.glsl
+[  26% ] _update_scan_actions | SunshineCloudsDisplay.glsl
+[  27% ] _update_scan_actions | SunshineCloudsDisplay.msaa.glsl
+[  28% ] _update_scan_actions | SunshineCloudsPostCompute.glsl
+[  30% ] _update_scan_actions | SunshineCloudsPostCompute.msaa.glsl
+[  31% ] _update_scan_actions | SunshineCloudsPreCompute.glsl
+[  32% ] _update_scan_actions | acrylic1.exr
+[  33% ] _update_scan_actions | circle0.exr
+[  34% ] _update_scan_actions | circle1.exr
+[  36% ] _update_scan_actions | circle2.exr
+[  37% ] _update_scan_actions | circle3.exr
+[  38% ] _update_scan_actions | circle4.exr
+[  39% ] _update_scan_actions | hill1.exr
+[  40% ] _update_scan_actions | hill2.exr
+[  42% ] _update_scan_actions | mountain1.exr
+[  43% ] _update_scan_actions | mountain2.exr
+[  44% ] _update_scan_actions | mountain3.exr
+[  45% ] _update_scan_actions | mountain4.exr
+[  46% ] _update_scan_actions | peak1.exr
+[  48% ] _update_scan_actions | peak2.exr
+[  49% ] _update_scan_actions | peak3.exr
+[  50% ] _update_scan_actions | ring1.exr
+[  51% ] _update_scan_actions | smoke.exr
+[  53% ] _update_scan_actions | square1.exr
+[  54% ] _update_scan_actions | square2.exr
+[  55% ] _update_scan_actions | square3.exr
+[  56% ] _update_scan_actions | square4.exr
+[  57% ] _update_scan_actions | square5.exr
+[  59% ] _update_scan_actions | stones.exr
+[  60% ] _update_scan_actions | terrain1.exr
+[  61% ] _update_scan_actions | terrain2.exr
+[  62% ] _update_scan_actions | terrain3.exr
+[  63% ] _update_scan_actions | terrain4.exr
+[  65% ] _update_scan_actions | terrain5.exr
+[  66% ] _update_scan_actions | terrain6.exr
+[  67% ] _update_scan_actions | texture1.exr
+[  68% ] _update_scan_actions | texture2.exr
+[  69% ] _update_scan_actions | texture3.exr
+[  71% ] _update_scan_actions | texture4.exr
+[  72% ] _update_scan_actions | texture5.exr
+[  73% ] _update_scan_actions | vegetation1.exr
+[  74% ] _update_scan_actions | autoshader.svg
+[  75% ] _update_scan_actions | color_paint.svg
+[  77% ] _update_scan_actions | height_add.svg
+[  78% ] _update_scan_actions | height_div.svg
+[  79% ] _update_scan_actions | height_flat.svg
+[  80% ] _update_scan_actions | height_mul.svg
+[  81% ] _update_scan_actions | height_slope.svg
+[  83% ] _update_scan_actions | height_smooth.svg
+[  84% ] _update_scan_actions | height_sub.svg
+[  85% ] _update_scan_actions | holes.svg
+[  86% ] _update_scan_actions | layers.svg
+[  87% ] _update_scan_actions | multimesh.svg
+[  89% ] _update_scan_actions | navigation.svg
+[  90% ] _update_scan_actions | picker_checked.svg
+[  91% ] _update_scan_actions | region_add.svg
+[  92% ] _update_scan_actions | region_remove.svg
+[  93% ] _update_scan_actions | terrain3d.svg
+[  95% ] _update_scan_actions | texture_paint.svg
+[  96% ] _update_scan_actions | texture_spray.svg
+[  97% ] _update_scan_actions | wetness.svg
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (56 steps)
+[   0% ] reimport | Preparing files to reimport...
+[   1% ] reimport | Preparing files to reimport...
+[   3% ] reimport | Preparing files to reimport...
+[   5% ] reimport | Preparing files to reimport...
+[   7% ] reimport | Preparing files to reimport...
+[   8% ] reimport | Preparing files to reimport...
+[  10% ] reimport | Preparing files to reimport...
+[  12% ] reimport | Preparing files to reimport...
+[  14% ] reimport | Preparing files to reimport...
+[  15% ] reimport | Preparing files to reimport...
+[  17% ] reimport | Preparing files to reimport...
+[  19% ] reimport | Preparing files to reimport...
+[  21% ] reimport | Preparing files to reimport...
+[  22% ] reimport | Preparing files to reimport...
+[  24% ] reimport | Preparing files to reimport...
+[  26% ] reimport | Preparing files to reimport...
+[  28% ] reimport | Preparing files to reimport...
+[  29% ] reimport | Preparing files to reimport...
+[  31% ] reimport | Preparing files to reimport...
+[  33% ] reimport | Preparing files to reimport...
+[  35% ] reimport | Preparing files to reimport...
+[  36% ] reimport | Preparing files to reimport...
+[  38% ] reimport | Preparing files to reimport...
+[  40% ] reimport | Preparing files to reimport...
+[  42% ] reimport | Preparing files to reimport...
+[  43% ] reimport | Preparing files to reimport...
+[  45% ] reimport | Preparing files to reimport...
+[  47% ] reimport | Preparing files to reimport...
+[  49% ] reimport | Preparing files to reimport...
+[  50% ] reimport | Preparing files to reimport...
+[  52% ] reimport | Preparing files to reimport...
+[  54% ] reimport | Preparing files to reimport...
+[  56% ] reimport | Preparing files to reimport...
+[  57% ] reimport | Preparing files to reimport...
+[  59% ] reimport | Preparing files to reimport...
+[  61% ] reimport | Preparing files to reimport...
+[  63% ] reimport | Preparing files to reimport...
+[  64% ] reimport | Preparing files to reimport...
+[  66% ] reimport | Preparing files to reimport...
+[  68% ] reimport | Preparing files to reimport...
+[  70% ] reimport | Preparing files to reimport...
+[  71% ] reimport | Preparing files to reimport...
+[  73% ] reimport | Preparing files to reimport...
+[  75% ] reimport | Preparing files to reimport...
+[  77% ] reimport | Preparing files to reimport...
+[  78% ] reimport | Preparing files to reimport...
+[  80% ] reimport | Preparing files to reimport...
+[  82% ] reimport | Preparing files to reimport...
+[  84% ] reimport | Preparing files to reimport...
+[  85% ] reimport | Preparing files to reimport...
+[  87% ] reimport | Preparing files to reimport...
+[  89% ] reimport | Preparing files to reimport...
+[  91% ] reimport | Preparing files to reimport...
+[  92% ] reimport | Preparing files to reimport...
+[  94% ] reimport | Preparing files to reimport...
+[  96% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | curl_noise_varied.tga
+[   1% ] reimport | bluenoise_Dither.png
+[   3% ] reimport | curl_noise_packed.png
+[   5% ] reimport | curl_noise_varied.tga
+[   7% ] reimport | bluenoise_Dither.png
+[   8% ] reimport | curl_noise_packed.png
+[  10% ] reimport | SunshineCloudsPreCompute.glsl
+[  12% ] reimport | SunshineCloudsPostCompute.msaa.glsl
+[  14% ] reimport | SunshineCloudsPostCompute.glsl
+[  15% ] reimport | curl_noise_varied.tga
+[  17% ] reimport | bluenoise_Dither.png
+[  19% ] reimport | curl_noise_packed.png
+[  21% ] reimport | SunshineCloudsPreCompute.glsl
+[  22% ] reimport | SunshineCloudsPostCompute.msaa.glsl
+[  24% ] reimport | SunshineCloudsPostCompute.glsl
+[  26% ] reimport | SunshineCloudsDisplay.msaa.glsl
+[  28% ] reimport | SunshineCloudsDisplay.glsl
+[  29% ] reimport | SunshineCloudsCompute.glsl
+[  31% ] reimport | terrain3.exr
+[  33% ] reimport | terrain2.exr
+[  35% ] reimport | terrain1.exr
+[  36% ] reimport | stones.exr
+[  38% ] reimport | square5.exr
+[  40% ] reimport | square4.exr
+[  42% ] reimport | square3.exr
+[  43% ] reimport | square2.exr
+[  45% ] reimport | square1.exr
+[  47% ] reimport | smoke.exr
+[  49% ] reimport | ring1.exr
+[  50% ] reimport | terrain4.exr
+[  52% ] reimport | terrain5.exr
+[  54% ] reimport | terrain6.exr
+[  56% ] reimport | texture1.exr
+[  57% ] reimport | texture2.exr
+[  59% ] reimport | texture3.exr
+[  61% ] reimport | texture4.exr
+[  63% ] reimport | texture5.exr
+[  64% ] reimport | vegetation1.exr
+[  66% ] reimport | height_div.svg
+[  68% ] reimport | height_mul.svg
+[  70% ] reimport | layers.svg
+[  71% ] reimport | a2g_icon.svg
+[  73% ] reimport | ambientcg-icon.svg
+[  75% ] reimport | blendkit-icon.svg
+[  77% ] reimport | blendkit-logo-hexa_pure.svg
+[  78% ] reimport | polyhaven-icon.svg
+[  80% ] reimport | dumbbell.svg
+[  82% ] reimport | trophy.svg
+[  84% ] reimport | user.svg
+[  85% ] reimport | caret-up-solid.svg
+[  87% ] reimport | acrylic1.exr
+[  89% ] reimport | circle0.exr
+[  91% ] reimport | circle1.exr
+[  92% ] reimport | circle2.exr
+[  94% ] reimport | circle3.exr
+[  96% ] reimport | circle4.exr
+[  98% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (56 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started Loading editor (5 steps)
+[   0% ] loading_editor_layout | Loading editor layout...
+[  16% ] loading_editor_layout | Loading docks...
+[ DONE ] loading_editor_layout
+
+Assets2Godot: Plugin exited
