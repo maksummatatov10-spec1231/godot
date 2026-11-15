@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-11-15T15:41:42.383727+00:00",
-  "source_commit": "d522f0640aeaeb382392bd5a84ffb7f7705daef0",
+  "timestamp_utc": "2026-11-15T15:46:34.205606+00:00",
+  "source_commit": "1a5977a5cb450c87eab4b257b24403bf423835af",
   "runner": "true",
   "renderer": "forward_plus",
   "software_rendering": true,
@@ -23,6 +23,12 @@
       "image": "lab.png"
     },
     {
+      "name": "sky-only",
+      "exit_code": 0,
+      "passed": true,
+      "image": "sky-only.png"
+    },
+    {
       "name": "terrain-only",
       "exit_code": 134,
       "passed": false,
@@ -42,7 +48,7 @@
     },
     {
       "name": "terrain-clouds-backtrace",
-      "exit_code": 255,
+      "exit_code": 5,
       "passed": false
     },
     {
