@@ -21,6 +21,7 @@ func _ready() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture-dir="):
 			capture_mode = true
+	ambient_sound()
 	lighting()
 	terrain()
 	forest()
@@ -46,6 +47,15 @@ func _ready() -> void:
 static func height_at(x: float, z: float) -> float:
 	var clearing := smoothstep(9.0, 28.0, Vector2(x, z).length())
 	return clearing * (sin(x * 0.09) * 1.8 + cos(z * 0.11) * 1.2 + 1.0)
+
+
+func ambient_sound() -> void:
+	var sound := AudioStreamPlayer.new()
+	sound.stream = load("res://audio/forest-air.ogg")
+	sound.stream.loop = true
+	sound.volume_db = -6
+	add_child(sound)
+	sound.play()
 
 
 func lighting() -> void:

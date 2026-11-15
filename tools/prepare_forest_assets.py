@@ -118,7 +118,9 @@ def main():
     for pack, name in [('ElementalMagicFXFree', 'ElementalMagicFX'), ('BattleFXFree', 'BattleFX')]:
         folder = SOURCE / f'Effects/{pack}.zip.contents/{pack}/assets/BinbunVFX_Vol2'
         for path in folder.rglob('*'):
-            if not path.is_file() or path.suffix in {'.import', '.uid', '.hdr'}:
+            if not path.is_file() or path.suffix in {'.import', '.uid', '.hdr', '.obj'}:
+                continue
+            if path.suffix == '.tscn' and 'effects' not in path.parts:
                 continue
             if 'shared' not in path.parts and name not in path.parts:
                 continue

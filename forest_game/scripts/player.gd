@@ -29,10 +29,17 @@ var input_enabled := true
 var jump_phase := 0.0
 var landing_phase := 0.0
 var queued_attack := false
+var sounds: Dictionary = {}
 
 
 func _ready() -> void:
 	configure_input()
+	for sound_name in ["footstep", "sword", "arcane"]:
+		var sound := AudioStreamPlayer.new()
+		sound.stream = load("res://audio/" + sound_name + ".ogg")
+		sound.volume_db = -14.0 if sound_name != "footstep" else -18.0
+		add_child(sound)
+		sounds[sound_name] = sound
 	collision_layer = 2
 	collision_mask = 1
 	floor_snap_length = 0.35
@@ -209,6 +216,10 @@ func _physics_process(delta: float) -> void:
 		position = Vector3(0, 2, 7)
 		velocity = Vector3.ZERO
 	var moving := Vector2(velocity.x, velocity.z).length()
+	step_clock -= delta
+	if is_on_floor() and moving > 0.5 and step_clock <= 0:
+		sounds["footstep"].play()
+		step_clock = 0.29 if moving > 4.0 else 0.43
 	if aim:
 		visual.rotation.y = lerp_angle(visual.rotation.y, yaw + PI, 1.0 - exp(-18.0 * delta))
 	elif direction.length_squared() > 0.05:
@@ -286,6 +297,7 @@ func attack() -> void:
 		if attacking and action_timer < 0.5:
 			queued_attack = true
 		return
+	sounds["sword"].play()
 	attack_serial += 1
 	var serial := attack_serial
 	var clip: String = ["Sword_Regular_A", "Sword_Regular_B", "Sword_Regular_C"][combo % 3]
@@ -328,6 +340,7 @@ func melee_contact() -> void:
 func cast_magic() -> void:
 	if magic_cooldown > 0.0 or action_timer > 0.15:
 		return
+	sounds["arcane"].play()
 	magic_cooldown = 2.5
 	action_timer = 0.85
 	visual.rotation.y = yaw + PI
