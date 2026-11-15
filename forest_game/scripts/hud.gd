@@ -105,10 +105,7 @@ func _process(_delta: float) -> void:
 	if world.menu != null and world.menu.options.fps:
 		quality.text += (
 			"  |  %d FPS  %.1f ms"
-			% [
-				Engine.get_frames_per_second(),
-				Performance.get_monitor(Performance.TIME_PROCESS) * 1000
-			]
+			% [Engine.get_frames_per_second(), 1000.0 / maxf(1.0, Engine.get_frames_per_second())]
 		)
 	notice.text = (
 		("FIRST PERSON" if player.first_person else "THIRD PERSON")

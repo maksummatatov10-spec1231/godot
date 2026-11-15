@@ -20,7 +20,7 @@ func _process_modification() -> void:
 		"r",
 		Vector3(0.57, -0.85, -0.05),
 		Vector3(0.42, -0.52, -0.37),
-		Vector3(0.28 - swing * 0.66, -0.29 + swing * 0.22, -0.64),
+		Vector3(0.28 - swing * 0.66, -0.34 + swing * 0.22, -0.64),
 		Basis(Vector3.FORWARD, -swing * 1.5) * Basis(Vector3.UP, Vector3.FORWARD, Vector3.LEFT)
 	)
 	pose_arm(

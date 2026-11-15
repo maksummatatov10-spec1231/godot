@@ -54,7 +54,8 @@ def main():
             valid = 'Forward+ - Using Device' in text
             for name in ['01-third-person', '02-first-person', '03-sword', '04-magic',
                          '05-jump', '06-walking', '07-forest-overview', '08-fps-body-shadow',
-                         '09-sky-sun', '10-pause-menu', '11-graphics-settings', '12-audio-settings']:
+                         '09-sky-sun', '10-pause-menu', '11-graphics-settings', '12-audio-settings',
+                         '13-main-menu', '14-controls-settings']:
                 path = OUTPUT / (name + '.png')
                 if not path.is_file():
                     valid = False

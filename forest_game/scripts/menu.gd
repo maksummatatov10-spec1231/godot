@@ -1,4 +1,6 @@
 extends CanvasLayer
+
+const BENCHMARK = preload("res://scripts/benchmark.gd")
 ## Actual pause/main/settings screens; UI runs while world physics is paused.
 var world: Node3D
 var panel: PanelContainer
@@ -21,7 +23,8 @@ var options := {
 	"sensitivity": 1.0,
 	"invert_y": false,
 	"fps": false,
-	"limit": 60
+	"limit": 60,
+	"resolution": 0
 }
 
 
@@ -214,12 +217,11 @@ func show_graphics() -> void:
 	var resolution := OptionButton.new()
 	for caption in ["1280 × 720", "1600 × 900", "1920 × 1080"]:
 		resolution.add_item(caption)
-	resolution.selected = 2 if DisplayServer.window_get_size().x >= 1920 else 0
+	resolution.selected = int(options.resolution)
 	resolution.item_selected.connect(
 		func(index: int):
-			DisplayServer.window_set_size(
-				[Vector2i(1280, 720), Vector2i(1600, 900), Vector2i(1920, 1080)][index]
-			)
+			options.resolution = index
+			save_options()
 	)
 	content.add_child(resolution)
 	slider("Масштаб 3D (UI остаётся чётким)", "scale", 0.5, 1.0, 0.05)
@@ -228,7 +230,17 @@ func show_graphics() -> void:
 	toggle("Вертикальная синхронизация", "vsync")
 	toggle("Полноэкранный режим", "fullscreen")
 	toggle("Показывать FPS и время кадра", "fps")
+	button("Проверить производительность на моём ПК (22 сек.)", run_benchmark)
 	button("Назад", show_settings)
+
+
+func run_benchmark() -> void:
+	if not ready_to_play:
+		return
+	var benchmark := Node.new()
+	benchmark.set_script(BENCHMARK)
+	world.add_child(benchmark)
+	benchmark.start(world)
 
 
 func show_audio() -> void:
@@ -273,6 +285,11 @@ func apply_options() -> void:
 			DisplayServer.VSYNC_ENABLED if options.vsync else DisplayServer.VSYNC_DISABLED
 		)
 		if not world.capture_mode:
+			DisplayServer.window_set_size(
+				[Vector2i(1280, 720), Vector2i(1600, 900), Vector2i(1920, 1080)][clampi(
+					int(options.resolution), 0, 2
+				)]
+			)
 			DisplayServer.window_set_mode(
 				(
 					DisplayServer.WINDOW_MODE_FULLSCREEN

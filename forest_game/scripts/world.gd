@@ -69,8 +69,11 @@ static func height_at(x: float, z: float) -> float:
 
 func prepare_play() -> void:
 	effects.process_mode = Node.PROCESS_MODE_ALWAYS
+	apply_profile(2)
 	await effects.warm_up(player.camera)
 	effects.process_mode = Node.PROCESS_MODE_INHERIT
+	menu.apply_options()
+	await get_tree().process_frame
 	menu.finish_loading()
 
 
@@ -102,7 +105,7 @@ func lighting() -> void:
 	environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	environment.tonemap_exposure = 1.05
 	environment.glow_enabled = true
-	environment.glow_intensity = 0.55
+	environment.glow_intensity = 0.25
 	environment.ssao_enabled = true
 	environment.ssao_radius = 1.3
 	environment.ssao_intensity = 1.5
@@ -110,7 +113,9 @@ func lighting() -> void:
 	environment.fog_enabled = true
 	environment.fog_light_color = Color("aac5cf")
 	environment.fog_density = 0.0007
-	environment.fog_sun_scatter = 0.55
+	environment.fog_sun_scatter = 0.08
+	environment.fog_sky_affect = 0.0
+	environment.volumetric_fog_sky_affect = 0.0
 	environment.volumetric_fog_enabled = true
 	environment.volumetric_fog_density = 0.0012
 	environment.volumetric_fog_albedo = Color("c5d4d0")
@@ -118,7 +123,7 @@ func lighting() -> void:
 	add_child(world)
 	var sun := DirectionalLight3D.new()
 	sun.name = "LateMorningSun"
-	sun.rotation_degrees = Vector3(-32, 145, 0)
+	sun.rotation_degrees = Vector3(-42, 38, 0)
 	sky_mat.set_shader_parameter("sun_direction", sun.basis.z)
 	sun.light_color = Color("fff1d0")
 	sun.light_energy = 1.3
@@ -414,6 +419,7 @@ func capture_suite(directory: String) -> void:
 	DirAccess.make_dir_recursive_absolute(directory)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	await effects.warm_up(player.camera)
+	var pipelines_before: Dictionary = effects.pipeline_counts()
 	for i in range(18):
 		await get_tree().process_frame
 	await save_frame(directory, "01-third-person")
@@ -463,11 +469,28 @@ func capture_suite(directory: String) -> void:
 		await get_tree().process_frame
 	await save_frame(directory, "08-fps-body-shadow")
 	player.set_first_person(false)
-	player.pitch = 0.65
-	player.yaw = -0.65
+	player.pitch = 0.75
+	player.set_first_person(true)
+	player.yaw = -2.48
 	for i in range(5):
 		await get_tree().process_frame
 	await save_frame(directory, "09-sky-sun")
+	var report := FileAccess.open(directory.path_join("runtime-metrics.json"), FileAccess.WRITE)
+	report.store_string(
+		JSON.stringify(
+			{
+				"device": RenderingServer.get_video_adapter_name(),
+				"hardware_fps_benchmark": false,
+				"pipelines_after_warmup": pipelines_before,
+				"pipelines_after_gameplay_captures": effects.pipeline_counts(),
+				"vfx_pool_nodes": effects.get_child_count(),
+				"grass_chunks": grass_batches.size(),
+				"static_ram_bytes": Performance.get_monitor(Performance.MEMORY_STATIC),
+				"video_memory_bytes": Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED)
+			},
+			"  "
+		)
+	)
 	menu.started = true
 	menu.ready_to_play = true
 	menu.show_main()
@@ -476,6 +499,11 @@ func capture_suite(directory: String) -> void:
 	await save_frame(directory, "11-graphics-settings")
 	menu.show_audio()
 	await save_frame(directory, "12-audio-settings")
+	menu.main_menu()
+	await save_frame(directory, "13-main-menu")
+	menu.show_controls()
+	await save_frame(directory, "14-controls-settings")
+	get_tree().paused = false
 	print("FOREST_CAPTURE_OK ", directory)
 	await stop_audio()
 	get_tree().quit(0)

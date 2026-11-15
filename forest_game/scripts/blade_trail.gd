@@ -38,7 +38,7 @@ func _ready() -> void:
 
 func strike(at: Vector3, yaw: float, alternate: bool) -> void:
 	global_position = at
-	rotation = Vector3(0, yaw, -0.5 if alternate else 0.65)
+	rotation = Vector3(-0.7, yaw, -0.5 if alternate else 0.65)
 	lifetime = 0.13
 	visible = true
 

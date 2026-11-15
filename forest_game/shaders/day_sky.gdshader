@@ -18,6 +18,6 @@ void sky() {
  // Finite visible disk + soft aureole. Explicit direction matches the shadow sun.
  float disk = smoothstep(cos(0.012),cos(0.009),cosine);
  float halo = pow(cosine,90.0)*0.25 + pow(cosine,8.0)*0.035;
- color += vec3(1.0,0.79,0.47)*(disk*6.0+halo)*(1.0-coverage*0.7);
+ color += vec3(1.0,0.79,0.47)*(disk*2.0+halo*0.3)*(1.0-coverage*0.7);
  COLOR = EYEDIR.y < 0.0 ? mix(vec3(0.13,0.20,0.15),color,exp(EYEDIR.y*16.0)) : color;
 }

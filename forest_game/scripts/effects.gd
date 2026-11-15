@@ -76,3 +76,12 @@ func warm_up(camera: Camera3D) -> void:
 		for effect in pools[key]:
 			release(effect)
 	warmed = true
+
+
+func pipeline_counts() -> Dictionary:
+	var result := {}
+	for constant in ClassDB.class_get_integer_constant_list("RenderingServer"):
+		if constant.begins_with("RENDERING_INFO_PIPELINE_COMPILATIONS_"):
+			var id := ClassDB.class_get_integer_constant("RenderingServer", constant)
+			result[constant] = RenderingServer.get_rendering_info(id)
+	return result

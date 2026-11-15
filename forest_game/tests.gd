@@ -147,6 +147,18 @@ func run() -> void:
 	)
 	wall.queue_free()
 	await ticks(6)
+	player.position = Vector3(0, 0.05, 7)
+	player.reset_physics_interpolation()
+	player.pitch = -0.09
+	var orbit_error := 0.0
+	for i in range(144):
+		player.yaw = float(i) * 0.006
+		player.update_camera(1.0 / 144.0, 0)
+		var pivot := player.get_global_transform_interpolated().origin + Vector3.UP * 1.55
+		var ideal := pivot + player.camera.basis * Vector3(0.5, 0.25, player.camera_distance)
+		orbit_error = maxf(orbit_error, player.camera.global_position.distance_to(ideal))
+	check(orbit_error < 0.01, "144 Hz camera orbit stays centred without world-position lag")
+	player.yaw = 0
 	world.toggle_quality()
 	check(
 		not world.environment.volumetric_fog_enabled,
@@ -195,6 +207,23 @@ func run() -> void:
 	check(world.menu.screen == "audio", "audio settings screen opens while paused")
 	world.menu.resume()
 	check(not paused and not world.menu.visible, "resume returns to gameplay")
+	var benchmark_script := load("res://scripts/benchmark.gd")
+	var benchmark := Node.new()
+	benchmark.set_script(benchmark_script)
+	world.add_child(benchmark)
+	benchmark.world = world
+	benchmark.frames.assign([10.0, 20.0, 30.0])
+	benchmark.path = "user://self_test_benchmark.json"
+	benchmark.finish()
+	var stats: Dictionary = JSON.parse_string(
+		FileAccess.get_file_as_string("user://self_test_benchmark.json")
+	)
+	check(
+		is_equal_approx(float(stats.average_fps), 50.0) and float(stats.p99_ms) == 30.0,
+		"benchmark computes delivered-frame average and p99 correctly"
+	)
+	DirAccess.remove_absolute(ProjectSettings.globalize_path("user://self_test_benchmark.json"))
+	world.menu.resume()
 	print(
 		"FOREST_TEST_RESULT ",
 		JSON.stringify(

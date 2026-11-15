@@ -93,7 +93,7 @@ func _ready() -> void:
 	var sword: Node3D = SWORD.instantiate()
 	sword.scale = Vector3.ONE * 0.52
 	sword.rotation_degrees.z = -90
-	sword.position = Vector3(0.13, 0.015, -0.015)
+	sword.position = Vector3(0.11, 0.09, 0.025)
 	grip.add_child(sword)
 	for mesh in visual.find_children("*", "MeshInstance3D", true, false):
 		mesh.layers = 1
@@ -104,6 +104,19 @@ func _ready() -> void:
 	for clip in ["Idle", "Sword_Idle", "Walk", "Jog_Fwd", "Sprint", "Jump"]:
 		legs_animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
 	legs.visible = false
+	var waist_cap := MeshInstance3D.new()
+	var cap := CylinderMesh.new()
+	cap.top_radius = 0.15
+	cap.bottom_radius = 0.16
+	cap.height = 0.055
+	cap.radial_segments = 16
+	waist_cap.mesh = cap
+	waist_cap.position.y = 0.985
+	waist_cap.scale.z = 0.7
+	var belt := StandardMaterial3D.new()
+	belt.albedo_color = Color("273239")
+	waist_cap.material_override = belt
+	legs.add_child(waist_cap)
 	for mesh in legs.find_children("*", "MeshInstance3D", true, false):
 		mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	trail = MeshInstance3D.new()
@@ -173,9 +186,9 @@ func create_viewmodel() -> void:
 	grip.bone_name = "hand_r"
 	arm_skeleton.add_child(grip)
 	var sword: Node3D = SWORD.instantiate()
-	sword.scale = Vector3.ONE * 0.42
+	sword.scale = Vector3.ONE * 0.36
 	sword.rotation_degrees.z = -90
-	sword.position = Vector3(0.13, 0.015, -0.015)
+	sword.position = Vector3(0.08, 0.09, 0.025)
 	grip.add_child(sword)
 	for mesh in viewmodel.find_children("*", "MeshInstance3D", true, false):
 		mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -356,7 +369,7 @@ func attack() -> void:
 	visual.rotation.y = yaw + PI
 	play_clip(clip)
 	animator.speed_scale = animator.get_animation(clip).length / action_timer
-	get_tree().create_timer(0.22).timeout.connect(
+	get_tree().create_timer(0.22, false).timeout.connect(
 		func():
 			if serial == attack_serial:
 				melee_contact()
@@ -385,7 +398,7 @@ func cast_magic() -> void:
 	get_parent().effects.acquire(
 		"cast", global_position + Vector3(0, 1.35, 0) - Basis(Vector3.UP, yaw).z * 0.6, 0.42, 1.2
 	)
-	get_tree().create_timer(0.22).timeout.connect(launch_magic)
+	get_tree().create_timer(0.22, false).timeout.connect(launch_magic)
 
 
 func launch_magic() -> void:
@@ -395,5 +408,5 @@ func launch_magic() -> void:
 	bolt.direction.y = sin(pitch) * 0.35
 	bolt.direction = bolt.direction.normalized()
 	bolt.player = self
+	bolt.position = global_position + Vector3(0, 1.25, 0) + bolt.direction * 0.8
 	get_parent().add_child(bolt)
-	bolt.global_position = global_position + Vector3(0, 1.25, 0) + bolt.direction * 0.8

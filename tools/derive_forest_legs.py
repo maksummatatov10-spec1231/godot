@@ -37,7 +37,7 @@ def main():
             selected = []
             for i in range(0, len(indices), 3):
                 tri = indices[i:i+3]
-                if max(points[v][1] for v in tri) < 1.16:
+                if max(points[v][1] for v in tri) < 1.01:
                     selected.extend(tri)
             primitive['indices'] = len(legs['accessors'])
             legs['accessors'].append({'bufferView': len(legs['bufferViews']), 'componentType': 5125,
