@@ -8,13 +8,13 @@ import time
 
 from PIL import ImageGrab, ImageStat
 
-from check import ROOT, resolve_engine
+from check import ERRORS, ROOT, resolve_engine
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--settle-seconds', type=float, default=20)
+    parser.add_argument('--settle-seconds', type=float, default=35)
     args = parser.parse_args()
     if not os.environ.get('DISPLAY'):
         raise RuntimeError('Use xvfb-run or an actual X11 display for the editor capture')
@@ -53,6 +53,8 @@ def main():
                     os.killpg(process.pid, signal.SIGKILL)
                     process.wait(timeout=5)
     text = log_path.read_text()
+    if ERRORS.search(text) or 'Program crashed' in text:
+        raise RuntimeError('Editor logged an error/crash; screenshot is diagnostic, not a pass')
     if 'Forward+ - Using Device' not in text:
         raise RuntimeError('Editor did not confirm Forward+ in its device log')
     print('EDITOR_CAPTURE_OK', destination)

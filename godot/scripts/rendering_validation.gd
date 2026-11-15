@@ -3,6 +3,9 @@ extends Node3D
 
 var frames := 0
 var capture_path := ""
+var cloud_effect: SunshineCloudsGD
+var cloud_world: WorldEnvironment
+var cloud_driver: SunshineCloudsDriverGD
 
 
 func _ready() -> void:
@@ -39,6 +42,27 @@ func _ready() -> void:
 		var terrain := ClassDB.instantiate("Terrain3D") as Node3D
 		terrain.name = "Terrain3D"
 		terrain.set("free_editor_textures", false)
+		terrain.set("tessellation_level", 0)
+		# Exercise the vendor's optimized material with actual texture layers,
+		# not an empty texture array in the heavyweight default shader.
+		var material := ClassDB.instantiate("Terrain3DMaterial") as Resource
+		material.set(
+			"shader_override", load("res://addons/terrain_3d/extras/shaders/lightweight.gdshader")
+		)
+		material.set("shader_override_enabled", true)
+		terrain.set("material", material)
+		var assets := ClassDB.instantiate("Terrain3DAssets") as Resource
+		var texture_asset := ClassDB.instantiate("Terrain3DTextureAsset") as Resource
+		var albedo := Image.create(16, 16, false, Image.FORMAT_RGBA8)
+		albedo.fill(Color(0.24, 0.38, 0.16, 1.0))
+		albedo.generate_mipmaps()
+		texture_asset.set("albedo_texture", ImageTexture.create_from_image(albedo))
+		var normal := Image.create(16, 16, false, Image.FORMAT_RGBA8)
+		normal.fill(Color(0.5, 0.5, 1.0, 1.0))
+		normal.generate_mipmaps()
+		texture_asset.set("normal_texture", ImageTexture.create_from_image(normal))
+		assets.set("texture_list", [texture_asset])
+		terrain.set("assets", assets)
 		add_child(terrain)
 		terrain.get("data").call("add_region_blank", Vector2i.ZERO)
 
@@ -62,6 +86,9 @@ func _ready() -> void:
 		driver.update_continuously = true
 		add_child(driver)
 		driver.retrieve_texture_data()
+		cloud_effect = clouds
+		cloud_world = world
+		cloud_driver = driver
 
 	print("RENDER_STAGE hud")
 	var hud := CanvasLayer.new()
@@ -69,7 +96,15 @@ func _ready() -> void:
 	var label := Label.new()
 	label.position = Vector2(20.0, 20.0)
 	label.text = (
-		"Forward+ / Terrain3D / SunshineClouds2\n"
+		"Forward+ / "
+		+ (
+			"Sky"
+			if OS.get_cmdline_user_args().has("--without-terrain")
+			else "Terrain3D lightweight"
+		)
+		+ " / "
+		+ ("No clouds" if OS.get_cmdline_user_args().has("--without-clouds") else "SunshineClouds2")
+		+ "\n"
 		+ "Balanced clouds: quarter resolution, 64 view steps, 8 lighting steps\n"
 		+ RenderingServer.get_rendering_device().get_device_name()
 	)
@@ -90,4 +125,12 @@ func _process(_delta: float) -> void:
 		get_tree().quit(1)
 		return
 	print("RENDER_VALIDATION_OK ", capture_path)
+	# Drain cloud RD work before RenderingServer shutdown, not after finalization.
+	if cloud_effect != null:
+		cloud_driver.update_continuously = false
+		cloud_effect.enabled = false
+		cloud_world.compositor.compositor_effects = []
+		RenderingServer.call_on_render_thread(cloud_effect.clear_compute)
+		await get_tree().process_frame
+		await get_tree().process_frame
 	get_tree().quit(0)
