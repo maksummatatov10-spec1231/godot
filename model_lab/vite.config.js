@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import fs from 'node:fs';
 import path from 'node:path';
-const game = path.resolve(import.meta.dirname, '../forest_game');
+const sibling = path.resolve(import.meta.dirname, '../forest_game');
+const game = fs.existsSync(sibling) ? sibling : path.resolve(import.meta.dirname, '..');
 function validVector(v, bound) { return Array.isArray(v) && v.length === 3 && v.every(n => typeof n === 'number' && Number.isFinite(n) && Math.abs(n) <= bound); }
-export default defineConfig({server:{host:'0.0.0.0',allowedHosts:true},plugins:[{
+export default defineConfig({build:{target:'esnext'},server:{host:'0.0.0.0',allowedHosts:true},plugins:[{
  name:'pose-workspace',configureServer(server){
   server.middlewares.use('/game/',(req,res)=>{
    const file=path.resolve(game,decodeURIComponent(req.url.split('?')[0]).replace(/^\//,''));

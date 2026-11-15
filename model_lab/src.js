@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {TransformControls} from 'three/addons/controls/TransformControls.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 const $=id=>document.getElementById(id);
 const renderer=new THREE.WebGLRenderer({canvas:document.querySelector('canvas'),antialias:true,preserveDrawingBuffer:true});
@@ -11,7 +12,10 @@ const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshStanda
 const camera=new THREE.PerspectiveCamera(68,1,.025,200);camera.position.set(2.7,1.8,-3.3);
 const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,1,0);controls.enableDamping=true;
 const loader=new GLTFLoader();const load=url=>loader.loadAsync('/game/'+url);
-let pose=await (await fetch('/api/pose')).json();let mode='third',playing=false,time=0,clipName='Sword_Idle',duration=1;const rigs=[];let markers;
+let pose=await (await fetch('/api/pose')).json();let mode='third',playing=false,time=0,clipName='Sword_Idle',duration=1;const rigs=[];let markers;const boneEdits=new Map();
+const gizmo=new TransformControls(camera,renderer.domElement);gizmo.setSpace("local");gizmo.enabled=false;const gizmoHelper=gizmo.getHelper();gizmoHelper.visible=false;scene.add(gizmoHelper);
+gizmo.addEventListener("dragging-changed",e=>{controls.enabled=!e.value&&mode!=="first";});
+gizmo.addEventListener("objectChange",()=>{if(!gizmo.object)return;const object=gizmo.object;pose.weapon.position=object.position.toArray();pose.weapon.rotation_degrees=[object.rotation.x,object.rotation.y,object.rotation.z].map(THREE.MathUtils.radToDeg);pose.weapon.scale=object.scale.x;});
 try{
  const [body,arms,weapon]=await Promise.all([load('assets/hero/warden.gltf'),load('assets/hero/warden_arms.gltf'),load('assets/weapon/sword_C.gltf')]);
  for(const [kind,gltf] of [['third',body],['first',arms]]){
@@ -24,7 +28,7 @@ try{
  clipName=clips.find(n=>n==='Sword_Idle')||clips[0];$('clip').value=clipName;
  markers=new THREE.Group();rigs[0].hand.add(markers);markers.add(new THREE.AxesHelper(.2));
  const marker=new THREE.Mesh(new THREE.SphereGeometry(.012,12,8),new THREE.MeshBasicMaterial({color:0x72ffb6}));marker.position.set(-.035,.085,0);markers.add(marker);
- rebuildInputs();chooseClip(clipName);chooseView('third');window.labReady=true;
+ for(const [bone] of rigs[0].rest)$('bone').add(new Option(bone.name,bone.name));$('bone').value='hand_r';rebuildInputs();chooseClip(clipName);chooseView('third');window.labReady=true;
 }catch(error){$('status').textContent=String(error);console.error(error);}
 function rebuildInputs(){for(const key of ['weapon','first_person']){
  $(key).replaceChildren();for(const [field,label,step] of [['position','XYZ · метры',.005],['rotation_degrees','XYZ · градусы',1]]){
@@ -33,9 +37,9 @@ function rebuildInputs(){for(const key of ['weapon','first_person']){
  }const scale=document.createElement('input');scale.type='number';scale.min=.1;scale.max=2;scale.step=.01;scale.value=pose[key].scale;scale.oninput=()=>{pose[key].scale=Number(scale.value);applyPose();};const label=document.createElement('label');label.textContent='Масштаб ';label.append(scale);$(key).append(label);
 }applyPose();}
 function transform(object,data){object.position.fromArray(data.position);object.rotation.set(...data.rotation_degrees.map(THREE.MathUtils.degToRad));object.scale.setScalar(data.scale);}
-function applyPose(){for(const rig of rigs){transform(rig.sword,pose.weapon);if(rig.kind==='first')transform(rig.root,pose.first_person);}renderOnce();}
+function applyPose(){for(const rig of rigs){transform(rig.sword,pose.weapon);if(rig.kind==='first')transform(rig.root,pose.first_person);}if(rigs.every(r=>r.action))sample(time);else renderOnce();}
 function chooseClip(name){clipName=name;time=0;for(const rig of rigs){rig.mixer.stopAllAction();const clip=rig.clips.find(c=>c.name===name);if(!clip)continue;rig.action=rig.mixer.clipAction(clip);rig.action.play();duration=clip.duration;}$('clip').value=name;$('time').max=duration;sample(0);}
-function sample(value){time=THREE.MathUtils.clamp(value,0,duration);for(const rig of rigs){for(const [b,p,q,s] of rig.rest){b.position.copy(p);b.quaternion.copy(q);b.scale.copy(s);}rig.mixer.setTime(time);rig.root.updateMatrixWorld(true);if(rig.kind==='first')anchorShoulders(rig);}$('time').value=time;$('timeLabel').value=time.toFixed(3)+' с';renderOnce();}
+function sample(value){time=THREE.MathUtils.clamp(value,0,duration);for(const rig of rigs){for(const [b,p,q,s] of rig.rest){b.position.copy(p);b.quaternion.copy(q);b.scale.copy(s);}rig.mixer.setTime(time);for(const [name,angles] of boneEdits){const bone=rig.root.getObjectByName(name);if(bone)bone.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(...angles.map(THREE.MathUtils.degToRad))));}rig.root.updateMatrixWorld(true);if(rig.kind==='first')anchorShoulders(rig);}$('time').value=time;$('timeLabel').value=time.toFixed(3)+' с';renderOnce();}
 function anchorShoulders(rig){
  for(const side of ['r','l']){
   const upper=rig.root.getObjectByName('upperarm_'+side),lower=rig.root.getObjectByName('lowerarm_'+side),wrist=rig.root.getObjectByName('hand_'+side);
@@ -58,13 +62,16 @@ function anchorShoulders(rig){
   oldWrist.setPosition(target);const local=wrist.parent.matrixWorld.clone().invert().multiply(oldWrist);local.decompose(wrist.position,wrist.quaternion,wrist.scale);rig.root.updateMatrixWorld(true);
  }
 }
-function chooseView(view){mode=view;for(const rig of rigs)rig.root.visible=rig.kind===(view==='first'?'first':'third');floor.visible=view!=='first';scene.children.find(o=>o.type==='GridHelper').visible=view!=='first';controls.enabled=view!=='first';
+function chooseView(view){gizmo.detach();gizmoHelper.visible=false;mode=view;for(const rig of rigs)rig.root.visible=rig.kind===(view==='first'?'first':'third');floor.visible=view!=='first';scene.children.find(o=>o.type==='GridHelper').visible=view!=='first';controls.enabled=view!=='first';
  if(view==='first'){camera.position.set(0,0,0);camera.quaternion.identity();camera.fov=68;}else if(view==='grip'){
  const hand=rigs[0].hand.getWorldPosition(new THREE.Vector3());camera.position.copy(hand).add(new THREE.Vector3(.24,.18,-.35));controls.target.copy(hand);camera.lookAt(hand);camera.fov=48;
  }else{camera.position.set(2.7,1.8,-3.3);controls.target.set(0,1,0);camera.lookAt(controls.target);camera.fov=68;}camera.updateProjectionMatrix();renderOnce();}
 function renderOnce(){if(!rigs.length)return;markers.visible=$('axes').checked&&mode!=='first';renderer.render(scene,camera);$('badge').textContent=`${mode==='first'?'FIRST PERSON':mode==='grip'?'PALM / SOCKET':'THIRD PERSON'}\n${clipName} · ${time.toFixed(3)} s`;
  const hand=rigs.find(r=>r.kind===(mode==='first'?'first':'third')).hand.getWorldPosition(new THREE.Vector3());$('status').textContent=`Кисть: ${hand.toArray().map(n=>n.toFixed(3)).join(' / ')}\n${renderer.info.render.triangles.toLocaleString()} triangles · ${renderer.info.render.calls} draw calls`;
 }
+for(const button of document.querySelectorAll('[data-gizmo]'))button.onclick=()=>{gizmo.attach(rigs.find(r=>r.kind===(mode==='first'?'first':'third')).sword);gizmo.setMode(button.dataset.gizmo);gizmo.enabled=true;gizmoHelper.visible=true;};
+for(const axis of ['X','Y','Z'])$('bone'+axis).oninput=()=>{boneEdits.set($('bone').value,['X','Y','Z'].map(a=>Number($('bone'+a).value)));sample(time);};
+$('bone').onchange=()=>{const angles=boneEdits.get($('bone').value)||[0,0,0];['X','Y','Z'].forEach((a,i)=>$('bone'+a).value=angles[i]);};$('boneReset').onclick=()=>{boneEdits.clear();['X','Y','Z'].forEach(a=>$('bone'+a).value=0);sample(time);};
 $('clip').onchange=()=>chooseClip($('clip').value);$('time').oninput=()=>{playing=false;sample(Number($('time').value));};$('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'❚❚ Пауза':'▶ Играть';};$('prev').onclick=()=>{playing=false;sample(time-1/30);};$('next').onclick=()=>{playing=false;sample(time+1/30);};$('axes').onchange=renderOnce;
 for(const button of document.querySelectorAll('[data-view]'))button.onclick=()=>chooseView(button.dataset.view);
 $('save').onclick=async()=>{const result=await fetch('/api/pose',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(pose)});$('status').textContent=result.ok?'Сохранено: forest_game/combat_pose.json':await result.text();};

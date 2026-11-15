@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import tempfile
+import zipfile
 
 FILE_ID = '1oYbF42doEsEK8kN6EVzFVdoZtz_TLZhr'
 EXPECTED_MD5 = 'cd56f13d4ceb33f0e90a1447a86ad8c5'
@@ -40,13 +41,34 @@ def inspect(archive_path, output):
                     p = Path(directory, name)
                     if p.is_file():
                         texts[name] = p.read_text(errors='replace')[:24000]
+        packs = []
+        with tempfile.TemporaryDirectory() as directory:
+            archive.reset()
+            archive.extract(path=directory, targets=names)
+            for name in names:
+                path = Path(directory, name)
+                if path.suffix.lower() != '.zip':
+                    packs.append({'archive': name, 'inspection': 'outer archive verified; nested non-ZIP retained for later tooling'})
+                    continue
+                with zipfile.ZipFile(path) as nested:
+                    members = [e for e in nested.infolist() if not e.is_dir()]
+                    licenses = {}
+                    for entry in members:
+                        title = PurePosixPath(entry.filename).name.lower()
+                        if any(word in title for word in ['license', 'licence', 'readme', 'copyright', 'terms']) and Path(title).suffix in {'.txt', '.md'} and entry.file_size < 100_000:
+                            licenses[entry.filename] = nested.read(entry).decode('utf-8', errors='replace')[:24000]
+                    packs.append({'archive': name, 'inspection': 'nested ZIP directory and small license texts read; no asset code executed',
+                                  'files': len(members), 'uncompressed_bytes': sum(e.file_size for e in members),
+                                  'extensions': dict(Counter(Path(e.filename).suffix.lower() for e in members)),
+                                  'license_texts': licenses,
+                                  'sample_names': [e.filename for e in members[:30]]})
         result = {'drive_id': FILE_ID, 'name': '2d assets.7z',
                   'bytes': archive_path.stat().st_size, 'md5': digest,
                   'sha256': hashlib.sha256(archive_path.read_bytes()).hexdigest(),
                   'file_count': len(files), 'uncompressed_bytes': sum(e.uncompressed for e in files),
                   'extensions': dict(Counter(Path(n).suffix.lower() for n in names)),
                   'top_level': dict(Counter(PurePosixPath(n).parts[0] for n in names)),
-                  'files': names, 'license_texts': texts,
+                  'files': names, 'license_texts': texts, 'nested_packs': packs,
                   'scope': 'Separate 2D game intake only. No source assets redistributed or added to forest_game.'}
     output.mkdir(parents=True, exist_ok=True)
     (output / 'catalog.json').write_text(json.dumps(result, ensure_ascii=False, indent=2))
