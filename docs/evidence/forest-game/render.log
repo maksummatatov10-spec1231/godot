@@ -7,6 +7,6 @@ FOREST_FRAME 02-first-person player=(0.0, -0.019853, 7.0)
 FOREST_FRAME 03-sword player=(0.0, -0.019853, 7.0)
 FOREST_FRAME 04-magic player=(0.0, -0.019853, 7.0)
 FOREST_FRAME 05-jump player=(0.0, 0.947603, 7.0)
-FOREST_FRAME 06-walking player=(0.0, -0.019065, 6.444168)
-FOREST_FRAME 07-forest-overview player=(0.0, -0.019065, 6.444168)
+FOREST_FRAME 06-walking player=(0.0, -0.019065, 5.184174)
+FOREST_FRAME 07-forest-overview player=(0.0, -0.019065, 5.184174)
 FOREST_CAPTURE_OK /home/runner/work/godot/godot/docs/evidence/forest-game
