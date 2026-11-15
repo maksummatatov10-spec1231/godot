@@ -1,0 +1,173 @@
+--- a/godot/addons/assets2godot/plugin.gd
++++ b/godot/addons/assets2godot/plugin.gd
+@@ -171,6 +171,7 @@
+ ## key → pane, filled by _add_tab_pane as each provider pane registers.
+ var _provider_panes := {}
+ ## The custom EditorResourcePreviewGenerator registered in _enter_tree.
++var _bk_quick_hook: Callable
+ var _preview_gen: EditorResourcePreviewGenerator
+ 
+ 
+@@ -184,6 +185,9 @@
+ 		ProjectSettings.set_setting(
+ 			"rendering/textures/vram_compression/compress_with_gpu", false)
+ 	init_settings()
++	# Arena integration: network and helper startup are explicit opt-ins.
++	if ProjectSettings.get_setting("assets2godot/offline_mode", true):
++		client_enabled = false
+ 	# The A2G preview generator fills the gaps the built-ins leave
+ 	# (external images, .glb/.gltf/.fbx) inside the native preview queue.
+ 	# request_draw_and_wait exists only since 4.6 (godot#96897) — on
+@@ -223,6 +227,9 @@
+ # No unsubscribe here: on editor shutdown the request never reaches the
+ # Client, as the HTTPRequest is freed with the plugin before it's sent.
+ func _exit_tree() -> void:
++	if _bk_quick_hook.is_valid() and get_tree().node_added.is_connected(_bk_quick_hook):
++		get_tree().node_added.disconnect(_bk_quick_hook)
++	_bk_quick_hook = Callable()
+ 	if _preview_gen != null:
+ 		var previewer := EditorInterface.get_resource_previewer()
+ 		if previewer != null:
+@@ -254,7 +261,7 @@
+ 		_a2g_placeholder = null
+ 	# The children go with the plugin; the panes live in the main screen.
+ 	if main_screen:
+-		main_screen.queue_free()
++		main_screen.free()
+ 		main_screen = null
+ 		a2g_pane = null
+ 		_tab_bar = null
+@@ -417,7 +424,7 @@
+ 	gallery.name = "BlendKit"
+ 	# Right-click quick download on BlendKit cards too — the same compact
+ 	# tile remote-provider cards get, installed without upstream edits.
+-	A2GUI.install_bk_quick_download(get_tree(), gallery)
++	_bk_quick_hook = A2GUI.install_bk_quick_download(get_tree(), gallery)
+ 	# Polyhaven: same kind of main tab as BlendKit, but pure GDScript —
+ 	# the public CC0 API needs neither login nor the Client.
+ 	var polyhaven := A2GPolyhaven.new()
+@@ -534,6 +541,8 @@
+ ## Whether provider [param key]'s tab is on — the settings menu's
+ ## switches and the providers' own catalog gates share this answer.
+ func provider_enabled(key: String) -> bool:
++	if ProjectSettings.get_setting("assets2godot/offline_mode", true):
++		return false
+ 	var es := EditorInterface.get_editor_settings()
+ 	var setting := SETTING_A2G_PROVIDER % key
+ 	if es and es.has_setting(setting):
+@@ -767,6 +776,8 @@
+ # MARK: settings
+ 
+ func set_client_enabled(enabled: bool) -> void:
++	if ProjectSettings.get_setting("assets2godot/offline_mode", true):
++		enabled = false
+ 	if enabled == client_enabled:
+ 		return
+ 	client_enabled = enabled
+--- a/godot/addons/assets2godot/a2g/a2g_ambientcg.gd
++++ b/godot/addons/assets2godot/a2g/a2g_ambientcg.gd
+@@ -318,6 +318,8 @@
+ ## catalog probe — only those feed the menu's status dot; a ?id= files
+ ## failure must never flip the whole catalog red.
+ func _fetch_url(url: String, cb: Callable, track_state := false) -> void:
++	if ProjectSettings.get_setting("assets2godot/offline_mode", true):
++		return
+ 	var req := HTTPRequest.new()
+ 	req.timeout = 60.0
+ 	# Off the main thread — catalog pages run to ~6MB of JSON each.
+--- a/godot/addons/assets2godot/a2g/a2g_dock.gd
++++ b/godot/addons/assets2godot/a2g/a2g_dock.gd
+@@ -84,9 +84,14 @@
+ 	_status_icon = TextureRect.new()
+ 	_status_icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+ 	if toolbar_parent != null:
++		# Keep the hidden status label owned so it is freed with the panel.
++		_status.hide()
++		vbox.add_child(_status)
+ 		toolbar_parent.add_child(_status_icon)
+ 		host.add_child(VSeparator.new())
+ 	else:
++		_status_icon.hide()
++		vbox.add_child(_status_icon)
+ 		vbox.add_child(_status)
+ 
+ 	_tree = Tree.new()
+--- a/godot/addons/assets2godot/a2g/a2g_polyhaven.gd
++++ b/godot/addons/assets2godot/a2g/a2g_polyhaven.gd
+@@ -286,6 +286,8 @@
+ ## catalog probe — only those feed the menu's status dot; a /files 404
+ ## must never flip the whole catalog red.
+ func _fetch_url(url: String, cb: Callable, track_state := false) -> void:
++	if ProjectSettings.get_setting("assets2godot/offline_mode", true):
++		return
+ 	var req := HTTPRequest.new()
+ 	req.timeout = 30.0
+ 	(plugin if plugin != null else self).add_child(req)
+--- a/godot/addons/assets2godot/a2g/a2g_scene_drop.gd
++++ b/godot/addons/assets2godot/a2g/a2g_scene_drop.gd
+@@ -119,7 +119,7 @@
+ 	_status.add_theme_constant_override("shadow_offset_y", 1)
+ 	_status.add_theme_font_size_override("font_size", 10)
+ 	var tracked := FontVariation.new()
+-	if has_theme_font("main_bold", "EditorFonts"):
++	if Engine.get_version_info().minor < 7 and has_theme_font("main_bold", "EditorFonts"):
+ 		tracked.base_font = get_theme_font("main_bold", "EditorFonts")
+ 	else:
+ 		# 4.7 has no "main_bold" entry — embolden the regular editor font.
+--- a/godot/addons/assets2godot/a2g/a2g_ui.gd
++++ b/godot/addons/assets2godot/a2g/a2g_ui.gd
+@@ -430,20 +430,13 @@
+ ## GalleryItems and connects a right-click handler that builds the
+ ## remote_* entry from the card's own asset dict. Self-disconnects when
+ ## the gallery leaves the tree (plugin disabled).
+-static func install_bk_quick_download(tree: SceneTree, gallery: Control) -> void:
+-	# Two lambda pitfalls avoided here: locals are captured by value, so a
+-	# plain `hook` var would freeze the null it held at lambda creation
+-	# (self-disconnect never works, the hook then errors on every
+-	# node_added) — an Array cell carries a live view instead. And a
+-	# freed `gallery` capture would log "capture was freed" on every
+-	# invocation — a WeakRef turns that into a clean null check.
++static func install_bk_quick_download(tree: SceneTree, gallery: Control) -> Callable:
++	# The owning plugin disconnects explicitly; do not create a holder/lambda
++	# reference cycle, which keeps this script and editor fonts alive at exit.
+ 	var gallery_ref := weakref(gallery)
+-	var holder: Array = [Callable()]
+-	holder[0] = func(node: Node):
+-		if gallery_ref.get_ref() == null:
+-			var h: Callable = holder[0]
+-			if h.is_valid() and tree.node_added.is_connected(h):
+-				tree.node_added.disconnect(h)
++	var hook := func(node: Node):
++		var current_gallery = gallery_ref.get_ref()
++		if current_gallery == null:
+ 			return
+ 		if node.get_script() != GalleryItemScript or node.has_meta(&"a2g_bk_quick"):
+ 			return
+@@ -455,11 +448,12 @@
+ 		if nasset is Dictionary and nasset.get("a2g", false):
+ 			return
+ 		node.set_meta(&"a2g_bk_quick", true)
+-		node.gui_input.connect(func(ev): _on_bk_card_input(node, ev, gallery))
+-		node.set_drag_forwarding(_bk_card_drag_data.bind(node, gallery),
++		node.gui_input.connect(func(ev): _on_bk_card_input(node, ev, current_gallery))
++		node.set_drag_forwarding(_bk_card_drag_data.bind(node, current_gallery),
+ 			Callable(), Callable())
+ 		_fix_card_filters(node)
+-	tree.node_added.connect(holder[0])
++	tree.node_added.connect(hook)
++	return hook
+ 
+ 
+ ## BlendKit gallery cards are built upstream, not via asset_card() — the
+--- a/godot/addons/SunshineClouds2/Dock/CloudsEditorController.gd
++++ b/godot/addons/SunshineClouds2/Dock/CloudsEditorController.gd
+@@ -122,7 +122,8 @@
+ 	SceneChanged(sceneRoot)
+ 
+ func FindSceneNode() -> Node:
+-	var editorInterface = EditorPlugin.new().get_editor_interface()
++	# EditorInterface is a singleton; allocating an EditorPlugin here leaks it.
++	var editorInterface = EditorInterface
+ 	var sceneRoot = editorInterface.get_edited_scene_root()
+ 	var iterationcount: int = 300 #30 seconds of checking.
+ 	while sceneRoot == null && iterationcount > 0:

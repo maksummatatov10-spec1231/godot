@@ -1,0 +1,10 @@
+import os
+
+bindings = os.environ.get("GODOT_CPP_DIR")
+if not bindings:
+    Exit("Set GODOT_CPP_DIR to the pinned godot-cpp source directory")
+env = SConscript(os.path.join(bindings, "SConstruct"), {"api_version": "4.7"})
+env.Append(CPPPATH=["src"])
+env.Append(CXXFLAGS=["-Wall", "-Wextra", "-Wno-unused-parameter"])
+library = env.SharedLibrary("../godot/native_cpp/bin/game_cpp", source=Glob("src/*.cpp"))
+Default(library)

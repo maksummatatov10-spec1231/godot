@@ -1,0 +1,41 @@
+test_budget_checked_before_writing (test_asset_extraction.AssetExtractionTests.test_budget_checked_before_writing) ... ok
+test_extracts_regular_file (test_asset_extraction.AssetExtractionTests.test_extracts_regular_file) ... ok
+test_never_overwrites_file (test_asset_extraction.AssetExtractionTests.test_never_overwrites_file) ... ok
+test_rejects_archive_symlink (test_asset_extraction.AssetExtractionTests.test_rejects_archive_symlink) ... ok
+test_rejects_duplicate_targets (test_asset_extraction.AssetExtractionTests.test_rejects_duplicate_targets) ... ok
+test_rejects_symlink_parent (test_asset_extraction.AssetExtractionTests.test_rejects_symlink_parent) ... ok
+test_rejects_unsafe_paths (test_asset_extraction.AssetExtractionTests.test_rejects_unsafe_paths) ... ok
+test_corrupt_cache_is_replaced_only_with_verified_data (test_dependencies.DependencyTests.test_corrupt_cache_is_replaced_only_with_verified_data) ... ok
+test_existing_directory_symlink_cannot_escape_destination (test_dependencies.DependencyTests.test_existing_directory_symlink_cannot_escape_destination) ... ok
+test_extracts_regular_files_and_strips_archive_root (test_dependencies.DependencyTests.test_extracts_regular_files_and_strips_archive_root) ... ok
+test_mismatched_download_is_rejected (test_dependencies.DependencyTests.test_mismatched_download_is_rejected) ... ok
+test_rejects_absolute_and_parent_paths (test_dependencies.DependencyTests.test_rejects_absolute_and_parent_paths) ... ok
+test_rejects_symlinks_hardlinks_and_special_files (test_dependencies.DependencyTests.test_rejects_symlinks_hardlinks_and_special_files) ... ok
+test_verified_cache_avoids_network (test_dependencies.DependencyTests.test_verified_cache_avoids_network) ... ok
+test_enables_only_real_extension_resources_not_templates (test_project_setup.ProjectSetupTests.test_enables_only_real_extension_resources_not_templates) ... ok
+test_rejects_newlines_in_resource_paths (test_project_setup.ProjectSetupTests.test_rejects_newlines_in_resource_paths) ... ok
+test_removes_stale_entries_and_ignores_import_cache (test_project_setup.ProjectSetupTests.test_removes_stale_entries_and_ignores_import_cache) ... ok
+test_cloud_budget_is_explicit (test_renderer_policy.RendererPolicyTests.test_cloud_budget_is_explicit) ... ok
+test_forward_plus_and_no_silent_gl_fallback (test_renderer_policy.RendererPolicyTests.test_forward_plus_and_no_silent_gl_fallback) ... ok
+test_noise_textures_keep_three_dimensional_imports (test_renderer_policy.RendererPolicyTests.test_noise_textures_keep_three_dimensional_imports) ... ok
+test_offline_client_cannot_restart_from_settings_signal (test_renderer_policy.RendererPolicyTests.test_offline_client_cannot_restart_from_settings_signal) ... ok
+test_shader_includes_are_present (test_renderer_policy.RendererPolicyTests.test_shader_includes_are_present) ... ok
+test_visual_tool_defaults_to_forward_plus (test_renderer_policy.RendererPolicyTests.test_visual_tool_defaults_to_forward_plus) ... ok
+test_capture_accepts_nonuniform_png (test_tools.ToolTests.test_capture_accepts_nonuniform_png) ... ok
+test_capture_rejects_blank_wrong_size_and_missing_files (test_tools.ToolTests.test_capture_rejects_blank_wrong_size_and_missing_files) ... ok
+test_explicit_engine_path_has_priority (test_tools.ToolTests.test_explicit_engine_path_has_priority) ... ok
+test_godot_errors_fail_even_on_zero_exit (test_tools.ToolTests.test_godot_errors_fail_even_on_zero_exit) ... ok
+test_local_engine_fallback (test_tools.ToolTests.test_local_engine_fallback) ... ok
+test_missing_engine_fails_smoke_instead_of_skipping (test_tools.ToolTests.test_missing_engine_fails_smoke_instead_of_skipping) ... ok
+test_nonzero_exit_fails (test_tools.ToolTests.test_nonzero_exit_fails) ... ok
+test_smoke_requires_completion_marker (test_tools.ToolTests.test_smoke_requires_completion_marker) ... ok
+test_stale_capture_is_removed_even_if_display_is_missing (test_tools.ToolTests.test_stale_capture_is_removed_even_if_display_is_missing) ... ok
+test_success_preserves_log (test_tools.ToolTests.test_success_preserves_log) ... ok
+test_timeout_fails_and_preserves_partial_log (test_tools.ToolTests.test_timeout_fails_and_preserves_partial_log) ... ok
+test_version_is_exact_not_a_minor_or_beta_match (test_tools.ToolTests.test_version_is_exact_not_a_minor_or_beta_match) ... ok
+test_version_pins_and_native_resource_contract (test_tools.ToolTests.test_version_pins_and_native_resource_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.085s
+
+OK

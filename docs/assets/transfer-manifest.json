@@ -1,0 +1,136 @@
+{
+  "format": "raw-concatenation-v1",
+  "part_size": 94371840,
+  "sources": [
+    {
+      "id": "1b-kDHxNE0aeqpMtLH_iRzdBd2syb0zmp",
+      "name": "assets.zip",
+      "size": 1264737618,
+      "sha256": "cabff06b986e57683a45607690cfa18ce4803a455396e6e923a2c952ed0fff13",
+      "parts": [
+        {
+          "name": "assets.zip.part001",
+          "id": "1Vs9v1lc-LRq50jvH2box1nas8LOVa6h1",
+          "size": 94371840,
+          "sha256": "058a69e981049630f82b0c595e338af582f2517188c93fac17b0b786d4d9efa0"
+        },
+        {
+          "name": "assets.zip.part002",
+          "id": "1MBd6z9AcGNRH_ybYX44toiPVPTvdbrjw",
+          "size": 94371840,
+          "sha256": "1107cee3dbef00d091c55e675e15ff1e115114ea4d6b6392f88dcaf0e5d6c48c"
+        },
+        {
+          "name": "assets.zip.part003",
+          "id": "1tHJn4XvO5Sj9Iwe9la4Ls2DYgjRnhn_l",
+          "size": 94371840,
+          "sha256": "b0e8bd99e1c6e30edae1d369a4471247858fc1a0151317adb5133a1b5344e01d"
+        },
+        {
+          "name": "assets.zip.part004",
+          "id": "1IQ4Yxcs6EMDAeeopegW-bbD020eWC-YK",
+          "size": 94371840,
+          "sha256": "c5a43a11326642e7b48a51df00cbfafdb0d9b564dc40b0dfa8b59ce79384ac22"
+        },
+        {
+          "name": "assets.zip.part005",
+          "id": "10HuqUflWdiF0KdRuIzqd0TnbC9CTbhOv",
+          "size": 94371840,
+          "sha256": "5a5016c67e27fe9cdbd93b5adc239b43ed3fdfd0e273a3ec79e9551f2f5c0bf1"
+        },
+        {
+          "name": "assets.zip.part006",
+          "id": "1KjFSMS6pYkNGcypSQUSXTzH_3a-SxqMh",
+          "size": 94371840,
+          "sha256": "d38e38f83999a69695c7de511a361a50f5ce77482d2c67d96ceb258f3cd43234"
+        },
+        {
+          "name": "assets.zip.part007",
+          "id": "1Ap4PcxyDVWzlouf3pODKQVR6ZOTKAFJN",
+          "size": 94371840,
+          "sha256": "14b11c82c09864658b2a5db26b5b24436227fdb472655a5a9a5ad0e095c62995"
+        },
+        {
+          "name": "assets.zip.part008",
+          "id": "1yRAvKQCX7DDCmjW_an1qdPUYCPHWIort",
+          "size": 94371840,
+          "sha256": "5a85499aa6e1844822df4cb0c301f1d8a091ea3970ffb6ea8aba9874da578ca5"
+        },
+        {
+          "name": "assets.zip.part009",
+          "id": "153HBY98r07qGbgVTWYPvH0gWZYkcMvVT",
+          "size": 94371840,
+          "sha256": "a06f6ac4c5d00ecc4c4894a0d6ddd61da63b95ff7144775b26c15a053ee83f7c"
+        },
+        {
+          "name": "assets.zip.part010",
+          "id": "1gXJQDU78HBdveVRiLC8u6VSPyqdPvafW",
+          "size": 94371840,
+          "sha256": "7b24e0335bf53bc9d252278bcde4c9a9fc23355bb32740b9dc104f2a6767e2b4"
+        },
+        {
+          "name": "assets.zip.part011",
+          "id": "1__23i4A-RomWJPZmGekT3d_o55AS7RcT",
+          "size": 94371840,
+          "sha256": "09b488c8c69a5d932e43dd03a08cfa3bdd070f016d8dd96cb16336f67f0c9a97"
+        },
+        {
+          "name": "assets.zip.part012",
+          "id": "1I_oD67FyGaCCFEjhVnDfY4ylX3VJ8zZ1",
+          "size": 94371840,
+          "sha256": "a3b58ae1fbb9edde7344d9a4f3555b4d7516701bb0e7e6bd0ea40d172bef6a42"
+        },
+        {
+          "name": "assets.zip.part013",
+          "id": "1e3OCLROwTLFRFu-uXgDUqSwM9i9gd_uf",
+          "size": 94371840,
+          "sha256": "9014b4250370a106ada4f70835a265ff96ba131541cfc420174c579d61b20181"
+        },
+        {
+          "name": "assets.zip.part014",
+          "id": "1x08UPbJr6g91Cpei-Mcq0g7RfmkH3Zfl",
+          "size": 37903698,
+          "sha256": "74aa6e19dd5563ea444665a1a61e003b3919612c99a5cde2b4c12f837a71905d"
+        }
+      ]
+    },
+    {
+      "id": "17K21PujL-qA8XYgl5F6MiofwPRgE2nAO",
+      "name": "blender-5.3.0-linux-x64.tar.xz",
+      "size": 406944100,
+      "sha256": "dacb8264197a3f7fda6001285a5a506fc97ee943881261c2c3bd63c882f22e05",
+      "parts": [
+        {
+          "name": "blender-5.3.0-linux-x64.tar.xz.part001",
+          "id": "18zEIGVPuUFIHgBU2tsuPEtQNG1Cv_yN1",
+          "size": 94371840,
+          "sha256": "74095723a2827eac73e1d316fa1d276e50f1149bbf50fc697600e42c1be99f85"
+        },
+        {
+          "name": "blender-5.3.0-linux-x64.tar.xz.part002",
+          "id": "15pU5IvzWbncTqeOzLBFw3557TQSygz_x",
+          "size": 94371840,
+          "sha256": "8565c7ff9b30f9a05b3ca284e226c08d380753161cd27058debea13b72e4e425"
+        },
+        {
+          "name": "blender-5.3.0-linux-x64.tar.xz.part003",
+          "id": "1sPPjMTHDZ9RjKRMAITcyeo3bW1Gu5SJW",
+          "size": 94371840,
+          "sha256": "f85634a854772689977863cba5c5754c86674c70b2d71444bd32bd8893a7a62b"
+        },
+        {
+          "name": "blender-5.3.0-linux-x64.tar.xz.part004",
+          "id": "1QrxR8M_maVXTB-Q8iJ9TkeSpz9ASuXL9",
+          "size": 94371840,
+          "sha256": "53f6b55fd537020db9e00728f48a9c0673661f4ddc3546df77130bf0038e3818"
+        },
+        {
+          "name": "blender-5.3.0-linux-x64.tar.xz.part005",
+          "id": "1ddZ8tOVv7rj0kE12VWNk2dzhpErbQiez",
+          "size": 29456740,
+          "sha256": "1f15260f0d3f0842a112ce3962c347951692eb989824afc52881dfd1aadf1b4e"
+        }
+      ]
+    }
+  ]
+}

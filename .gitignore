@@ -1,0 +1,11 @@
+.tools/
+.venv/
+__pycache__/
+.godot/
+target/
+artifacts/
+godot/native/
+
+godot/native_cpp/
+cpp/.sconsign*
+cpp/src/*.os

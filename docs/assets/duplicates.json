@@ -1,0 +1,1579 @@
+[
+  {
+    "sha256": "a37ca932c4287a67d9cf7f78997b5cc4b026ca7319a4c8454132d076307ca5cf",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Concrete_Asphalt_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Concrete_Asphalt_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "697276f680b34d6321e6b06da208a0fc3516db372d4a7de543fc2c33e895f482",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Concrete_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Concrete_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "e4de917d2506bff4b17d44380a136336cf16e5ea828edfdb8981f4f27e30a86a",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Concrete_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Concrete_Normal.png"
+    ]
+  },
+  {
+    "sha256": "be17636c061a7c6c4f4bf23c3887a3f894da0e88394e233926e816c735a49244",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Concrete_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Concrete_ORM.png"
+    ]
+  },
+  {
+    "sha256": "bcb7b1d7bb9801aae25720f495af76306d11cce7654f52763e3cb6b273845302",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Dirt_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Dirt_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "88958149742c2ebf8447079edd80ac1133f7b72a5fce0c118206b2f742a350ea",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Dirt_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Dirt_Normal.png"
+    ]
+  },
+  {
+    "sha256": "a2803d1ce2d6ccfdd0896de05a96e3c6aec898000c5897e1669c000faf2b2060",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Dirt_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Dirt_ORM.png"
+    ]
+  },
+  {
+    "sha256": "a01f57e2976d3af21a59f1ae18e12be84d2acae7ba3e93d184d2874224f737c0",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_MarbleFloor_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_MarbleFloor_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "52ba88ccfd35f072a51d11c31cdfb6e6ea8cde641ab4521115994d2c3216b451",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_MarbleFloor_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_MarbleFloor_Normal.png"
+    ]
+  },
+  {
+    "sha256": "95008e79cdba191b525afce2a95452fe28934efd5546d35919c24ea6cbcc0c22",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_MarbleFloor_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_MarbleFloor_ORM.png"
+    ]
+  },
+  {
+    "sha256": "adae656323f15cd2c3f1a6453685cb1ca104b700dc114076137cb3a4c253d3d0",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_MetalConcrete_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_MetalConcrete_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "93f95a96c32b27820c590301f00f5ba1d23d4054046d92bf6d58adbf23007419",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_MetalConcrete_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_MetalConcrete_Normal.png"
+    ]
+  },
+  {
+    "sha256": "c4d35f684d20c47f199bea2fbe098d60a000fa7d1489df0f00a4c3c1ace4fcb7",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_MetalConcrete_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_MetalConcrete_ORM.png"
+    ]
+  },
+  {
+    "sha256": "528cbe672c62384aa3bac703f574b60509bd69b4d492291cb2915022a12a449c",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Ornaments_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Ornaments_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "c1aa6b307d47386b63e775ba88d82992dd0aaf34f1e4c2b7824002e3cc0a795a",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Ornaments_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Ornaments_Normal.png"
+    ]
+  },
+  {
+    "sha256": "c65b673f871e6b4b2fa61fd110286a096d05d9a311e71ca71804cea46811885d",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Ornaments_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Ornaments_ORM.png"
+    ]
+  },
+  {
+    "sha256": "ea85bfc02c4c807265a85f7ab50656f7eaa19f6567301d362d78c1d06da161ab",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_RedBrick_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_RedBrick_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "147f14d7f665d2598d0d796bd02a227f6b8b0fbc790c3e0737b1b90128101c93",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_RedBrick_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_RedBrick_Normal.png"
+    ]
+  },
+  {
+    "sha256": "dfba8a1da5ca7dcff1b707a051e82717e93013c2ad36c93b7a41b0f331414b70",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_RedBrick_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_RedBrick_ORM.png"
+    ]
+  },
+  {
+    "sha256": "2057fecd5f405c56adfc94df056d3f0bcfe7cd3e444779bcabc85db389761503",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_RoofSlate_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_RoofSlate_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "cd5cb711b2cc4f59a846604309cb0d312596b0e178b3aa2cd56e3a2f84d9471b",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_RoofSlate_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_RoofSlate_Normal.png"
+    ]
+  },
+  {
+    "sha256": "7e8bafdd2a33af3d5ae9493305b48ed40c6ea8f7354808da6d6e40ec42a1e01b",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_RoofSlate_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_RoofSlate_ORM.png"
+    ]
+  },
+  {
+    "sha256": "90eca7571c910f713952d7568674e231fd21bc6f6693de5514a563c19c91148e",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Street_Decals.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Street_Decals.png"
+    ]
+  },
+  {
+    "sha256": "c3334902f8315783477eec63e2d462f8cefedf9c55b41ef452d8374b5603f08e",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Trim_BaseColor.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Trim_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "95fa43093067956fa6e206408f3e2f2302c18c7453b75a02f6e29fe57e2cd041",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Trim_Normal.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Trim_Normal.png"
+    ]
+  },
+  {
+    "sha256": "52449f201ad3cf606a2eb2972702b10051c369cdc67b6fadd109502b4735d7fb",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_Trim_ORM.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_Trim_ORM.png"
+    ]
+  },
+  {
+    "sha256": "59e5c77292953d93c3cd239c2f06d4e80e393761195da66d886d3887ad59f1dc",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_dark_interior.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_dark_interior.png"
+    ]
+  },
+  {
+    "sha256": "d20aa9f249a506eb145d76e264e59667cec4bef66c07e4baace6583a28cc3be4",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_lit_interior_1.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_lit_interior_1.png"
+    ]
+  },
+  {
+    "sha256": "83c3f1b2ad84b65aab88d5744e6997730a04140e41d230e2cecfe9bfb2ae0559",
+    "paths": [
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Exports/glTF (Godot)/T_lit_interior_2.png",
+      "assets/Downtown City MegaKit_Standard_.zip.contents/Textures/T_lit_interior_2.png"
+    ]
+  },
+  {
+    "sha256": "965849919bce5939066299e18a39502244f2f70385321cc5d6109fc1867e6981",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/icons/leaf.png",
+      "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/icons/leaf.png"
+    ]
+  },
+  {
+    "sha256": "e5d233a33ecc373c39bf81a57eae457c7bbeed909bcc302c1b4abc6c39e7ec3e",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd",
+      "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd",
+      "assets/Effects/HitFXFree.zip.contents/HitFXFree/assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd"
+    ]
+  },
+  {
+    "sha256": "1dac7548c4a9004adc632e11ec8d79da0e0a45cfdae418479697b76fbcf04e3c",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+      "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd"
+    ]
+  },
+  {
+    "sha256": "f6b99ea4f52a02dfa20f6405d52e314a5551c81204dd905afe85ee8a35dab6ed",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+      "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+      "assets/Effects/HitFXFree.zip.contents/HitFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd"
+    ]
+  },
+  {
+    "sha256": "cc7a09986ac6c95c94d58e21f914d204322e0e17d4b0d7a2b30a60d976a8bea2",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+      "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+      "assets/Effects/HitFXFree.zip.contents/HitFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader"
+    ]
+  },
+  {
+    "sha256": "74401c20aedec49b5f7d104662bc908c860807ec4e8b19285bf4ca63a0481b48",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
+      "assets/Effects/HitFXFree.zip.contents/HitFXFree/assets/BinbunVFX_Vol2/shared/shader/sky.gdshader"
+    ]
+  },
+  {
+    "sha256": "8d34f9d4bf9cb422130060057a3bb53481f52014d6598fecde4ab42e8ae54c3b",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr",
+      "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr"
+    ]
+  },
+  {
+    "sha256": "7d365f7f7f46c7c81fa70e585cde6fdf7db311e7a9e8452de6fc1e943bad46f5",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr.import",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr.import",
+      "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr.import",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr.import",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/story_studio_02_1k.hdr.import"
+    ]
+  },
+  {
+    "sha256": "c9bc8a308e0d48f1529e533aa465652948754b9a786d697ca3dc8a7e67c2a8b9",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj"
+    ]
+  },
+  {
+    "sha256": "d3a10a2a4d19ddd95a26b9027be9a7e96ade5fd213d9a634734fe4fd6dba5cce",
+    "paths": [
+      "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj.import",
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj.import",
+      "assets/Effects/ExplosionFXFree.zip.contents/ExplosionFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj.import",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj.import"
+    ]
+  },
+  {
+    "sha256": "74f6e0aef33afb3a81528cb02e72747e6583f4f78de143b389443877e817731e",
+    "paths": [
+      "assets/Effects/DarkMagicFXFree.zip.contents/DarkMagicFXFree/assets/BinbunVFX_Vol2/DarkMagicFX/license.txt",
+      "assets/Effects/FlameFXFree.zip.contents/FlameFXFree/assets/BinbunVFX_Vol2/FlameFX/license.txt"
+    ]
+  },
+  {
+    "sha256": "193001ddf189f1e88569b7849f577e0ac2620590cce844025ac9c482457e56e9",
+    "paths": [
+      "assets/Effects/GodotBeamVFXFree.zip.contents/assets/BinbunVFX/shared/texture/placeholder.png",
+      "assets/Effects/MagicProjectilesVFX.zip.contents/assets/BinbunVFX/shared/texture/placeholder.png"
+    ]
+  },
+  {
+    "sha256": "c153429a49928594b00b53c07c4ab3d6352087b7f5df6c272d4aedfdb99a40be",
+    "paths": [
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/fbx/weapons_bits_texture.png",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/fbx(unity)/weapons_bits_texture.png",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/weapons_bits_texture.png",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/weapons_bits_texture.png",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Textures/weapons_bits_texture.png"
+    ]
+  },
+  {
+    "sha256": "9b43557e62b3dda0eab599fb7de38ccc615e42c732cd1839d9a8c2d3f856209b",
+    "paths": [
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/arrow_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/arrow_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/axe_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/axe_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/axe_C.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/bow_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/bow_A_withString.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/bow_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/bow_B_withString.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/dagger_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/dagger_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/fistweapon_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/fistweapon_A_stacked.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/fistweapon_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/fistweapon_B_stacked.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/halberd.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/hammer_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/hammer_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/hammer_C.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/shield_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/shield_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/shield_C.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/spear_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/staff_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/staff_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/sword_A.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/sword_B.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/sword_C.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/sword_D.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/sword_E.mtl",
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/obj/wand_A.mtl"
+    ]
+  },
+  {
+    "sha256": "5c0e260497a7d7edb8c0c58d9669268d03cbf8886e241c68c51712e139c45776",
+    "paths": [
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Discord Server.url",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Discord Server.url"
+    ]
+  },
+  {
+    "sha256": "56e1e15b8796b2982c63f2c6beaf7e432abb5b5c985ba6bc7902e63eda884ede",
+    "paths": [
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/More KayKit Assets.url",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/More KayKit Assets.url",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/More KayKit Assets.url"
+    ]
+  },
+  {
+    "sha256": "93706b75e2bbfc2e6711e0d2ed035facfc2aa816c8e79510c55823b88260ae16",
+    "paths": [
+      "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Patreon.url",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Patreon.url",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Patreon.url"
+    ]
+  },
+  {
+    "sha256": "1e671e9b176b290a35ce8f5f22c773b3f5e9c7a9cf0e1991de51e44dd3a23e7c",
+    "paths": [
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/halloweenbits_texture.png",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/halloweenbits_texture.png",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/halloweenbits_texture.png",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/halloweenbits_texture.png",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/textures/halloweenbits_texture.png"
+    ]
+  },
+  {
+    "sha256": "c03211311322fea13e46d89c986ff81a278205e26bf4e1aab1c11a2812c3c0e7",
+    "paths": [
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/arch.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/arch_gate.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/arch_gate_left.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/arch_gate_right.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/bench.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/bench_decorated.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/bone_A.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/bone_B.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/bone_C.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/candle.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/candle_melted.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/candle_thin.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/candle_triple.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/coffin.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/coffin_decorated.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/coffin_lid.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/crypt.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_broken.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_gate.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_gate_left.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_gate_right.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar_broken.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_seperate.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_seperate_broken.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/floor_dirt.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/floor_dirt_grave.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/floor_dirt_small.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/grave_A.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/grave_A_destroyed.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/grave_B.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/gravemarker_A.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/gravemarker_B.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/gravestone.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/lantern_hanging.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/lantern_standing.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/path_A.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/path_B.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/path_C.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/path_D.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pillar.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/plaque.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/plaque_candles.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/post.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/post_lantern.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/post_lantern_lantern.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/post_skull.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/post_skull_skull.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pumpkin_orange.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pumpkin_orange_jackolantern.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pumpkin_orange_small.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pumpkin_yellow.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pumpkin_yellow_jackolantern.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/pumpkin_yellow_small.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/ribcage.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/shrine.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/shrine_candles.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/skull.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/skull_candle.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_dead_large.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_dead_large_decorated.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_dead_medium.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_dead_small.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_pine_orange_large.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_pine_orange_medium.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_pine_orange_small.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_pine_yellow_large.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_pine_yellow_medium.mtl",
+      "assets/KayKit_HalloweenBits_1.0_FREE.zip.contents/KayKit_HalloweenBits_1.0_FREE/Assets/obj/tree_pine_yellow_small.mtl"
+    ]
+  },
+  {
+    "sha256": "577c357193d38c2c10fe8c31e545b86ec0e3f9a5eab4bf2632791d4207d2a98e",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx/tools_bits_blueprint.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx(unity)/tools_bits_blueprint.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_blueprint.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/tools_bits_blueprint.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_blueprint.png"
+    ]
+  },
+  {
+    "sha256": "ed6a0f8e165ac68d34a1e3f40bb839dbee3d669a42202eb38e0b239ff341ea3d",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx/tools_bits_map.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx(unity)/tools_bits_map.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/tools_bits_map.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map.png"
+    ]
+  },
+  {
+    "sha256": "25d521a2fc4b161357727371437e31836323627086990d38ad5647bfdcc08460",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx/tools_bits_map_empty.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx(unity)/tools_bits_map_empty.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_map_empty.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/tools_bits_map_empty.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_map_empty.png"
+    ]
+  },
+  {
+    "sha256": "e0663527c0c0a8e9f4dba0bb15261c367de31981cb3e3ec80f84bf6a5e47fc60",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx/tools_bits_texture.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/fbx(unity)/tools_bits_texture.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/tools_bits_texture.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/tools_bits_texture.png",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Textures/tools_bits_texture.png"
+    ]
+  },
+  {
+    "sha256": "44cac3ee8e3d22979edb10924d3325a8ab9c91a03b9e14a9297743a86a7f9053",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map.bin",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/gltf/map_empty.bin"
+    ]
+  },
+  {
+    "sha256": "a6614c20366fbae5ac5bffa18e36649898804fbcfcd7cfe6bc80ca1bd8f9a03b",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/anvil.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/axe.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/bucket_metal.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/bucket_metal_handle.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/chisel.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/compass_base.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/compass_base_compass_needle.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/drafting_compass.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/drafting_compass_legLeft.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/drafting_compass_legRight.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/drafting_compass_wheel.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/file.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/grindstone.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/grindstone_wheel.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/hammer.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/handdrill.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/handplane.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/journal_closed.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/journal_open.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/knife.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/lantern_handle.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/mallet.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/map_rolled.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/nail.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/pencil_A_long.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/pencil_A_short.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/pencil_B_long.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/pencil_B_short.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/pickaxe.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/rope_bundle_A.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/rope_bundle_B.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/saw.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/scissors.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/scissors_part.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screw_A.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screw_B.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_A_long.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_A_long_color.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_A_short.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_A_short_color.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_B_long.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_B_long_color.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_B_short.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/screwdriver_B_short_color.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/shovel.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/tongs.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/tongs_part.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/torch.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/torch_burnt.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/trowel.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/wrench_A.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/wrench_B.mtl"
+    ]
+  },
+  {
+    "sha256": "b5c9385921fc265fd42da04d7eb89dc9940b44c016e08aad8170d6120dbcee0d",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/blueprint.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/blueprint_stacked.mtl"
+    ]
+  },
+  {
+    "sha256": "67e7b5bad019c64bf3aa63cccdc0dbcaff4c4277e9ecb78bf8b516940701a2b3",
+    "paths": [
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/compass_base_compass_lid.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/lantern.mtl",
+      "assets/KayKit_RPGToolsBits_1.0_FREE.zip.contents/KayKit_RPGToolsBits_1.0_FREE/Assets/obj/magnifying_glass.mtl"
+    ]
+  },
+  {
+    "sha256": "1caff2a3f932e7de2e4d4f4d9c06d5fb5b849610e665c2cb8ce7162de9034c66",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Balcony_Cross_Corner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Balcony_Cross_Straight.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Balcony_Simple_Corner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Balcony_Simple_Straight.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_ExteriorWide_Wood.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_Exterior_TopDown.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_Exterior_TopOnly.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_Exterior_Wood.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_Interior_Big.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_Interior_Small.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/DoorFrame_Flat_WoodDark.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/DoorFrame_Round_WoodDark.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodDark.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodDark_Half1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodDark_Half2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodDark_Half3.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodDark_OverhangCorner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodDark_OverhangCorner2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodLight.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodLight_OverhangCorner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_WoodLight_OverhangCorner2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/HoleCover_90Angle.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/HoleCover_90Half.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/HoleCover_90Stairs.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/HoleCover_Straight.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/HoleCover_StraightHalf.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Crate.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Support.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_WoodenFence_Extension1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_WoodenFence_Extension2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_WoodenFence_Single.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_FrontSupports.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Log.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Support2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stair_Interior_Rails.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stair_Interior_Simple.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stair_Interior_Solid.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stair_Interior_SolidExtended.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Arch.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_BottomCover.mtl"
+    ]
+  },
+  {
+    "sha256": "d99605c254a614384efe607f21854d6ed2d9810b6feb8dc5f3b2cb7138ecd0f6",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_ExteriorWide_Brick.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Corner_Exterior_Brick.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/DoorFrame_Flat_Brick.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/DoorFrame_Round_Brick.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Brick1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Brick2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Brick3.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Brick4.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_ExteriorBorder_Corner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_ExteriorBorder_Straight1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_ExteriorBorder_Straight2.mtl"
+    ]
+  },
+  {
+    "sha256": "74b13678a8ebf3843ea7ea9ca7aaf99be3299a91f1861f63ee6aa35a7b17ba4c",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_1_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_1_Round.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Window_Thin_Flat1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Window_Wide_Flat1.mtl"
+    ]
+  },
+  {
+    "sha256": "c7fed79137acfc0c7e21b6f7ab58cd9756173d1a5f06a451fea5cdca15f471fa",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_2_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_2_Round.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_4_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_4_Round.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_8_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Door_8_Round.mtl"
+    ]
+  },
+  {
+    "sha256": "c7458fe450f3845bc8c19519724dcb979c2a717043ab4cdd46e367852dca5490",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_Brick.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Sides.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Sides45.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_SidesU.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_SingleSide.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_SingleSideThick.mtl"
+    ]
+  },
+  {
+    "sha256": "9c27ab893b0106e54ea517dbe36799d192cce6052112e4bee4bac4e727191d4d",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Floor_UnevenBrick.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Chimney2.mtl"
+    ]
+  },
+  {
+    "sha256": "84e63ae6c6b95823cd1efc04e44bc7b56596c7a1b820a64a8f5dcc3ad43a468d",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Plaster_Corner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Plaster_Corner_Front.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Plaster_Long.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Plaster_Short.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_RoofIncline_Plaster.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Roof_Plaster.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_Plaster_Long_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_Plaster_Long_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_Plaster_Short_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_Plaster_Short_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick4.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick4_Half_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick4_Half_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick6.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick6_Half_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick6_Half_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick8.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick8_Half_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Front_Brick8_Half_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Straight.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Window_Wide_Flat2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_WoodGrid.mtl"
+    ]
+  },
+  {
+    "sha256": "e26b9a66e0a8c70bfbfa4defba28350b1e8c297c754c30e9b20d82cf8000c46b",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_RoofIncline_UnevenBricks.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Roof_UnevenBricks.mtl"
+    ]
+  },
+  {
+    "sha256": "2632a4b078b360a8e39a45a80783eb3bbc225e2a92b9ed00d4e43d0f218f9fe0",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_UnevenBrick_Long_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_UnevenBrick_Long_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_UnevenBrick_Short_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_Side_UnevenBrick_Short_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_UnevenBrick_Corner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_UnevenBrick_Corner_Front.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_UnevenBrick_Long.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Overhang_UnevenBrick_Short.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_UnevenBrick_Door_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_UnevenBrick_Door_Round.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_UnevenBrick_Straight.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_UnevenBrick_Window_Thin_Round.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_UnevenBrick_Window_Wide_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_UnevenBrick_Window_Wide_Round.mtl"
+    ]
+  },
+  {
+    "sha256": "036f29d96f5e0c1dedf58e5a5c957d786e0a9a7a53356a9b903c7f53d51b85f1",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Chimney.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_NoFirstStep.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Platform.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Platform45.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Platform45Clean.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_PlatformU.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_SidePlatform.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Straight.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Straight_Center.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Straight_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Stairs_Exterior_Straight_R.mtl"
+    ]
+  },
+  {
+    "sha256": "15b5a3392c06c044e47e03e0ede1d75c7a53a05b011ac72c4638a8fed8543263",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_MetalFence_Ornament.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_MetalFence_Simple.mtl"
+    ]
+  },
+  {
+    "sha256": "c23e77147615dfbae7b2cb178e885ec9106ff0df71dc6da5052b4d9d123fca13",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Vine1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Vine2.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Vine4.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Vine5.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Vine6.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Vine9.mtl"
+    ]
+  },
+  {
+    "sha256": "ea59c29633f4f1757e44ce167b79188d96d0893aba01d14bf5cc0c948ed7a8d9",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Prop_Wagon.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Thin_Flat_Closed.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Thin_Flat_Open.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Thin_Round_Closed.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Thin_Round_Open.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Wide_Flat_Closed.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Wide_Flat_Open.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Wide_Round_Closed.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/WindowShutters_Wide_Round_Open.mtl"
+    ]
+  },
+  {
+    "sha256": "22829fc04111958f6b5618f16ee5f83db8c4566ee31b1b09389319857a6d3099",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_2x4_RoundTile.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTile_2x1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTile_2x1_Long.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_4x4.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_4x6.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_4x8.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_6x10.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_6x12.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_6x14.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_6x4.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_6x6.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_6x8.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_8x10.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_8x12.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_8x14.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_RoundTiles_8x8.mtl"
+    ]
+  },
+  {
+    "sha256": "679a273fcdd1a2b07e21e9f48414a72bc6082f903e662d70dc9120c5d112c96c",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Wooden_2x1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Wooden_2x1_Center.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Wooden_2x1_Center_Mirror.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Wooden_2x1_Corner.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Wooden_2x1_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Wooden_2x1_Middle.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Roof_Wooden_2x1_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Window_Roof_Thin.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Window_Roof_Wide.mtl"
+    ]
+  },
+  {
+    "sha256": "65b6bf73008420174881300027c7fbdc92906e1aaa9a34ce64a8fb1c57d7dbbf",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Door_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Door_Round.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Door_RoundInset.mtl"
+    ]
+  },
+  {
+    "sha256": "a96d1cb0b9b9e5873212837381e711a5040fa6d8472cc59f5539721bdc79fd35",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Straight_Base.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Straight_L.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Straight_R.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Window_Thin_Round.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Window_Wide_Flat.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Wall_Plaster_Window_Wide_Round.mtl"
+    ]
+  },
+  {
+    "sha256": "faf9fdb614a540e261c2079a3eeaf5b7457d11b7b63df0488d046d0c25a6de2f",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Window_Thin_Round1.mtl",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/OBJ/Window_Wide_Round1.mtl"
+    ]
+  },
+  {
+    "sha256": "5515f57e61767838f53f4b9e25aa83b1382ad345ff6b446482718b5140c33813",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_Brick_BaseColor.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_Brick_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "6349f1fb3eed9985e6f969c1de04b9e92490020a12ba19a44b96ea808fb27c1a",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_Brick_Normal.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_Brick_Normal.png"
+    ]
+  },
+  {
+    "sha256": "98547ca83888307e3ffa96384ce058b7622affe0a42add3b36d0b48618c5eda4",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_Plaster_BaseColor.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_Plaster_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "8b9617b561466cce00d5a0628eae7bef208dcf63445d72570e7f8e5057fed0d4",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_Plaster_Normal.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_Plaster_Normal.png"
+    ]
+  },
+  {
+    "sha256": "7be9d64a6154ba12bb7086e1d6774a7d5bbbc95775efb614f6ff40a4787fe0c7",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_Plaster_ORM.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_Plaster_ORM.png"
+    ]
+  },
+  {
+    "sha256": "44c6303a8b9cef8988f02d92d7309482082412ebf0a2e2f99a50a642dcb3b8f9",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_RedBrick_BaseColor.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_RedBrick_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "aa571cd612091a8f4c95393f8f938bd6e5d47a8cdfd9c896b60a4b37903e2c7c",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_RockTrim_BaseColor.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_RockTrim_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "f93f82f7e69aa0bf1900f8ab3f252390f091b771f0b84a345c5fefb0f0155cd3",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_RockTrim_Normal.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_RockTrim_Normal.png"
+    ]
+  },
+  {
+    "sha256": "5287dd9a4e9fb7423af8d8440a8de8bdb8910f9f37ba148f619a6eddf58d5bc8",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_RockTrim_ORM.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_RockTrim_ORM.png"
+    ]
+  },
+  {
+    "sha256": "acf388ebd1a97346e1e5b59091cfc609ed15b4f70b83a626089f12a82a2d9997",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_RoundTiles_BaseColor.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_RoundTiles_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "e8cf202fbc1ec36c3f5389a25ab9c99f015d49ae0ca963d0404614c3e1e8f687",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_RoundTiles_Normal.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_RoundTiles_Normal.png"
+    ]
+  },
+  {
+    "sha256": "ee0f096df6110e943cd9739680b61bc0ffd6fe00db752c5c3797941057a95ebc",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_UnevenBrick_BaseColor.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_UnevenBrick_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "bbf623cc35720d67a02079b20b9a6d9641c3686952b288cda97dec41e4b8acad",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_UnevenBrick_Normal.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_UnevenBrick_Normal.png"
+    ]
+  },
+  {
+    "sha256": "8c80a9835d29cf7b1360ca46c2a96cedc0bfffee59f09db892f64db6825e3188",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_VineLeaf.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_VineLeaf_png.png"
+    ]
+  },
+  {
+    "sha256": "a59f410b07a9bc5f0664df3ba7a2c1e37acffc7979795911f3fc8730ab60e33e",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_WoodTrim_BaseColor.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_WoodTrim_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "5847623e4ed6c206e59f32d1718ee75dcb2b49a1d55ede7ef70a254739caf4a8",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/Textures/T_WoodTrim_Normal.png",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/T_WoodTrim_Normal.png"
+    ]
+  },
+  {
+    "sha256": "2205075c87d65d157c735206450b45183dfc24f8185e2e5db706974ac2b5567e",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/Floor_Brick.bin",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/Floor_RedBrick.bin",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/Floor_UnevenBrick.bin"
+    ]
+  },
+  {
+    "sha256": "0c961d2554f79dae9901c81e7e4cad923b2b0af1f825db5d90368a2652e04676",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/Overhang_RoofIncline_Plaster.bin",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/Overhang_RoofIncline_UnevenBricks.bin"
+    ]
+  },
+  {
+    "sha256": "d3c77148239e78749351db7bf866d28aabbaa7732acdd9cb84bf78c20391d89b",
+    "paths": [
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/Overhang_Roof_Plaster.bin",
+      "assets/Medieval Village MegaKit_Standard_.zip.contents/Medieval Village MegaKit[Standard]/glTF/Overhang_Roof_UnevenBricks.bin"
+    ]
+  },
+  {
+    "sha256": "44ed3beb97e12045f0c5f5a5c061bbccf106c76cbd57ddd4faeab6c50c3e6d99",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/FBX/Aliens/Alien_Cyclop.fbx",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/FBX (Unity)/Aliens/Alien_Cyclop.fbx"
+    ]
+  },
+  {
+    "sha256": "848139cee9632a9503cb4cce2ed067c7b83358353f596caa3c3dd96c1b252bfb",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/FBX/Aliens/Alien_Oculichrysalis.fbx",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/FBX (Unity)/Aliens/Alien_Oculichrysalis.fbx"
+    ]
+  },
+  {
+    "sha256": "ac3e01df0b020a4acdfbf75fb2bb3ca697b4997d448ae34083c7b35d9449b113",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/FBX/Aliens/Alien_Scolitex.fbx",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/FBX (Unity)/Aliens/Alien_Scolitex.fbx"
+    ]
+  },
+  {
+    "sha256": "e94a51153dc2efd1ce59844e27d5ef493de396419a4cf1bbaba7b36bf99c05b1",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Columns/Column_Hollow.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Columns/Column_Round.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Columns/Column_Simple.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Door_Metal.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_CenterPlate.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_CenterPlate_Curve.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Round1.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Barrel_Large.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Chest.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Fan_Small_Propeller.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Vent_Big.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomMetal_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomMetal_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomMetal_Corner_Square_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomMetal_Corner_Square_Outer_1.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomMetal_Corner_Square_Outer_2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomMetal_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallWindow_Cap_A.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallWindow_Cap_B.mtl"
+    ]
+  },
+  {
+    "sha256": "fc7cf277ce7471846133841b9a56d90a654b8db4c84165e2a76629ea325a359e",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Columns/Column_MetalSupport.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Columns/Column_MetalSupport_Curve.mtl"
+    ]
+  },
+  {
+    "sha256": "9530c640ca49384434426f6cdd53099a0c1914234add3b33bec78dc4e43c33e2",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Columns/Column_Pipes.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_PipeHolder.mtl"
+    ]
+  },
+  {
+    "sha256": "6af6e6db0d2c3df3761176c7218892f1a1ed96401b6bf7193f2e6f5bad5537ef",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_0.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_1.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_3.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_4.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_5.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_6.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_7.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_8.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_9.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_A.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Dashes.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_K.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Logo.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Logo_Letters.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Logo_Small.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Sign.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_V.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_X.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_XSign.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Z.mtl"
+    ]
+  },
+  {
+    "sha256": "36926c3394acf1b0967fee59c3776569e8712751c8fbd4b15df3407381775709",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_90.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_90_Round.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_90_Round_Large.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_Bend1_L.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_Bend1_R.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_Bend2_L.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_Bend2_R.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Decals/Decal_Line_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "527e6b3d5833c4e024fa1b2fdab1ccd8d1446983bc360f70f2ab22d13d434b62",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Door_DarkMetal.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Door_Frame_Square.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Door_Frame_SquareTall.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Door_Frame_Square_Blocked.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_3Plates.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_DarkPlates.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_DarkPlates_Curves.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_AccentStrip_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_AccentStrip_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_AccentStrip_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_DarkMetal2_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_DarkMetal2_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_DarkMetal2_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Metal2_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Metal2_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Metal2_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Triangles_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Triangles_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Triangles_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "f61192a607b0102b5b99806cae5c59247e3f803aabcd6a9d4b2bf1e78fff3fcc",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Door_Frame_A.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallBand_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallBand_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallBand_Corner_Square_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallBand_Corner_Square_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallBand_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallBand_Straight_Broken.mtl"
+    ]
+  },
+  {
+    "sha256": "59c251754698679c0cb6b47859b5b555db00eb7186d9b3ce1119530e923e246b",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Metal.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Metal2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Metal_Curve.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_X.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Crate3.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Crate4.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_MetalPlates_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_MetalPlates_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_MetalPlates_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Simple2_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Simple2_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Simple2_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopSimple_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopSimple_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopSimple_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "d22663d67c9b613cfba94a56010de00a9ec9affad6d21d91a60149fbabf76dee",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Metal2_Curve.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Squares.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Squares_Curve.mtl"
+    ]
+  },
+  {
+    "sha256": "9dcc03e986b819e5e60d1745ce91e6e6d40bdd3c35f18f1d369f1d6b73d876bd",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Rails_2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Rails_4.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Rails_4Wide.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Rails_4WideTall.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_3.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_4.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_Incline_Long_L.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_Incline_Long_R.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_Incline_Short_L.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_Incline_Short_R.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_Round_Big.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Rail_Round_Small.mtl"
+    ]
+  },
+  {
+    "sha256": "d14fa995b750a27bfb0d553a293b6415ae61e5402105e49faef90ba73929c2d5",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Ramp_2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Ramp_2Short.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Ramp_4.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Ramp_4Wide.mtl"
+    ]
+  },
+  {
+    "sha256": "4f17d1d1e010688f12f07e7390424b198dda0c63fa770a09d316c46dcc60e379",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Simple.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Simple2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Simple2_Curve.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Simple_Curve.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Simple1_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Simple1_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Simple1_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_WhitePlate2_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_WhitePlate2_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_WhitePlate2_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "9f68599e9439d1e80e1ea0c3cd39330523a20704d11c259f3eba71dcb5f9636a",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Stairs_2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Stairs_4.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Stairs_4Wide.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Stairs_4WideTall.mtl"
+    ]
+  },
+  {
+    "sha256": "dc8e6b02cb95d172fb0fa10189ac6bb43add3754734563e61cca6a2526367f6a",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Window_Thin.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Platforms/Platform_Window_Wide.mtl"
+    ]
+  },
+  {
+    "sha256": "4780c8cc98f01d95e6f036ae99ca954928d94263b06df3d5a4766834dfdcc70e",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Cable_1.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Cable_3.mtl"
+    ]
+  },
+  {
+    "sha256": "7d85b5fa501b42c4b4b66b850dece0b9094c90c2f9e27adfcca0e43b25ec93d6",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Fan_Small.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Vent_Small.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Vent_Wide.mtl"
+    ]
+  },
+  {
+    "sha256": "01ea6a96ce18066c8a29ee893163d9ea626d1f8bf9da86a96d2c40b46782901e",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Light_Corner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Light_Floor.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Light_Small.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Props/Prop_Light_Wide.mtl"
+    ]
+  },
+  {
+    "sha256": "05b6fee5740b4b44d1c76660d9c873b91c4180e591364c5075f85e1260f039ee",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomSimple_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomSimple_Corner_Square_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomSimple_Corner_Square_Outer_1.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomSimple_Corner_Square_Outer_2.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/BottomSimple_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_DarkPlastic_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_DarkPlastic_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_DarkPlastic_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "f5edfa2919291a596a39e95a9ab71eba26d8afe3a1a654d5e45ca10a2430774a",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Band2_Corner_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Band2_Corner_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/ShortWall_Band2_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "5ebcb9bccce0a32e11e141557246a5562c2245b540f5d59b57d1f3e76d9bb19d",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopAstra_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopAstra_Curve_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopAstra_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "741d9d93321d475c904f7921c735f232d1c506fc7ddcabeb601782ef145b9cd5",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopCables_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopCables_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopCables_Corner_Square_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopCables_Corner_Square_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopCables_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopCables_Straight_Hanging.mtl"
+    ]
+  },
+  {
+    "sha256": "a8d8e321f92ea1c8e9eb1b2d223573ab81ecbcfb1c55338f5d6543e36df6d68b",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopPlastic_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopPlastic_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopPlastic_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "c9e82cc729cf560e9d2820c6e3cb9e584d5abd8db026721e7ba102cf7b974c13",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopWindow_Corner_Curve_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopWindow_Corner_Curve_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/TopWindow_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "788412ac525c8a5923e51551ea682a4dc226a728e50e3e0d6b5eede6fe94e837",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Corner_Square_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Corner_Square_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Straight.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Straight_Divided.mtl"
+    ]
+  },
+  {
+    "sha256": "eda5b9344bb90284372d11dbfffa05c70765f5fa66b3b4d442977d5190703fb3",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Straight_Flat_Window.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallAstra_Straight_Window.mtl"
+    ]
+  },
+  {
+    "sha256": "f96a13ec420376677a9b2ecff1b607d175e26991f562ef85ee3a527847064dcb",
+    "paths": [
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallWindow_Corner_Round_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallWindow_Corner_Round_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallWindow_Corner_Square_Inner.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallWindow_Corner_Square_Outer.mtl",
+      "assets/Modular SciFi MegaKit_Standard_.zip.contents/Modular SciFi MegaKit[Standard]/OBJ/Walls/WallWindow_Straight.mtl"
+    ]
+  },
+  {
+    "sha256": "8f055724c35f8e8c5685a505775b3b9ebfc6b4745308ef35ce1cfe6fd976153f",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Bark_DeadTree.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_DeadTree.png"
+    ]
+  },
+  {
+    "sha256": "692da2f58909263f074cb17b36defd09f56bf89ab7efda567a9a3e59261747b3",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Bark_DeadTree_Normal.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Bark_TwistedTree_Normal.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_DeadTree_Normal.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_TwistedTree_Normal.png"
+    ]
+  },
+  {
+    "sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Bark_NormalTree.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree.png"
+    ]
+  },
+  {
+    "sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Bark_NormalTree_Normal.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree_Normal.png"
+    ]
+  },
+  {
+    "sha256": "01608a96c42954eb725b32824530b51e67a2f3d85432d21a8d8adff958d2084a",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Bark_TwistedTree.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_TwistedTree.png"
+    ]
+  },
+  {
+    "sha256": "5c531f2329c241c625aafd6cb769de29f33b480ef2a16491c2489f3c68e62a6a",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Flowers.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Flowers.png"
+    ]
+  },
+  {
+    "sha256": "5d69048193b246a73c996b892607fb36c75d0c60afcb2dab8aa12de3c0b2d9bd",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Grass.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Grass.png"
+    ]
+  },
+  {
+    "sha256": "b1a6de1f0f2d1d68a68b3e70b38325c7f2293ab88e2b2c26d9d426407682b26b",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaf_Pine.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaf_Pine.png"
+    ]
+  },
+  {
+    "sha256": "86f7ff7a214f5424de48d269568f36a15485e61c80677e426c7be9f45181eef9",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaf_Pine_C.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaf_Pine_C.png"
+    ]
+  },
+  {
+    "sha256": "23248cebe28a24e78add32db3c2ee2f4d7b9219e9d2467279722f0197a7b6bd5",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaves.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves.png"
+    ]
+  },
+  {
+    "sha256": "57f375e6a8ee339a415986033d54513186b0d82b9fa865070a2ef2afe61a0aa3",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaves_GiantPine_C.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_GiantPine_C.png"
+    ]
+  },
+  {
+    "sha256": "171ad1c8fa6ddde351a3b3c9e2b1457d5c7a4a43ba4fd55a83801029db797151",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaves_NormalTree.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_NormalTree.png"
+    ]
+  },
+  {
+    "sha256": "998612bdf0b76a22f5f54d65cd7a457815d2842d89653fa4348a4ebb42933ad3",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaves_NormalTree_C.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_NormalTree_C.png"
+    ]
+  },
+  {
+    "sha256": "d548e707fa34a558f88f477fa98f7b4ad3afbd4ceb7ab954506be694edf0f2ba",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaves_TwistedTree.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_TwistedTree.png"
+    ]
+  },
+  {
+    "sha256": "0e459b56b14c0e81b1b7cf3d1e8c6f0bb71790eb6c46bb02a76a922d8df646ea",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Leaves_TwistedTree_C.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_TwistedTree_C.png"
+    ]
+  },
+  {
+    "sha256": "e29eed2db831e44a29634fe25c62e9e31edf201e978a52912b9e5221ffd4a1f3",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Mushrooms.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Mushrooms.png"
+    ]
+  },
+  {
+    "sha256": "85a04abb2c136fee53b376daf3b7d7f96fdf3966de0258dff6fe2b24da792b23",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/PathRocks_Diffuse.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/PathRocks_Diffuse.png"
+    ]
+  },
+  {
+    "sha256": "209a27345707385a00de9ce6ab548ea238994f0a0721ed765aa4cdd25b7306fc",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Rocks_Desert_Diffuse.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rocks_Desert_Diffuse.png"
+    ]
+  },
+  {
+    "sha256": "b813696df6081f469a127092eb0ce45cc39d56f3ccc0699152bfcd3804810b48",
+    "paths": [
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/Textures/Rocks_Diffuse.png",
+      "assets/Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rocks_Diffuse.png"
+    ]
+  },
+  {
+    "sha256": "8fde3e49385c3b3dc214bfe2bc61dde6f873a06f57cab9b245c8fc2543bc7496",
+    "paths": [
+      "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/Godot_Setup.png",
+      "assets/Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/Godot_Setup.png"
+    ]
+  },
+  {
+    "sha256": "6d01f55c6e4c49a2c9963e147e561945ae2c83958c8ca667d90a6bffdbfac061",
+    "paths": [
+      "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/License.txt",
+      "assets/Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/License.txt"
+    ]
+  },
+  {
+    "sha256": "ccd02718886b5a57f10f0a8911a38cfe10c36880e1d6dfa3445923fba32d2a72",
+    "paths": [
+      "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/README.txt",
+      "assets/Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/README.txt"
+    ]
+  },
+  {
+    "sha256": "1f9ac00f442c4342fae060150a2cfb5a825f7e3b6e8ffd8ce01044e4fe31f7c9",
+    "paths": [
+      "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/Unity_Setup.png",
+      "assets/Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/Unity_Setup.png"
+    ]
+  },
+  {
+    "sha256": "c2c64e659943c634f538329ea0904f7902ab4194d0aaae77ac486d236171d00c",
+    "paths": [
+      "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/Unreal_Setup.png",
+      "assets/Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/Unreal_Setup.png"
+    ]
+  },
+  {
+    "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Eye_Brown.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/T_Eye_Brown.png"
+    ]
+  },
+  {
+    "sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Eye_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/Normals Unity - Godot/T_Eye_Normal.png"
+    ]
+  },
+  {
+    "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_1_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_1_BaseColor_png.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/T_Hair_1_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/T_Hair_1_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Rigged to Head Bone/glTF (Godot -Unreal)/T_Hair_1_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Textures/T_Hair_1_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_1_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/Normals Unity - Godot/T_Hair_1_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/T_Hair_1_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Rigged to Head Bone/glTF (Godot -Unreal)/T_Hair_1_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Textures/Normals Unity - Godot/T_Hair_1_Normal.png"
+    ]
+  },
+  {
+    "sha256": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_2_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_2_BaseColor_png.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/T_Hair_2_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/T_Hair_2_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Rigged to Head Bone/glTF (Godot -Unreal)/T_Hair_2_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Textures/T_Hair_2_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_2_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/Normals Unity - Godot/T_Hair_2_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/T_Hair_2_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Rigged to Head Bone/glTF (Godot -Unreal)/T_Hair_2_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Textures/Normals Unity - Godot/T_Hair_2_Normal.png"
+    ]
+  },
+  {
+    "sha256": "d366843ee7d9e9f37ec87a0e1c98c7f2e45573c08eeb80a51a6d9344e68cf288",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Superhero_Female_Dark_BaseColor.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/T_Superhero_Female_Dark_BaseColor.png"
+    ]
+  },
+  {
+    "sha256": "cf922460b43ccd31e983e34db05514c9d451dd2f9cdd01a843978e797719f859",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Superhero_Female_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/Normals Unity - Godot/T_Superhero_Female_Normal.png"
+    ]
+  },
+  {
+    "sha256": "df680cbc1967a61e85998bfafb8f7bc0a36dd604bb3266486c4b06b1a184bb45",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Superhero_Male_Dark.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/T_Superhero_Male_Dark.png"
+    ]
+  },
+  {
+    "sha256": "9b25cf9200216eb754b79cf4c63b5380c419780788322f3c57cdd2b3e02679a6",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Superhero_Male_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/Normals Unity - Godot/T_Superhero_Male_Normal.png"
+    ]
+  },
+  {
+    "sha256": "fd4530bb696a083ac7f9c2f685b4bb15d91150040e76c905db591c7644b4aa87",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/T_Hair_1_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Textures/T_Hair_1_Normal.png"
+    ]
+  },
+  {
+    "sha256": "214dff8981ab87319b2acfaf1ad9143db020989afa14896a0d70048a667e17e3",
+    "paths": [
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Textures/T_Hair_2_Normal.png",
+      "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Textures/T_Hair_2_Normal.png"
+    ]
+  }
+]

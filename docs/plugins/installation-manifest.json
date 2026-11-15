@@ -1,0 +1,2266 @@
+{
+  "sunshine_upstream_commit": "a73a80b08fb37b255f8f10d49debd71e5541bd70",
+  "sunshine_updated_blobs": [
+    {
+      "path": "addons/SunshineClouds2/CloudsDriverIcon.svg",
+      "git_blob": "d30e97ac8ec32c6a39e049a47b656f754cd15200",
+      "sha256": "f0d4534aeae79f4b2a294347ba46f8fca57784cab325d43f9ca98eade64bad90"
+    },
+    {
+      "path": "addons/SunshineClouds2/CloudsInc.comp",
+      "git_blob": "64ce50c2c85e400dedae1eb6e9730da8f6bb7a06",
+      "sha256": "8da0d86475ab114483e47c1ed9f419c3bbcc83d5dce1b6d531e5b440e8a54f58"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/AccordionButton.gd.uid",
+      "git_blob": "7e1b1f91ad975ffe81cac2461f1bf46c0351f96c",
+      "sha256": "dbc2208d9838e2bb13b50bff1359d60edb174d0ea8d61c2d8992307a286d475c"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/AdaptingGridContainer.gd",
+      "git_blob": "901bba1d65ad0b3d629d206d30d01432799df509",
+      "sha256": "c4e37831dd0e5138a8516458f4e9aa62719b37ca5700948fb133a6d53146bc23"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/AdaptingGridContainer.gd.uid",
+      "git_blob": "8b5d83db799421c149075e8b6e7e44fcdb80ace2",
+      "sha256": "42e060192b2dbda79b3e01e23237662f2ccc5d0a18da9464924e06af5821699b"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/CloudsEditorController.gd.uid",
+      "git_blob": "b7f10e56a18db856d60a29bb90384af073fc4da7",
+      "sha256": "473e97fd6a04f1979cc7bb7656bc1d2f5702d6b25a0bfb77a23c7b06fc2a0572"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/caret-down-solid.svg",
+      "git_blob": "b004732c50a35f8c8f5642729298a8d3117c53e2",
+      "sha256": "523d7e1d291e91fdcc7e86445340352d6fe38347e197ca889e78a9bff2616000"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/caret-up-solid.svg",
+      "git_blob": "c8e6734f9ee74fd599433dcc5d12c6b8cb2661c5",
+      "sha256": "19e8d9189f85a61660084ad0e0a3da141d5e7c96c1fab08ff0147c233a6ae23f"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/cloud-solid-hovered.svg",
+      "git_blob": "e6320fabd5732b95bf6a9edaa7d46f45c79db06a",
+      "sha256": "9c807b8c1b025ac2c35c1c18d605fdfab6ef63d25ace4e74798c6d19107aa0e1"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/cloud-solid-toggled.svg",
+      "git_blob": "2bf52ea22eb722f1d389ecb658189c002db1ba11",
+      "sha256": "d815727001a9b4868e85c764d74f4ee58ec219f224bc4c88a096e39866a8c040"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/cloud-solid.svg",
+      "git_blob": "ccc8b22ada76ca9b4e27ef748b58d8a5cba4833d",
+      "sha256": "b05b11727e72b92945f71fc3f6242a98dbd750c63fba5d45a1f715f14b7b9cd1"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/paintbrush-solid-hovered.svg",
+      "git_blob": "73f15f1409e59f0d7b6dc1d0bbc6e3f012b77d58",
+      "sha256": "a45591f6f53fd756034cc0cce8c6ec0a78287bf967528fa94f526ae446ab65b3"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/paintbrush-solid-toggled.svg",
+      "git_blob": "d9cfd4f8d9ea4e518a9fda05494e3d78b0273a5c",
+      "sha256": "1e29185a8645f143ea4bde8df5bf09f2ee9e8291df401efa152213afef18697b"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/Icons/paintbrush-solid.svg",
+      "git_blob": "d90e22de873cc15f14931821988dacb5e960d22d",
+      "sha256": "d5775d8e70708754682daf133d9e243ff4183576ae9752df22051ccb6b83717d"
+    },
+    {
+      "path": "addons/SunshineClouds2/Dock/MaskDrawingCompute.glsl",
+      "git_blob": "f05d7f7306e587ab84d710261921de80e69f26b2",
+      "sha256": "828ce32a85048ddea68daf31bfdcfbc6ef33fa6ad31ab5e87406e814a90e69d7"
+    },
+    {
+      "path": "addons/SunshineClouds2/NoiseTextures/ExtraLargeScaleNoise.tres",
+      "git_blob": "afa1306c351efdf4c7b463f9bf460f662a28e668",
+      "sha256": "cda3fdf67cb0cd07079537225cc4c2ffa7ff4a191bea8cfe539d4120c16d293a"
+    },
+    {
+      "path": "addons/SunshineClouds2/SunshineClouds.gd",
+      "git_blob": "4c74338d488d53de5567c79a838f92521fdb5b28",
+      "sha256": "71fb1cd0e3891c218f22a52784e8c6406cf50bc2756533882d0885a2de16ec8a"
+    },
+    {
+      "path": "addons/SunshineClouds2/SunshineClouds.gd.uid",
+      "git_blob": "8fe63b727da0b743b165a055cec562c4ef488721",
+      "sha256": "f7ba8a7fd5616ff41302c3583996979bec9b9fffc7fcfdbe9a41b28f11f4d86d"
+    },
+    {
+      "path": "addons/SunshineClouds2/SunshineClouds2.gd.uid",
+      "git_blob": "e52fdb844fe820507859fff6f666d0581795dc0c",
+      "sha256": "d02d13b2b0646f8edc8ae3a8dd8b92093fa5c6b1506314840ac0f78d4b143086"
+    },
+    {
+      "path": "addons/SunshineClouds2/SunshineCloudsCompute.glsl",
+      "git_blob": "9b72414ea2fffdb7aa8398bcc3a34c4266ed518b",
+      "sha256": "635048edee9eb1e92c4db0b2151975ce98675a9695469fd01eead5dd1e1c30bc"
+    },
+    {
+      "path": "addons/SunshineClouds2/SunshineCloudsDriver.gd",
+      "git_blob": "f6df46b9ef6ad850a2e2c687f79ddb022bab146a",
+      "sha256": "fbc1bc1fcd006904409a9141feb6c60a1fc90ee1163fa25ad25229c5c53a8394"
+    },
+    {
+      "path": "addons/SunshineClouds2/SunshineCloudsDriver.gd.uid",
+      "git_blob": "c73499caede2d58628cec2d52970446aedf6542e",
+      "sha256": "f879c0747ce3ea1f9b76322344bc995cfe191c5064f6e60bdc28bd29582ed5b8"
+    },
+    {
+      "path": "addons/SunshineClouds2/SunshineCloudsPostCompute.comp",
+      "git_blob": "af2dae480b53336769ad329acda80581a2a3ae7b",
+      "sha256": "55d7bcb5c5cff086ff88d3b88a4d8db309c46f545bf8e3bbfd0cf6fd94f96930"
+    }
+  ],
+  "excluded_original_paths": [
+    "terrain_3d/bin/libterrain.macos.debug.framework/libterrain.macos.debug",
+    "terrain_3d/bin/libterrain.macos.release.framework/libterrain.macos.release",
+    "terrain_3d/brushes/.gdignore",
+    "SunshineClouds2/.vs/ProjectSettings.json",
+    "SunshineClouds2/.vs/SunshineClouds2/CopilotIndices/17.14.670.39694/CodeChunks.db",
+    "SunshineClouds2/.vs/SunshineClouds2/CopilotIndices/17.14.670.39694/SemanticSymbols.db",
+    "SunshineClouds2/.vs/SunshineClouds2/FileContentIndex/5e54b9c7-82b4-481e-9085-ea250dc3d8c6.vsidx",
+    "SunshineClouds2/.vs/SunshineClouds2/v17/.wsuo",
+    "SunshineClouds2/.vs/SunshineClouds2/v17/DocumentLayout.json",
+    "SunshineClouds2/.vs/VSWorkspaceState.json",
+    "SunshineClouds2/.vs/slnx.sqlite",
+    "SunshineClouds2/ExampleCloudsResource.tres",
+    "SunshineClouds2/ExampleScene.tscn",
+    "SunshineClouds2/SunshineClouds.cs",
+    "SunshineClouds2/SunshineClouds.cs.uid",
+    "SunshineClouds2/SunshineCloudsResource.tres",
+    "SunshineClouds2/SunshineCloudsResourceLowSettings.tres",
+    "SunshineClouds2/SunshineCloudsTestResource.tres",
+    "SunshineClouds2/compositor_test_scene.tscn"
+  ],
+  "installed_files": [
+    {
+      "path": "godot/addons/SunshineClouds2/CloudsDriverIcon.svg",
+      "bytes": 4709,
+      "sha256": "f0d4534aeae79f4b2a294347ba46f8fca57784cab325d43f9ca98eade64bad90"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/CloudsDriverIcon.svg.import",
+      "bytes": 1073,
+      "sha256": "be4d962fdcc6420c2fbed74b71e0e34fb41bfebe9231df9084a14bd789ba469f"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/CloudsInc.comp",
+      "bytes": 9022,
+      "sha256": "8da0d86475ab114483e47c1ed9f419c3bbcc83d5dce1b6d531e5b440e8a54f58"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/CloudsInc.txt",
+      "bytes": 8178,
+      "sha256": "fdcaf26618ac33762df951db0aa5d97029e991659cf87885ae3603114bb8a97c"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/AccordionButton.gd",
+      "bytes": 1112,
+      "sha256": "ba0f85007d500504227e39887ffc4ae4f96e6a842da1451bb95b6c1d17a7a899"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/AccordionButton.gd.uid",
+      "bytes": 20,
+      "sha256": "dbc2208d9838e2bb13b50bff1359d60edb174d0ea8d61c2d8992307a286d475c"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/AdaptingGridContainer.gd",
+      "bytes": 457,
+      "sha256": "c4e37831dd0e5138a8516458f4e9aa62719b37ca5700948fb133a6d53146bc23"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/AdaptingGridContainer.gd.uid",
+      "bytes": 20,
+      "sha256": "42e060192b2dbda79b3e01e23237662f2ccc5d0a18da9464924e06af5821699b"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/CloudsDrawBrush.tscn",
+      "bytes": 579,
+      "sha256": "4dca2e7f24c838968b08eded675509067b6c72161981f5e16075f6a218f955f8"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/CloudsEditorController.gd",
+      "bytes": 36754,
+      "sha256": "a8cdda6cd14d11bd6db0c1d28be6871ed79a615955dfd3eb64f603d8f07c1431"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/CloudsEditorController.gd.uid",
+      "bytes": 20,
+      "sha256": "473e97fd6a04f1979cc7bb7656bc1d2f5702d6b25a0bfb77a23c7b06fc2a0572"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/CloudsEditorDock.tscn",
+      "bytes": 16772,
+      "sha256": "5f44b6f190fe9c6413f952765e96df22decb4954f70ded7cc529d7720409ea31"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/DockPanelStyle.tres",
+      "bytes": 131,
+      "sha256": "d857c8c5e26d1f947eff38a1307a42271561ecdbf9d86d82d0025cfcab92febe"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/caret-down-solid.svg",
+      "bytes": 1385,
+      "sha256": "523d7e1d291e91fdcc7e86445340352d6fe38347e197ca889e78a9bff2616000"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/caret-down-solid.svg.import",
+      "bytes": 1082,
+      "sha256": "d421a4bdadd0b433d1d87160387be5acf49b779a14b7de00ee25922229343f86"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/caret-up-solid.svg",
+      "bytes": 1383,
+      "sha256": "19e8d9189f85a61660084ad0e0a3da141d5e7c96c1fab08ff0147c233a6ae23f"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/caret-up-solid.svg.import",
+      "bytes": 1076,
+      "sha256": "cf5183404b780f72bc91d7e7ff151429ecdd304c78ac3d758daa3efb502e7bd0"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/cloud-solid-hovered.svg",
+      "bytes": 1482,
+      "sha256": "9c807b8c1b025ac2c35c1c18d605fdfab6ef63d25ace4e74798c6d19107aa0e1"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/cloud-solid-hovered.svg.import",
+      "bytes": 1091,
+      "sha256": "aa9dea56e5f54931cc7f5c450f135c1a60e0578445636c6cd4ba7fe7b4398c65"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/cloud-solid-toggled.svg",
+      "bytes": 2830,
+      "sha256": "d815727001a9b4868e85c764d74f4ee58ec219f224bc4c88a096e39866a8c040"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/cloud-solid-toggled.svg.import",
+      "bytes": 1091,
+      "sha256": "c81da02724d2b3da536488dd87d5fff582c08fab9c2fb94b284b8d9e890946ce"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/cloud-solid.svg",
+      "bytes": 1474,
+      "sha256": "b05b11727e72b92945f71fc3f6242a98dbd750c63fba5d45a1f715f14b7b9cd1"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/cloud-solid.svg.import",
+      "bytes": 1068,
+      "sha256": "cc1ff0eaf14cd49d048da1d91940ca904ec919a03c6471b3f4247d46b99ef20a"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/paintbrush-solid-hovered.svg",
+      "bytes": 1578,
+      "sha256": "a45591f6f53fd756034cc0cce8c6ec0a78287bf967528fa94f526ae446ab65b3"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/paintbrush-solid-hovered.svg.import",
+      "bytes": 1107,
+      "sha256": "3191fb44f7ab5909662cf85dd90d3e37f1a653c1b10618f63628993809e89342"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/paintbrush-solid-toggled.svg",
+      "bytes": 3406,
+      "sha256": "1e29185a8645f143ea4bde8df5bf09f2ee9e8291df401efa152213afef18697b"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/paintbrush-solid-toggled.svg.import",
+      "bytes": 1107,
+      "sha256": "62854a6e19800e7d92737bf50b0b8014a84ecc459f5a35a6eb3b9fec10c1a7cc"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/paintbrush-solid.svg",
+      "bytes": 1570,
+      "sha256": "d5775d8e70708754682daf133d9e243ff4183576ae9752df22051ccb6b83717d"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Icons/paintbrush-solid.svg.import",
+      "bytes": 1083,
+      "sha256": "563ab2360b1824cafa0252d204f1b7b038623a2b67893efeda1e65ec1fe05794"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/MaskDrawingCompute.glsl",
+      "bytes": 1407,
+      "sha256": "828ce32a85048ddea68daf31bfdcfbc6ef33fa6ad31ab5e87406e814a90e69d7"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/MaskDrawingCompute.glsl.import",
+      "bytes": 351,
+      "sha256": "7340a2076d1182ef32e808a2dbe01cc9d7984314ab1b436385520b9ad862a126"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/Dock/Materials/DrawBrushToolsMaterial.tres",
+      "bytes": 697,
+      "sha256": "2d04a014c248e30ec4ec391d01be93f940d677ee4f0c0c4ad8387dc142605c3f"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/LICENSE",
+      "bytes": 1068,
+      "sha256": "9a6c6a64821878a9523188d7bbcad84bc4a27d822316be7ca34f57b07a27f5ab"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/ExtraLargeScaleNoise.tres",
+      "bytes": 422,
+      "sha256": "cda3fdf67cb0cd07079537225cc4c2ffa7ff4a191bea8cfe539d4120c16d293a"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/HeightGradient.tres",
+      "bytes": 456,
+      "sha256": "6215f8f6755d8f4462a99c9a2e94aaee768a4ed30879ed5584376f9151128728"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/HeightGradient2.tres",
+      "bytes": 342,
+      "sha256": "205fd3069a604074793e4c34f9b901853a7dc91de49ec70af03c1fbc89f4c5e4"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/LargeScaleNoise.tres",
+      "bytes": 326,
+      "sha256": "9694fe98372abee9da65f850ea2ca6db14724ec8bf54fcaf0d0be3d228de3d05"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/MediumScaleNoise.tres",
+      "bytes": 311,
+      "sha256": "a8c78581676f671d15e61b3888d1e27d7047ba480f5c69f4eba59ca78b6f4ee0"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/SmallScaleNoise.tres",
+      "bytes": 311,
+      "sha256": "1eb99f4a6ed2872930b6d56b6b26f238e0be10126e6119bf676cb23b1f688a8a"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/bluenoise_Dither.png",
+      "bytes": 262616,
+      "sha256": "3612096421e82e99f45f121d38e94284047d4d98d951e05d9f42e80c56fed698"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/bluenoise_Dither.png.import",
+      "bytes": 659,
+      "sha256": "4890969c02e636356c2ef95660ed3300bf107c16663e987d7e33c7d3bbc64172"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/curl_noise_packed.png",
+      "bytes": 4566744,
+      "sha256": "9c18cd9279caba56a708ab23d00ebb7a19f23be4c117f29fc4273380149a9da8"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/curl_noise_packed.png.import",
+      "bytes": 662,
+      "sha256": "d94ef9d92687fe1f72b8af2dc9e2635d8acf2378c0c99b42465466378a3edcf9"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/curl_noise_varied.tga",
+      "bytes": 8388652,
+      "sha256": "acf7b11deb5d637a6bca039c572537bf562cb8e87e79c6081177954ac5057cd1"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/NoiseTextures/curl_noise_varied.tga.import",
+      "bytes": 663,
+      "sha256": "77a448540e40ee8c95df71ceab99315d0c68e04ba08f5346a4ffe276482f4040"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/README.md",
+      "bytes": 3349,
+      "sha256": "e817b7147456be34325d873c1aead6e25b0d2f893f4b6dfc7c139e732f4f290c"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudEffector.gd",
+      "bytes": 167,
+      "sha256": "0a7cb1c6aa6c7b2ccc92ee9b0d3c311bf02f38ceae86bb6891b7a50de1aa1026"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudEffector.gd.uid",
+      "bytes": 20,
+      "sha256": "0435998240a524e1bbf101c40c082c1f14e2a73e7fe5522ef1063ebbd244a2f8"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineClouds.gd",
+      "bytes": 51989,
+      "sha256": "71fb1cd0e3891c218f22a52784e8c6406cf50bc2756533882d0885a2de16ec8a"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineClouds.gd.uid",
+      "bytes": 20,
+      "sha256": "f7ba8a7fd5616ff41302c3583996979bec9b9fffc7fcfdbe9a41b28f11f4d86d"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineClouds2.gd",
+      "bytes": 1790,
+      "sha256": "97001abae1f7795794210e719ffdd46442baf18d952e1f4dc4502e923ab13783"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineClouds2.gd.uid",
+      "bytes": 20,
+      "sha256": "d02d13b2b0646f8edc8ae3a8dd8b92093fa5c6b1506314840ac0f78d4b143086"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsCompute.glsl",
+      "bytes": 42324,
+      "sha256": "635048edee9eb1e92c4db0b2151975ce98675a9695469fd01eead5dd1e1c30bc"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsCompute.glsl.import",
+      "bytes": 355,
+      "sha256": "87671df94441a823d1fcd2dd43bcde806d33884cc568f1159c22c420c1d779c7"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsDisplay.glsl",
+      "bytes": 229,
+      "sha256": "60e152ffb7ee5318109eccd810581127dde8ed51a219ae167516a749459aaddb"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsDisplay.glsl.import",
+      "bytes": 355,
+      "sha256": "bc80c4ddf3a212df99cebfe07dcaf6cb65449706f5cd34acb13c2dcb21b10f0e"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsDisplay.msaa.glsl",
+      "bytes": 277,
+      "sha256": "8060bfdc7c7b28c772fde5ef4bf7513cebd3007a9c12471ce3404d8c9c94a58b"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsDisplay.msaa.glsl.import",
+      "bytes": 369,
+      "sha256": "cf63bd6ac197088ef5a5117a2c19565f19ebbdabd222d9a33208f2c262d1141d"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsDisplay.rast",
+      "bytes": 456,
+      "sha256": "dcd42134f1692b5620c08cf24f042d379c8377cd414fabea31af56b9c5c7d356"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsDriver.gd",
+      "bytes": 13383,
+      "sha256": "fbc1bc1fcd006904409a9141feb6c60a1fc90ee1163fa25ad25229c5c53a8394"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsDriver.gd.uid",
+      "bytes": 20,
+      "sha256": "f879c0747ce3ea1f9b76322344bc995cfe191c5064f6e60bdc28bd29582ed5b8"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsGDTestResource.tres",
+      "bytes": 3542,
+      "sha256": "1fae546ff60fadeeee38d00cbe4eb2d4a82ace72a03bc138c6ba263d45509348"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsPostCompute.comp",
+      "bytes": 14602,
+      "sha256": "55d7bcb5c5cff086ff88d3b88a4d8db309c46f545bf8e3bbfd0cf6fd94f96930"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsPostCompute.glsl",
+      "bytes": 97,
+      "sha256": "ad18865f3eaeb84fd6388914f3ac1195163efb6e2896db770d17cb1e544358c8"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsPostCompute.glsl.import",
+      "bytes": 367,
+      "sha256": "b26eb518f275c80aaf7e993dd7f4cbba357e43b605596d377d72af9226e159c1"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsPostCompute.msaa.glsl",
+      "bytes": 121,
+      "sha256": "91d962893e0472f161cb9d7ae9f027c7c45ba2175838ead4b497bc93f52c0c0b"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsPostCompute.msaa.glsl.import",
+      "bytes": 382,
+      "sha256": "313b6e725a8448a58c59e499e80bdbce4f68fef7a3f391bd8552b4fca1b3c4a2"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsPreCompute.glsl",
+      "bytes": 1513,
+      "sha256": "70476eca23a1540ad2de1fecb83076a44b6859f65fa32bec15d0154206440c14"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/SunshineCloudsPreCompute.glsl.import",
+      "bytes": 364,
+      "sha256": "b75e4366e23cae903ebd7e065d6262b6f2a3f54f4a6d1f0ac103c097d8b3f3c4"
+    },
+    {
+      "path": "godot/addons/SunshineClouds2/plugin.cfg",
+      "bytes": 152,
+      "sha256": "b5ae05f6a5213bcd624b0677c09b1108e8ec2e73257099b1cd1cf3ea98874e7c"
+    },
+    {
+      "path": "godot/addons/assets2godot/ARENA_CHANGES.md",
+      "bytes": 987,
+      "sha256": "03a9ed348433abebf854ca5ab1c0b374d58b3fb34bbb2601418a32d1457c5e9a"
+    },
+    {
+      "path": "godot/addons/assets2godot/LICENSE",
+      "bytes": 18582,
+      "sha256": "b7f51f1c311dab8fff0d4f8938c0247f39f67fb7bc53cf743fa4724fb370df83"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_acg_details.gd",
+      "bytes": 18367,
+      "sha256": "62f6766dcc662dcd0ca415c860c597fd8cf117090b5529d791778dec8427e2c6"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_acg_details.gd.uid",
+      "bytes": 20,
+      "sha256": "8d8d36c5cff2140d04352c9100ae5d7869dce8f3333ab60f562adb49cccd42b8"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_acg_menu_button.gd",
+      "bytes": 10331,
+      "sha256": "255e278986b7a65b6ee75a3d452ebab9e2ed8f836ac3a38588867dc35e1f105f"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_acg_menu_button.gd.uid",
+      "bytes": 19,
+      "sha256": "55e6138301467518c06363182927cc4b3bea70c463ab5bd9a669dff92bc0cafe"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ambientcg.gd",
+      "bytes": 45409,
+      "sha256": "db03c6782dd9ae8770f3faf584b913941b70b85058d7847a575196a711c388be"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ambientcg.gd.uid",
+      "bytes": 20,
+      "sha256": "d8ea088193fd1e44c157ef819290dd8cf755605d98dbbcb60c3bf4e508e84c19"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_browser.gd",
+      "bytes": 38880,
+      "sha256": "ef776c7c097eb84a3a71285f307deebd07463225729515297b617d4167cd2ae8"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_browser.gd.uid",
+      "bytes": 19,
+      "sha256": "d82c51053bf42c78c9410a1a5c992c5f475762c9cafa7f679bd7639a3e122164"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_context_plugin.gd",
+      "bytes": 1002,
+      "sha256": "92f3cd8ea3e89b533f78ccbdb74378210097e5b131db1966b2f7308be25564da"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_context_plugin.gd.uid",
+      "bytes": 19,
+      "sha256": "e04583041883fbd1a5b1c5419f8fe0aa92507ebf2f617c5e9c26e118cf1b4346"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_details.gd",
+      "bytes": 13621,
+      "sha256": "599b96d073aa36d0776d67d66b131505a167c4eff82b49939d79ab51667fd949"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_details.gd.uid",
+      "bytes": 20,
+      "sha256": "4031556b336433cfc0bb371603b298477267b4f9e21b6db07245fdb39a8bec5e"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_dock.gd",
+      "bytes": 26567,
+      "sha256": "2d3a2f7865288b6d0147c78a079715d2dc7dc9f68fcf9dfd74ac9b91eece7300"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_dock.gd.uid",
+      "bytes": 20,
+      "sha256": "da857916254e22f17ccdf02728b40a1fc6d57d20e7d73537e88b5864c9de1b37"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_icon.svg",
+      "bytes": 1417,
+      "sha256": "48d0d0d7291d8fbd8ca0517db2cc488a5947b91d4c24e23361aa0ba974fd355e"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_icon.svg.import",
+      "bytes": 1049,
+      "sha256": "bbc02a40e62f1a0e9117a65e6f1c852287355c28b77f843702e9a2b0828c3dfe"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_import_dialog.gd",
+      "bytes": 11094,
+      "sha256": "173b37e31cc05fd2f47f667ba8f5813444f205cddf09688270156d179d476f61"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_import_dialog.gd.uid",
+      "bytes": 20,
+      "sha256": "76805be8dc0509099737ad27449630f935ee3c0da83f1b34d537c750f81278df"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ph_details.gd",
+      "bytes": 19304,
+      "sha256": "2962d951dda793dcdb81331bd869626a1dd7fb52813738d5d2e08745fab28b22"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ph_details.gd.uid",
+      "bytes": 20,
+      "sha256": "6ebd65dce4140b584454e928f731d577ab410b36a133c14c00e396222204b528"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ph_menu_button.gd",
+      "bytes": 10853,
+      "sha256": "99031978520ef83408ddec1ae871ab0627d5433dbda92cd95ec5d4c1491d5974"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ph_menu_button.gd.uid",
+      "bytes": 20,
+      "sha256": "08f81a0a9b6adaee5903042492b1bd9e3ed49ea69b699092d3c1249e3306a245"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_polyhaven.gd",
+      "bytes": 38874,
+      "sha256": "a8a896b22b4706c016daa6f71df4e3da8b3324a586274c4a21556382b061987e"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_polyhaven.gd.uid",
+      "bytes": 20,
+      "sha256": "2f85aedd2486aa74db1f38a6eaf33f83b65ce1ab4df594c3ebfee4f58dac0198"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_preview_generator.gd",
+      "bytes": 10317,
+      "sha256": "5411872ac4ef81cc79fc2c1557e0d01d81829c9f15e198dfffafdb261a78c528"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_preview_generator.gd.uid",
+      "bytes": 20,
+      "sha256": "f7b509f32d4de7db122a5cf58eecb725fab681e4408e31995e605883ba6f5a2c"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_project_view.tscn",
+      "bytes": 820,
+      "sha256": "8e49b809b71333646044a0da06c110addab1fbcaeda769306a5d853f4914469a"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_provider_downloads.gd",
+      "bytes": 4559,
+      "sha256": "b2341cbd919df3631afe9b93e7201d7bf8754b04e4cf806579ac837d2042a245"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_provider_downloads.gd.uid",
+      "bytes": 20,
+      "sha256": "f4dd01dd7656a78b49bb8e4de7f1e4565780f0b6222f51d711b527a4de8d9c73"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_quick_download.gd",
+      "bytes": 8706,
+      "sha256": "891f52d71840711a6036aad625a9205d1284332e099cd451ee50f13330d9396f"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_quick_download.gd.uid",
+      "bytes": 20,
+      "sha256": "87489a8bc3598cf094b48844330222639d73c150788892a5e9e94e71a0219d59"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_scene_assets.gd",
+      "bytes": 14517,
+      "sha256": "7763337e3b38544118f01c57a130ad422d03477a0493059d9d36d4689c0bf976"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_scene_assets.gd.uid",
+      "bytes": 20,
+      "sha256": "1866adb73e13f6b24b11fcf628791dc656f3cb382b6314fd6431bf981d32037f"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_scene_drop.gd",
+      "bytes": 35921,
+      "sha256": "5bd8a4e6025ae1cc8f32bcfbb5acf24a77a19f65cf2ed440cbb73b89f878e5e8"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_scene_drop.gd.uid",
+      "bytes": 20,
+      "sha256": "148455fdb5dc82947ef51b10106d659a168710174740de334a974d2ab6c52b43"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_settings_button.gd",
+      "bytes": 12303,
+      "sha256": "3cedbf32400d593ed10f03065eeae5d1e637f1ea9cbd882089b994231711ae39"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_settings_button.gd.uid",
+      "bytes": 20,
+      "sha256": "8fdf4c414b5cb1f39f9d7feadf12012e3458f5b55c4253d5398c0a9785681e6f"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_terrain.gd",
+      "bytes": 8844,
+      "sha256": "dc2c95409913389575b5efe3f80f59525481b7d4978fd17327b4ecdbcf4596f2"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_terrain.gd.uid",
+      "bytes": 20,
+      "sha256": "6593f35dedd394e4dc2ee88d05caa385ed3ef965e51c06c64cde9ec6a9181ff1"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_thumbs.gd",
+      "bytes": 12759,
+      "sha256": "a89592b862c735d4c0f0d34baad84a9be355b93c54d57f1fe7a54f2ac36b717d"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_thumbs.gd.uid",
+      "bytes": 20,
+      "sha256": "07e53244eb80e6f0939ddd5798fa7d577e8017b3d0937ee557d5be8ec25cc257"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ui.gd",
+      "bytes": 36385,
+      "sha256": "c4b65d31dee7676ea735181da7403a16b6b906eb1355ff54e996a68adf5c30a4"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/a2g_ui.gd.uid",
+      "bytes": 19,
+      "sha256": "e85236da374beb483f4a7539c3ace2eb61f09ac3a9f167264df4c70a6de8d18f"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/ambientcg_api.gd",
+      "bytes": 21242,
+      "sha256": "c9055c80cad6a30657c9303c6bd6a78b2e81966ec16428deacef2e7bcc9f3f11"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/ambientcg_api.gd.uid",
+      "bytes": 20,
+      "sha256": "4caa60af281bb564aef8b252c1fce9149f3da47572a1725a191b4e2937dcb674"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/polyhaven_api.gd",
+      "bytes": 14330,
+      "sha256": "f6a161a41f409286685c75afa990046a952bb3d351c9fbdf338d6aa47c1c7d33"
+    },
+    {
+      "path": "godot/addons/assets2godot/a2g/polyhaven_api.gd.uid",
+      "bytes": 20,
+      "sha256": "e11b9e9bdf1ce15cbf98b4b75855b4730f345afd84d32464a84a51c0ef6ea031"
+    },
+    {
+      "path": "godot/addons/assets2godot/auth.gd",
+      "bytes": 13641,
+      "sha256": "32944c5cee452b2582c50d7ceae1c5cc20cead256ddcdeeda7788f90c23e1782"
+    },
+    {
+      "path": "godot/addons/assets2godot/auth.gd.uid",
+      "bytes": 20,
+      "sha256": "47686a5b60343764aa394ef44d612bd3e5d9c6959246aa13d7abb4554c1381bb"
+    },
+    {
+      "path": "godot/addons/assets2godot/blender/material_to_godot.py",
+      "bytes": 18998,
+      "sha256": "48beb65cd99cfad85df5aa52ca623bdc384602d0a101ea8111bd3e7c712bf02e"
+    },
+    {
+      "path": "godot/addons/assets2godot/blender/resave_exr.py",
+      "bytes": 1181,
+      "sha256": "689e759d22ec1e5df321b9458b72498e22b8e122c56e07338842512894975a90"
+    },
+    {
+      "path": "godot/addons/assets2godot/blender_import.gd",
+      "bytes": 5244,
+      "sha256": "ede02017f55a595bc3acf1f8dd3f71bbe5ad8786c4dd603104cb88d8b807b5d0"
+    },
+    {
+      "path": "godot/addons/assets2godot/blender_import.gd.uid",
+      "bytes": 20,
+      "sha256": "13fb77c6a65ab1f9016a6d3021fa78d8a51d388b115039631bc066dc6357da7e"
+    },
+    {
+      "path": "godot/addons/assets2godot/client/RESOLVED_VERSION",
+      "bytes": 10,
+      "sha256": "b33c571ec7f35ccc4368b150a0fa7498e0a0264bcb8e147e6e85debb850da776"
+    },
+    {
+      "path": "godot/addons/assets2godot/client/v1.13.12/VERSION",
+      "bytes": 8,
+      "sha256": "d1847f91b654f258c1be028c4e8a69b56cc5973c5ca74b4809da54b8b5e941bf"
+    },
+    {
+      "path": "godot/addons/assets2godot/client/v1.13.12/manifest.json",
+      "bytes": 4062,
+      "sha256": "1ea6bfce50a793fae03f55546f8dda46281b79a818468d1ab10fa8f37cf6850f"
+    },
+    {
+      "path": "godot/addons/assets2godot/client_binary.gd",
+      "bytes": 7641,
+      "sha256": "9171adf69808b3ac546161c5ea33a241e9507aab35863cf8a764f04cc14575ce"
+    },
+    {
+      "path": "godot/addons/assets2godot/client_binary.gd.uid",
+      "bytes": 20,
+      "sha256": "2756ab18d00089626568be71ea56e622115387477523b16482eb5350d98eaf13"
+    },
+    {
+      "path": "godot/addons/assets2godot/client_connection.gd",
+      "bytes": 18615,
+      "sha256": "586e2df4b2075957f02c6b215a4e5ee9b6b7d1ffeaa60ca7c16d3dbf5c80a1fc"
+    },
+    {
+      "path": "godot/addons/assets2godot/client_connection.gd.uid",
+      "bytes": 19,
+      "sha256": "457424c829ea60f59a2e1052848907d314f80c6c1cdb5780e581ee42a0edfabc"
+    },
+    {
+      "path": "godot/addons/assets2godot/client_download.gd",
+      "bytes": 2844,
+      "sha256": "487ba3f8dd7e15a718646aa5042600f2b2dbb2c7fe93954c013af55f153511f2"
+    },
+    {
+      "path": "godot/addons/assets2godot/client_download.gd.uid",
+      "bytes": 20,
+      "sha256": "38e32aa87b7911a03bb41ea20c5a2526e381a91dc36f4026190acf19609cdc68"
+    },
+    {
+      "path": "godot/addons/assets2godot/conversions.gd",
+      "bytes": 20912,
+      "sha256": "6196b8b48e28d2bf75f1b18dd8537ae7751bb7854ee69f80fc300039ba6ab95b"
+    },
+    {
+      "path": "godot/addons/assets2godot/conversions.gd.uid",
+      "bytes": 19,
+      "sha256": "9842b9c48cc8287e80205996fa9e89e808f4b1b083e97de9e4f2b95c0e3bbfe2"
+    },
+    {
+      "path": "godot/addons/assets2godot/file_ops.gd",
+      "bytes": 2895,
+      "sha256": "07d0fb25d75324be029a03816d16650af85bd8386e0762a5158d7d1abfa6121d"
+    },
+    {
+      "path": "godot/addons/assets2godot/file_ops.gd.uid",
+      "bytes": 20,
+      "sha256": "fb4d7adc25c5d39de093848a74c41b5c5ab36a8474d65ad3ee4cc57a49dc711b"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/LICENSE",
+      "bytes": 1865,
+      "sha256": "ac45c14673ee3f9a3a6d74fe3c2c890e09b8b9abe87fa8b80e855184f9ab1a9f"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/ambientcg-icon.svg",
+      "bytes": 6313,
+      "sha256": "50559eae5ae939ec4a8fa7e0c16f00ccaa50b93c7ad50eb4007ea42d08a482aa"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/ambientcg-icon.svg.import",
+      "bytes": 1068,
+      "sha256": "bab2dedc2504b6c57d574e789dafdc777014d6168e67c59fe24f7b1e9a5b576a"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/blendkit-icon.svg",
+      "bytes": 292,
+      "sha256": "41c07b760f2006c71a618b18604a436f68c08d17bb170b76a154997cf4b58bbe"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/blendkit-icon.svg.import",
+      "bytes": 1065,
+      "sha256": "c34c96ade1ca8f12bd9272112128e978da7810cc4adac5c92a084f662a5a3bb9"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/blendkit-logo-hexa_pure.svg",
+      "bytes": 292,
+      "sha256": "41c07b760f2006c71a618b18604a436f68c08d17bb170b76a154997cf4b58bbe"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/blendkit-logo-hexa_pure.svg.import",
+      "bytes": 1095,
+      "sha256": "b3dbc743c3f5c52f50018ec68db9c0baf978084166af8caf3f18889d116ac52c"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/polyhaven-icon.svg",
+      "bytes": 3952,
+      "sha256": "d614c414e7c9f1b409b711ec8169e2a888430ba8ba7933443a3ac2e7dcacb13c"
+    },
+    {
+      "path": "godot/addons/assets2godot/logo/polyhaven-icon.svg.import",
+      "bytes": 1068,
+      "sha256": "4e95be6c85c9daeebc8733c45e786cb4ef3324b388c01059cd067cd4e7c38286"
+    },
+    {
+      "path": "godot/addons/assets2godot/plugin.cfg",
+      "bytes": 265,
+      "sha256": "b19ec670c9b60499dae3e8232b29b98641aaca0008684bb54e69d538b2905d59"
+    },
+    {
+      "path": "godot/addons/assets2godot/plugin.gd",
+      "bytes": 39741,
+      "sha256": "e4b86679aecf595df7f574600c386893d23b58e1d8ed52e9d878504e0c341b11"
+    },
+    {
+      "path": "godot/addons/assets2godot/plugin.gd.uid",
+      "bytes": 20,
+      "sha256": "1fcca90cdd60a389116ff6b78e8a577024f0256abb378ab64ab61dc7738cbcd3"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/blender_import_dialog.gd",
+      "bytes": 12314,
+      "sha256": "e46472eb1583fdccbbab4135a6c8b9b22453ba64f6d752b4afd04b5ba650d18c"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/blender_import_dialog.gd.uid",
+      "bytes": 19,
+      "sha256": "519093ce9a0cbdd659dca1dcef89657e8f44fbbbdd4ff336d5d1d26d097dbc3d"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/file_pointer.gd",
+      "bytes": 5995,
+      "sha256": "bb10970f4908d1bcb0087e46debbf1d892afed9a75c93cfae2495b3dd12c3ed8"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/file_pointer.gd.uid",
+      "bytes": 20,
+      "sha256": "5b218f53d81e8cb4f3cd529136ea5f6fe2e4ec6f8900b7d911ee237b9a1a667e"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/file_reveal.gd",
+      "bytes": 5624,
+      "sha256": "5787273ac267b96e58ee530eb0a6bfc27167b06e89b51320f05903930dca1344"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/file_reveal.gd.uid",
+      "bytes": 20,
+      "sha256": "77609aa11de920b044402480d6df1220e7c27f3be56b5c3adf61418a0ed4693a"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/asset_details.gd",
+      "bytes": 25372,
+      "sha256": "286d1876f231d59b7f8527f0e63cae793ae0b530054354c902aa02bdf18547b6"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/asset_details.gd.uid",
+      "bytes": 19,
+      "sha256": "0205fd40f3171f0d925bfa60e35e886fc2265d27b05e92b612d9934d9e4a2512"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/asset_details.tscn",
+      "bytes": 4007,
+      "sha256": "250e3b50f28641fa002d3a6ea656e0ff882638f49ac78b41c1084934bffe8df3"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/client_tasks.gd",
+      "bytes": 3642,
+      "sha256": "d0a78c111e32f049b6a73ef1fedb40b9f188afea1cc7d03a5a61615d9e398de1"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/client_tasks.gd.uid",
+      "bytes": 20,
+      "sha256": "f7377c7e9a17877ed4ab2abb41f176639e0d66b57e75557249a0326a24d241d1"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/downloads.gd",
+      "bytes": 18716,
+      "sha256": "c661867af1b197bd27f4ad05aaa952705fb0551739e40fe5f553f3b8fcf51ecf"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/downloads.gd.uid",
+      "bytes": 20,
+      "sha256": "b1d4b117297531f24b84c890e0d7f45ff526d3ca84304c92a7c9ab442945336d"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery.gd",
+      "bytes": 15976,
+      "sha256": "d24c11677c77d9bbe0a0527933c055df44c9d344266e028510e015a5b0a43182"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery.gd.uid",
+      "bytes": 20,
+      "sha256": "56945c4bd89524c43eeee2786f2fcd247a3cf45681dfc98831eaf2a47ce00e3d"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery.tscn",
+      "bytes": 8646,
+      "sha256": "0a0edbe8df77aaf04d887e16d523fc1f335f91c5fac47b4c8adfc43d2967e301"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery_api.gd",
+      "bytes": 24809,
+      "sha256": "f71a76b6ba072452095c095c0565e424fe0e4dce931efac8b21d3dd1eb6fed81"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery_api.gd.uid",
+      "bytes": 19,
+      "sha256": "e48024fd51608de50a21436e645a24675c8e2a91fa5f9fee89494923b8c7c631"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery_item.gd",
+      "bytes": 15311,
+      "sha256": "23062f5436cfc07384b282d9847f5d9b72f59a5b14fd759b0e832339ac160c7d"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery_item.gd.uid",
+      "bytes": 20,
+      "sha256": "142e0f4164ba4fb7295ec3fa66b5b22e3d5a71ee534434f6b6285880d0144864"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/gallery_item.tscn",
+      "bytes": 1886,
+      "sha256": "eb39fa87d76feaba8518d26dac9c46a2be3473bd1828437e9b2a43ddb4276424"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/main_menu_button.gd",
+      "bytes": 13746,
+      "sha256": "06baf39e083c2f1564d3358a3f613d2951a59bdd833077f597457c935897f359"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/main_menu_button.gd.uid",
+      "bytes": 20,
+      "sha256": "3b6f9dcd62f9775b1271e34770606bb17fc16328054a36a6b53a6f449deeed46"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/polygon_filter.gd",
+      "bytes": 9223,
+      "sha256": "3a5055c311f35ea718df270f4fb0155b6a44224740efd490f94934607f24731e"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/polygon_filter.gd.uid",
+      "bytes": 20,
+      "sha256": "eb63836b0f5766e6440399090e09db6caa176055d2edbc92b38c0dccfeeb4400"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/project_assets.gd",
+      "bytes": 23916,
+      "sha256": "807276b9e5db9ceaeeedebb6fe9cc937d56f5c1c17e4cc734c76991bdb5c3361"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/project_assets.gd.uid",
+      "bytes": 20,
+      "sha256": "11da878b76ed058c4f89ed31fc7bc8782d00f20ad92af23c13c437f26337a87a"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/project_view.gd",
+      "bytes": 14515,
+      "sha256": "81b497cc0a3c6aa8219d544913d97e65d94252e1cf259a787fa559e3029af775"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/project_view.gd.uid",
+      "bytes": 19,
+      "sha256": "58f456f12c9427f67c64b37394c79db64bdf5597b1da17ee57e2a1597f95fbe8"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/search_view.gd",
+      "bytes": 21529,
+      "sha256": "5b59c2e03f83047f663491697a97eddb91a687c220d824214358209c306ae201"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/gallery/search_view.gd.uid",
+      "bytes": 20,
+      "sha256": "202aded2051030c25e18c4eeaf95b5976d1c297cd0b7ca784d4f036b632c7e04"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons/dumbbell.svg",
+      "bytes": 818,
+      "sha256": "e0b88e8d314a4101c5cbd594f12307e3ee375ed6f8c818531e2563730db72cdf"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons/dumbbell.svg.import",
+      "bytes": 1054,
+      "sha256": "8136e14c476e0746941367bb938e30aee9155d7d4c04f1517e77f15657e033da"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons/trophy.svg",
+      "bytes": 1024,
+      "sha256": "376f060c0f17321c5dc7a799d233e5011b79005885786738be85c5a8b47aac27"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons/trophy.svg.import",
+      "bytes": 1048,
+      "sha256": "e8a1fd676c622e59c2844763a50d845fd5cb7830fcc8b8a09fa58c1f61638785"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons/user.svg",
+      "bytes": 182,
+      "sha256": "06ddc2c375752217c15b08c363202bf2c18708209f83ab82687b52355300e9ff"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons/user.svg.import",
+      "bytes": 1042,
+      "sha256": "5a48d3fb6b1a7ccfa59ad49944f87466c0303d79233ffc5bd74e0be81312658a"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons.gd",
+      "bytes": 3377,
+      "sha256": "a0ab8f490a6925016fd51ed5c737d91f25b5b23010863ef1277a1a9a97600b1a"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/icons.gd.uid",
+      "bytes": 20,
+      "sha256": "a68b2c956642ba1d36bf00e089745e6bf2d7f6aaf8d547a6b074816937e5a552"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/plans.gd",
+      "bytes": 5122,
+      "sha256": "2f07f1c8b7a4d108b6ddb040636c3992577632edcd99d886f3b26586db7cbe61"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/plans.gd.uid",
+      "bytes": 20,
+      "sha256": "734794e21017c9a9648d8a33b01bd527e2bdb7b52479088ad13ff0df0a05fe76"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/settings_dialog.gd",
+      "bytes": 12181,
+      "sha256": "d615532fa6a87185d48bb0cac4d16b13ce7f1f311d5f0cb921ef6de237d01eac"
+    },
+    {
+      "path": "godot/addons/assets2godot/ui/settings_dialog.gd.uid",
+      "bytes": 20,
+      "sha256": "17210095fd9aa5fcaaec6563cf127e309dfe15f9aa42060d5350f34cb9c1bee5"
+    },
+    {
+      "path": "godot/addons/terrain_3d/LICENSE.txt",
+      "bytes": 1112,
+      "sha256": "f7ecc09ce65c97828130728072c5a6ed3cc185d3bf0436e51a15828ad9ceca7c"
+    },
+    {
+      "path": "godot/addons/terrain_3d/README.md",
+      "bytes": 2594,
+      "sha256": "7363c83730920dc7963d02cfcb8e211ceca12bb91b145e37e3fe9bf40b03120c"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.android.debug.arm32.so",
+      "bytes": 3355452,
+      "sha256": "70e6b30bb6ee93d64d343ed9fba85f3785a2827bd876ad007e425340b1aab84c"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.android.debug.arm64.so",
+      "bytes": 3499544,
+      "sha256": "6db6d56e1a28d528c1f32a725414232806634c2fae84f102e60faf0a045c99b4"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.android.release.arm32.so",
+      "bytes": 2391440,
+      "sha256": "2a6f90cb7dbc1e84a1e774781471742b7cb92818476da2a46ae12ca928df3f9e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.android.release.arm64.so",
+      "bytes": 2771808,
+      "sha256": "1b898230838f32df9d712f604767cbad6dcfba2763c6858484ef46f0d61f973a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.ios.debug.universal.dylib",
+      "bytes": 1867680,
+      "sha256": "8a2e02f8d17ecd2273b0eb6bcca6582b978530304e4577bd831723accf149299"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.ios.release.universal.dylib",
+      "bytes": 1357480,
+      "sha256": "45cb59fe69b5442443cfca60625a2b32f382c2c320037fa478a9dc12ca8046a0"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.linux.debug.x86_64.so",
+      "bytes": 4464496,
+      "sha256": "fe606ca576e76064679d0cc816cde121b1398c47689378accbd90841443799cd"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.linux.release.x86_64.so",
+      "bytes": 3752608,
+      "sha256": "cfa04d936965e8874f4487129416e806090f98e2bb9bb49d13b20942545a5fe7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.web.release.wasm32.nothreads.wasm",
+      "bytes": 2117798,
+      "sha256": "abdcca16f5ea443ed30ebc6e9687ecdc03351eb2c597e503513a97e5e41e398d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.web.release.wasm32.threads.wasm",
+      "bytes": 2182592,
+      "sha256": "8ae76c85272c35771e5e86ad5802dc6c726f004f574b370af1f43c64490a36ec"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.windows.debug.arm64.dll",
+      "bytes": 3450880,
+      "sha256": "c736ebc968217a24284f2c43ace6d215cd4bdc16f754458109e302b90d0713a0"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.windows.debug.x86_64.dll",
+      "bytes": 4594176,
+      "sha256": "33b89e08aeeb29da543ae12d9d88e39ce1cd570dfda47a745acc6b7d5a36c1da"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.windows.release.arm64.dll",
+      "bytes": 2726912,
+      "sha256": "7205c16c5f7f239728fdd449bf835ea02a9f606aca1a514986f759265d904124"
+    },
+    {
+      "path": "godot/addons/terrain_3d/bin/libterrain.windows.release.x86_64.dll",
+      "bytes": 3878912,
+      "sha256": "7ada91d28444a6cdb23f79b70f0461a9ffb62f345af79a1df7b9a4d47be8ef92"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/acrylic1.exr",
+      "bytes": 12881,
+      "sha256": "05a2540c03a8ef04d52cfcf660db5b46c62b3a329ab4f235561675bbfcefc26f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/acrylic1.exr.import",
+      "bytes": 954,
+      "sha256": "d40547b164259afe0558151b223c2c3d0b456f045e376c65a919d0bf827768c7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle0.exr",
+      "bytes": 214156,
+      "sha256": "f6a042bd1355b2dfdc18876953ff3e4e89422fa4dea2c4a0cc05b66dbcc80162"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle0.exr.import",
+      "bytes": 951,
+      "sha256": "e0b2f3248558cf05712fb25565ce7ce08834ad7ad9e73df01d21c42f58ff3cad"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle1.exr",
+      "bytes": 11022,
+      "sha256": "66ce2dd510af03434f3c13dee1cacbfd37011f7296206db40efad5dc86585142"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle1.exr.import",
+      "bytes": 951,
+      "sha256": "552856d4958feab1ceb41e51c62811ad0508c30d90a00f9d82ce104e3288a799"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle2.exr",
+      "bytes": 17380,
+      "sha256": "0d4aacba5f570e9d3d7109c39fc09ecd52733e61cf97d582e32ec87264a3363e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle2.exr.import",
+      "bytes": 951,
+      "sha256": "e2ff3fd7df22386a73cc0ab777addd4b42787e1a26fdd3b36d4f0adb9409bad8"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle3.exr",
+      "bytes": 10895,
+      "sha256": "b29884867c994fc54b025681da37512a97699f3916dbcc08f96d2db21e0f18a2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle3.exr.import",
+      "bytes": 951,
+      "sha256": "f68373e3cabb17a326477dd60f5d5bdc04fcc7b3401949d6be7d80cdf080bf8b"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle4.exr",
+      "bytes": 8906,
+      "sha256": "0d474e34e381e91f56477424838b8e66387c9ad0bd1c6295db7a09df0e71eaa1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/circle4.exr.import",
+      "bytes": 951,
+      "sha256": "3b2f2a80b666001445ee4803761738cdab36aa89c420f18c06fd520dfbb64ba7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/hill1.exr",
+      "bytes": 198208,
+      "sha256": "9850fadcb9f3a56de2a01574756986f50cce2a0a579b82d18d4ce0b5c1c440f1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/hill1.exr.import",
+      "bytes": 945,
+      "sha256": "dc3603a990c7fad706b6e600c66d4d6c34e8198da303637f9e3852809b464035"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/hill2.exr",
+      "bytes": 266517,
+      "sha256": "cba0712c8c1251fb94e36d2cfbab0396448cec0201621325e95b7ed2d2cf97e6"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/hill2.exr.import",
+      "bytes": 944,
+      "sha256": "0fd769aa655fe26282f50d6537b033da5bb2944bda358f894c3c9c7647e7fecf"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain1.exr",
+      "bytes": 266517,
+      "sha256": "b746b6bb473589610ce153266914e39e5a2986bb13a0eb7ed8db58d26c5ff98c"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain1.exr.import",
+      "bytes": 957,
+      "sha256": "65e249984488849b2a511c098d394d3bb41d9555d36f4717dc5cea88d02fac1f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain2.exr",
+      "bytes": 266517,
+      "sha256": "0e0f9c7191ab3c08a4de0bd8a62d08651338f01ccd83e09c88f32871168fa19f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain2.exr.import",
+      "bytes": 957,
+      "sha256": "9aa3b9ee280d88194ceaa9f868409847f6b98b81d1f128cee3c7e03284c8fcf7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain3.exr",
+      "bytes": 266517,
+      "sha256": "5a4c4f72c9df1ec6484fd64d90635ca0354a4d91f1a2db06fe8ac79c4d5cb4ba"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain3.exr.import",
+      "bytes": 956,
+      "sha256": "d09e92094e50ee5783705f0d599ee25e900e15d78abd4ecf404db6ddb304d322"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain4.exr",
+      "bytes": 181277,
+      "sha256": "00e31f2e5a58e2e88c3a55fb0d1e9e8ce79a98add735eab6aafda8969765e698"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/mountain4.exr.import",
+      "bytes": 957,
+      "sha256": "1b0eca8c3e5294acf51dafb3e72255d112e9aaf022c4f1b2628d2b717f9bc022"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/peak1.exr",
+      "bytes": 25254,
+      "sha256": "943c29c39f2e1a0202b54339398334e81cff2b74e40c5e36d5c60a3abfa1c658"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/peak1.exr.import",
+      "bytes": 945,
+      "sha256": "f1cd85518e3e334bb93dfea373920c650f0e5b6c7717670d1d971321f112f2c4"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/peak2.exr",
+      "bytes": 280242,
+      "sha256": "5fd4bf3d24f99626b8b283b0add562b066064530d62f1bd2d08d55ed3775331d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/peak2.exr.import",
+      "bytes": 944,
+      "sha256": "9f355afa625aaaffb73b2159a2c20d82fa229bc5f2cdef08f5fdc36f12edb18b"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/peak3.exr",
+      "bytes": 290239,
+      "sha256": "c09c65d5902ec7aef0fe5f60bf1bb5cc460837517b4ad528699c9d0f09d7b998"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/peak3.exr.import",
+      "bytes": 945,
+      "sha256": "ac97a83910c051ab21851d674109ef6e8f32f68831c7a9da55434f6c7a331a20"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/ring1.exr",
+      "bytes": 82316,
+      "sha256": "fc87e2fa34ba49640272a5a4f7002b13cb2351a55b5b903f5ae513696cce795e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/ring1.exr.import",
+      "bytes": 945,
+      "sha256": "75809955b601ef77f8de9e3ad0d1a507c992c0fb5805a433948d328f58b4d85c"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/smoke.exr",
+      "bytes": 10348,
+      "sha256": "4197b317e862839b0688ed27789328df7cdaa4bae05c11c41679fc585f84d0d9"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/smoke.exr.import",
+      "bytes": 945,
+      "sha256": "bbbcb24897e9df6eed52281ab743c65ed05e97505e708fa4f91a9ce27d98d04d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square1.exr",
+      "bytes": 2321,
+      "sha256": "ea8219b978a807d3fc5bc68772f973416754df9fa920cde65eaa10cfc2a45b0a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square1.exr.import",
+      "bytes": 951,
+      "sha256": "c268f14d8a47894d4966d8762f973df9fd21621d50bcac4e54d6eeaa77550412"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square2.exr",
+      "bytes": 2973,
+      "sha256": "112e11aa860dff8db76402b17b8d576c69b08dc0718c5dda0e658185c0c1f344"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square2.exr.import",
+      "bytes": 951,
+      "sha256": "022de89e0e03aa4440309387cf5f1967e49df9471cd95f3ae569d17043c20ef5"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square3.exr",
+      "bytes": 4264,
+      "sha256": "791c4ca40043d820e12ffabb4b462d88a934f4fda593e7ffb89d7f1286c2af9b"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square3.exr.import",
+      "bytes": 951,
+      "sha256": "7db1b6d9b24d970770d06931e37e401b10ea360261625ccbd605134b63f0b823"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square4.exr",
+      "bytes": 7498,
+      "sha256": "e427e18e1481260f745e03f2c16710233e2d3e7873bf400899d5000bec522890"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square4.exr.import",
+      "bytes": 951,
+      "sha256": "68dcd5fcd4688584b175257aabb2b7e2dc311f1f705fa9d488da527d46720d41"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square5.exr",
+      "bytes": 11564,
+      "sha256": "f834ffef340ae67255680d8b3343d657b93b260e8f0ef48136ae96937f2833f1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/square5.exr.import",
+      "bytes": 950,
+      "sha256": "42ed6bda12a2eb3258df7aa2c1c1dfcc69646154b28b1dbc8d28b890a35eac5d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/stones.exr",
+      "bytes": 1581369,
+      "sha256": "6689002b57220fdce93842d0f9d49596cacf40004ad261efcd4e3d4cd6a4f681"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/stones.exr.import",
+      "bytes": 948,
+      "sha256": "3081348afa87f83f8bd1660ec9cf9c2e40f8c8dda34f21dd3f1f0828f195ab73"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain1.exr",
+      "bytes": 303941,
+      "sha256": "c195ece6608eb19d7a02f9360ec6345f0b9af131dfb52d157f05e976e567f4d0"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain1.exr.import",
+      "bytes": 954,
+      "sha256": "00355c1ac27523b4be6ae29c45dfc5fa552a5491600663309da8a614bbd40326"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain2.exr",
+      "bytes": 339271,
+      "sha256": "a4d9228ab669f94192e38fe9307362dd11bafa99e0c801ad9dbab255dfd899b1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain2.exr.import",
+      "bytes": 954,
+      "sha256": "09f328c381c465450450827ad4977f77916cb52acae83ead082e73257c0cec63"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain3.exr",
+      "bytes": 314338,
+      "sha256": "dc1f04426e455e3825ed250fb177f980a88a19380f158b24f44d757a500b63cb"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain3.exr.import",
+      "bytes": 953,
+      "sha256": "9b3a314e2dfe63ee06ee7de33b23d183b8b3d70687c2f40af8b2a8af38efeb5d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain4.exr",
+      "bytes": 341265,
+      "sha256": "04a6d75dbe86c3438f96b89eafbd19503cde0591c77f9aa46d45c6325f7346a2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain4.exr.import",
+      "bytes": 954,
+      "sha256": "879396bb4a2f56d6c8ef4cd5bfe76e534352b52a9a60b5a63efc76bc58937596"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain5.exr",
+      "bytes": 302296,
+      "sha256": "ac9ce32027bbff7d0b06c5a30776d868630cb8d89e85ea567cf1b7e0bf5416af"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain5.exr.import",
+      "bytes": 953,
+      "sha256": "e8605fa627f554a9d851b1c68608609d07bed4976d459dab3d5dd0a429a729cf"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain6.exr",
+      "bytes": 236240,
+      "sha256": "b914bea697b9004876667490cad22f9998fcdc12aa683ebdf1a984f6ab571ed3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/terrain6.exr.import",
+      "bytes": 954,
+      "sha256": "cd9e468b968173b161973da1ed97b900e35d9fdcbf8bb4317db6a3411ec42ca9"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture1.exr",
+      "bytes": 17201,
+      "sha256": "fd463b107493266c747184e85714175a0e6dea2fcb88d846f176b8b17970551a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture1.exr.import",
+      "bytes": 954,
+      "sha256": "ddd4d312b3be4802eb1deca1722ec4347db1ae123915dce9db6818b7b23120d0"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture2.exr",
+      "bytes": 872793,
+      "sha256": "d961ee2ac4f1c7c4d4571a0fb750470d5fe4898b8746135b62d8917e9948c9f4"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture2.exr.import",
+      "bytes": 954,
+      "sha256": "373e8f18f77223990871f89b2cf57e5d2911bcb0b141eb44bd0c12fc6cfc5185"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture3.exr",
+      "bytes": 1581369,
+      "sha256": "274b864866585b80107cce2e845192b8d0a6ba997e152b961335e0fd6d18c292"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture3.exr.import",
+      "bytes": 954,
+      "sha256": "fa5ab601cac1dd21c562ad9383c5b95c2d4bbc35e25245a098f097b14ccbc19a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture4.exr",
+      "bytes": 1581369,
+      "sha256": "2d89409bc0d85a5896ff80187a8879133319a189b5228fc0a59fbec3d51b1ffb"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture4.exr.import",
+      "bytes": 953,
+      "sha256": "a4d56bb3289eb8d8ad6980e0e3dad01644f5f3368018f16ca202e2bb5d371df8"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture5.exr",
+      "bytes": 1581369,
+      "sha256": "81d216c7d40edfa9b9995d0225ce9b8194d31073dc2e3bf41e70a6f60198d9b2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/texture5.exr.import",
+      "bytes": 954,
+      "sha256": "a37569b5984821c873f81d026a910ad1d4c520d8d928f3d609bccf0f4515eed8"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/vegetation1.exr",
+      "bytes": 12597,
+      "sha256": "cbc1c1ea247327208a57407dc848284199d56cf473f4ab5fde9bf01c5e24bcf3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/brushes/vegetation1.exr.import",
+      "bytes": 963,
+      "sha256": "36ef46d85561e98d788013076b674315d24573655d3fad4781fc1717e5b89a6d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3D.cs",
+      "bytes": 34666,
+      "sha256": "ff49eb27bade315d27a6f808a21d0cb90b37f86f84825a52113a6c3c6d2ea66d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3D.cs.uid",
+      "bytes": 20,
+      "sha256": "3d059992f039e28f143929da848dd1821db73748cf7312fbdcfa59b0233ff485"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DAssetResource.cs",
+      "bytes": 3184,
+      "sha256": "68d3f8cb8b415900b3eb85acc3c82b7c5fd49d9a67010e5946239e19898b5f16"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DAssetResource.cs.uid",
+      "bytes": 19,
+      "sha256": "c229f987f822448b3ef1e62c30e477bd59e3aaf6aa82c1df41b4cda1c954025f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DAssets.cs",
+      "bytes": 13465,
+      "sha256": "0da8ff49e2b6252a54082e8541ffc0b7f8c8153d9548e764aad2e5121d2eef1f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DAssets.cs.uid",
+      "bytes": 19,
+      "sha256": "381755f387c9b59e362baf959f33bcddaed961982393abe9c08a5fc8d0820d08"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DCollision.cs",
+      "bytes": 7453,
+      "sha256": "ee44609d4348609f9051c5ddb8f6a0baa973ecc105f003592c5913caa89d5c4d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DCollision.cs.uid",
+      "bytes": 19,
+      "sha256": "b3cbac17c945c64ec28cde6d444eb9fcd2fbc7ad59d2b13d2b8b3728a8aa02f9"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DData.cs",
+      "bytes": 33463,
+      "sha256": "260dd2216fcf5af1fe53a5d1e53e5e9ed50c4d1e9f5b26ce72630137ad32a226"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DData.cs.uid",
+      "bytes": 20,
+      "sha256": "82d05e31f397324fb0188aeb19670695eecc7ca9b43b1cebdfd12647465e6dad"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DEditor.cs",
+      "bytes": 7730,
+      "sha256": "d10a440f2fcbfefa6dcca0b77afedbcd27c2ddb4c39333e257143e0cb735447d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DEditor.cs.uid",
+      "bytes": 20,
+      "sha256": "85fedf8c675f07054aa40249b530aadc282e5f09533c0040e89717b06632d9cc"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DInstancer.cs",
+      "bytes": 8440,
+      "sha256": "ea111b6c761a6035bf270cc7cc28662e24262fbdbb7abd9aba75fa671ae38ec6"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DInstancer.cs.uid",
+      "bytes": 19,
+      "sha256": "0412b6181f9abb7a5084d2e637530932820ed81fd459f4edd06438d9b572acea"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DMaterial.cs",
+      "bytes": 22030,
+      "sha256": "aec87ed3833124cfed1d2cb496259754fe14a178649364a2ee36618c0e5fbc9d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DMaterial.cs.uid",
+      "bytes": 20,
+      "sha256": "51fd3264fe81eadb01df6fabddcf1f9cd8169cb8bbee5a4a4f7f7a8315f5c580"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DMeshAsset.cs",
+      "bytes": 19042,
+      "sha256": "3160c9370806ea187c3ffcc20636c11bedfe4a5453911b07010a49cd5eb20feb"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DMeshAsset.cs.uid",
+      "bytes": 20,
+      "sha256": "838612608b041562a454eb0c7cc56b76c1bc33a8949aebd3a44eb097c2ae8aad"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DRegion.cs",
+      "bytes": 13310,
+      "sha256": "963262e5b265e2e25697d44850345bb75adb7c6bdcf87d77e12e9bd006bdb3b1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DRegion.cs.uid",
+      "bytes": 20,
+      "sha256": "ac6e72fa578733115ff68fb48b25f646d714367c87dd5ddc257e639f7084db6e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DTextureAsset.cs",
+      "bytes": 11969,
+      "sha256": "e71a4a57137de7012ff8baab78da34a566315f194d1ead2dacf2268b2b650eae"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DTextureAsset.cs.uid",
+      "bytes": 20,
+      "sha256": "7a291420c10bf4ed55ca8c89e35ee8f53a4db9cc637865a5324d5977a882da3e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DUtil.cs",
+      "bytes": 11955,
+      "sha256": "a693aa60ad477f1e9508845efa016ae094664263424228583508e9280dd3d94e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/csharp/Terrain3DUtil.cs.uid",
+      "bytes": 20,
+      "sha256": "25ccee640e0a177c0f43856b5676fb15fe5fc91691e43e32bd052dddc84a7cac"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/3rd_party/import_sgt.gd",
+      "bytes": 1823,
+      "sha256": "4c55668439ea9354cb6f952debbd890d303a157f7b767714e32fffa8b2677d8b"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/3rd_party/import_sgt.gd.uid",
+      "bytes": 20,
+      "sha256": "4778b6e529a7287c6d2413babb53f266b8b5e7a8d1505e19dcc4ac51f9507cb1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/3rd_party/project_on_terrain3d.gd",
+      "bytes": 4863,
+      "sha256": "3afe38537ca6841341f32e9274b6bb330d35d5a74990c15169ea9a232d274eb3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/3rd_party/project_on_terrain3d.gd.uid",
+      "bytes": 19,
+      "sha256": "2d217fa0eaf770161d9f20e1686155c92da959576dd6e286b574b7f9d793bbf6"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/Terrain3DParticles.tscn",
+      "bytes": 1004,
+      "sha256": "6b10c42168b1e37f14ac25aa5883a9da8253bcdafe2d78c961f031c13532ccf5"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/grass.gdshader",
+      "bytes": 2499,
+      "sha256": "29c42b6216d6d92cd3f7e5040bed066f5f24867292415efc586cf96b66dfe2a6"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/grass.gdshader.uid",
+      "bytes": 20,
+      "sha256": "b383940d0778887f47b43a1e47ce478c1e49de71aa6399cb83dad2cbdf4d15a7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/grass_material.tres",
+      "bytes": 334,
+      "sha256": "01d21c33e794e16de4d0c29df85d90a6139c1f4baadda217a43c245e03299e74"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/particles.gdshader",
+      "bytes": 11822,
+      "sha256": "682b11ba0850a462744abec71bd8138661f87e8e2d8c50cce1e766c602e2803e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/particles.gdshader.uid",
+      "bytes": 20,
+      "sha256": "fa094b4944c1921fd5fe69cde54e5983c23203a6c4bf9de51944ece2285548fb"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/process_material.tres",
+      "bytes": 2093,
+      "sha256": "9d39ed9bb8026114cf124b319133bc4c3de8d07efbafd8ef45d8e73d43aa250a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/terrain_3D_particles.gd",
+      "bytes": 8522,
+      "sha256": "d079f6f6a4ae468add85209ce0babb0dbbe87e206f298e50185f86a37ac6b822"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/particle_example/terrain_3D_particles.gd.uid",
+      "bytes": 20,
+      "sha256": "c99f179da0c7e0f408ca3ad3c7481a97937923b81389c308d38989d6c6f4004e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/M_ocean.tres",
+      "bytes": 2070,
+      "sha256": "b72fda3d5bd648d3ab2b17469428fc796c4a964aada2a42bace22a1e7bbec0de"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/hex_grid.gdshaderinc",
+      "bytes": 2139,
+      "sha256": "16d2920c3073220e7ed77f96a781fd0a61479e3114c0c96ca2ca89676989dc5e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/hex_grid.gdshaderinc.uid",
+      "bytes": 19,
+      "sha256": "5efd20c4f63f2e59da34d7ea9ec8a2d1a124865eec092ff9d4b70997c190b502"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/lightweight.gdshader",
+      "bytes": 19500,
+      "sha256": "97570c3d5c285ac3a24264f5b529ff024fef229aac4ee09c200bdfc380970789"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/lightweight.gdshader.uid",
+      "bytes": 20,
+      "sha256": "ba40122a3cbea26ef238eb33c2e32e693c90ce8758266a82879a77a2fef9dd33"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/minimum.gdshader",
+      "bytes": 10684,
+      "sha256": "d3e26607a9fe21e3026280cc1866fdc15e3c4c55f6cc44d4f43a2c2777037898"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/minimum.gdshader.uid",
+      "bytes": 19,
+      "sha256": "d1f1af1c041d7b2154d5f8e49a05b93a338077482c6a536ff9eb64d571f1dddc"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/ocean_shader.gdshader",
+      "bytes": 11020,
+      "sha256": "7adbbafb6efae9478e2e72c3ccaead4cd15f55b9082eda043ba228db39c02528"
+    },
+    {
+      "path": "godot/addons/terrain_3d/extras/shaders/ocean_shader.gdshader.uid",
+      "bytes": 20,
+      "sha256": "256cda8f7e09541b93694c8af993fb79bece89e994fd4ada77aa2d8550d2fe0c"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/autoshader.svg",
+      "bytes": 6187,
+      "sha256": "a23ff96b29264580ec351f6fab02093cb0c233b993d8b03ba3c5629ae60fa7bd"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/autoshader.svg.import",
+      "bytes": 1054,
+      "sha256": "8f7e22f94d9773ab17ef0df7da494c7b376a6d73515353f25f14553a8423968d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/color_paint.svg",
+      "bytes": 5914,
+      "sha256": "6c6b2bc21449022727eee41d9e154da080eb088203c2c856d505f7f9808c03fa"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/color_paint.svg.import",
+      "bytes": 1057,
+      "sha256": "a7b68ba3425e8d13c96d6614871a32fea19b855f8d75ce317c1b4e95ce676764"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_add.svg",
+      "bytes": 3210,
+      "sha256": "b0a2ef9807154bbd703eb7f4883dc1f1d9fc303dfed785b53178d5e311cee51e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_add.svg.import",
+      "bytes": 1054,
+      "sha256": "25f6d04ca2afaf6868f5d8b7c4b4ba2025db663d69883386f1c229cbdafe3191"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_div.svg",
+      "bytes": 6477,
+      "sha256": "2905464b91c6045617da5d4e2922c31594beb07a1ab9f0061c5dac1a0f506207"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_div.svg.import",
+      "bytes": 1055,
+      "sha256": "29173d39c5a8a121187b3345e46ac4e8f759a9d209d2f4a2a903f092b0de12eb"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_flat.svg",
+      "bytes": 3228,
+      "sha256": "0b878f2c7704f7ce7200bd1bfe0f5c7df27e53e824ef24b9bd05ab84ece9c8b2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_flat.svg.import",
+      "bytes": 1057,
+      "sha256": "598ecdddbdf3d65cc945d2d9a661eb47f1b3f111c8df9b71e1c219f311ae0a32"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_mul.svg",
+      "bytes": 6628,
+      "sha256": "1b0781838d88e7584444c82403864f26239d475d81459488ef4a201eaacc3777"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_mul.svg.import",
+      "bytes": 1054,
+      "sha256": "3915ae33413ef60cbdd155bf7013bfe3b8bca06bc9098416a877fa38c8ec32c2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_slope.svg",
+      "bytes": 3204,
+      "sha256": "0940ecc3c9a840c36cac610819ce50bf5e8b86689dbefafa1b44df8182c836c6"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_slope.svg.import",
+      "bytes": 1060,
+      "sha256": "b66d895898590f912484595ece49f06a98d68f652142c283af30717961bc02e0"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_smooth.svg",
+      "bytes": 1716,
+      "sha256": "3702b62c1d01d883c0ef46e521d2093988ba427e04eebe2a026cc5e3473d5a67"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_smooth.svg.import",
+      "bytes": 1064,
+      "sha256": "d7b7daa12d1bd8bc8bfeca43a8d37efe2fcf8d081c6d41d24917afadb7f5aee3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_sub.svg",
+      "bytes": 3242,
+      "sha256": "314ad73fb58adfeaa69bd23a11ea269628169a1c4353d8ff77a880439c633f02"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/height_sub.svg.import",
+      "bytes": 1055,
+      "sha256": "9bcdc65e5d477e2ee615696ae94230f9139d4062ef9a3dc8c9f3ff0c31c5a021"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/holes.svg",
+      "bytes": 1105,
+      "sha256": "e5d9d165a8e6c23d3f4382749fb9cacad775d47ae3ad7dea2986010c6cbe2063"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/holes.svg.import",
+      "bytes": 1040,
+      "sha256": "b6ba8bee74b0212a4afb58afa656168d79b54a03567b078fb97452de800962fa"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/layers.svg",
+      "bytes": 3639,
+      "sha256": "b015ca7387460feefb35e533b28c2bf92b2ff310a79ad23f940bc6b3ee759723"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/layers.svg.import",
+      "bytes": 1043,
+      "sha256": "8534df460e4efdf00f4689ddc6af3246e155fcb8ce13103e0e4d749ce32a2c87"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/multimesh.svg",
+      "bytes": 1785,
+      "sha256": "9380807f1df0bc015659de440e9aaa3b600150540a8abffd8e403392e4ad11a2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/multimesh.svg.import",
+      "bytes": 1052,
+      "sha256": "c1258573125dbd433a8ebba03ed06cc3395af6d7044894dd53bee5da53ee47d5"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/navigation.svg",
+      "bytes": 3003,
+      "sha256": "7f7aa860f52a50621e004f4e45b2e0fcd90a81c2ba196b7b19460a20876dccd2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/navigation.svg.import",
+      "bytes": 1055,
+      "sha256": "9f0797f47071f72aaf8a78759a7b7f9c74aa3d12e480f5cb536c091345a44165"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/picker_checked.svg",
+      "bytes": 1580,
+      "sha256": "d49df2ea5fed39eb09fb98c91cc31905d97911d470f3b32ccdb65d284123acc4"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/picker_checked.svg.import",
+      "bytes": 1067,
+      "sha256": "d77cde18a7e07db5b06fdece134d60361fe1a432c1025a8f6dc1fa02eb7bd6ca"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/region_add.svg",
+      "bytes": 3637,
+      "sha256": "f4ec558e96a4e0c1592da11d380e638c59b38e14e9b50947ff7bba3b336d2e7f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/region_add.svg.import",
+      "bytes": 1054,
+      "sha256": "9af0c895bf76233ebc07b3440d98a61eb724dc9bec723d9bffe4564d161ba009"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/region_remove.svg",
+      "bytes": 3704,
+      "sha256": "c2a63e3f25e25a86b5f7d8098280f8f402ce69071684c5599e9a4367b274a953"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/region_remove.svg.import",
+      "bytes": 1064,
+      "sha256": "ae79ce0d7115e51cabafda8cf06df20dc35a37ec15222a7d5c613176880db386"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/terrain3d.svg",
+      "bytes": 4860,
+      "sha256": "8b96b39a96324435aa2e405ad12ace94f0b801e2658bb455280cdd85ca5cce54"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/terrain3d.svg.import",
+      "bytes": 1052,
+      "sha256": "f8c82d124a69d54f33256d6714bf216323a8715cbc2054c22f966fee3be3b0a7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/texture_paint.svg",
+      "bytes": 5559,
+      "sha256": "527002ef714d9ad883525e329c654dcab744c47463c8e0fe7e2b9d51c21b7aaa"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/texture_paint.svg.import",
+      "bytes": 1064,
+      "sha256": "f55b6caf34edac44983fe5e9b8f4dc3a5f867476ff850bf22edbeb9d0d740d2b"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/texture_spray.svg",
+      "bytes": 5832,
+      "sha256": "32156eb91883fa1e7bb1858b205aaa42a413c0c200b3c0bc474f9ebf232a3d5f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/texture_spray.svg.import",
+      "bytes": 1064,
+      "sha256": "73eef21ba9dcd373b253888d29011f6f99ddd997249029b0058b6026f9c8ea44"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/wetness.svg",
+      "bytes": 4666,
+      "sha256": "c396780c33d5293d8ced909d74c6a3041ce1c60f9d4297b62ad019cf4bd0c07a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/icons/wetness.svg.import",
+      "bytes": 1046,
+      "sha256": "11668ede04537f825164cc16523c8db3b7c869422f15535f0f43a9f15072059b"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/bake_lod_dialog.gd",
+      "bytes": 789,
+      "sha256": "8c69c53c2d32bc50a6e6a10cbc74b6acf442a3bc5470aa27efe76def094a6a08"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/bake_lod_dialog.gd.uid",
+      "bytes": 20,
+      "sha256": "8054b9c583646a21ed65e710d0a9f138ccbd18f2730dc0816acafd31d82851bc"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/bake_lod_dialog.tscn",
+      "bytes": 1371,
+      "sha256": "419426c70b184d76f22bf01fd9451e8ad7bf6cad03c0f53aedeaab369c9cd6e7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/baker.gd",
+      "bytes": 15975,
+      "sha256": "c41b3de78f2f2f4c32505c3cd74cd3634d6c4e854e2dbb4296e140290ad43a28"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/baker.gd.uid",
+      "bytes": 19,
+      "sha256": "b4a6db7cb4bee5535f951e4e86735cf1a62a8e080af0466a5c8b60cace0d2566"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/channel_packer.gd",
+      "bytes": 20087,
+      "sha256": "9907434bf48d9ffd7d3cb2118ed0a5897e645c17c397053f98c047e3dc681ff9"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/channel_packer.gd.uid",
+      "bytes": 20,
+      "sha256": "e1f78e36544bf46ae5177bee97423c40cc1ccb2588fab40e37248a66a6af3fbb"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/channel_packer.tscn",
+      "bytes": 31627,
+      "sha256": "fbddca5044009971acc06c8b655433ab4b1fea35f9d626620dd41ba2d90d92d5"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/channel_packer_dragdrop.gd",
+      "bytes": 508,
+      "sha256": "ce46d0ffd1ff37727a591164e78bd955f560073c5b040d872bee2f119780f00f"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/channel_packer_dragdrop.gd.uid",
+      "bytes": 20,
+      "sha256": "ba001fe32408cc4cab43450b0c943d04f4b37f144ff7b67d780021314ee8eb67"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/channel_packer_import_template.txt",
+      "bytes": 612,
+      "sha256": "6c1dd411d2651d0986c4f89f3a83451056a776727426bf70399f535e0d8d8ed3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/directory_setup.gd",
+      "bytes": 2736,
+      "sha256": "f01c333bf27175645e153b339b5f15c59ba5bbad9a5ccbc9c1ad496649271597"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/directory_setup.gd.uid",
+      "bytes": 19,
+      "sha256": "ef3c0422c91c99eb97942352b1782411c9015d0c6440dce563b1574a6290659a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/directory_setup.tscn",
+      "bytes": 1678,
+      "sha256": "e0cf59599c8b878da27bd10bab9b68eef214943b7aa566a6319b98d42c20eaaa"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/terrain_menu.gd",
+      "bytes": 4250,
+      "sha256": "378b806c35317a6ca318cf1032cb89ad02cb47a1adc10f4ee169c7d7ba40687a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/menu/terrain_menu.gd.uid",
+      "bytes": 19,
+      "sha256": "20982cb2571cfe22d3ec548592b398cea8caf0dc5ea986db43bfbd69a716c34a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/plugin.cfg",
+      "bytes": 185,
+      "sha256": "409127228f742cf2cd920f090e097056962d48092066bfd16d4845c3a35d5cc3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock.gd",
+      "bytes": 11839,
+      "sha256": "cc34e65e5d7a4eea8b413c104837797c89e6cd15156a10e8f37df77846d2ded8"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock.gd.uid",
+      "bytes": 20,
+      "sha256": "7b58d4e189212c701a6f597186b699a218976c0a77e3a59db94ff824ad86f7b1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock.tscn",
+      "bytes": 2317,
+      "sha256": "9c6bff8ba9f10ce84c6bd9e37bf3b7b97717042fb56bef7505d0fe4c54e95144"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock_45.gd",
+      "bytes": 15875,
+      "sha256": "9aa53fdaf3fd962b62d0dd661f653d519ee30637e9f9aac0fd8f5bd2358abb67"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock_45.gd.uid",
+      "bytes": 20,
+      "sha256": "a251a9bb156245a0b4c85304c53668aa8a1f0d71320e2dc4a3108f301ffe5a33"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock_45.tscn",
+      "bytes": 3238,
+      "sha256": "22a7732611c5f3d55dee8d9f1281b5f07a14f5b9fe0b86a71dd27da67deaf55a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock_list_container.gd",
+      "bytes": 11578,
+      "sha256": "567afaa09b39dc206bc544e5949cfae0d656d58800adb506045b6c9886f55016"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock_list_container.gd.uid",
+      "bytes": 20,
+      "sha256": "a193c09b4fcdb3a852bca2906986ee1ead8bc7e8b3b6523cb59800235b83e8c1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock_list_entry.gd",
+      "bytes": 13951,
+      "sha256": "f5c067b125a2f5d8113b67c1c50482a0c6308bc42571bc0171f3089fd77f56ee"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/asset_dock_list_entry.gd.uid",
+      "bytes": 20,
+      "sha256": "2c6112037a085ef4d543eae93ee599be4f065983f9313af5c85904c1431f8fe7"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/double_slider.gd",
+      "bytes": 4363,
+      "sha256": "888c8382c719cc89fedb1c159d9272bb613cd4737b17140e214a6834c56df6ee"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/double_slider.gd.uid",
+      "bytes": 19,
+      "sha256": "a38da4a5d395684b054714ebc87ceb16f0134a60f7de18fa8a1607e238dfa9a4"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/editor_plugin.gd",
+      "bytes": 17666,
+      "sha256": "1fb59a2b11ca66b0137adbb68dceb0620bee182c0f48e69e3de8e556f409ff19"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/editor_plugin.gd.uid",
+      "bytes": 20,
+      "sha256": "9f0d75d00214d6c68b22b3d8f29670beb76f5a6abeafd15d85ba417245f0ca71"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/export_plugin.gd",
+      "bytes": 1644,
+      "sha256": "7d06042b651ba91813a671ca842dd02370720787b707c7021621e43df818ea91"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/export_plugin.gd.uid",
+      "bytes": 20,
+      "sha256": "7c7fa07e09ee24a8de48385a23d7489cd5cc51ae2d95de0055ea7a7863f20e1d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/gradient_operation_builder.gd",
+      "bytes": 1611,
+      "sha256": "87bab9c41da20f9efda52a5c99e524138cb047e956a7e1563a6ce773548cc2a2"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/gradient_operation_builder.gd.uid",
+      "bytes": 20,
+      "sha256": "5e7f632d22451780dac4337816d3c75c8ebfa5c0f75ee5c827d15639aea4f836"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/live_info_panel.gd",
+      "bytes": 2590,
+      "sha256": "b4025bdc5183a432a1626e63b098623b5d9439610381bb3f5bbe357aa6b970c0"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/live_info_panel.gd.uid",
+      "bytes": 20,
+      "sha256": "92f4c4f0fd59729f0c6ce0fb9df87aedb47be4ad4f96eef146d9df36c7f1373d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/live_info_panel.tscn",
+      "bytes": 1271,
+      "sha256": "db0cd33861f6202d03dc8c29ee16a6b87ecaf8ca505eaf0e404ce4a351db766a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/multi_picker.gd",
+      "bytes": 1942,
+      "sha256": "583b29825a772c31e3ffc792cc36d93429e7b23464a70f099f20f7f1fd7e4ff9"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/multi_picker.gd.uid",
+      "bytes": 20,
+      "sha256": "c508639f080db311bbf84c8ddee98f11a1bb7596a040e96c74dc1972657d1a31"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/operation_builder.gd",
+      "bytes": 528,
+      "sha256": "0588a355d02b84805f75bb7febd113b2114e66e367fdc92b4804e93e6c8690c3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/operation_builder.gd.uid",
+      "bytes": 20,
+      "sha256": "33b950e164f3750d2285a1528f086f40f0770f7670ba168a47d85da64a7c2dd6"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/tool_settings.gd",
+      "bytes": 29483,
+      "sha256": "15374c50706c1f1781af410becd54dee79fea98b68c8f2baeb3dbc90d374b6ec"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/tool_settings.gd.uid",
+      "bytes": 20,
+      "sha256": "d2269da3189625627d0debdad4d32cd01e13e56d265099d03f71175f4055c22e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/toolbar.gd",
+      "bytes": 7512,
+      "sha256": "204d5f782fc5a16c1a22ac9808e2a23b3c89c3295f04cfed019d2ccaa25c61c1"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/toolbar.gd.uid",
+      "bytes": 20,
+      "sha256": "76ecc703c788f38ee8a3bfb320762c6ab662effaa328baae201f22d0551917bf"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/ui.gd",
+      "bytes": 26702,
+      "sha256": "6d802ed6c43a4e8e090b3d6dfface0fb904139e5c686eb186bd4fd0b13da5be8"
+    },
+    {
+      "path": "godot/addons/terrain_3d/src/ui.gd.uid",
+      "bytes": 20,
+      "sha256": "9faeb441b436c528d524b141c0d3c273e0a068d524b55d3e3a74b5c0eceab7cf"
+    },
+    {
+      "path": "godot/addons/terrain_3d/terrain.gdextension",
+      "bytes": 3015,
+      "sha256": "d76ff1849c48ecb58bf271442b6833530c4e872996653176e32383ca37261ab4"
+    },
+    {
+      "path": "godot/addons/terrain_3d/terrain.gdextension.uid",
+      "bytes": 20,
+      "sha256": "1d0ea8752c673b1cc4212ce7eddea5b2c8f4f2c6fc80bbf523377485d6dd363a"
+    },
+    {
+      "path": "godot/addons/terrain_3d/tools/importer.gd",
+      "bytes": 4919,
+      "sha256": "755e4dfc54aa3664e66da1d761a99b3cac184049644f0f99741b275a2219f61e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/tools/importer.gd.uid",
+      "bytes": 20,
+      "sha256": "ff18e81083bea723ccddb164c08b13d6b0b918f086d5a0e080a72653adf24f13"
+    },
+    {
+      "path": "godot/addons/terrain_3d/tools/importer.tscn",
+      "bytes": 1970,
+      "sha256": "c357e98de6472917e5b047fd5c7aeefb3c8ea9a141ba6c9cb1e637ac8024ee1e"
+    },
+    {
+      "path": "godot/addons/terrain_3d/tools/region_mover.gd",
+      "bytes": 1753,
+      "sha256": "287b3243f18d80a72f87e6cd0c2309ea15ab4c88e357005491dea7e0ea5be931"
+    },
+    {
+      "path": "godot/addons/terrain_3d/tools/region_mover.gd.uid",
+      "bytes": 20,
+      "sha256": "40cade8b3cee60ed48254ba9e73eabdd599408264d68194e886f7e53ed7dcb9d"
+    },
+    {
+      "path": "godot/addons/terrain_3d/utils/terrain_3d_objects.gd",
+      "bytes": 6733,
+      "sha256": "a1e04ad8bda68f49c8700193c4818337f3565e7bcdb34947364518f7f32a5dd3"
+    },
+    {
+      "path": "godot/addons/terrain_3d/utils/terrain_3d_objects.gd.uid",
+      "bytes": 20,
+      "sha256": "da82247c282269dae5cb783fafc4b6c918b3f47a63889cdb8e724bc17183de91"
+    },
+    {
+      "path": "godot/addons/terrain_3d/utils/transform_changed_notifier.gd",
+      "bytes": 363,
+      "sha256": "ee5e098a23e116fe2f1fcfbc663456038b5f3c13921669029a89c2a0f18f9b23"
+    },
+    {
+      "path": "godot/addons/terrain_3d/utils/transform_changed_notifier.gd.uid",
+      "bytes": 20,
+      "sha256": "dc17da28dd55d788a1bacb727a5cfccad7ecb39708b547e268886041c7a28376"
+    }
+  ],
+  "updated_at": "2026-11-15T15:26:26.808400+00:00",
+  "scope": "Installed addon files after local fixes and Godot import; no .godot cache",
+  "local_source_patch": "tools/plugin-integration.patch"
+}

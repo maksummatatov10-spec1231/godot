@@ -1,0 +1,10 @@
+# Supplemental syntax/style checks, not a substitute for Godot 4.7 validation.
+gdtoolkit==4.5.0
+Pillow==13.0.0
+scons==4.10.1
+Brotli==1.2.1
+
+# External-library auditing (never copies the bulk library into the project).
+mutagen==1.48.1
+imageio-ffmpeg==0.8.1
+rarfile==4.5

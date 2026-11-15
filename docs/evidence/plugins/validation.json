@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-15",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "renderer_policy": "forward_plus",
+  "silent_gl_fallback": false,
+  "python_tests": {
+    "passed": 36,
+    "failed": 0
+  },
+  "project_smoke": "PASS",
+  "editor_import": "PASS; Terrain3D editor brush Image API warnings, no errors or exit leaks",
+  "plugin_smoke": "PASS; native registration + script parsing + 7 SPIR-V shader artifacts",
+  "addon_reinstallation": "PASS in temporary external directory; local source patch matches live files",
+  "own_gdscript_lint_and_format": "PASS",
+  "forward_plus_rendered_frame": "BLOCKED: software Vulkan has no VK_KHR_xlib_surface",
+  "integration_fixture": "GDScript parsed; correctly rejects headless; actual GPU scene not run",
+  "hardware_performance": "NOT MEASURED",
+  "assets2godot_remote_providers": "OFFLINE; not operational/tested",
+  "export_and_other_platforms": "NOT TESTED"
+}

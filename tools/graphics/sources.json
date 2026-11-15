@@ -1,0 +1,92 @@
+{
+  "xvfb": {
+    "url": "https://codeload.github.com/chromium-full-mirror/chromium_tools_xvfb/tar.gz/077af3535e54dbb782a355b81ba69ea17ec6bde5",
+    "sha256": "ddc57d7bce4388ab719d72bd00a174f51cde4be18e70e1167a8f4bc9aabd4381",
+    "kind": "tar"
+  },
+  "fontenc": {
+    "url": "https://codeload.github.com/sailfishos/libfontenc/tar.gz/a74be74eedbe58d353954b358494cf5b4f913387",
+    "sha256": "bbb65a312b78e477315b44bbdb18c497baba6a84c22ed8cb218d33f4d291df40",
+    "kind": "tar"
+  },
+  "xkeyboard": {
+    "url": "https://codeload.github.com/freedesktop-unofficial-mirror/xkeyboard-config/tar.gz/7d00bcc2d9c3944bbdfcbe472ee3299729dc7687",
+    "sha256": "3335b63f824eae8f72bc4a87d9ce938d535e540bb3c291dd1778739ede2437ad",
+    "kind": "tar"
+  },
+  "zlib": {
+    "url": "https://codeload.github.com/madler/zlib/tar.gz/v1.2.13",
+    "sha256": "1525952a0a567581792613a9723333d7f8cc20b87a81f920fb8bc7e3f2251428",
+    "kind": "tar"
+  },
+  "egl_headers": {
+    "url": "https://codeload.github.com/KhronosGroup/EGL-Registry/tar.gz/8e56e86e65687697ef54114cdb1afabdfac756bf",
+    "sha256": "c4c9edde9db1a0ff14bcf692f421498bed3b612207499cfb5a435545859bc63f",
+    "kind": "tar"
+  },
+  "angle": {
+    "url": "https://registry.npmjs.org/@sparticuz/chromium/-/chromium-131.0.1.tgz",
+    "sha256": "42004ef1ad2ac2179c1281e29dc0557a9419c60724bba9267da94b414625e85e",
+    "kind": "tar"
+  },
+  "libgcrypt.so.11": {
+    "url": "https://api.github.com/repos/hanpfei/chromium-net/contents/build/linux/debian_wheezy_amd64-sysroot/lib/x86_64-linux-gnu/libgcrypt.so.11.7.0?ref=9df8ce98c2a14fb60c2f581853011e32eb4bed0f",
+    "sha256": "369d861bcb613cba1191c4c690a455074a99d429f54e877b4a1b08f21c8165a5",
+    "kind": "github_file"
+  },
+  "libXcursor.so.1": {
+    "url": "https://api.github.com/repos/hanpfei/chromium-net/contents/build/linux/debian_wheezy_amd64-sysroot/usr/lib/x86_64-linux-gnu/libXcursor.so.1?ref=9df8ce98c2a14fb60c2f581853011e32eb4bed0f",
+    "sha256": "b8c6b75d5ed5b7c00c5e807ab2417b42768d50537d179a53b36137ae35e5a00e",
+    "kind": "github_file"
+  },
+  "libXinerama.so.1": {
+    "url": "https://api.github.com/repos/hanpfei/chromium-net/contents/build/linux/debian_wheezy_amd64-sysroot/usr/lib/x86_64-linux-gnu/libXinerama.so.1?ref=9df8ce98c2a14fb60c2f581853011e32eb4bed0f",
+    "sha256": "c6b81901b48a244162769039a588403115664bc4abc1108ecd1019f06f366a00",
+    "kind": "github_file"
+  },
+  "libXrender.so.1": {
+    "url": "https://api.github.com/repos/hanpfei/chromium-net/contents/build/linux/debian_wheezy_amd64-sysroot/usr/lib/x86_64-linux-gnu/libXrender.so.1?ref=9df8ce98c2a14fb60c2f581853011e32eb4bed0f",
+    "sha256": "b53df82c5dec7cdfb4f093c7426ec95a8b911b319f3194a1d400d34fd7bd07a3",
+    "kind": "github_file"
+  },
+  "libXfixes.so.3": {
+    "url": "https://api.github.com/repos/hanpfei/chromium-net/contents/build/linux/debian_wheezy_amd64-sysroot/usr/lib/x86_64-linux-gnu/libXfixes.so.3?ref=9df8ce98c2a14fb60c2f581853011e32eb4bed0f",
+    "sha256": "3dd33ab48cf1cce852915670f5691db90f62d40277de0ac73889b493de987073",
+    "kind": "github_file"
+  },
+  "libXext.so.6": {
+    "url": "https://api.github.com/repos/hanpfei/chromium-net/contents/build/linux/debian_wheezy_amd64-sysroot/usr/lib/x86_64-linux-gnu/libXext.so.6?ref=9df8ce98c2a14fb60c2f581853011e32eb4bed0f",
+    "sha256": "d1670876146999e89200d0c0ec03c9738229b0371a3be8db6751dcda6641eee1",
+    "kind": "github_file"
+  },
+  "libX11-xcb.so.1": {
+    "url": "https://api.github.com/repos/hanpfei/chromium-net/contents/build/linux/debian_wheezy_amd64-sysroot/usr/lib/x86_64-linux-gnu/libX11-xcb.so.1?ref=9df8ce98c2a14fb60c2f581853011e32eb4bed0f",
+    "sha256": "372917995f1339ea34f19a854a74c34157926518b61b484239d1b70a4d9c5aaf",
+    "kind": "github_file"
+  },
+  "xkbcomp": {
+    "url": "https://api.github.com/repos/myPorteus/Porteus/contents/x86_64/porteus/base/002-xorg/usr/bin/xkbcomp?ref=dbc43fc92aded9971ea2375cbed76050caa2aa37",
+    "sha256": "dc9d7176ed4584279bbc32eb1e5ea8446197133b593d2479b67c7d5d8b06f343",
+    "kind": "github_file"
+  },
+  "libxkbfile.so.1": {
+    "url": "https://api.github.com/repos/myPorteus/Porteus/contents/x86_64/porteus/base/002-xorg/usr/lib64/libxkbfile.so.1.0.2?ref=dbc43fc92aded9971ea2375cbed76050caa2aa37",
+    "sha256": "0e7de946fb5d9895b98eb0633fe9d13f95263b6eee41db21724113a708bc94e4",
+    "kind": "github_file"
+  },
+  "libXrandr.so.2": {
+    "url": "https://api.github.com/repos/myPorteus/Porteus/contents/x86_64/porteus/base/002-xorg/usr/lib64/libXrandr.so.2?ref=dbc43fc92aded9971ea2375cbed76050caa2aa37",
+    "sha256": "66b226c065aa53aa58d97a7f093d922a348baab0923ff9c130e7d958b7490679",
+    "kind": "github_file"
+  },
+  "libXi.so.6": {
+    "url": "https://api.github.com/repos/myPorteus/Porteus/contents/x86_64/porteus/base/002-xorg/usr/lib64/libXi.so.6?ref=dbc43fc92aded9971ea2375cbed76050caa2aa37",
+    "sha256": "1f56346c83a684e7160a5117fca42ad158414a71c54a0d247b6d161bec9f0201",
+    "kind": "github_file"
+  },
+  "libxkbcommon.so.0": {
+    "url": "https://api.github.com/repos/myPorteus/Porteus/contents/x86_64/porteus/base/002-xorg/usr/lib64/libxkbcommon.so.0?ref=dbc43fc92aded9971ea2375cbed76050caa2aa37",
+    "sha256": "3ca4d8bc2e2a932db87d4bcc2cece7b017ff8d5b723a0574a61f09eb12835ae6",
+    "kind": "github_file"
+  }
+}
