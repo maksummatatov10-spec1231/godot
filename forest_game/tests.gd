@@ -150,12 +150,15 @@ func run() -> void:
 	player.position = Vector3(0, 0.05, 7)
 	player.reset_physics_interpolation()
 	player.pitch = -0.09
+	player.camera_initialized = false
 	var orbit_error := 0.0
 	for i in range(144):
 		player.yaw = float(i) * 0.006
 		player.update_camera(1.0 / 144.0, 0)
 		var pivot := player.get_global_transform_interpolated().origin + Vector3.UP * 1.55
-		var ideal := pivot + player.camera.basis * Vector3(0.5, 0.25, player.camera_distance)
+		var ideal: Vector3 = (
+			pivot + player.camera.basis * Vector3(0.5, 0.25, player.camera_distance)
+		)
 		orbit_error = maxf(orbit_error, player.camera.global_position.distance_to(ideal))
 	check(orbit_error < 0.01, "144 Hz camera orbit stays centred without world-position lag")
 	player.yaw = 0
