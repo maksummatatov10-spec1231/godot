@@ -9,6 +9,9 @@ CHECK PASS directional walking: left
 CHECK PASS directional walking: right
 CHECK PASS first person shows viewmodel, hides head/body clipping
 CHECK PASS FPS wrist/grip is in front of and below lens
+CHECK PASS first person retains animated lower body
+CHECK PASS first person retains complete body and weapon shadow
+CHECK PASS Shift sprint works in first person
 CHECK PASS third person restores animated full body
 CHECK PASS jump impulse leaves ground
 CHECK PASS gravity and floor snap land without falling through terrain
@@ -20,5 +23,15 @@ CHECK PASS diagonal movement is normalized, not sqrt(2) faster
 CHECK PASS camera retracts before collidable obstacle
 CHECK PASS balanced graphics toggle disables expensive fog
 CHECK PASS ultra profile restores fog
+CHECK PASS grass is spatially chunked, not one whole-world MultiMesh
+CHECK PASS grass shadows enabled
+CHECK PASS grass shadow option applies
+CHECK PASS birds can be muted independently of wind
+CHECK PASS repeated magic reuses fixed-size VFX pool
+CHECK PASS sword trail has physical 3D thickness
+CHECK PASS Escape menu pauses actual world simulation
+CHECK PASS graphics settings screen opens while paused
+CHECK PASS audio settings screen opens while paused
+CHECK PASS resume returns to gameplay
 FOREST_TEST_RESULT {"failed":[],"magic_hits":1,"sword_hits":1}
 FOREST_TEST_OK
