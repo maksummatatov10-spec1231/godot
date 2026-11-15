@@ -1,13 +1,29 @@
 {
   "version": 1,
   "weapon": {
-    "position": [-0.035, 0.085, 0.11],
-    "rotation_degrees": [90, 0, 0],
+    "position": [
+      -0.03,
+      0.104,
+      -0.08
+    ],
+    "rotation_degrees": [
+      90,
+      0,
+      0
+    ],
     "scale": 0.52
   },
   "first_person": {
-    "position": [0, -1.05, -0.9],
-    "rotation_degrees": [0, 180, 0],
+    "position": [
+      0,
+      -1.05,
+      -0.9
+    ],
+    "rotation_degrees": [
+      0,
+      180,
+      0
+    ],
     "scale": 0.8
   }
 }

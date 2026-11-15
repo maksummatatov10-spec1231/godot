@@ -1,7 +1,240 @@
-<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WARDEN / Pose Laboratory</title><style>
-*{box-sizing:border-box}body{margin:0;background:#101b22;color:#dce9e9;font:14px system-ui}header{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 25px;border-bottom:1px solid #31434c}header b{letter-spacing:3px;font-size:19px}header small{color:#9bb7c2}main{display:grid;grid-template-columns:310px 1fr;height:calc(100vh - 70px)}aside{overflow:auto;padding:20px;border-right:1px solid #31434c;background:#17252e}h2{font-size:13px;letter-spacing:2px;color:#87c4ad;margin:22px 0 12px}select,button,input{font:inherit;color:inherit;background:#253943;border:1px solid #49616c;border-radius:5px;padding:8px}button{cursor:pointer}button:hover{background:#36565d}select{width:100%}label{display:block;margin:10px 0;color:#afc5cd}input[type=number]{width:75px;margin:3px;padding:6px}input[type=range]{width:100%}.row{display:flex;gap:5px;align-items:center}.row button{flex:1}#stage{position:relative;min-width:0}canvas{display:block;width:100%;height:100%}#badge{position:absolute;top:20px;left:22px;background:#14242cdd;padding:12px;border:1px solid #3a5962;pointer-events:none;white-space:pre-line}#status{position:absolute;bottom:20px;left:22px;color:#bfdacb;background:#14242cdd;padding:12px;white-space:pre-line}.hint{font-size:12px;color:#8eabb7;line-height:1.6}#save{width:100%;background:#356b59;margin-top:16px}@media(max-width:750px){main{grid-template-columns:240px 1fr}aside{padding:12px}header small{display:none}}
-</style></head><body><header><b>WARDEN <span style="color:#87c4ad">/ POSE LAB</span></b><small>Живой glTF · те же модели и combat_pose.json · WebGL, не игровой Forward+</small></header><main><aside>
-<h2>01 / АНИМАЦИЯ</h2><select id="clip"></select><div class="row" style="margin-top:10px"><button id="play">▶ Играть</button><button id="prev">− кадр</button><button id="next">+ кадр</button></div><label>Точное время <output id="timeLabel">0.000 с</output><input id="time" type="range" min="0" max="1" step="0.001" value="0"></label><label>Скорость <input id="speed" type="range" min="0.1" max="2" step="0.1" value="1"></label>
-<h2>02 / КАМЕРА</h2><div class="row"><button data-view="third">3-е лицо</button><button data-view="first">1-е лицо</button><button data-view="grip">Ладонь</button></div><p class="hint">Мышь — орбита, колесо — масштаб, ПКМ — панорама. В первом лице камера фиксирована. Все A/B/C, ходьба и прыжок — исходные клипы.</p>
-<h2>03 / СОКЕТ МЕЧА</h2><div class="row"><button data-gizmo="translate">Двигать</button><button data-gizmo="rotate">Вращать</button><button data-gizmo="scale">Масштаб</button></div><div id="weapon"></div><label><input id="axes" type="checkbox" checked> Оси кисти и ориентиры хвата</label>
-<h2>04 / СКЕЛЕТ · ЭКСПЕРИМЕНТ</h2><select id="bone"></select><div class="row"><input id="boneX" type="number" step="5" value="0" title="Поворот X"><input id="boneY" type="number" step="5" value="0" title="Поворот Y"><input id="boneZ" type="number" step="5" value="0" title="Поворот Z"></div><button id="boneReset">Сбросить кости</button><p class="hint">Локальные XYZ-повороты поверх клипа. Только эксперимент в лаборатории; в игру сохраняются сокет и компоновка FPS.</p><h2>05 / FPS КОМПОНОВКА</h2><div id="first_person"></div><button id="save">Сохранить в игру</button><button id="reset" style="width:100%;margin-top:8px">Загрузить сохранённое</button><p class="hint">Сохранение меняет только combat_pose.json. Игра читает его при запуске. Поправки позы не подменяют анимацию. Space — play/pause, ←/→ — кадр.</p></aside><section id="stage"><canvas></canvas><div id="badge">Загрузка реального скелета…</div><div id="status">Инициализация WebGL</div></section></main><script type="module" src="/src.js"></script></body></html>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WARDEN / Pose Laboratory</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #101b22;
+        color: #dce9e9;
+        font: 14px system-ui;
+      }
+      header {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 25px;
+        border-bottom: 1px solid #31434c;
+      }
+      header b {
+        letter-spacing: 3px;
+        font-size: 19px;
+      }
+      header small {
+        color: #9bb7c2;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 310px 1fr;
+        height: calc(100vh - 70px);
+      }
+      aside {
+        overflow: auto;
+        padding: 20px;
+        border-right: 1px solid #31434c;
+        background: #17252e;
+      }
+      h2 {
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: #87c4ad;
+        margin: 22px 0 12px;
+      }
+      select,
+      button,
+      input {
+        font: inherit;
+        color: inherit;
+        background: #253943;
+        border: 1px solid #49616c;
+        border-radius: 5px;
+        padding: 8px;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:hover {
+        background: #36565d;
+      }
+      select {
+        width: 100%;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+        color: #afc5cd;
+      }
+      input[type="number"] {
+        width: 75px;
+        margin: 3px;
+        padding: 6px;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .row {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .row button {
+        flex: 1;
+      }
+      #stage {
+        position: relative;
+        min-width: 0;
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      #badge {
+        position: absolute;
+        top: 20px;
+        left: 22px;
+        background: #14242cdd;
+        padding: 12px;
+        border: 1px solid #3a5962;
+        pointer-events: none;
+        white-space: pre-line;
+      }
+      #status {
+        position: absolute;
+        bottom: 20px;
+        left: 22px;
+        color: #bfdacb;
+        background: #14242cdd;
+        padding: 12px;
+        white-space: pre-line;
+      }
+      .hint {
+        font-size: 12px;
+        color: #8eabb7;
+        line-height: 1.6;
+      }
+      #save {
+        width: 100%;
+        background: #356b59;
+        margin-top: 16px;
+      }
+      @media (max-width: 750px) {
+        main {
+          grid-template-columns: 240px 1fr;
+        }
+        aside {
+          padding: 12px;
+        }
+        header small {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <b>WARDEN <span style="color: #87c4ad">/ POSE LAB</span></b
+      ><small
+        >Живой glTF · те же модели и combat_pose.json · WebGL, не игровой
+        Forward+</small
+      >
+    </header>
+    <main>
+      <aside>
+        <h2>01 / АНИМАЦИЯ</h2>
+        <select id="clip"></select>
+        <div class="row" style="margin-top: 10px">
+          <button id="play">▶ Играть</button><button id="prev">− кадр</button
+          ><button id="next">+ кадр</button>
+        </div>
+        <label
+          >Точное время <output id="timeLabel">0.000 с</output
+          ><input
+            id="time"
+            type="range"
+            min="0"
+            max="1"
+            step="0.001"
+            value="0" /></label
+        ><label
+          >Скорость
+          <input id="speed" type="range" min="0.1" max="2" step="0.1" value="1"
+        /></label>
+        <h2>02 / КАМЕРА</h2>
+        <div class="row">
+          <button data-view="third">3-е лицо</button
+          ><button data-view="first">1-е лицо</button
+          ><button data-view="grip">Ладонь</button>
+        </div>
+        <p class="hint">
+          Мышь — орбита, колесо — масштаб, ПКМ — панорама. В первом лице камера
+          фиксирована. Все A/B/C, ходьба и прыжок — исходные клипы.
+        </p>
+        <h2>03 / СОКЕТ МЕЧА</h2>
+        <div class="row">
+          <button data-gizmo="translate">Двигать</button
+          ><button data-gizmo="rotate">Вращать</button
+          ><button data-gizmo="scale">Масштаб</button>
+        </div>
+        <div id="weapon"></div>
+        <label
+          ><input id="axes" type="checkbox" checked /> Оси кисти и ориентиры
+          хвата</label
+        >
+        <h2>04 / СКЕЛЕТ · ЭКСПЕРИМЕНТ</h2>
+        <select id="bone"></select>
+        <div class="row">
+          <input
+            id="boneX"
+            type="number"
+            step="5"
+            value="0"
+            title="Поворот X"
+          /><input
+            id="boneY"
+            type="number"
+            step="5"
+            value="0"
+            title="Поворот Y"
+          /><input
+            id="boneZ"
+            type="number"
+            step="5"
+            value="0"
+            title="Поворот Z"
+          />
+        </div>
+        <button id="boneReset">Сбросить кости</button>
+        <p class="hint">
+          Локальные XYZ-повороты поверх клипа. Только эксперимент в лаборатории;
+          в игру сохраняются сокет и компоновка FPS.
+        </p>
+        <h2>05 / FPS КОМПОНОВКА</h2>
+        <div id="first_person"></div>
+        <button id="save">Сохранить в игру</button
+        ><button id="screenshot" style="width: 100%; margin-top: 8px">
+          Скачать кадр PNG</button
+        ><button id="reset" style="width: 100%; margin-top: 8px">
+          Загрузить сохранённое
+        </button>
+        <p class="hint">
+          Сохранение меняет только combat_pose.json. Игра читает его при
+          запуске. Поправки позы не подменяют анимацию. Space — play/pause, ←/→
+          — кадр.
+        </p>
+      </aside>
+      <section id="stage">
+        <canvas></canvas>
+        <div id="badge">Загрузка реального скелета…</div>
+        <div id="status">Инициализация WebGL</div>
+      </section>
+    </main>
+    <script type="module" src="/src.js"></script>
+  </body>
+</html>

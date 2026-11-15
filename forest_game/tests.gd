@@ -134,6 +134,15 @@ func run() -> void:
 		player.world_sword.transform.is_equal_approx(player.view_sword.transform),
 		"both views share exactly the calibrated palm socket and weapon scale"
 	)
+	# sword_C handle lies on local +Y; the guard starts around Y=0.24.
+	# Match the measured closed-finger pocket, not the wrist origin/pommel.
+	var pocket := Vector3(-0.03, 0.104, 0)
+	var handle_center: Vector3 = player.view_sword.transform * Vector3(0, 0.154, 0)
+	var guard_edge: Vector3 = player.view_sword.transform * Vector3(0, 0.24, 0)
+	check(
+		handle_center.distance_to(pocket) < 0.015 and guard_edge.z > 0.038,
+		"handle crosses closed finger pocket and guard clears the index knuckle"
+	)
 	player.current_clip = ""
 	player.play_clip("Sword_Idle")
 	player.set_first_person(false)

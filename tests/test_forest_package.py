@@ -38,5 +38,25 @@ class ForestPackageTests(unittest.TestCase):
             self.assertTrue(destination.with_suffix('.zip.sha256').exists())
 
 
+    def test_lab_is_included_without_generated_dependencies(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'forest_game').mkdir()
+            (root / 'forest_game/project.godot').write_text('config_version=5')
+            lab = root / 'model_lab'
+            (lab / 'node_modules').mkdir(parents=True)
+            (lab / 'node_modules/cache.js').write_text('do not ship')
+            (lab / 'src.js').write_text('// lab source')
+            (lab / '.gdignore').touch()
+            destination = root / 'release/game.zip'
+            with patch.object(package_tool, 'ROOT', root), patch.object(
+                    package_tool.subprocess, 'check_output', return_value='test-commit\n'):
+                package_tool.package(destination)
+            with zipfile.ZipFile(destination) as archive:
+                self.assertIn('WardenForest/model_lab/src.js', archive.namelist())
+                self.assertIn('WardenForest/model_lab/.gdignore', archive.namelist())
+                self.assertFalse(any('node_modules' in name for name in archive.namelist()))
+
+
 if __name__ == '__main__':
     unittest.main()

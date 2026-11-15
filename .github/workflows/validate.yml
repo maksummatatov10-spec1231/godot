@@ -249,7 +249,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python tools/package_forest.py
-          gh release create warden-forest-v0.2.0 .tools/releases/Warden-Forest-Godot-Project.zip .tools/releases/Warden-Forest-Godot-Project.zip.sha256 --target "$GITHUB_SHA" --title 'WARDEN — The Emerald Wild | Forest prototype v0.2.0' --notes-file docs/FOREST_RELEASE.md
+          gh release create warden-forest-v0.3.0-preview.1 .tools/releases/Warden-Forest-Godot-Project.zip .tools/releases/Warden-Forest-Godot-Project.zip.sha256 --target "$GITHUB_SHA" --prerelease --title 'WARDEN — Pose Lab + animation revision | v0.3.0 preview 1' --notes-file docs/FOREST_PREVIEW_RELEASE.md
 
   inspect-2d:
     if: github.event_name == 'workflow_dispatch' && inputs.inspect_2d && github.ref_name == 'arena/449f84de-godot'
