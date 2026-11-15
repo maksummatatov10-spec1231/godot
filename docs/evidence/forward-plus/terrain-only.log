@@ -12,8 +12,8 @@ Engine version: Godot Engine v4.7.2.stable.official (ed1daf0bf001b61586d9930840f
 Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
 Load address: 0
 
-[1] 7ff75c645330 (libc.so.6+45330) - /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7ff75c645330]
-[2] 7ff750690ff7 (<unknown module>+7ff750690ff7) - [0x7ff750690ff7]
+[1] 7f0050c45330 (libc.so.6+45330) - /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7f0050c45330]
+[2] 7f0044b6d6b8 (<unknown module>+7f0044b6d6b8) - [0x7f0044b6d6b8]
 -- END OF C++ BACKTRACE --
 ================================================================
 Aborted (core dumped)

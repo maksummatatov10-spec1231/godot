@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-11-15T15:46:34.205606+00:00",
-  "source_commit": "1a5977a5cb450c87eab4b257b24403bf423835af",
+  "timestamp_utc": "2026-11-15T15:50:15.416277+00:00",
+  "source_commit": "87049a4a7f930d54f37be2fbcefed0f8d5f2d35b",
   "runner": "true",
   "renderer": "forward_plus",
   "software_rendering": true,
@@ -48,7 +48,7 @@
     },
     {
       "name": "terrain-clouds-backtrace",
-      "exit_code": 5,
+      "exit_code": 255,
       "passed": false
     },
     {
