@@ -90,6 +90,15 @@ func _ready() -> void:
 		cloud_world = world
 		cloud_driver = driver
 
+	# Neutral geometry makes depth, lighting and cloud occlusion visible.
+	var reference := MeshInstance3D.new()
+	reference.mesh = BoxMesh.new()
+	reference.scale = Vector3(6.0, 12.0, 6.0)
+	reference.position = Vector3(128.0, 6.0, 145.0)
+	var reference_material := StandardMaterial3D.new()
+	reference_material.albedo_color = Color(0.8, 0.3, 0.12)
+	reference.material_override = reference_material
+	add_child(reference)
 	print("RENDER_STAGE hud")
 	var hud := CanvasLayer.new()
 	add_child(hud)

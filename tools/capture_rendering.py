@@ -89,6 +89,8 @@ def main():
                            '--resolution', '960x540']
     for name, scene, marker, user_args in [
         ('lab', 'res://scenes/lab.tscn', 'SMOKE_OK', ['--smoke']),
+        ('sky-only', 'res://scenes/rendering_validation.tscn',
+         'RENDER_VALIDATION_OK', ['--without-clouds', '--without-terrain']),
         ('terrain-only', 'res://scenes/rendering_validation.tscn',
          'RENDER_VALIDATION_OK', ['--without-clouds']),
         ('clouds-only', 'res://scenes/rendering_validation.tscn',
