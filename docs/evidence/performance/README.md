@@ -34,3 +34,28 @@ The software-Vulkan CI A/B report is stored in `../forest-game/performance-ab.js
 - [Resolution scaling](https://docs.godotengine.org/en/stable/tutorials/3d/resolution_scaling.html): 0.5 scale is one quarter of the pixels, not half; no gain means the bottleneck may be elsewhere.
 
 On physical RX 580 / the user's CPU: **not yet measured**. A user report from `user://performance-diagnostic.json` is required to confirm the actual bottleneck there.
+
+## Completed rendered A/B evidence
+
+[Validation run 43752469497](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43752469497), game source `99938eb2119578ff50e2e0483ecfcac9cd7f4ad1`: **47 gameplay checks**, **22 real Forward+ screenshots**, all **12 rendered diagnostic stages** completed. New High screenshot and graphics menu were opened and inspected, together with representative third-/first-person frames. A fresh source ZIP extraction also passed import and all 47 checks (logs here).
+
+Environment: llvmpipe LLVM 20.1.2 / software Vulkan, 1280×720, first-person fixed view. Not AMD RX 580.
+
+| Variant | Mean delivered frame ms | Draw calls | Primitives |
+|---|---:|---:|---:|
+| Optimized High baseline | 1006.88 | 541 | 653304 |
+| Reconstructed old High GPU settings | 1692.55 | 541 | 665870 |
+| Old High, PCSS off only | 1588.01 | 541 | 665870 |
+| Old High, MSAA off only | 1674.87 | 541 | 665870 |
+| Optimized High, half-resolution | 665.79 | 541 | 653304 |
+| Optimized High, post off | 816.63 | 541 | 653304 |
+| Optimized High, shadows off | 673.48 | 250 | 270369 |
+| Optimized High, trees off | 401.16 | 273 | 257682 |
+| Optimized High, grass off | 935.82 | 387 | 571689 |
+| Optimized High, animation frozen | 1011.19 | 541 | 653304 |
+| Optimized High, VFX off | 1011.53 | 541 | 653304 |
+| Optimized High baseline repeat | 1014.15 | 541 | 653304 |
+
+The new High stack reduces delivered frame cost by ~40.5% versus reconstructed old High **in this software-rendered scene**. Individual PCSS/MSAA ablations alone are not the whole gain; the combined shadow atlas/filter/cascade/SSAO/AA changes matter. Trees and shadows dominate these ablations; removing all grass saves ~7%, freezing animation does not help rendered throughput here. The ablations overlap (removing trees also removes their shadows), so savings cannot be added together. These numbers do not imply 22→37 FPS or any other prediction on the user's GPU.
+
+Baseline repeat differs by <1%, so this run's drift flag is stable. GPU timestamps are available here, but their asynchronous scope is not identical to wall-clock delivered frame intervals; use the raw JSON with that distinction. The report on the user's actual machine is still required to confirm that machine's limiting path.

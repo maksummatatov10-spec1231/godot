@@ -1,0 +1,52 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FOREST_READY trees=280 ground_cover=3400 seed=730221
+CHECK PASS capsule rests on the actual triangulated forest ground
+CHECK PASS 14 real skeletal clips imported
+CHECK PASS forward movement uses velocity and move_and_slide
+CHECK PASS directional walking: back
+CHECK PASS directional walking: left
+CHECK PASS directional walking: right
+CHECK PASS first person shows viewmodel, hides head/body clipping
+CHECK PASS FPS wrist/grip is in front of and below lens
+CHECK PASS first person retains animated lower body
+CHECK PASS first person retains complete body and weapon shadow
+CHECK PASS Shift sprint works in first person
+CHECK PASS FPS preserves original wrist rotation, finger channels and exact clip phase
+CHECK PASS FPS A/B/C use three distinct source blade directions, not one generic swing
+CHECK PASS both views share exactly the calibrated palm socket and weapon scale
+CHECK PASS handle crosses closed finger pocket and guard clears the index knuckle
+CHECK PASS third person restores animated full body
+CHECK PASS third person skips hidden rig copies, duplicate evaluators and arm IK
+CHECK PASS balanced High keeps SSAO and shadows without 4K PCSS or double AA
+CHECK PASS tree cells reuse per-species mesh and LOD resources
+CHECK PASS diagnostic removes grass independently, not just grass shadows
+CHECK PASS diagnostic resets previous ablation before changing shadows
+CHECK PASS diagnostic reconstructs legacy High shadow and AA stack
+CHECK PASS diagnostic baseline restores optimized profile and shadow visibility
+CHECK PASS diagnostic does not blame grass when removing it makes no difference
+CHECK PASS diagnostic flags background-load or thermal drift
+CHECK PASS jump impulse leaves ground
+CHECK PASS gravity and floor snap land without falling through terrain
+CHECK PASS sword applies one 34-damage contact in range/cone
+CHECK PASS magic cannot bypass cooldown by repeated calls
+CHECK PASS asset VFX projectile swept collision deals magic damage
+CHECK PASS shattered training ward reforms for repeatable testing
+CHECK PASS diagonal movement is normalized, not sqrt(2) faster
+CHECK PASS camera retracts before collidable obstacle
+CHECK PASS 144 Hz camera orbit stays centred without world-position lag
+CHECK PASS balanced graphics toggle disables expensive fog
+CHECK PASS ultra profile restores fog
+CHECK PASS grass is spatially chunked, not one whole-world MultiMesh
+CHECK PASS grass shadows enabled
+CHECK PASS grass shadow option applies
+CHECK PASS birds can be muted independently of wind
+CHECK PASS repeated magic reuses fixed-size VFX pool
+CHECK PASS sword trail has physical 3D thickness
+CHECK PASS Escape menu pauses actual world simulation
+CHECK PASS graphics settings screen opens while paused
+CHECK PASS audio settings screen opens while paused
+CHECK PASS resume returns to gameplay
+CHECK PASS benchmark computes delivered-frame average and p99 correctly
+FOREST_TEST_RESULT {"failed":[],"magic_hits":1,"sword_hits":1}
+FOREST_TEST_OK
