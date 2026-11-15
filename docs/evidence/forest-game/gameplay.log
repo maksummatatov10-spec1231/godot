@@ -15,6 +15,7 @@ CHECK PASS Shift sprint works in first person
 CHECK PASS FPS preserves original wrist rotation, finger channels and exact clip phase
 CHECK PASS FPS A/B/C use three distinct source blade directions, not one generic swing
 CHECK PASS both views share exactly the calibrated palm socket and weapon scale
+CHECK PASS handle crosses closed finger pocket and guard clears the index knuckle
 CHECK PASS third person restores animated full body
 CHECK PASS jump impulse leaves ground
 CHECK PASS gravity and floor snap land without falling through terrain
