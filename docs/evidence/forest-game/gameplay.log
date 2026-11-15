@@ -20,6 +20,12 @@ CHECK PASS third person restores animated full body
 CHECK PASS third person skips hidden rig copies, duplicate evaluators and arm IK
 CHECK PASS balanced High keeps SSAO and shadows without 4K PCSS or double AA
 CHECK PASS tree cells reuse per-species mesh and LOD resources
+CHECK PASS diagnostic removes grass independently, not just grass shadows
+CHECK PASS diagnostic resets previous ablation before changing shadows
+CHECK PASS diagnostic reconstructs legacy High shadow and AA stack
+CHECK PASS diagnostic baseline restores optimized profile and shadow visibility
+CHECK PASS diagnostic does not blame grass when removing it makes no difference
+CHECK PASS diagnostic flags background-load or thermal drift
 CHECK PASS jump impulse leaves ground
 CHECK PASS gravity and floor snap land without falling through terrain
 CHECK PASS sword applies one 34-damage contact in range/cone
