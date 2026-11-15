@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+CAPTURE 01-main-menu
+CAPTURE 00-map-overview
+CAPTURE 00-map-collisions
+CAPTURE 02-village
+CAPTURE 03-village-collisions
+CAPTURE 04-traveller
+CAPTURE 05-lake
+CAPTURE 06-lake-collisions
+CAPTURE 05-farm
+CAPTURE 06-farm-collisions
+CAPTURE 05-forest
+CAPTURE 06-forest-collisions
+CAPTURE 07-lantern-ability
+CAPTURE 08-sword
+CAPTURE 09-axe
+CAPTURE 10-wildlife-surprise
+CAPTURE 11-pause
+CAPTURE 12-settings
+CAPTURE 13-controls
+CAPTURE 14-walk-0
+CAPTURE 14-walk-1
+CAPTURE 14-walk-2
+CAPTURE 14-walk-3
+CAPTURE 15-net
+LANTERN_CAPTURE_OK 24

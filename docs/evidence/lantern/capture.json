@@ -1,0 +1,30 @@
+{
+	"images": [
+		"01-main-menu",
+		"00-map-overview",
+		"00-map-collisions",
+		"02-village",
+		"03-village-collisions",
+		"04-traveller",
+		"05-lake",
+		"06-lake-collisions",
+		"05-farm",
+		"06-farm-collisions",
+		"05-forest",
+		"06-forest-collisions",
+		"07-lantern-ability",
+		"08-sword",
+		"09-axe",
+		"10-wildlife-surprise",
+		"11-pause",
+		"12-settings",
+		"13-controls",
+		"14-walk-0",
+		"14-walk-1",
+		"14-walk-2",
+		"14-walk-3",
+		"15-net"
+	],
+	"real_render": true,
+	"renderer": "llvmpipe (LLVM 20.1.2, 256 bits)"
+}
