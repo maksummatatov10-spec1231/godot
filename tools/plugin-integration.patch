@@ -271,3 +271,32 @@
  	if rd == null:
  		initialize_compute()
  	elif pipeline.is_valid() and height_gradient and extra_large_noise_patterns and large_scale_noise and medium_scale_noise and small_scale_noise and dither_noise and curl_noise:
+--- a/godot/addons/SunshineClouds2/SunshineCloudsPostCompute.comp
++++ b/godot/addons/SunshineClouds2/SunshineCloudsPostCompute.comp
+@@ -255,7 +255,7 @@
+ 	// pMie *= (1.0 - lightingWeight);
+ 
+ 	float AtmosphericsDistancePower = length(vec3(RayleighScatteringCoef * totalRlh + MieScatteringCoef * totalMie));
+-	vec3 atmospherics = 22.0 * (ambientLight * RayleighScatteringCoef * totalRlh + pMie * MieScatteringCoef * sunlightColor * totalMie) / sampleCount;
++	vec3 atmospherics = 22.0 * (ambientLight * RayleighScatteringCoef * totalRlh + pMie * MieScatteringCoef * sunlightColor * totalMie) / max(sampleCount, 1.0);
+ 	return vec4(atmospherics, AtmosphericsDistancePower);
+ }
+ 
+@@ -348,7 +348,7 @@
+ 		}
+ 		density *= smoothstep(minstep, minstep * 2.0, linear_depth);
+ 		density = mix(density, 0.0, lerp);
+-		float groundLinearFade = mix(smoothstep(maxTheoreticalStep, maxTheoreticalStep, linear_depth), 1.0, genericData.data.fogEffectGround);
++		float groundLinearFade = mix(step(maxTheoreticalStep, linear_depth), 1.0, genericData.data.fogEffectGround);
+ 
+ 		vec4 color = texelFetchMSAA(input_screen_image, uv, sampleIdx);
+ 
+@@ -359,7 +359,7 @@
+         vec3 physicalFogColor = color.rgb;
+         float fogweight = 0.0;
+ 
+-		if (directionalLightCount > 0.0){
++		if (directionalLightCount > 0.0 && atmosphericDensity > 0.0){
+ 			for (float i = 0.0; i < directionalLightCount; i++){
+ 				DirectionalLight light = directionalLights[int(i)];
+ 				vec3 sundir = light.direction.xyz;

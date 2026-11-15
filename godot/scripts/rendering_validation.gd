@@ -43,12 +43,11 @@ func _ready() -> void:
 		terrain.name = "Terrain3D"
 		terrain.set("free_editor_textures", false)
 		terrain.set("tessellation_level", 0)
+		terrain.set("mesh_lods", 3)
 		# Exercise the vendor's optimized material with actual texture layers,
 		# not an empty texture array in the heavyweight default shader.
 		var material := ClassDB.instantiate("Terrain3DMaterial") as Resource
-		material.set(
-			"shader_override", load("res://addons/terrain_3d/extras/shaders/minimum.gdshader")
-		)
+		material.set("shader_override", load("res://shaders/terrain_safe_minimum.gdshader"))
 		material.set("shader_override_enabled", true)
 		terrain.set("material", material)
 		var assets := ClassDB.instantiate("Terrain3DAssets") as Resource
