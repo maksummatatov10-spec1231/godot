@@ -21,6 +21,7 @@ CHECK PASS asset VFX projectile swept collision deals magic damage
 CHECK PASS shattered training ward reforms for repeatable testing
 CHECK PASS diagonal movement is normalized, not sqrt(2) faster
 CHECK PASS camera retracts before collidable obstacle
+CHECK PASS 144 Hz camera orbit stays centred without world-position lag
 CHECK PASS balanced graphics toggle disables expensive fog
 CHECK PASS ultra profile restores fog
 CHECK PASS grass is spatially chunked, not one whole-world MultiMesh
@@ -33,5 +34,6 @@ CHECK PASS Escape menu pauses actual world simulation
 CHECK PASS graphics settings screen opens while paused
 CHECK PASS audio settings screen opens while paused
 CHECK PASS resume returns to gameplay
+CHECK PASS benchmark computes delivered-frame average and p99 correctly
 FOREST_TEST_RESULT {"failed":[],"magic_hits":1,"sword_hits":1}
 FOREST_TEST_OK

@@ -14,4 +14,6 @@ FOREST_FRAME 09-sky-sun player=(0.0, -0.019065, 4.900007)
 FOREST_FRAME 10-pause-menu player=(0.0, -0.019065, 4.900007)
 FOREST_FRAME 11-graphics-settings player=(0.0, -0.019065, 4.900007)
 FOREST_FRAME 12-audio-settings player=(0.0, -0.019065, 4.900007)
+FOREST_FRAME 13-main-menu player=(0.0, -0.019065, 4.900007)
+FOREST_FRAME 14-controls-settings player=(0.0, -0.019065, 4.900007)
 FOREST_CAPTURE_OK /home/runner/work/godot/godot/docs/evidence/forest-game
