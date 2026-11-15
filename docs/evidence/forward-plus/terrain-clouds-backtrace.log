@@ -1,215 +1,55 @@
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
-[Detaching after vfork from child process 4460]
-[New Thread 0x7ffff75ff6c0 (LWP 4462)]
-[New Thread 0x7ffff65fe6c0 (LWP 4463)]
-[New Thread 0x7fffeffff6c0 (LWP 4464)]
-[New Thread 0x7ffff55fd6c0 (LWP 4465)]
-[New Thread 0x7fffeeffe6c0 (LWP 4466)]
+[Detaching after vfork from child process 4424]
+[New Thread 0x7ffff75ff6c0 (LWP 4426)]
+[New Thread 0x7ffff65fe6c0 (LWP 4427)]
+[New Thread 0x7fffed3ff6c0 (LWP 4428)]
+[New Thread 0x7ffff55fd6c0 (LWP 4429)]
+[New Thread 0x7fffeffff6c0 (LWP 4430)]
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-[New Thread 0x7fffec5ff6c0 (LWP 4467)]
-[New Thread 0x7fffec3fe6c0 (LWP 4468)]
-[New Thread 0x7fffd57ff6c0 (LWP 4469)]
-[New Thread 0x7fffd55fe6c0 (LWP 4470)]
-[New Thread 0x7fffc7fff6c0 (LWP 4471)]
-[New Thread 0x7fffc6ffe6c0 (LWP 4472)]
-[New Thread 0x7fffc5ffd6c0 (LWP 4473)]
+[New Thread 0x7fffec3fe6c0 (LWP 4431)]
+[New Thread 0x7fffd57ff6c0 (LWP 4432)]
+[New Thread 0x7fffd55fe6c0 (LWP 4433)]
+[New Thread 0x7fffd53fd6c0 (LWP 4434)]
+[New Thread 0x7fffc7fff6c0 (LWP 4435)]
+[New Thread 0x7fffc6ffe6c0 (LWP 4436)]
+[New Thread 0x7fffc5ffd6c0 (LWP 4437)]
 Vulkan 1.4.318 - Forward+ - Using Device #0: Unknown - llvmpipe (LLVM 20.1.2, 128 bits)
-[New Thread 0x7fffb1fff6c0 (LWP 4474)]
-[New Thread 0x7fffabfff6c0 (LWP 4475)]
-[New Thread 0x7fffaaffe6c0 (LWP 4476)]
-[New Thread 0x7fffa9ffd6c0 (LWP 4477)]
+[New Thread 0x7fffb1fff6c0 (LWP 4438)]
+[New Thread 0x7fffabfff6c0 (LWP 4439)]
+[New Thread 0x7fffaaffe6c0 (LWP 4440)]
+[New Thread 0x7fffa9ffd6c0 (LWP 4441)]
 
-[Thread 0x7fffec3fe6c0 (LWP 4468) exited]
-[New Thread 0x7fffa1fff6c0 (LWP 4478)]
-[New Thread 0x7fffa0ffe6c0 (LWP 4479)]
-[New Thread 0x7fff9fffd6c0 (LWP 4480)]
+[Thread 0x7fffd57ff6c0 (LWP 4432) exited]
+[New Thread 0x7fffa1fff6c0 (LWP 4442)]
+[New Thread 0x7fffa0ffe6c0 (LWP 4443)]
+[New Thread 0x7fff9fffd6c0 (LWP 4444)]
 RENDER_STAGE terrain
+ERROR: Terrain3DRegion#1022:validate_map_size:299: Image size doesn't match existing images in this region(1024, 1024)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/rendering_validation.gd:75)
 RENDER_STAGE clouds
 RENDER_STAGE hud
-
-Thread 10 "Godot_v4.7.2-st" received signal SIGSEGV, Segmentation fault.
-[Switching to Thread 0x7fffd55fe6c0 (LWP 4470)]
-0x00007fffec0576b8 in ?? ()
-
-Thread 20 (Thread 0x7fff9fffd6c0 (LWP 4480) "Godot_v4.7.2-st"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0xff40570) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0xff40570) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0xff40570, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0xff40520, cond=0xff40548) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0xff40548, mutex=0xff40520) at ./nptl/pthread_cond_wait.c:627
-#5  0x00000000006e23d6 in ?? ()
-#6  0x00000000052e6c23 in ?? ()
-#7  0x00007ffff7c9cb64 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
-
-Thread 19 (Thread 0x7fffa0ffe6c0 (LWP 4479) "WSI swapchain e"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0xebb83fc) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0xebb83fc) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0xebb83fc, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0xebb83a8, cond=0xebb83d0) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0xebb83d0, mutex=0xebb83a8) at ./nptl/pthread_cond_wait.c:627
-#5  0x00007fffecf4155d in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#6  0x00007fffece69d79 in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#7  0x00007fffecf7eb0c in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-
-Thread 18 (Thread 0x7fffa1fff6c0 (LWP 4478) "WSI swapchain q"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=-2147483648, cancel=true, abstime=0x7fffa1ffda90, op=137, expected=0, futex_word=0xebb8324) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=-2147483648, abstime=0x7fffa1ffda90, clockid=32767, expected=0, futex_word=0xebb8324) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0xebb8324, expected=expected@entry=0, clockid=clockid@entry=1, abstime=abstime@entry=0x7fffa1ffda90, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9bd4e in __pthread_cond_wait_common (abstime=0x7fffa1ffda90, clockid=1, mutex=0xebb82d0, cond=0xebb82f8) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_timedwait64 (cond=0xebb82f8, mutex=0xebb82d0, abstime=0x7fffa1ffda90) at ./nptl/pthread_cond_wait.c:652
-#5  0x00007fffecf4152d in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#6  0x00007fffece6934a in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#7  0x00007fffecf7eb0c in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-
-Thread 17 (Thread 0x7fffa9ffd6c0 (LWP 4477) "Godot_v4.7.2-st"):
-#0  0x00007ffff7cecb9f in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7fffa9ffba70, rem=0x7fffa9ffba80) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
-#1  0x00007ffff7cf9ae7 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
-#2  0x0000000004d9a34a in ?? ()
-#3  0x0000000003b051a3 in ?? ()
-#4  0x0000000004406195 in ?? ()
-#5  0x00000000052e6c23 in ?? ()
-#6  0x00007ffff7c9cb64 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
-#7  0x00007ffff7d29e8c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
-
-Thread 16 (Thread 0x7fffaaffe6c0 (LWP 4476) "Godot_v4.7.2-st"):
-#0  0x00007ffff7cecb9f in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7fffaaffc950, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
-#1  0x00007ffff7cf9ae7 in __GI___nanosleep (req=req@entry=0x7fffaaffc950, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
-#2  0x00007ffff7d2997c in usleep (useconds=<optimized out>) at ../sysdeps/posix/usleep.c:31
-#3  0x00000000004a7de5 in ?? ()
-#4  0x0000000004406195 in ?? ()
-#5  0x00000000052e6c23 in ?? ()
-#6  0x00007ffff7c9cb64 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
-#7  0x00007ffff7d29e8c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
-
-Thread 15 (Thread 0x7fffabfff6c0 (LWP 4475) "Godot_v4.7.2-st"):
-#0  0x00007ffff7cecb9f in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7fffabffd730, rem=0x7fffabffd740) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
-#1  0x00007ffff7cf9ae7 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
-#2  0x0000000004d9a34a in ?? ()
-#3  0x00000000005252aa in ?? ()
-#4  0x0000000004406195 in ?? ()
-#5  0x00000000052e6c23 in ?? ()
-#6  0x00007ffff7c9cb64 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
-#7  0x00007ffff7d29e8c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
-
-Thread 14 (Thread 0x7fffb1fff6c0 (LWP 4474) "Godot_v4.7.2-st"):
-#0  0x00007ffff7d26f67 in __GI___select (nfds=9, readfds=0x7fffb1ffda10, writefds=0x0, exceptfds=0x0, timeout=0x7fffb1ffda00) at ../sysdeps/unix/sysv/linux/select.c:69
-#1  0x00000000004bc1fb in ?? ()
-#2  0x00000000004de9fd in ?? ()
-#3  0x0000000004406195 in ?? ()
-#4  0x00000000052e6c23 in ?? ()
-#5  0x00007ffff7c9cb64 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
-#6  0x00007ffff7d29e8c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
-
-Thread 13 (Thread 0x7fffc5ffd6c0 (LWP 4473) "Godot_v:disk$0"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x9304528) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x9304528) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x9304528, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x93044d0, cond=0x9304500) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x9304500, mutex=0x93044d0) at ./nptl/pthread_cond_wait.c:627
-#5  0x00007fffecf7ebdd in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#6  0x00007fffecf4e50b in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#7  0x00007fffecf7eb0c in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-
-Thread 12 (Thread 0x7fffc6ffe6c0 (LWP 4472) "Godot_v4.7.2-st"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=1065353216, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x9dcd630) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=1065353216, abstime=0x0, clockid=0, expected=0, futex_word=0x9dcd630) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x9dcd630, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x9dcd5e0, cond=0x9dcd608) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x9dcd608, mutex=0x9dcd5e0) at ./nptl/pthread_cond_wait.c:627
-#5  0x00007fffecf7ebdd in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#6  0x00007fffed19043b in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#7  0x00007fffecf7eb0c in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-
-Thread 11 (Thread 0x7fffc7fff6c0 (LWP 4471) "llvmpipe-0"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=-1, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x9dca588) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=-1, abstime=0x0, clockid=0, expected=0, futex_word=0x9dca588) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x9dca588, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x9dca538, cond=0x9dca560) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x9dca560, mutex=0x9dca538) at ./nptl/pthread_cond_wait.c:627
-#5  0x00007fffecf7ebdd in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#6  0x00007fffed193a53 in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#7  0x00007fffecf7eb0c in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-
-Thread 10 (Thread 0x7fffd55fe6c0 (LWP 4470) "Godot_v4.7.2-st"):
-#0  0x00007fffec0576b8 in ?? ()
-#1  0x3b8000003b800000 in ?? ()
-#2  0x3b8000003b800000 in ?? ()
-#3  0x0000000000000000 in ?? ()
-
-Thread 9 (Thread 0x7fffd57ff6c0 (LWP 4469) "async-io"):
-#0  0x00000000051ad8c2 in ?? ()
-#1  0x00000000051acd3c in ?? ()
-#2  0x00000000051acc84 in ?? ()
-#3  0x00000000051f93a0 in ?? ()
-#4  0x00007ffff7c9cb64 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
-#5  0x00007ffff7d29e8c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
-
-Thread 7 (Thread 0x7fffec5ff6c0 (LWP 4467) "Godot_v4.7.2-st"):
-#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
-#1  0x00000000051cdd51 in ?? ()
-#2  0x000000000517cf02 in ?? ()
-#3  0x000000000517b4fa in ?? ()
-#4  0x00000000051f93a0 in ?? ()
-#5  0x00007ffff7c9cb64 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
-#6  0x00007ffff7d29e8c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
-
-Thread 6 (Thread 0x7fffeeffe6c0 (LWP 4466) "WorkerThread 3"):
-#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
-#1  0x00007fffecf451ba in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#2  0x00007fffecefe28f in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#3  0x00007fffecefe7f7 in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#4  0x00007fffeceff42a in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#5  0x00000000018d398e in ?? ()
-#6  0x0000000003c87fd2 in ?? ()
-#7  0x0000000003f09477 in ?? ()
-
-Thread 5 (Thread 0x7ffff55fd6c0 (LWP 4465) "WorkerThread 2"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x96830cc) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x96830cc) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x96830cc, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x95356c8, cond=0x96830a0) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x96830a0, mutex=0x95356c8) at ./nptl/pthread_cond_wait.c:627
-#5  0x000000000490545d in ?? ()
-#6  0x0000000004406195 in ?? ()
-#7  0x00000000052e6c23 in ?? ()
-
-Thread 4 (Thread 0x7fffeffff6c0 (LWP 4464) "WorkerThread 1"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x9683064) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x9683064) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x9683064, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x95356c8, cond=0x9683038) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x9683038, mutex=0x95356c8) at ./nptl/pthread_cond_wait.c:627
-#5  0x000000000490545d in ?? ()
-#6  0x0000000004406195 in ?? ()
-#7  0x00000000052e6c23 in ?? ()
-
-Thread 3 (Thread 0x7ffff65fe6c0 (LWP 4463) "WorkerThread 0"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x9682ff8) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x9682ff8) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x9682ff8, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x95356c8, cond=0x9682fd0) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x9682fd0, mutex=0x95356c8) at ./nptl/pthread_cond_wait.c:627
-#5  0x000000000490545d in ?? ()
-#6  0x0000000004406195 in ?? ()
-#7  0x00000000052e6c23 in ?? ()
-
-Thread 2 (Thread 0x7ffff75ff6c0 (LWP 4462) "Godot_v4.7.2-st"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x9533a98) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x9533a98) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x9533a98, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x9533a48, cond=0x9533a70) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x9533a70, mutex=0x9533a48) at ./nptl/pthread_cond_wait.c:627
-#5  0x00000000044f3da3 in ?? ()
-#6  0x0000000004406195 in ?? ()
-#7  0x00000000052e6c23 in ?? ()
-
-Thread 1 (Thread 0x7ffff7eb4b00 (LWP 4457) "Godot_v4.7.2-st"):
-#0  0x00007ffff7c98e31 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x1db87030) at ./nptl/futex-internal.c:57
-#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x1db87030) at ./nptl/futex-internal.c:87
-#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x1db87030, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
-#3  0x00007ffff7c9b8ad in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x1db86fe0, cond=0x1db87008) at ./nptl/pthread_cond_wait.c:503
-#4  ___pthread_cond_wait (cond=0x1db87008, mutex=0x1db86fe0) at ./nptl/pthread_cond_wait.c:627
-#5  0x00007fffecf7ebdd in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#6  0x00007fffecefc790 in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
-#7  0x00007fffece85fa5 in ?? () from /lib/x86_64-linux-gnu/libvulkan_lvp.so
+RENDER_VALIDATION_OK /home/runner/work/godot/godot/docs/evidence/forward-plus/terrain-clouds.png
+[Thread 0x7fff9fffd6c0 (LWP 4444) exited]
+[Thread 0x7fffa9ffd6c0 (LWP 4441) exited]
+[Thread 0x7fffb1fff6c0 (LWP 4438) exited]
+[Thread 0x7fffa0ffe6c0 (LWP 4443) exited]
+[Thread 0x7fffa1fff6c0 (LWP 4442) exited]
+[Thread 0x7fffd53fd6c0 (LWP 4434) exited]
+[Thread 0x7fffc6ffe6c0 (LWP 4436) exited]
+[Thread 0x7fffc7fff6c0 (LWP 4435) exited]
+[Thread 0x7fffc5ffd6c0 (LWP 4437) exited]
+[Thread 0x7fffabfff6c0 (LWP 4439) exited]
+[Thread 0x7fffaaffe6c0 (LWP 4440) exited]
+[Thread 0x7ffff55fd6c0 (LWP 4429) exited]
+[Thread 0x7ffff65fe6c0 (LWP 4427) exited]
+[Thread 0x7fffed3ff6c0 (LWP 4428) exited]
+[Thread 0x7fffeffff6c0 (LWP 4430) exited]
+[Thread 0x7ffff75ff6c0 (LWP 4426) exited]
+[Thread 0x7fffd55fe6c0 (LWP 4433) exited]
+[Thread 0x7ffff7eb4b00 (LWP 4421) exited]
+[Thread 0x7fffec3fe6c0 (LWP 4431) exited]
+[New process 4421]
+[Inferior 1 (process 4421) exited normally]
