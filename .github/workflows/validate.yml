@@ -96,7 +96,7 @@ jobs:
       - name: Install software Vulkan and virtual display
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb xauth mesa-vulkan-drivers libvulkan1 vulkan-tools
+          sudo apt-get install -y xvfb xauth mesa-vulkan-drivers libvulkan1 vulkan-tools gdb
           pip install -r requirements-dev.txt
       - name: Install verified Godot
         env:

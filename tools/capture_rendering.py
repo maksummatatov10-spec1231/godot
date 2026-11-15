@@ -33,7 +33,11 @@ def main():
     prepare_extensions(ROOT / 'godot')
     base = [engine, '--path', str(ROOT / 'godot')]
     report = {'timestamp_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-              'renderer': 'forward_plus', 'software_rendering': True,
+              'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'],
+                                                        cwd=ROOT, text=True).strip(),
+              'runner': os.environ.get('GITHUB_ACTIONS', 'local'),
+              'renderer': 'forward_plus',
+              'software_rendering': bool(os.environ.get('VK_ICD_FILENAMES', '').find('lvp') >= 0),
               'purpose': 'Frame correctness, not hardware performance', 'steps': []}
 
     def run(name, command, marker=None, image=None):
@@ -54,6 +58,9 @@ def main():
         if marker:
             passed = passed and marker in text
         details = {'name': name, 'exit_code': code, 'passed': passed}
+        if image and 'Forward+ - Using Device' not in text:
+            details['renderer_error'] = 'Forward+ was not confirmed by the actual device log'
+            details['passed'] = False
         if image and image.exists():
             try:
                 validate_capture(image)
@@ -82,11 +89,27 @@ def main():
                            '--resolution', '960x540']
     for name, scene, marker, user_args in [
         ('lab', 'res://scenes/lab.tscn', 'SMOKE_OK', ['--smoke']),
+        ('terrain-only', 'res://scenes/rendering_validation.tscn',
+         'RENDER_VALIDATION_OK', ['--without-clouds']),
+        ('clouds-only', 'res://scenes/rendering_validation.tscn',
+         'RENDER_VALIDATION_OK', ['--without-terrain']),
         ('terrain-clouds', 'res://scenes/rendering_validation.tscn',
          'RENDER_VALIDATION_OK', []),
     ]:
         image = output / f'{name}.png'
-        run(name, gpu + [scene, '--', *user_args, f'--capture={image}'], marker, image)
+        success = run(name, gpu + [scene, '--', *user_args, f'--capture={image}'], marker, image)
+        if name == 'terrain-clouds' and not success and shutil.which('gdb'):
+            run('terrain-clouds-backtrace', prefix + [shutil.which('gdb'), '--batch',
+                '--return-child-result', '-ex', 'run', '-ex', 'thread apply all bt 8',
+                '--args', *base, '--disable-crash-handler', '--rendering-method',
+                'forward_plus', '--audio-driver', 'Dummy', '--resolution', '960x540',
+                scene, '--', f'--capture={image}'])
+    editor_prefix = prefix
+    if prefix:
+        editor_prefix = [prefix[0], '-a', '-s', '-screen 0 1280x800x24']
+    run('editor', editor_prefix + [sys.executable, str(ROOT / 'tools/capture_editor.py'),
+                                  '--output', str(output / 'editor.png')],
+        'EDITOR_CAPTURE_OK')
     report['passed'] = all(step['passed'] for step in report['steps'])
     (output / 'result.json').write_text(json.dumps(report, indent=2) + '\n')
     return 0 if report['passed'] else 1

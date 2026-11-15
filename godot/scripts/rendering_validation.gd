@@ -34,12 +34,13 @@ func _ready() -> void:
 	sun.shadow_enabled = true
 	add_child(sun)
 
-	print("RENDER_STAGE terrain")
-	var terrain := ClassDB.instantiate("Terrain3D") as Node3D
-	terrain.name = "Terrain3D"
-	terrain.set("free_editor_textures", false)
-	add_child(terrain)
-	terrain.get("data").call("add_region_blank", Vector2i.ZERO)
+	if not OS.get_cmdline_user_args().has("--without-terrain"):
+		print("RENDER_STAGE terrain")
+		var terrain := ClassDB.instantiate("Terrain3D") as Node3D
+		terrain.name = "Terrain3D"
+		terrain.set("free_editor_textures", false)
+		add_child(terrain)
+		terrain.get("data").call("add_region_blank", Vector2i.ZERO)
 
 	var camera := Camera3D.new()
 	camera.position = Vector3(128.0, 12.0, 100.0)
@@ -48,18 +49,19 @@ func _ready() -> void:
 	camera.look_at(Vector3(128.0, 25.0, 300.0))
 	camera.current = true
 
-	print("RENDER_STAGE clouds")
-	var clouds := load("res://resources/clouds_balanced.tres") as SunshineCloudsGD
-	world.compositor = Compositor.new()
-	world.compositor.compositor_effects = [clouds]
-	var driver := SunshineCloudsDriverGD.new()
-	driver.clouds_resource = clouds
-	driver.ambience_sample_environment = world.environment
-	driver.tracked_directional_lights = [sun]
-	driver.tracked_directional_light_shadow_steps = [8]
-	driver.update_continuously = true
-	add_child(driver)
-	driver.retrieve_texture_data()
+	if not OS.get_cmdline_user_args().has("--without-clouds"):
+		print("RENDER_STAGE clouds")
+		var clouds := load("res://resources/clouds_balanced.tres") as SunshineCloudsGD
+		world.compositor = Compositor.new()
+		world.compositor.compositor_effects = [clouds]
+		var driver := SunshineCloudsDriverGD.new()
+		driver.clouds_resource = clouds
+		driver.ambience_sample_environment = world.environment
+		driver.tracked_directional_lights = [sun]
+		driver.tracked_directional_light_shadow_steps = [8]
+		driver.update_continuously = true
+		add_child(driver)
+		driver.retrieve_texture_data()
 
 	print("RENDER_STAGE hud")
 	var hud := CanvasLayer.new()
