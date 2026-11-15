@@ -53,9 +53,30 @@ func run() -> void:
 	modifier.call("_process_modification")
 	var wrist := fps_skeleton.get_bone_global_pose(fps_skeleton.find_bone("hand_r")).origin
 	check(wrist.z < -0.4 and wrist.y < 0.0, "FPS wrist/grip is in front of and below lens")
+	check(player.legs.visible, "first person retains animated lower body")
+	var all_shadow_only := true
+	for mesh in player.body_meshes:
+		all_shadow_only = (
+			all_shadow_only
+			and mesh.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+		)
+	check(all_shadow_only, "first person retains complete body and weapon shadow")
+	player.position = Vector3(0, 0.05, 7)
+	player.reset_physics_interpolation()
+	player.velocity = Vector3.ZERO
+	Input.action_press("forward")
+	Input.action_press("sprint")
+	await ticks(30)
+	check(
+		Vector2(player.velocity.x, player.velocity.z).length() > 5.2,
+		"Shift sprint works in first person"
+	)
+	Input.action_release("forward")
+	Input.action_release("sprint")
+	await ticks(20)
 	player.set_first_person(false)
 	check(
-		player.camera.cull_mask == 3 and not player.viewmodel.visible,
+		player.camera.cull_mask == 1 and not player.viewmodel.visible and not player.legs.visible,
 		"third person restores animated full body"
 	)
 	player.position = Vector3(0, 0.05, 1)
@@ -133,6 +154,47 @@ func run() -> void:
 	)
 	world.toggle_quality()
 	check(world.environment.volumetric_fog_enabled, "ultra profile restores fog")
+	check(
+		world.grass_batches.size() > 20, "grass is spatially chunked, not one whole-world MultiMesh"
+	)
+	world.set_grass_shadows(true)
+	check(
+		world.grass_batches[0].cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON,
+		"grass shadows enabled"
+	)
+	world.set_grass_shadows(false)
+	check(
+		world.grass_batches[0].cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF,
+		"grass shadow option applies"
+	)
+	world.set_grass_shadows(true)
+	world.menu.options.birds = false
+	world.menu.apply_options()
+	check(
+		world.birds.volume_db <= -79 and world.wind.volume_db > -79,
+		"birds can be muted independently of wind"
+	)
+	world.menu.options.birds = true
+	world.menu.apply_options()
+	var initial_count: int = world.effects.get_child_count()
+	for i in range(12):
+		var effect: Node3D = world.effects.acquire("cast", Vector3(0, 1, 0), 0.42)
+		world.effects.release(effect)
+	check(
+		world.effects.get_child_count() == initial_count,
+		"repeated magic reuses fixed-size VFX pool"
+	)
+	check(player.trail.mesh.get_aabb().size.y > 0.03, "sword trail has physical 3D thickness")
+	world.menu.started = true
+	world.menu.ready_to_play = true
+	world.menu.pause()
+	check(paused and world.menu.visible, "Escape menu pauses actual world simulation")
+	world.menu.show_graphics()
+	check(world.menu.screen == "graphics", "graphics settings screen opens while paused")
+	world.menu.show_audio()
+	check(world.menu.screen == "audio", "audio settings screen opens while paused")
+	world.menu.resume()
+	check(not paused and not world.menu.visible, "resume returns to gameplay")
 	print(
 		"FOREST_TEST_RESULT ",
 		JSON.stringify(

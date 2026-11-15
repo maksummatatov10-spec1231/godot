@@ -27,21 +27,28 @@ def save(name, samples):
 def main():
     rng = random.Random(739)
     ambient = []
+    wind_stem, bird_stem = [], []
     low = 0.0
     birds = [(rng.uniform(1, 19), rng.uniform(1800, 3200)) for _ in range(15)]
     for i in range(RATE * 20):
         t = i / RATE
         low = low * 0.985 + rng.uniform(-1, 1) * 0.015
         value = low * (0.5 + 0.2 * math.sin(t * math.tau / 20))
+        bird_value = 0.0
         for start, freq in birds:
             local = t - start
             if 0 < local < 0.23:
                 env = math.sin(math.pi * local / 0.23) ** 2
-                value += math.sin(math.tau * (freq * local + 1200 * local * local)) * env * 0.065
+                bird_value += math.sin(math.tau * (freq * local + 1200 * local * local)) * env * 0.065
         # Fade through the loop boundary; no click, both endpoints zero.
-        value *= min(1, t / 0.3, (20 - t) / 0.3)
+        fade = min(1, t / 0.3, (20 - t) / 0.3)
+        wind_stem.append(value * fade)
+        bird_stem.append(bird_value * fade)
+        value = (value + bird_value) * fade
         ambient.append(value)
     save('forest-air', ambient)
+    save('wind', wind_stem)
+    save('birds', bird_stem)
     for name, duration in [('footstep', 0.16), ('sword', 0.42), ('arcane', 0.8)]:
         samples = []
         for i in range(int(RATE * duration)):

@@ -1,9 +1,11 @@
 extends CharacterBody3D
 ## Camera-relative locomotion; real Universal skeletal clips crossfade on one rig.
-
 const FPS_ARMS = preload("res://scripts/fps_arms.gd")
 const SWORD = preload("res://assets/weapon/sword_C.gltf")
 const PROJECTILE = preload("res://scripts/projectile.gd")
+const LEGS = preload("res://assets/hero/warden_legs.gltf")
+const TRAIL = preload("res://scripts/blade_trail.gd")
+
 var visual: Node3D
 var skeleton: Skeleton3D
 var animator: AnimationPlayer
@@ -34,6 +36,16 @@ var jump_phase := 0.0
 var landing_phase := 0.0
 var queued_attack := false
 var sounds: Dictionary = {}
+var invert_y := false
+var legs: Node3D
+var legs_animator: AnimationPlayer
+var body_meshes: Array[MeshInstance3D] = []
+var camera_boom := 3.8
+var boom_shape := SphereShape3D.new()
+var boom_query := PhysicsShapeQueryParameters3D.new()
+var camera_motion_enabled := true
+var sprinting := false
+var trail: MeshInstance3D
 
 
 func _ready() -> void:
@@ -81,19 +93,35 @@ func _ready() -> void:
 	var sword: Node3D = SWORD.instantiate()
 	sword.scale = Vector3.ONE * 0.52
 	sword.rotation_degrees.z = -90
-	sword.position = Vector3(0.02, 0.08, 0.02)
+	sword.position = Vector3(0.13, 0.015, -0.015)
 	grip.add_child(sword)
-	# Body and bone-attached sword are hidden from the first-person lens only.
 	for mesh in visual.find_children("*", "MeshInstance3D", true, false):
-		mesh.layers = 2
+		mesh.layers = 1
+		body_meshes.append(mesh)
+	legs = LEGS.instantiate()
+	visual.add_child(legs)
+	legs_animator = legs.find_children("*", "AnimationPlayer", true, false)[0]
+	for clip in ["Idle", "Sword_Idle", "Walk", "Jog_Fwd", "Sprint", "Jump"]:
+		legs_animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
+	legs.visible = false
+	for mesh in legs.find_children("*", "MeshInstance3D", true, false):
+		mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	trail = MeshInstance3D.new()
+	trail.set_script(TRAIL)
+	get_parent().add_child(trail)
 	camera = Camera3D.new()
 	camera.name = "ShoulderAndEyesCamera"
 	camera.near = 0.055
 	camera.far = 150.0
 	camera.fov = 72
-	camera.cull_mask = 3
+	camera.cull_mask = 1
+	camera.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	get_parent().add_child(camera)
 	camera.current = true
+	boom_shape.radius = 0.22
+	boom_query.shape = boom_shape
+	boom_query.collision_mask = 1
+	boom_query.exclude = [get_rid()]
 	create_viewmodel()
 	play_clip("Sword_Idle")
 
@@ -147,29 +175,21 @@ func create_viewmodel() -> void:
 	var sword: Node3D = SWORD.instantiate()
 	sword.scale = Vector3.ONE * 0.42
 	sword.rotation_degrees.z = -90
-	sword.position = Vector3(0.02, 0.08, 0.02)
+	sword.position = Vector3(0.13, 0.015, -0.015)
 	grip.add_child(sword)
+	for mesh in viewmodel.find_children("*", "MeshInstance3D", true, false):
+		mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	viewmodel.visible = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		yaw -= event.relative.x * mouse_sensitivity
-		pitch = clampf(pitch - event.relative.y * mouse_sensitivity, -1.1, 0.8)
-	if event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = (
-			Input.MOUSE_MODE_VISIBLE
-			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
-			else Input.MOUSE_MODE_CAPTURED
+		yaw = wrapf(yaw - event.screen_relative.x * mouse_sensitivity, -PI, PI)
+		pitch = clampf(
+			pitch - event.screen_relative.y * mouse_sensitivity * (-1 if invert_y else 1),
+			-1.35,
+			1.15
 		)
-	if (
-		event is InputEventMouseButton
-		and event.pressed
-		and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED
-	):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		get_viewport().set_input_as_handled()
-		return
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		return
 	if event.is_action_pressed("view"):
@@ -203,7 +223,12 @@ func _physics_process(delta: float) -> void:
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED and not get_parent().capture_mode:
 		input = Vector2.ZERO
 	var direction := Basis(Vector3.UP, yaw) * Vector3(input.x, 0, input.y)
-	var speed := 5.7 if Input.is_action_pressed("sprint") and not aim else 3.15
+	sprinting = (
+		Input.is_action_pressed("sprint")
+		and not Input.is_action_pressed("aim")
+		and action_timer <= 0.0
+	)
+	var speed := 5.7 if sprinting else 3.15
 	if action_timer > 0.0:
 		speed *= 0.32
 	velocity.x = move_toward(velocity.x, direction.x * speed, 16.0 * delta)
@@ -220,6 +245,7 @@ func _physics_process(delta: float) -> void:
 	if position.y < -12.0 or Vector2(position.x, position.z).length() > 74.0:
 		position = Vector3(0, 2, 7)
 		velocity = Vector3.ZERO
+		reset_physics_interpolation()
 	var moving := Vector2(velocity.x, velocity.z).length()
 	step_clock -= delta
 	if is_on_floor() and moving > 0.5 and step_clock <= 0:
@@ -244,26 +270,35 @@ func _physics_process(delta: float) -> void:
 		else:
 			play_clip("Sword_Idle")
 			animator.speed_scale = 1.0
-	update_camera(delta, moving)
+
+
+func _process(delta: float) -> void:
+	if camera_motion_enabled:
+		update_camera(delta, Vector2(velocity.x, velocity.z).length())
 
 
 func update_camera(delta: float, moving: float) -> void:
 	camera.rotation = Vector3(pitch, yaw, 0)
-	var pivot := global_position + Vector3(0, 1.55, 0)
+	var pivot := get_global_transform_interpolated().origin + Vector3(0, 1.55, 0)
 	var offset := (
 		Vector3(0.5, 0.25, camera_distance) if not first_person else Vector3(0, 0.10, -0.02)
 	)
 	var desired := pivot + camera.basis * offset
 	if not first_person and is_inside_tree():
-		var query := PhysicsRayQueryParameters3D.create(pivot, desired, 1, [get_rid()])
-		var hit := get_world_3d().direct_space_state.intersect_ray(query)
-		if not hit.is_empty():
-			desired = hit.position + hit.normal * 0.23
-	if not camera_initialized:
-		camera.global_position = desired
-		camera_initialized = true
-	else:
-		camera.global_position = camera.global_position.lerp(desired, 1.0 - exp(-20.0 * delta))
+		# Sphere sweep protects the entire near plane, not just its centre ray.
+		boom_query.transform = Transform3D(Basis.IDENTITY, pivot)
+		boom_query.motion = desired - pivot
+		var fractions := get_world_3d().direct_space_state.cast_motion(boom_query)
+		var safe_length := offset.length() * fractions[0]
+		if not camera_initialized or safe_length < camera_boom:
+			camera_boom = safe_length
+		else:
+			camera_boom = lerpf(camera_boom, safe_length, 1.0 - exp(-8.0 * delta))
+		desired = pivot + (desired - pivot).normalized() * camera_boom
+	# Orbit is centred on the interpolated pivot; never lerp world camera position
+	# behind mouse rotation (that caused the old rubber-band orbit and jerk).
+	camera.global_position = desired
+	camera_initialized = true
 	camera.fov = lerpf(
 		camera.fov, 78.0 if moving > 4.0 else (68.0 if aim else 72.0), 1.0 - exp(-6.0 * delta)
 	)
@@ -273,12 +308,21 @@ func update_camera(delta: float, moving: float) -> void:
 	)
 	viewmodel.rotation = Vector3.ZERO
 	view_animator.speed_scale = animator.speed_scale
+	legs_animator.speed_scale = animator.speed_scale
 
 
 func set_first_person(value: bool) -> void:
 	first_person = value
-	camera.cull_mask = 1 if value else 3
+	camera.cull_mask = 1
 	viewmodel.visible = value
+	legs.visible = value
+	for mesh in body_meshes:
+		mesh.cast_shadow = (
+			GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+			if value
+			else GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+		)
+	camera_initialized = false
 
 
 func play_clip(clip: String) -> void:
@@ -292,6 +336,8 @@ func play_clip(clip: String) -> void:
 	animator.play(clip, 0.14)
 	if view_animator != null:
 		view_animator.play(clip, 0.14)
+	if legs_animator != null:
+		legs_animator.play(clip, 0.14)
 
 
 func attack() -> void:
@@ -325,20 +371,7 @@ func melee_contact() -> void:
 		if offset.length() < 2.35 and forward.dot(offset.normalized()) > 0.35:
 			target.take_damage(34, false)
 			damage_events += 1
-	var fx := (
-		(
-			load("res://assets/BinbunVFX_Vol2/BattleFX/effects/slash/vfx_blank_slash.tscn")
-			. instantiate()
-		)
-		as Node3D
-	)
-	get_parent().add_child(fx)
-	fx.add_to_group("transient_slash")
-	fx.global_position = global_position + forward * 1.1 + Vector3.UP
-	fx.rotation.y = yaw
-	fx.scale = Vector3.ONE * 0.65
-	fx.call("open")
-	get_tree().create_timer(1.6).timeout.connect(fx.queue_free)
+	trail.strike(global_position + Vector3.UP * 1.15, yaw, combo % 2 == 0)
 
 
 func cast_magic() -> void:
@@ -349,16 +382,9 @@ func cast_magic() -> void:
 	action_timer = 0.85
 	visual.rotation.y = yaw + PI
 	play_clip("Spell_Simple_Shoot")
-	var cast: Node3D = (
-		load("res://assets/BinbunVFX_Vol2/ElementalMagicFX/effects/cast/vfx_fire_cast_01.tscn")
-		. instantiate()
+	get_parent().effects.acquire(
+		"cast", global_position + Vector3(0, 1.35, 0) - Basis(Vector3.UP, yaw).z * 0.6, 0.42, 1.2
 	)
-	get_parent().add_child(cast)
-	cast.global_position = global_position + Vector3(0, 1.35, 0) - Basis(Vector3.UP, yaw).z * 0.6
-	cast.scale = Vector3.ONE * 0.42
-	cast.set("one_shot", true)
-	cast.call("play")
-	get_tree().create_timer(1.2).timeout.connect(cast.queue_free)
 	get_tree().create_timer(0.22).timeout.connect(launch_magic)
 
 

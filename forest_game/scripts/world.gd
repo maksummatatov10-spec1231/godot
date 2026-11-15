@@ -1,9 +1,11 @@
 extends Node3D
 ## Deterministic handcrafted clearing, with seeded forest dressing around it.
-
 const PLAYER = preload("res://scripts/player.gd")
 const TARGET = preload("res://scripts/target.gd")
 const HUD = preload("res://scripts/hud.gd")
+const MENU = preload("res://scripts/menu.gd")
+const EFFECTS = preload("res://scripts/effects.gd")
+
 var rng := RandomNumberGenerator.new()
 var player: CharacterBody3D
 var hud: CanvasLayer
@@ -14,6 +16,12 @@ var foliage_materials: Dictionary = {}
 var tree_batches: Dictionary = {}
 var capture_mode := false
 var high_quality := true
+var profile := 1
+var menu: CanvasLayer
+var effects: Node3D
+var birds: AudioStreamPlayer
+var wind: AudioStreamPlayer
+var grass_batches: Array[MultiMeshInstance3D] = []
 
 
 func _ready() -> void:
@@ -37,8 +45,17 @@ func _ready() -> void:
 	add_child(hud)
 	hud.setup(player, self)
 	player.hud = hud
-	if not capture_mode:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	effects = Node3D.new()
+	effects.set_script(EFFECTS)
+	add_child(effects)
+	player.update_camera(1.0, 0)
+	menu = CanvasLayer.new()
+	menu.set_script(MENU)
+	add_child(menu)
+	if capture_mode:
+		apply_profile(2)
+	else:
+		prepare_play.call_deferred()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture-dir="):
 			capture_suite.call_deferred(arg.trim_prefix("--capture-dir="))
@@ -50,13 +67,24 @@ static func height_at(x: float, z: float) -> float:
 	return clearing * (sin(x * 0.09) * 1.8 + cos(z * 0.11) * 1.2 + 1.0)
 
 
+func prepare_play() -> void:
+	effects.process_mode = Node.PROCESS_MODE_ALWAYS
+	await effects.warm_up(player.camera)
+	effects.process_mode = Node.PROCESS_MODE_INHERIT
+	menu.finish_loading()
+
+
 func ambient_sound() -> void:
-	var sound := AudioStreamPlayer.new()
-	sound.stream = load("res://audio/forest-air.ogg")
-	sound.stream.loop = true
-	sound.volume_db = -6
-	add_child(sound)
-	sound.play()
+	wind = AudioStreamPlayer.new()
+	wind.stream = preload("res://audio/wind.ogg")
+	wind.stream.loop = true
+	add_child(wind)
+	wind.play()
+	birds = AudioStreamPlayer.new()
+	birds.stream = preload("res://audio/birds.ogg")
+	birds.stream.loop = true
+	add_child(birds)
+	birds.play()
 
 
 func lighting() -> void:
@@ -70,7 +98,7 @@ func lighting() -> void:
 	sky.sky_material = sky_mat
 	environment.sky = sky
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
-	environment.ambient_light_energy = 0.65
+	environment.ambient_light_energy = 0.38
 	environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	environment.tonemap_exposure = 1.05
 	environment.glow_enabled = true
@@ -81,21 +109,22 @@ func lighting() -> void:
 	environment.ssr_enabled = true
 	environment.fog_enabled = true
 	environment.fog_light_color = Color("aac5cf")
-	environment.fog_density = 0.0018
+	environment.fog_density = 0.0007
 	environment.fog_sun_scatter = 0.55
 	environment.volumetric_fog_enabled = true
-	environment.volumetric_fog_density = 0.003
+	environment.volumetric_fog_density = 0.0012
 	environment.volumetric_fog_albedo = Color("c5d4d0")
 	environment.volumetric_fog_length = 75.0
 	add_child(world)
 	var sun := DirectionalLight3D.new()
 	sun.name = "LateMorningSun"
-	sun.rotation_degrees = Vector3(-42, -38, 0)
+	sun.rotation_degrees = Vector3(-32, 145, 0)
+	sky_mat.set_shader_parameter("sun_direction", sun.basis.z)
 	sun.light_color = Color("fff1d0")
 	sun.light_energy = 1.3
 	sun.shadow_enabled = true
 	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
-	sun.directional_shadow_max_distance = 95.0
+	sun.directional_shadow_max_distance = 55.0
 	sun.directional_shadow_blend_splits = true
 	sun.light_angular_distance = 0.8
 	sun.light_volumetric_fog_energy = 1.2
@@ -215,7 +244,7 @@ func forest() -> void:
 
 
 func add_tree(species: String, pos: Vector3, size: float) -> void:
-	var key := species + str(int(pos.x > 0)) + str(int(pos.z > 0))
+	var key := species + str(floori(pos.x / 16.0)) + ":" + str(floori(pos.z / 16.0))
 	if not tree_batches.has(key):
 		tree_batches[key] = {"species": species, "transforms": []}
 	var orientation := Basis(Vector3.UP, rng.randf_range(-PI, PI)).scaled(Vector3.ONE * size)
@@ -272,35 +301,44 @@ func scatter_point(radius: float) -> Vector3:
 
 func ground_cover(species: String, count: int) -> void:
 	var source := model(species).instantiate()
-	var meshes := source.find_children("*", "MeshInstance3D", true, false)
-	for source_mesh in meshes:
-		var batch := MultiMeshInstance3D.new()
-		var mm := MultiMesh.new()
-		mm.transform_format = MultiMesh.TRANSFORM_3D
-		mm.mesh = source_mesh.mesh.duplicate()
-		for surface in range(mm.mesh.get_surface_count()):
+	var cells: Dictionary = {}
+	for i in range(count):
+		var p := scatter_point(39.0)
+		var path_distance := absf(p.x - 2.4 * sin(p.z * 0.055))
+		if path_distance < 2.0 or Vector2(p.x + 12, (p.z + 3) / 1.6).length() < 6.0:
+			continue
+		var size := rng.randf_range(0.65, 1.25)
+		if "Flower" in species:
+			size *= 0.24
+		elif "Tall" in species:
+			size *= 0.38
+		else:
+			size *= 0.7
+		var cell := Vector2i(floori(p.x / 10.0), floori(p.z / 10.0))
+		if not cells.has(cell):
+			cells[cell] = []
+		var origin := Vector3(cell.x * 10 + 5, 0, cell.y * 10 + 5)
+		var orientation := Basis(Vector3.UP, rng.randf_range(0, TAU)).scaled(Vector3.ONE * size)
+		cells[cell].append(Transform3D(orientation, p - origin))
+	for source_mesh in source.find_children("*", "MeshInstance3D", true, false):
+		var shared_mesh: Mesh = source_mesh.mesh.duplicate()
+		for surface in range(shared_mesh.get_surface_count()):
 			var original: Material = source_mesh.get_active_material(surface)
 			if original is StandardMaterial3D:
-				mm.mesh.surface_set_material(surface, wind_material(original))
-		mm.instance_count = count
-		batch.multimesh = mm
-		batch.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-		batch.visibility_range_end = 48.0
-		add_child(batch)
-		for i in range(count):
-			var p := scatter_point(39.0)
-			var path_distance := absf(p.x - 2.4 * sin(p.z * 0.055))
-			if path_distance < 2.0 or Vector2(p.x + 12, (p.z + 3) / 1.6).length() < 6.0:
-				p.y -= 5.0
-			var size := rng.randf_range(0.65, 1.25)
-			if "Flower" in species:
-				size *= 0.24
-			elif "Tall" in species:
-				size *= 0.65
-			var instance_basis := Basis(Vector3.UP, rng.randf_range(0, TAU)).scaled(
-				Vector3.ONE * size
-			)
-			mm.set_instance_transform(i, Transform3D(instance_basis, p))
+				shared_mesh.surface_set_material(surface, wind_material(original))
+		for cell in cells:
+			var batch := MultiMeshInstance3D.new()
+			var mm := MultiMesh.new()
+			mm.transform_format = MultiMesh.TRANSFORM_3D
+			mm.mesh = shared_mesh
+			mm.instance_count = cells[cell].size()
+			for i in range(mm.instance_count):
+				mm.set_instance_transform(i, cells[cell][i])
+			batch.multimesh = mm
+			batch.visibility_range_end = 38.0
+			add_child(batch)
+			batch.position = Vector3(cell.x * 10 + 5, 0, cell.y * 10 + 5)
+			grass_batches.append(batch)
 	source.free()
 
 
@@ -329,11 +367,37 @@ func landmarks() -> void:
 
 
 func toggle_quality() -> void:
-	high_quality = not high_quality
+	apply_profile(1 if profile == 2 else 2)
+	if menu != null:
+		menu.options.profile = profile
+		menu.save_options()
+
+
+func apply_profile(value: int) -> void:
+	profile = clampi(value, 0, 2)
+	high_quality = profile == 2
 	environment.volumetric_fog_enabled = high_quality
-	environment.ssao_enabled = high_quality
+	environment.ssao_enabled = profile >= 1
 	environment.ssr_enabled = high_quality
-	get_viewport().msaa_3d = Viewport.MSAA_2X if high_quality else Viewport.MSAA_DISABLED
+	get_viewport().msaa_3d = Viewport.MSAA_2X if profile >= 1 else Viewport.MSAA_DISABLED
+	var sun: DirectionalLight3D = $LateMorningSun
+	sun.directional_shadow_max_distance = 55.0 if high_quality else 38.0
+	sun.directional_shadow_mode = (
+		DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
+		if high_quality
+		else DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS
+	)
+	for batch in grass_batches:
+		batch.visibility_range_end = [22.0, 32.0, 42.0][profile]
+
+
+func set_grass_shadows(enabled: bool) -> void:
+	for batch in grass_batches:
+		batch.cast_shadow = (
+			GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+			if enabled
+			else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		)
 
 
 func stop_audio() -> void:
@@ -349,6 +413,7 @@ func stop_audio() -> void:
 func capture_suite(directory: String) -> void:
 	DirAccess.make_dir_recursive_absolute(directory)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	await effects.warm_up(player.camera)
 	for i in range(18):
 		await get_tree().process_frame
 	await save_frame(directory, "01-third-person")
@@ -383,12 +448,34 @@ func capture_suite(directory: String) -> void:
 	await save_frame(directory, "06-walking")
 	Input.action_release("forward")
 	player.set_physics_process(false)
+	player.camera_motion_enabled = false
 	player.play_clip("Sword_Idle")
 	player.camera.global_position = Vector3(10, 5.0, 17)
 	player.camera.look_at(Vector3(0, 1.5, -1))
 	for i in range(3):
 		await get_tree().process_frame
 	await save_frame(directory, "07-forest-overview")
+	player.camera_motion_enabled = true
+	player.set_physics_process(true)
+	player.set_first_person(true)
+	player.pitch = -1.15
+	for i in range(5):
+		await get_tree().process_frame
+	await save_frame(directory, "08-fps-body-shadow")
+	player.set_first_person(false)
+	player.pitch = 0.65
+	player.yaw = -0.65
+	for i in range(5):
+		await get_tree().process_frame
+	await save_frame(directory, "09-sky-sun")
+	menu.started = true
+	menu.ready_to_play = true
+	menu.show_main()
+	await save_frame(directory, "10-pause-menu")
+	menu.show_graphics()
+	await save_frame(directory, "11-graphics-settings")
+	menu.show_audio()
+	await save_frame(directory, "12-audio-settings")
 	print("FOREST_CAPTURE_OK ", directory)
 	await stop_audio()
 	get_tree().quit(0)

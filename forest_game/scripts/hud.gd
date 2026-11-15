@@ -63,7 +63,7 @@ func setup(actor: CharacterBody3D, scene_world: Node3D) -> void:
 	health.value = 100
 	focus = bar(165, 4, Color("e9c878"))
 	tips = text(
-		"WASD  MOVE    SHIFT  RUN    SPACE  JUMP    RMB  AIM    ESC  CURSOR    F6  QUALITY    R  RESET",
+		"WASD  MOVE    SHIFT  RUN    SPACE  JUMP    RMB  AIM    ESC  MENU    F6  QUALITY    R  RESET",
 		Vector2.ZERO,
 		11,
 		cream
@@ -101,7 +101,15 @@ func _process(_delta: float) -> void:
 	status.text = (
 		"WARDEN   /   " + ("ARCANE STRIKE" if player.magic_cooldown > 1.8 else "SWORD READY")
 	)
-	quality.text = ("ULTRA" if world.high_quality else "BALANCED") + "  /  FORWARD+"
+	quality.text = (["LOW", "HIGH", "ULTRA"][world.profile]) + "  /  FORWARD+"
+	if world.menu != null and world.menu.options.fps:
+		quality.text += (
+			"  |  %d FPS  %.1f ms"
+			% [
+				Engine.get_frames_per_second(),
+				Performance.get_monitor(Performance.TIME_PROCESS) * 1000
+			]
+		)
 	notice.text = (
 		("FIRST PERSON" if player.first_person else "THIRD PERSON")
 		+ "\n"

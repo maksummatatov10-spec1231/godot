@@ -5,25 +5,11 @@ var player: CharacterBody3D
 var life := 0.0
 var detonated := false
 
+var effect: Node3D
+
 
 func _ready() -> void:
-	var effect := (
-		(
-			load(
-				"res://assets/BinbunVFX_Vol2/ElementalMagicFX/effects/projectile/vfx_fire_projectile_01.tscn"
-			)
-			. instantiate()
-		)
-		as Node3D
-	)
-	add_child(effect)
-	effect.scale = Vector3.ONE * 0.42
-	effect.call("open")
-	var light := OmniLight3D.new()
-	light.light_color = Color("ffb441")
-	light.light_energy = 2.5
-	light.omni_range = 5.0
-	add_child(light)
+	effect = get_parent().effects.acquire("bolt", global_position, 0.42)
 
 
 func _physics_process(delta: float) -> void:
@@ -38,6 +24,8 @@ func _physics_process(delta: float) -> void:
 		detonate()
 		return
 	global_position = next
+	effect.global_position = next
+	effect.basis = Basis.looking_at(direction) * Basis(Vector3.UP, PI / 2)
 	if life > 2.6:
 		detonate()
 
@@ -50,16 +38,6 @@ func detonate() -> void:
 		if target.global_position.distance_to(global_position - Vector3.UP) < 3.0:
 			target.take_damage(70, true)
 			player.magic_hits += 1
-	var effect := (
-		(
-			load("res://assets/BinbunVFX_Vol2/ElementalMagicFX/effects/area/vfx_fire_area_01.tscn")
-			. instantiate()
-		)
-		as Node3D
-	)
-	get_parent().add_child(effect)
-	effect.global_position = global_position
-	effect.scale = Vector3.ONE * 0.6
-	effect.call("open")
-	get_tree().create_timer(2.3).timeout.connect(effect.queue_free)
+	get_parent().effects.release(effect)
+	get_parent().effects.acquire("area", global_position, 0.6, 2.3)
 	queue_free()
