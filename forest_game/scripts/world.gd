@@ -377,7 +377,8 @@ func capture_suite(directory: String) -> void:
 	player.velocity = Vector3.ZERO
 	player.position = Vector3(0, 0.05, 7)
 	Input.action_press("forward")
-	for i in range(8):
+	# Let the landing blend finish before documenting the walking cycle.
+	for i in range(20):
 		await get_tree().process_frame
 	await save_frame(directory, "06-walking")
 	Input.action_release("forward")
