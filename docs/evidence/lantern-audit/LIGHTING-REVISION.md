@@ -29,7 +29,7 @@ Scope: replace the baked runtime shadow layer with ground-projected alpha silhou
 - **24 general + 152 close-up frames**, all 430 manifest objects and 1284 painted road tiles fully covered.
 - Motion GIF: 48 frames, 10 fps. Isolated wind-driven shadow A/B: **1658 changed pixels** above RGB delta 3 at 960×540. Source actors/particles/sunlight hidden and actor physics stopped, so camera/player motion cannot explain the difference.
 - All three report digests match source SHA256 `8732798009aa87ad5679452bb1d6138b7edc43c8df0602823e923cb1c04b02b4`.
-- Fresh extracted ZIP: 112 source files byte-identical, clean editor import and all 4759 assertions PASS, no ERROR/leaks. Local ZIP SHA256 `c70d03a446e6785a13f235165b1513d30e1a039d5285be5d2651f84a7f35cf6b`. ZIP timestamps make repackaged archive hashes differ; use the accompanying SHA file.
+- Fresh extracted ZIP: 112 source files byte-identical, clean editor import and all 4759 assertions PASS, no ERROR/leaks. Final local ZIP, repackaged after pulling canonical CI reports: 1052223 bytes, SHA256 `1acc0774e34c9e6cdf486c02792595525c0b448d3848d6f71a950a0db2469eaa`. ZIP timestamps make repackaged archive hashes differ; use the accompanying SHA file.
 - During evidence development the first motion-driver exit leaked local coroutine references, then exited abnormally. Fixed by scheduling exit after returning from the coroutine and freeing the scene while rendering is alive. Final driver exits 0, no errors/leaks. Review also caught camera follow overriding the intended fixed shot; final recording explicitly steps visuals with fixed camera while keeping actual physics/input.
 
 ### Limits
@@ -39,3 +39,10 @@ Scope: replace the baked runtime shadow layer with ground-projected alpha silhou
 ### Delivery
 
 Current source ZIP: `artifacts/lantern/Lantern-Valley-Godot-Project.zip`. Gallery: `index.html` via HTTP, now includes the GIF. Historical 0.1.2 remains a separate immutable release; the lighting revision is 0.1.3.
+
+
+### Canonical publication verified
+
+[CI 43764709142](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43764709142) succeeded, including motion and isolated-shadow checks, packaging and publication. Release/evidence commit `b3a946b0bb7a0ff5719d028e9d75c4f692eceece`. Canonical 1280×720 GIF reports **2881 changed isolated-shadow pixels**; the 1658 figure above is the earlier successful local 960×540 recording. All three canonical reports match the same game digest. Reopened canonical motion18 and village after pulling the CI evidence.
+
+[Published 0.1.3](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.3): ZIP, SHA256, normal/collision village images and motion GIF all reported uploaded by GitHub. Downloading assets from this sandbox was blocked at the release-assets host redirect, so the uploaded ZIP is not claimed as independently downloaded/rehashed here. The local ZIP was repackaged from the canonical reports, freshly extracted, all 112 game source files compared byte-for-byte, and clean import / 4759 assertions passed again. See `../lantern-motion/clean-zip-result.json`.

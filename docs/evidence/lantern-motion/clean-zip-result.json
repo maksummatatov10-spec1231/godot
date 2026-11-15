@@ -1,0 +1,13 @@
+{
+  "source_files": 112,
+  "byte_identical": true,
+  "zip_bytes": 1052223,
+  "zip_sha256": "1acc0774e34c9e6cdf486c02792595525c0b448d3848d6f71a950a0db2469eaa",
+  "published_ci": "https://github.com/maksummatatov10-spec1231/godot/actions/runs/43764709142",
+  "release_assets_uploaded": true,
+  "release_asset_download_rehashed": false,
+  "note": "Release asset download redirect is outside sandbox network allowlist. Local ZIP repackaged from canonical reports; game source byte-identical.",
+  "import_passed": true,
+  "assertions": 4759,
+  "tests_passed": true
+}
