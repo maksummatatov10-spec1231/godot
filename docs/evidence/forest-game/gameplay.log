@@ -1,6 +1,6 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
-FOREST_READY trees=124 ground_cover=1660 seed=730221
+FOREST_READY trees=280 ground_cover=3400 seed=730221
 CHECK PASS capsule rests on the actual triangulated forest ground
 CHECK PASS 14 real skeletal clips imported
 CHECK PASS forward movement uses velocity and move_and_slide
@@ -8,6 +8,7 @@ CHECK PASS directional walking: back
 CHECK PASS directional walking: left
 CHECK PASS directional walking: right
 CHECK PASS first person shows viewmodel, hides head/body clipping
+CHECK PASS FPS wrist/grip is in front of and below lens
 CHECK PASS third person restores animated full body
 CHECK PASS jump impulse leaves ground
 CHECK PASS gravity and floor snap land without falling through terrain
@@ -15,6 +16,8 @@ CHECK PASS sword applies one 34-damage contact in range/cone
 CHECK PASS magic cannot bypass cooldown by repeated calls
 CHECK PASS asset VFX projectile swept collision deals magic damage
 CHECK PASS shattered training ward reforms for repeatable testing
+CHECK PASS diagonal movement is normalized, not sqrt(2) faster
+CHECK PASS camera retracts before collidable obstacle
 CHECK PASS balanced graphics toggle disables expensive fog
 CHECK PASS ultra profile restores fog
 FOREST_TEST_RESULT {"failed":[],"magic_hits":1,"sword_hits":1}
