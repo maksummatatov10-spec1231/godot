@@ -1,0 +1,163 @@
+.tools/lavapipe/runtime/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml
+.tools/lavapipe/runtime/share/wayland-protocols/stable/viewporter/viewporter.xml
+.tools/lavapipe/runtime/share/wayland-protocols/stable/tablet/tablet-v2.xml
+.tools/lavapipe/runtime/share/wayland-protocols/stable/linux-dmabuf/linux-dmabuf-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/stable/presentation-time/presentation-time.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-image-copy-capture/ext-image-copy-capture-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/color-representation/color-representation-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xdg-activation/xdg-activation-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xdg-session-management/xdg-session-management-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-transient-seat/ext-transient-seat-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-session-lock/ext-session-lock-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/tearing-control/tearing-control-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-background-effect/ext-background-effect-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xwayland-shell/xwayland-shell-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-data-control/ext-data-control-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-idle-notify/ext-idle-notify-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xdg-system-bell/xdg-system-bell-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xdg-toplevel-tag/xdg-toplevel-tag-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/commit-timing/commit-timing-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/color-management/color-management-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xdg-toplevel-icon/xdg-toplevel-icon-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/content-type/content-type-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/single-pixel-buffer/single-pixel-buffer-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/fifo/fifo-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-workspace/ext-workspace-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-image-capture-source/ext-image-capture-source-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/linux-drm-syncobj/linux-drm-syncobj-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xdg-toplevel-drag/xdg-toplevel-drag-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/xdg-dialog/xdg-dialog-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/security-context/security-context-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/pointer-warp/pointer-warp-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/alpha-modifier/alpha-modifier-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/cursor-shape/cursor-shape-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/drm-lease/drm-lease-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/fractional-scale/fractional-scale-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/staging/ext-foreign-toplevel-list/ext-foreign-toplevel-list-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/keyboard-shortcuts-inhibit/keyboard-shortcuts-inhibit-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/pointer-gestures/pointer-gestures-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/xdg-shell/xdg-shell-unstable-v5.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/xdg-shell/xdg-shell-unstable-v6.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/input-timestamps/input-timestamps-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/tablet/tablet-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/tablet/tablet-unstable-v2.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/text-input/text-input-unstable-v3.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/text-input/text-input-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/xdg-output/xdg-output-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/relative-pointer/relative-pointer-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/primary-selection/primary-selection-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/input-method/input-method-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/xdg-decoration/xdg-decoration-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/linux-dmabuf/linux-dmabuf-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/xdg-foreign/xdg-foreign-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/xdg-foreign/xdg-foreign-unstable-v2.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/linux-explicit-synchronization/linux-explicit-synchronization-unstable-v1.xml
+.tools/lavapipe/runtime/share/wayland-protocols/unstable/xwayland-keyboard-grab/xwayland-keyboard-grab-unstable-v1.xml
+.tools/lavapipe/runtime/share/pkgconfig/wayland-protocols.pc
+.tools/lavapipe/runtime/share/vulkan/icd.d/lvp_icd.x86_64.json
+.tools/lavapipe/runtime/share/drirc.d/00-mesa-defaults.conf
+.tools/lavapipe/runtime/share/drirc.d/00-lavapipe-defaults.conf
+.tools/lavapipe/runtime/include/wayland-protocols/tablet-unstable-v2-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/security-context-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/linux-drm-syncobj-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-output-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/text-input-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-data-control-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/fifo-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-dialog-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xx-cutouts-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xx-keyboard-filter-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/tablet-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-foreign-unstable-v2-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/content-type-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/input-timestamps-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/input-method-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-workspace-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xx-zones-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/linux-dmabuf-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xwayland-shell-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/primary-selection-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/viewporter-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-shell-unstable-v6-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/fractional-scale-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/tablet-v2-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/presentation-time-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-shell-unstable-v5-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/color-representation-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-session-management-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-image-copy-capture-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-transient-seat-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/keyboard-shortcuts-inhibit-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xx-text-input-v3-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/relative-pointer-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-system-bell-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/color-management-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/alpha-modifier-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-foreign-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/drm-lease-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/single-pixel-buffer-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/tearing-control-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-toplevel-icon-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-toplevel-tag-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-toplevel-drag-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-foreign-toplevel-list-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-image-capture-source-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-activation-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-background-effect-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/linux-explicit-synchronization-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/pointer-gestures-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/pointer-constraints-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xx-session-management-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/commit-timing-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/pointer-warp-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/fullscreen-shell-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/cursor-shape-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/linux-dmabuf-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/text-input-unstable-v3-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-idle-notify-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xx-input-method-v2-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-shell-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/idle-inhibit-unstable-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/ext-session-lock-v1-enum.h
+.tools/lavapipe/runtime/include/wayland-protocols/xdg-decoration-unstable-v1-enum.h
+.tools/lavapipe/runtime/lib/x86_64-linux-gnu/libvulkan_lvp.so
+.tools/lavapipe/runtime/lib/x86_64-linux-gnu/dri/libdril_dri.so
+.tools/lavapipe/runtime/lib/x86_64-linux-gnu/dri/swrast_dri.so
+.tools/lavapipe/runtime/lib/libvulkan.so.1.4.363
+.tools/lavapipe/runtime/lib/libvulkan.so.1
+.tools/lavapipe/runtime/lib/cmake/VulkanLoader/VulkanLoaderConfigVersion.cmake
+.tools/lavapipe/runtime/lib/cmake/VulkanLoader/VulkanLoaderConfig.cmake
+.tools/lavapipe/runtime/lib/cmake/VulkanLoader/VulkanLoaderConfig-release.cmake
+.tools/lavapipe/runtime/lib/pkgconfig/vulkan.pc
+.tools/lavapipe/runtime/lib/libvulkan.so
+.tools/lavapipe/runtime/lib/x86_64-linux-gnu/libvulkan_lvp.so: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_ABI_GNU2_TLS' not found (required by .tools/lavapipe/runtime/lib/x86_64-linux-gnu/libvulkan_lvp.so)
+	linux-vdso.so.1 (0x00007f0e17a6a000)
+	libLLVM.so.22.1 => not found
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f0e17a3c000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f0e16b17000)
+	libdrm.so.2 => /lib/x86_64-linux-gnu/libdrm.so.2 (0x00007f0e17a25000)
+	libexpat.so.1 => /lib/x86_64-linux-gnu/libexpat.so.1 (0x00007f0e179f7000)
+	libxcb.so.1 => /lib/x86_64-linux-gnu/libxcb.so.1 (0x00007f0e16aee000)
+	libxcb-randr.so.0 => /lib/x86_64-linux-gnu/libxcb-randr.so.0 (0x00007f0e16add000)
+	libX11-xcb.so.1 => /lib/x86_64-linux-gnu/libX11-xcb.so.1 (0x00007f0e179f0000)
+	libxcb-dri3.so.0 => /lib/x86_64-linux-gnu/libxcb-dri3.so.0 (0x00007f0e16ad6000)
+	libxcb-present.so.0 => /lib/x86_64-linux-gnu/libxcb-present.so.0 (0x00007f0e16ad1000)
+	libxcb-xfixes.so.0 => /lib/x86_64-linux-gnu/libxcb-xfixes.so.0 (0x00007f0e16ac7000)
+	libxcb-sync.so.1 => /lib/x86_64-linux-gnu/libxcb-sync.so.1 (0x00007f0e16abe000)
+	libxcb-shm.so.0 => /lib/x86_64-linux-gnu/libxcb-shm.so.0 (0x00007f0e16ab9000)
+	libxshmfence.so.1 => /lib/x86_64-linux-gnu/libxshmfence.so.1 (0x00007f0e16ab4000)
+	libxcb-keysyms.so.1 => not found
+	libwayland-client.so.0 => /lib/x86_64-linux-gnu/libwayland-client.so.0 (0x00007f0e16aa4000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f0e16800000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f0e167d2000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f0e16400000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f0e17a6c000)
+	libXau.so.6 => /lib/x86_64-linux-gnu/libXau.so.6 (0x00007f0e16a9c000)
+	libXdmcp.so.6 => /lib/x86_64-linux-gnu/libXdmcp.so.6 (0x00007f0e16a94000)
+	libffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007f0e16a88000)
+	libbsd.so.0 => /lib/x86_64-linux-gnu/libbsd.so.0 (0x00007f0e167bc000)
+	libmd.so.0 => /lib/x86_64-linux-gnu/libmd.so.0 (0x00007f0e167ad000)
