@@ -1,0 +1,57 @@
+[
+  {
+    "path": "assets/Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/license.txt",
+    "pack": "BattleFXFree.zip",
+    "text": "Battle FX is licensed under Creative Commons Zero (CC0)\nhttps://creativecommons.org/publicdomain/zero/1.0/\n\nYou're free to use the assets in this pack for personal, educational and commercial projects with no attribution required.\n\n---\n\nTo support me you can mention me 'Binbun3D' or 'bun3d.com'\n"
+  },
+  {
+    "path": "assets/Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/license.txt",
+    "pack": "ElementalMagicFXFree.zip",
+    "text": "Elemental Magic FX is licensed under Creative Commons Zero (CC0)\nhttps://creativecommons.org/publicdomain/zero/1.0/\n\nYou're free to use the assets in this pack for personal, educational and commercial projects with no attribution required.\n\n---\n\nTo support me you can mention me 'Binbun3D' or 'bun3d.com'\n"
+  },
+  {
+    "path": "assets/KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/License.txt",
+    "pack": "KayKit_FantasyWeaponsBits_1.0_FREE.zip",
+    "text": "\t\r\n\r\n\tKayKit : Fantasy Weapons Bits (1.0)\r\n\r\n\tCreated/distributed by Kay Lousberg (www.kaylousberg.com)\r\n\tCreation date: 19/02/2026 09:00\r\n\r\n\t\t\t------------------------------\r\n\r\n\tLicense: (Creative Commons Zero, CC0)\r\n\thttp://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n\tThis content is free to use in personal, educational and commercial projects.\r\n\tYou can support me by purchasing an asset pack at the EXTRA or SOURCE tiers, leaving a donation/tip on itch.io, or joining my Patreon.\r\n\tIf you wish to credit me you can do so by crediting \"Kay Lousberg, www.kaylousberg.com\" (this is not mandatory)\r\n\r\n\t\t\t------------------------------\r\n\r\n\tThis asset pack is here thanks to all the wonderful people who support KayKit on Patreon and those who buy EXTRA or SOURCE packs on itch.io.\r\n\r\n\tAnd a big, special thank you to my Super Supporters on Patreon:\r\n\r\n\t- Brian McBarron\r\n\t- Silva\r\n\t- Joseph Preston\r\n\t- Leon Burkhardt\r\n\t- NickyBHobbying\r\n\t- Emilia\r\n\t- Magic Pig Games\r\n\t- Lennart Steinke\r\n\t- OWSC\r\n\t- tenthtonman\r\n\t- Ducain23\r\n\t- flo-bit\r\n\t- Jezzy Sukaemi\r\n\t- Martyn Rushton\r\n\t- Joe\r\n\t- estee\r\n\t- Alex Cea\r\n\t- Matthew A\r\n\t- Stephen Williams\r\n\t- Kevin\r\n\t- Arnaud Schlupp\r\n\t- Neil Castle\r\n\t- Cedrico Serbruyns\r\n\t- Pawel Jarosz\r\n\t- Alan Lawrance\r\n\t- Alina Koppelaar\r\n\r\n\r\n\t\t\t------------------------------\r\n\r\n\r\n\tPatreon:  http://patreon.com/kaylousberg\r\n\r\n\tFollow here for updates:\r\n\thttp://twitter.com/KayLousberg\r\n\thttps://mastodon.gamedev.place/@Kay\r\n\thttp://twitter.com/KayLousberg"
+  },
+  {
+    "path": "assets/Stylized Nature MegaKit_Standard_.zip.contents/License_Standard.txt",
+    "pack": "Stylized Nature MegaKit_Standard_.zip",
+    "text": "This is the standard FREE version of the Stylized Nature MegaKit, which only contains \r\na portion of the models (68/116). You can buy the PRO version which has all the models,\r\nor the SOURCE version which has all the models and also includes Unity(URP), Unreal Engine and Godot projects\r\nwith the stylized shader already set up.\r\n\r\nYou can get the other versions from the website https://quaternius.com\r\n\r\n-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n-------------------------------------------------------\r\nJoin the Discord Server:\r\nhttps://discord.gg/vJqnRUYRfT\r\n"
+  },
+  {
+    "path": "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/Female Mannequin/README.txt",
+    "pack": "Universal Animation Library 2_Standard_(1).zip",
+    "text": "The female mannequin doesn’t include the animations, as duplicating them wouldn’t make sense. \r\nYou can easily retarget them from the library files in Blender, or even better, directly in your engine, since both mannequins share the same rig and very similar proportions."
+  },
+  {
+    "path": "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/License.txt",
+    "pack": "Universal Animation Library 2_Standard_(1).zip",
+    "text": "-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n"
+  },
+  {
+    "path": "assets/Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/README.txt",
+    "pack": "Universal Animation Library 2_Standard_(1).zip",
+    "text": "The Universal Animation Library comes in two files: the one ending in _RM has root motion baked into every animation, while the other has root motion disabled.\r\n\r\nExplore all the animations in the Animation Viewer!\r\nhttps://quaternius.com/animviewer.html\r\n-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n-------------------------------------------------------\r\nJoin the Discord Server:\r\nhttps://discord.gg/vJqnRUYRfT\r\n"
+  },
+  {
+    "path": "assets/Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/License.txt",
+    "pack": "Universal Animation Library_Standard_.zip",
+    "text": "-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n"
+  },
+  {
+    "path": "assets/Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/README.txt",
+    "pack": "Universal Animation Library_Standard_.zip",
+    "text": "The Universal Animation Library comes in two files: the one ending in _RM has root motion baked into every animation, while the other has root motion disabled.\r\n\r\nExplore all the animations in the Animation Viewer!\r\nhttps://quaternius.com/animviewer.html\r\n-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n-------------------------------------------------------\r\nJoin the Discord Server:\r\nhttps://discord.gg/vJqnRUYRfT\r\n"
+  },
+  {
+    "path": "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Unreal-Engine-README.txt",
+    "pack": "Universal Base Characters_Standard_.zip",
+    "text": "The Unreal Engine models were exported in GLTF because of a known scaling bug when importing rigged FBXs from Blender. It recognizes the units wrong and breaks retargeting in some cases.\r\nStrongly suggest also using GLTF if you want to re-export.\r\n\r\nTo import just drag and drop the .glTF."
+  },
+  {
+    "path": "assets/Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/License_Standard.txt",
+    "pack": "Universal Base Characters_Standard_.zip",
+    "text": "This is the standard FREE version of the Universal Base Characters Kit, which only contains \r\na portion of the models . You can buy the SOURCE version which has all the models with rigged .blends,\r\nand Unity(URP), Unreal Engine and Godot projects\r\nwith custom shaders already set up.\r\n\r\nYou can get the other version from the website https://quaternius.com\r\n\r\n-------------------------------------------------------\r\nLicense:\r\nCC0 1.0 Universal (CC0 1.0) \r\nPublic Domain Dedication\r\nhttps://creativecommons.org/publicdomain/zero/1.0/\r\n\r\n------------------------------------------------------\r\nModels by @Quaternius\r\nConsider supporting me on Patreon!\r\n\r\nhttps://www.patreon.com/quaternius\r\n\r\n-------------------------------------------------------\r\nJoin the Discord Server:\r\nhttps://discord.gg/vJqnRUYRfT\r\n"
+  }
+]

@@ -1,0 +1,615 @@
+[
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/CommonTree_1.bin",
+    "destination": "assets/nature/CommonTree_1.bin",
+    "source_sha256": "9dd689e84e1aa2f5b08db8def591254d582783c73737af54ba0d89b3e549c3ae"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree_Normal.png",
+    "destination": "assets/nature/Bark_NormalTree_Normal.png",
+    "source_sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree.png",
+    "destination": "assets/nature/Bark_NormalTree.png",
+    "source_sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_NormalTree_C.png",
+    "destination": "assets/nature/Leaves_NormalTree_C.png",
+    "source_sha256": "998612bdf0b76a22f5f54d65cd7a457815d2842d89653fa4348a4ebb42933ad3"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/CommonTree_1.gltf",
+    "destination": "assets/nature/CommonTree_1.gltf",
+    "source_sha256": "b51cdea6545edb51d102dd6c27caafe62aa75e3c328ac8f9039f4e7bfd690bfa"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/CommonTree_2.bin",
+    "destination": "assets/nature/CommonTree_2.bin",
+    "source_sha256": "a273d69de31a675a9d7e3eb3c43f804aef2d1b031692111b9e76eb3b0b686d0c"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree_Normal.png",
+    "destination": "assets/nature/Bark_NormalTree_Normal.png",
+    "source_sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree.png",
+    "destination": "assets/nature/Bark_NormalTree.png",
+    "source_sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_NormalTree_C.png",
+    "destination": "assets/nature/Leaves_NormalTree_C.png",
+    "source_sha256": "998612bdf0b76a22f5f54d65cd7a457815d2842d89653fa4348a4ebb42933ad3"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/CommonTree_2.gltf",
+    "destination": "assets/nature/CommonTree_2.gltf",
+    "source_sha256": "67160975f0ac991b4a2ffb2add4ab4037b5e9c1bef9f66dac5235fcf0ba9bd52"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/CommonTree_3.bin",
+    "destination": "assets/nature/CommonTree_3.bin",
+    "source_sha256": "24541f46fd9553e2389aba15575f2697009226e82118ed76868284114fd12b49"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree_Normal.png",
+    "destination": "assets/nature/Bark_NormalTree_Normal.png",
+    "source_sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree.png",
+    "destination": "assets/nature/Bark_NormalTree.png",
+    "source_sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_NormalTree_C.png",
+    "destination": "assets/nature/Leaves_NormalTree_C.png",
+    "source_sha256": "998612bdf0b76a22f5f54d65cd7a457815d2842d89653fa4348a4ebb42933ad3"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/CommonTree_3.gltf",
+    "destination": "assets/nature/CommonTree_3.gltf",
+    "source_sha256": "17c6537aa8042bb7255fbb501bf7aeb2b6db87c16766f794f9c37be3ce70c976"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Pine_1.bin",
+    "destination": "assets/nature/Pine_1.bin",
+    "source_sha256": "0cc0900d156359cab7028d87cd5d8897fbcb0479ddf1ddf524d5462c11e17af2"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree_Normal.png",
+    "destination": "assets/nature/Bark_NormalTree_Normal.png",
+    "source_sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree.png",
+    "destination": "assets/nature/Bark_NormalTree.png",
+    "source_sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaf_Pine_C.png",
+    "destination": "assets/nature/Leaf_Pine_C.png",
+    "source_sha256": "86f7ff7a214f5424de48d269568f36a15485e61c80677e426c7be9f45181eef9"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Pine_1.gltf",
+    "destination": "assets/nature/Pine_1.gltf",
+    "source_sha256": "adc85a72e6f46f71317ca5f7630876bfb207f687427bc9e37cd97ec4af5f2cbc"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Pine_3.bin",
+    "destination": "assets/nature/Pine_3.bin",
+    "source_sha256": "73edd69d7e789b12bfa32ab202c62d74ae98f0bba67975205211bf51906d8c82"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree_Normal.png",
+    "destination": "assets/nature/Bark_NormalTree_Normal.png",
+    "source_sha256": "852f6155404b8c39e100e41e26970e02a6a5c81b482d3726618dab28e3ad03a2"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bark_NormalTree.png",
+    "destination": "assets/nature/Bark_NormalTree.png",
+    "source_sha256": "f36e94fdd73255347325b998e02a0b2575fdf714b0315bfe5e8ff34bc8e13603"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaf_Pine_C.png",
+    "destination": "assets/nature/Leaf_Pine_C.png",
+    "source_sha256": "86f7ff7a214f5424de48d269568f36a15485e61c80677e426c7be9f45181eef9"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Pine_3.gltf",
+    "destination": "assets/nature/Pine_3.gltf",
+    "source_sha256": "54c72a4d614f053dd4b3d4404076a361de6085ec6a34560e42a76d7e79d89830"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bush_Common.bin",
+    "destination": "assets/nature/Bush_Common.bin",
+    "source_sha256": "a5e1a773c8ba78fd9c05a8b342131eba4879302a8fddd2c5186cab9ee1ef4966"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves_TwistedTree_C.png",
+    "destination": "assets/nature/Leaves_TwistedTree_C.png",
+    "source_sha256": "0e459b56b14c0e81b1b7cf3d1e8c6f0bb71790eb6c46bb02a76a922d8df646ea"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Bush_Common.gltf",
+    "destination": "assets/nature/Bush_Common.gltf",
+    "source_sha256": "77811fca92610cb254713d3d49d5029ab6cf13050c3afb61aa942786a7b2ca90"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Fern_1.bin",
+    "destination": "assets/nature/Fern_1.bin",
+    "source_sha256": "5e92b87a27f81a69fe15347a533df3c77d567b48298dceeef43168ccb7c22853"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves.png",
+    "destination": "assets/nature/Leaves.png",
+    "source_sha256": "23248cebe28a24e78add32db3c2ee2f4d7b9219e9d2467279722f0197a7b6bd5"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Fern_1.gltf",
+    "destination": "assets/nature/Fern_1.gltf",
+    "source_sha256": "d41915cffe9dbbde1ae88be381eb9c60f7caa2274511436cc78fe4de627468ab"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Grass_Common_Short.bin",
+    "destination": "assets/nature/Grass_Common_Short.bin",
+    "source_sha256": "7a0f0f7a9ac39cfa4b303bac03a6594f43e48d873b73553fa06a79e4df1271e9"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Grass.png",
+    "destination": "assets/nature/Grass.png",
+    "source_sha256": "5d69048193b246a73c996b892607fb36c75d0c60afcb2dab8aa12de3c0b2d9bd"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Grass_Common_Short.gltf",
+    "destination": "assets/nature/Grass_Common_Short.gltf",
+    "source_sha256": "6957b50622c9e26e7296c1b47ea8653bc0d957e0a547de444e2ed96f0075a21a"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Grass_Wispy_Tall.bin",
+    "destination": "assets/nature/Grass_Wispy_Tall.bin",
+    "source_sha256": "a46e091f39958242a96722ea331efa8d7fb055c6e24d21aea6b0ac091a7b1b66"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Grass.png",
+    "destination": "assets/nature/Grass.png",
+    "source_sha256": "5d69048193b246a73c996b892607fb36c75d0c60afcb2dab8aa12de3c0b2d9bd"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Grass_Wispy_Tall.gltf",
+    "destination": "assets/nature/Grass_Wispy_Tall.gltf",
+    "source_sha256": "a05e3ac05e43abbdb89c5b61134e367c7d33e285ff8d2a6e0a40180cb335af0b"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Flower_3_Group.bin",
+    "destination": "assets/nature/Flower_3_Group.bin",
+    "source_sha256": "5ab387dd3d6fe181df3af4eeac4df85533e4c27e77545ae39a61e0c2aaaab248"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves.png",
+    "destination": "assets/nature/Leaves.png",
+    "source_sha256": "23248cebe28a24e78add32db3c2ee2f4d7b9219e9d2467279722f0197a7b6bd5"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Flowers.png",
+    "destination": "assets/nature/Flowers.png",
+    "source_sha256": "5c531f2329c241c625aafd6cb769de29f33b480ef2a16491c2489f3c68e62a6a"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Flower_3_Group.gltf",
+    "destination": "assets/nature/Flower_3_Group.gltf",
+    "source_sha256": "4df1612371982c543f930d6b213967372e0d459622d7eff7fc2ed1ddbfaa3b6c"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Flower_4_Group.bin",
+    "destination": "assets/nature/Flower_4_Group.bin",
+    "source_sha256": "3ac30b4c9eaa5078a17c061aa29e2e9618cc9eb58cb6d5d2ab0c07fa0b851ae1"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Leaves.png",
+    "destination": "assets/nature/Leaves.png",
+    "source_sha256": "23248cebe28a24e78add32db3c2ee2f4d7b9219e9d2467279722f0197a7b6bd5"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Flowers.png",
+    "destination": "assets/nature/Flowers.png",
+    "source_sha256": "5c531f2329c241c625aafd6cb769de29f33b480ef2a16491c2489f3c68e62a6a"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Flower_4_Group.gltf",
+    "destination": "assets/nature/Flower_4_Group.gltf",
+    "source_sha256": "69ead56b36b50f06a0cf18380797fce7434302e9b2da7bf68a85014b993c6134"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rock_Medium_1.bin",
+    "destination": "assets/nature/Rock_Medium_1.bin",
+    "source_sha256": "ea79527d4c2b3bdb7a28bf589bf0c1fd96d192a4d0738636753911dd58681e99"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rocks_Diffuse.png",
+    "destination": "assets/nature/Rocks_Diffuse.png",
+    "source_sha256": "b813696df6081f469a127092eb0ce45cc39d56f3ccc0699152bfcd3804810b48"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rock_Medium_1.gltf",
+    "destination": "assets/nature/Rock_Medium_1.gltf",
+    "source_sha256": "5d1ab1fa03218f4a908728ed0eabe6486344a7e4f510b0d3d6f837fd1d011bd8"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rock_Medium_2.bin",
+    "destination": "assets/nature/Rock_Medium_2.bin",
+    "source_sha256": "76b60bf8349f71abdb0ed462b3223d93c2dcabdfb5754bc132e18b021cc6c805"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rocks_Diffuse.png",
+    "destination": "assets/nature/Rocks_Diffuse.png",
+    "source_sha256": "b813696df6081f469a127092eb0ce45cc39d56f3ccc0699152bfcd3804810b48"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Rock_Medium_2.gltf",
+    "destination": "assets/nature/Rock_Medium_2.gltf",
+    "source_sha256": "fac2d05a05f2d0d2098de59c09b58f42cc875c9caca4fd4c4bd57f3d36e7b12e"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Mushroom_Common.bin",
+    "destination": "assets/nature/Mushroom_Common.bin",
+    "source_sha256": "e4cee9f2570505a172990a2754d52ed5775a4d75857a832fffa1b573e38a4051"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Mushrooms.png",
+    "destination": "assets/nature/Mushrooms.png",
+    "source_sha256": "e29eed2db831e44a29634fe25c62e9e31edf201e978a52912b9e5221ffd4a1f3"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Mushroom_Common.gltf",
+    "destination": "assets/nature/Mushroom_Common.gltf",
+    "source_sha256": "2088b39d92f2f6331f45e59a048d02814dcd8b22767b024f4d220143bc8339f4"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Pebble_Round_1.bin",
+    "destination": "assets/nature/Pebble_Round_1.bin",
+    "source_sha256": "f3dacef3243ccaaad7df2beb5c72574a38fb3eae45357e1b5e2b40200d51c375"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/PathRocks_Diffuse.png",
+    "destination": "assets/nature/PathRocks_Diffuse.png",
+    "source_sha256": "85a04abb2c136fee53b376daf3b7d7f96fdf3966de0258dff6fe2b24da792b23"
+  },
+  {
+    "source": "Stylized Nature MegaKit_Standard_.zip.contents/glTF/Pebble_Round_1.gltf",
+    "destination": "assets/nature/Pebble_Round_1.gltf",
+    "source_sha256": "9f6261c81134915e73cf35eb4e37076238fd1e79434515ac686d15cbd1f779ab"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/Superhero_Male_FullBody.bin",
+    "destination": "assets/hero/Superhero_Male_FullBody.bin",
+    "source_sha256": "459003f9745853ae562a85506a2b94dd56515c1f37728f9fa3d2ce1a3e4cd92f"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_1_Normal.png",
+    "destination": "assets/hero/T_Hair_1_Normal_png.png",
+    "source_sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Hair_1_BaseColor.png",
+    "destination": "assets/hero/T_Hair_1_BaseColor.png",
+    "source_sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Eye_Normal.png",
+    "destination": "assets/hero/T_Eye_Normal_png.png",
+    "source_sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Eye_Brown.png",
+    "destination": "assets/hero/T_Eye_Brown.png",
+    "source_sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Superhero_Male_Normal.png",
+    "destination": "assets/hero/T_Superhero_Male_Normal.png",
+    "source_sha256": "9b25cf9200216eb754b79cf4c63b5380c419780788322f3c57cdd2b3e02679a6"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Superhero_Male_Dark.png",
+    "destination": "assets/hero/T_Superhero_Male_Dark.png",
+    "source_sha256": "df680cbc1967a61e85998bfafb8f7bc0a36dd604bb3266486c4b06b1a184bb45"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/T_Superhero_Male_Roughness.png",
+    "destination": "assets/hero/T_Superhero_Male_Roughness.png",
+    "source_sha256": "c70dabf48574cda55644d556beae1ee7cf1bdcf68a50d259d20f2f2358f27991"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Base Characters/Godot - UE/Superhero_Male_FullBody.gltf",
+    "destination": "assets/hero/Superhero_Male_FullBody.gltf",
+    "source_sha256": "e7fcea214ecf8855afbf910b50de6f9c7d1decfb71ca28bad8a4481452dafeb4"
+  },
+  {
+    "source": "Universal Animation Library_Standard_.zip.contents/Universal Animation Library[Standard]/Unreal-Godot/UAL1_Standard.glb",
+    "source_sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+    "selected_animations": [
+      "Idle_Loop",
+      "Sword_Idle",
+      "Walk_Loop",
+      "Jog_Fwd_Loop",
+      "Sprint_Loop",
+      "Jump_Start",
+      "Jump_Loop",
+      "Jump_Land",
+      "Spell_Simple_Shoot",
+      "Sword_Attack"
+    ],
+    "operation": "same named Universal rig; no retarget guessing"
+  },
+  {
+    "source": "Universal Animation Library 2_Standard_(1).zip.contents/Universal Animation Library 2[Standard]/Unreal-Godot/UAL2_Standard.glb",
+    "source_sha256": "8cee20ab1bc55130092447e810e26df22dd2803eccc54f52137a7d54d7ab88a8",
+    "selected_animations": [
+      "Sword_Regular_A",
+      "Sword_Regular_B",
+      "Sword_Regular_C",
+      "Sword_Heavy_Combo"
+    ],
+    "operation": "same named Universal rig; no retarget guessing"
+  },
+  {
+    "source": "KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/sword_C.bin",
+    "destination": "assets/weapon/sword_C.bin",
+    "source_sha256": "d47c90f6991c4d8bcd551afc3903d2f7404b93b0ebfd469076b6f696e3a8b6ca"
+  },
+  {
+    "source": "KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/weapons_bits_texture.png",
+    "destination": "assets/weapon/weapons_bits_texture.png",
+    "source_sha256": "c153429a49928594b00b53c07c4ab3d6352087b7f5df6c272d4aedfdb99a40be"
+  },
+  {
+    "source": "KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/sword_C.gltf",
+    "destination": "assets/weapon/sword_C.gltf",
+    "source_sha256": "f18406c1792f90ba214bd836d88be06b498252f6e937a3bbd5e36a0617650573"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/scene_empty.tscn",
+    "destination": "assets/BinbunVFX_Vol2/shared/scene_empty.tscn",
+    "source_sha256": "3ab59f36534067a45bf4679cd5d19d45f818692b31342c875baeb93fc6db268a"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+    "source_sha256": "cc7a09986ac6c95c94d58e21f914d204322e0e17d4b0d7a2b30a60d976a8bea2"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+    "source_sha256": "f6b99ea4f52a02dfa20f6405d52e314a5551c81204dd905afe85ee8a35dab6ed"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+    "source_sha256": "1dac7548c4a9004adc632e11ec8d79da0e0a45cfdae418479697b76fbcf04e3c"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd",
+    "source_sha256": "e5d233a33ecc373c39bf81a57eae457c7bbeed909bcc302c1b4abc6c39e7ec3e"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/license.txt",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/license.txt",
+    "source_sha256": "c673038ad3327f4244eecf157de5f993272bed1ecfa0ec604a889be420a11507"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/elemental_magic_scene_free.tscn",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/elemental_magic_scene_free.tscn",
+    "source_sha256": "0621b5cebacb486e604a94889aa6f9167e9857d0e9cd5f27dc6bb74afd3d1070"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_core.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_core.gdshader",
+    "source_sha256": "44677cd9a4293135bf6dc01149ae881a955503b197b3130cea44c2a165be17d8"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_tail.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_tail.gdshader",
+    "source_sha256": "8620b03826dfcecbaa98f431dcb467f1456f948077d1aea7bc8d0ff893332bd1"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_streaks.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_streaks.gdshader",
+    "source_sha256": "ecd8e36fefc9482b58bf54096ec80d34b07468075b99405c306020737b4e882f"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_particles.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_particles.gdshader",
+    "source_sha256": "97a2ae8ddbbcbc4796990b864167f904c27a735ff162332c2459602aa02eed2f"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/area_ground.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/shader/area_ground.gdshader",
+    "source_sha256": "0202294ca9f1027df1cb37f66c3b7f169b8c88439fbaf2aa53ebaf46a5559cb0"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/area_glow.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/shader/area_glow.gdshader",
+    "source_sha256": "5a70335d85c469ef78b076fefd23d36e2ecdf6bdb910165514e863d03cbb62e7"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/cast_flare.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/shader/cast_flare.gdshader",
+    "source_sha256": "46133b7af96acc6d39d52dddce9c18c27b7fa6ef5d98de46e10d358701a47a3a"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/effects/projectile/vfx_fire_projectile_01.tscn",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/effects/projectile/vfx_fire_projectile_01.tscn",
+    "source_sha256": "7ecf2c37cc64a60257f3d11ff246fe374430eecc0c9f9bcdc661f6afe8ff6362"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/effects/area/vfx_fire_area_01.tscn",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/effects/area/vfx_fire_area_01.tscn",
+    "source_sha256": "db3bf668eb80382f1b7a6eabeb562632decd1116e2f946b73c067f94ab4f0729"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/effects/cast/vfx_fire_cast_01.tscn",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/effects/cast/vfx_fire_cast_01.tscn",
+    "source_sha256": "3a1ee3f1107d405ab975de63835ff79c84f44f1ef0700e3eef032c4bc106d270"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/script/VFXElementalAreaBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/script/VFXElementalAreaBB.gd",
+    "source_sha256": "56339d4f25be05c8807a45ffedde35444a008f5e5cd0953ac6575d3eaa8dc0cd"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/script/VFXElementalCastBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/script/VFXElementalCastBB.gd",
+    "source_sha256": "75f8dfa0319f6ccc830c595c34e523e6700d5951eb1e46dfdba96634393b3a48"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/script/VFXElementalProjectileBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/script/VFXElementalProjectileBB.gd",
+    "source_sha256": "945c9d8096aeacce0e795bc321842bdcc6d101804e2465968b04df2ec75fbb89"
+  },
+  {
+    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/icons/leaf.png",
+    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/icons/leaf.png",
+    "source_sha256": "965849919bce5939066299e18a39502244f2f70385321cc5d6109fc1867e6981"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj",
+    "destination": "assets/BinbunVFX_Vol2/shared/suzanne.obj",
+    "source_sha256": "c9bc8a308e0d48f1529e533aa465652948754b9a786d697ca3dc8a7e67c2a8b9"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
+    "source_sha256": "74401c20aedec49b5f7d104662bc908c860807ec4e8b19285bf4ca63a0481b48"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
+    "source_sha256": "cc7a09986ac6c95c94d58e21f914d204322e0e17d4b0d7a2b30a60d976a8bea2"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/shared/script/VFXOmniLightBB.gd",
+    "source_sha256": "f6b99ea4f52a02dfa20f6405d52e314a5551c81204dd905afe85ee8a35dab6ed"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/shared/script/VFXEmitterBB.gd",
+    "source_sha256": "1dac7548c4a9004adc632e11ec8d79da0e0a45cfdae418479697b76fbcf04e3c"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/shared/script/VFXControllerBB.gd",
+    "source_sha256": "e5d233a33ecc373c39bf81a57eae457c7bbeed909bcc302c1b4abc6c39e7ec3e"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/license.txt",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/license.txt",
+    "source_sha256": "8a63837d53b3049221fb215d375da909b69762b05dc66f33adc69baac8facb08"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/battle_fx_scene_free.tscn",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/battle_fx_scene_free.tscn",
+    "source_sha256": "191e92e930a9e98f9232cef10f224e0e4a43bc8a9abf1eb7d0043a3652737c71"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/shield_aura.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/shield_aura.gdshader",
+    "source_sha256": "21424e60cc160979d86a3e07a533e708c1461ed4e198fae88ffcb4d133f5d821"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/shards.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/shards.gdshader",
+    "source_sha256": "1df5cfb0fe51956e75e356f1ddd38d72260e8496ab2a9ac252efeab8a87f3102"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/shield_shell.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/shield_shell.gdshader",
+    "source_sha256": "2f290352c428593e77edf4a8233caceee677ba0264186fb27a8d8e830283b52b"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/shield_surface.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/shield_surface.gdshader",
+    "source_sha256": "e6c58114fe10386c1dc0b35a3dc9c7f8d1b8d0570cfa4142da09e7f72e672612"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/shield_orbit.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/shield_orbit.gdshader",
+    "source_sha256": "a194663d2a51eb014a5e3e0f19aa0ff2b8c8d7c28ae162cf562b58cc24002b91"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/slash.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/slash.gdshader",
+    "source_sha256": "e0f3196960e4dd5d3f7ef504c6937f7e263e9fd8e715769924c25b3677fd04fd"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/attack_particles.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/attack_particles.gdshader",
+    "source_sha256": "ecc868a6e4694ebbdc3fb1ef53135e9aa01e5ebda3b40750b9d8ceb6adfa1d16"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/swing.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/swing.gdshader",
+    "source_sha256": "38d3857fdf205abe48077fb35bfb77d590ed124fb00814d9236481a74db47ecb"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/claw.gdshader",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/shader/claw.gdshader",
+    "source_sha256": "5c62cdb5a5f9e4ab9e7c91f5e6c91d6c3824b4c6cf79e9944ed65995e9ff7a15"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleSwingBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleSwingBB.gd",
+    "source_sha256": "9b62ac31d2ed43663144ea4136f47ad7caacceef1c2390f9fdbaab0db96d164a"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleSlash.gd",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleSlash.gd",
+    "source_sha256": "f6dfa2e9544043e4d3f42bb0844ea5dd4bb1da91b1f587b8c659b88fa0e0803c"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleShieldBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleShieldBB.gd",
+    "source_sha256": "90910ea6104b920765c0cae237ce258e08edd5000138dcf270b08195273ce3c1"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleChargeBB.gd",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/script/VFXBattleChargeBB.gd",
+    "source_sha256": "82a2ed59c78cf31b887cbe72fcba97cc44e5c29930475ab08b4c1cd422a91278"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/effects/shield/vfx_blank_shield_01.tscn",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/effects/shield/vfx_blank_shield_01.tscn",
+    "source_sha256": "7fc4f4030c83a4ebad5db21aa947adc8acefe800777cb7558a7d0696e04c5bc5"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/effects/slash/vfx_blank_slash.tscn",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/effects/slash/vfx_blank_slash.tscn",
+    "source_sha256": "8d491b054e33d93fa79a81138fb2941d8458099b75880d18cc9118c93a24e647"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/effects/swing/vfx_blank_swing.tscn",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/effects/swing/vfx_blank_swing.tscn",
+    "source_sha256": "4c338d7fb0ca5fdd18390bef935ee2b6ad9fdfc295936bd3b3e3cfc931932048"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/effects/claw/vfx_blank_claw.tscn",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/effects/claw/vfx_blank_claw.tscn",
+    "source_sha256": "f5f770057587a93bb3443547fcce3eceb4dac18615ee3ee01713ee6cb80248ff"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/effects/charge/vfx_blank_charge.tscn",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/effects/charge/vfx_blank_charge.tscn",
+    "source_sha256": "39852eb4cb24969805360b46cf19483f68f580456f944fc6ccb40d0650fb7452"
+  },
+  {
+    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/icons/leaf.png",
+    "destination": "assets/BinbunVFX_Vol2/BattleFX/icons/leaf.png",
+    "source_sha256": "965849919bce5939066299e18a39502244f2f70385321cc5d6109fc1867e6981"
+  }
+]

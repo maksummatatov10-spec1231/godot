@@ -4,6 +4,10 @@ on:
   pull_request:
   workflow_dispatch:
     inputs:
+      test_forest:
+        description: Validate and screenshot the standalone Warden forest game
+        type: boolean
+        default: false
       test_rust:
         description: Also build the optional Rust example
         type: boolean
@@ -81,7 +85,7 @@ jobs:
           path: artifacts/
           if-no-files-found: ignore
   capture:
-    if: github.event_name == 'workflow_dispatch' && !inputs.test_rust && github.ref_name == 'arena/449f84de-godot'
+    if: github.event_name == 'workflow_dispatch' && !inputs.test_rust && !inputs.test_forest && github.ref_name == 'arena/449f84de-godot'
     permissions:
       contents: write
     runs-on: ubuntu-24.04
@@ -145,4 +149,62 @@ jobs:
           fi
       - name: Fail honestly when rendering or validation failed
         if: steps.capture.outcome != 'success'
+        run: exit 1
+
+  forest:
+    if: github.event_name == 'workflow_dispatch' && inputs.test_forest && github.ref_name == 'arena/449f84de-godot'
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/449f84de-godot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install software Vulkan and virtual display
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb xauth mesa-vulkan-drivers libvulkan1 vulkan-tools gdb
+          pip install -r requirements-dev.txt
+      - name: Install verified Godot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag=$(cat .godot-version)
+          archive="Godot_v${tag}_linux.x86_64.zip"
+          mkdir -p .tools/godot
+          gh release download "$tag" --repo godotengine/godot --pattern "$archive" --pattern SHA512-SUMS.txt --dir .tools/godot
+          cd .tools/godot
+          grep -F " $archive" SHA512-SUMS.txt | sha512sum --check --strict -
+          unzip "$archive"
+          chmod +x "${archive%.zip}"
+          echo "GODOT4_BIN=$PWD/${archive%.zip}" >> "$GITHUB_ENV"
+      - name: Test and capture Warden forest game
+        id: forest
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          export VK_ICD_FILENAMES=$(find /usr/share/vulkan/icd.d -name '*lvp*json' -print -quit)
+          export LIBGL_ALWAYS_SOFTWARE=1 LP_NUM_THREADS=2 LP_NATIVE_VECTOR_WIDTH=128
+          python tools/capture_forest.py
+      - name: Publish forest game evidence to working branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- docs/evidence/forest-game
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record real forest game screenshots and gameplay tests [skip ci]'
+            git push origin HEAD:arena/449f84de-godot
+          fi
+      - name: Reject failed game checks
+        if: steps.forest.outcome != 'success'
         run: exit 1
