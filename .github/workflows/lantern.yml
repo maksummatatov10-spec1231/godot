@@ -1,0 +1,37 @@
+name: Lantern village 2D
+on:
+  workflow_dispatch:
+    inputs:
+      intake:
+        type: boolean
+        default: false
+      validate:
+        type: boolean
+        default: false
+      publish:
+        type: boolean
+        default: false
+permissions:
+  contents: write
+jobs:
+  intake:
+    if: inputs.intake && github.ref_name == 'arena/449f84de-godot'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/449f84de-godot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install gdown py7zr
+      - run: python tools/intake_lantern.py
+      - name: Record CC0 selection on working branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lantern_game/assets
+          git commit -m 'Import verified CC0 Ninja Adventure selection for separate 2D game [skip ci]'
+          git fetch origin arena/449f84de-godot
+          git rebase origin/arena/449f84de-godot
+          git push origin HEAD:arena/449f84de-godot
