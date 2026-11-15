@@ -1,0 +1,36 @@
+{
+  "drive_id": "1oYbF42doEsEK8kN6EVzFVdoZtz_TLZhr",
+  "name": "2d assets.7z",
+  "bytes": 151066815,
+  "md5": "cd56f13d4ceb33f0e90a1447a86ad8c5",
+  "sha256": "53a6e85dffa37c181731c6ea292d58235e5c8396b96e2c9407af51efbb405fae",
+  "file_count": 15,
+  "uncompressed_bytes": 173965694,
+  "extensions": {
+    ".zip": 13,
+    ".7z": 1,
+    ".rar": 1
+  },
+  "top_level": {
+    "2d assets": 15
+  },
+  "files": [
+    "2d assets/2D Pixel Dungeon Asset Pack v2.0.zip",
+    "2d assets/Cute_Fantasy_Free.zip",
+    "2d assets/effects/Effect and FX Pixel All Free.zip",
+    "2d assets/effects/Super Pixel Effects Gigapack (Free Version) v3.2.0.zip",
+    "2d assets/Enemy_Animations_Set.zip",
+    "2d assets/Free - Raven Fantasy Icons.zip",
+    "2d assets/FreeEnvironment.zip",
+    "2d assets/Game-Icon-Pack-v1.4-PNG.7z",
+    "2d assets/Ninja Adventure - Asset Pack.zip",
+    "2d assets/Pixel Crawler - Free Pack (Exterior 0.1).zip",
+    "2d assets/Pixel UI pack 3.rar",
+    "2d assets/sounds/SuperRetroRanch_FreeTier_v35.zip",
+    "2d assets/Tiny RPG Character Asset Pack 01 v2.0 -Free Soldier&Orc.zip",
+    "2d assets/Tiny RPG Character Asset Pack 02 v1.01-Free Demon_A&Blood Monster_A.zip",
+    "2d assets/UIBundleFree.zip"
+  ],
+  "license_texts": {},
+  "scope": "Separate 2D game intake only. No source assets redistributed or added to forest_game."
+}
