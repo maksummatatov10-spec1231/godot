@@ -168,6 +168,9 @@ func animate() -> void:
 	else:
 		# Original regular sheets: each column a direction; rows 0..3 walking.
 		sprite.region_rect = Rect2(facing * 16, 0, 16, 16)
+	# Small idle breathing, not full-body bobbing or moving collision shapes.
+	var breath := sin(clock * 2.6) * 0.018 if state == "idle" else 0.0
+	sprite.scale = Vector2(1.0 + breath * 0.5, 1.0 - breath)
 	queue_redraw()
 
 

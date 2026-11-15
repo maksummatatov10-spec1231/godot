@@ -45,6 +45,7 @@ func run() -> void:
 	await frame(3)
 	check(game.mode == "main", "Main menu opens before movement")
 	check(game.hero.position == Vector2(776, 658), "Central village spawn")
+	await check_live_shadows()
 	action("interact")
 	await frame(2)
 	check(game.mode == "play", "Z activates focused main-menu button")
@@ -278,3 +279,63 @@ func run() -> void:
 	if failures.is_empty():
 		print("LANTERN_TEST_OK ", checks)
 	quit(0 if failures.is_empty() else 1)
+
+
+func check_live_shadows() -> void:
+	check(game.shadows.z_index < game.actors.z_index, "Cast shadows stay below all actors")
+	var expected: int = (
+		game.map.objects.size() + game.actors.get_child_count() - game.map.objects.size()
+	)
+	# Every actor child is a map sprite, animated sprite, or character; only ripples do not cast.
+	for animation in game.map.animations:
+		if animation.kind == "ripple":
+			expected -= 1
+	# Hero has two silhouettes: body AND equipped tool.
+	expected += 1
+	check(game.shadows.casters.size() == expected, "Every raised sprite has a live silhouette")
+	var hero_entry: Dictionary
+	for entry in game.shadows.casters:
+		check(entry.shadow.texture == entry.source.texture, "Shadow shares actual source texture")
+		check(
+			entry.shadow.region_rect == entry.source.region_rect,
+			"Shadow matches current atlas frame"
+		)
+		if entry.source == game.hero.sprite:
+			hero_entry = entry
+	check(not hero_entry.is_empty(), "Hero has a directional silhouette, not only a contact oval")
+	var old_position: Vector2 = game.hero.position
+	var before: Vector2 = hero_entry.shadow.global_position
+	game.hero.position += Vector2(20, 10)
+	await frame(3)
+	check(
+		hero_entry.shadow.global_position.is_equal_approx(before + Vector2(20, 10)),
+		"Shadow follows actor translation"
+	)
+	game.hero.state = "attack"
+	game.hero.timer = 0.12
+	game.hero.animate()
+	await frame(3)
+	check(
+		hero_entry.shadow.region_rect == game.hero.sprite.region_rect,
+		"Shadow follows attack animation"
+	)
+	game.hero.tool.hide()
+	await frame(3)
+	for entry in game.shadows.casters:
+		if entry.source == game.hero.tool:
+			# animate() restores tool visibility; test sync directly for the hidden case.
+			game.hero.tool.hide()
+			game.shadows.sync(entry)
+			check(not entry.shadow.visible, "Hidden equipment cannot cast a stale shadow")
+	game.hero.position = old_position
+	game.hero.state = "idle"
+	game.hero.timer = 0.0
+	game.hero.animate()
+	check(game.leaves.size() >= 600, "Crown-local falling leaf emitters cover the forest")
+	var old_time: float = game.elapsed
+	var sample: Vector3 = game.leaf_sample(Vector3(100, 100, 0))
+	game.elapsed += 1.0
+	var later: Vector3 = game.leaf_sample(Vector3(100, 100, 0))
+	check(not sample.is_equal_approx(later), "Leaves drift and fall with simulation time")
+	game.elapsed = old_time
+	await frame(3)

@@ -2,7 +2,7 @@ shader_type canvas_item;
 render_mode unshaded;
 
 // Northwest sunlight through the canopy; world-anchored, not a camera HUD filter.
-// Static directional silhouettes live in sun_shadows.png, below the sorted actors.
+// Live ground-projected silhouettes are drawn below the sorted actors.
 void fragment() {
     vec2 p = UV * vec2(1536.0, 1152.0);
     float cross_ray = p.x - p.y * 0.8;

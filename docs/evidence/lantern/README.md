@@ -1,55 +1,34 @@
-# Lantern Valley · 0.1.2 · actual-render evidence
+# Lantern Valley · 0.1.3 · actual-render evidence
 
-Standalone project: [`lantern_game`](../../../lantern_game/README.md), not `forest_game`.
-
-**The old 0.1.0 overview-only review missed real defects reported by the user.**
-It is superseded by the [before-fix defect register and full close-up review](../lantern-audit/REVIEW.md).
-The old release remains historical; it is not the corrected download.
+This directory now contains the **lighting/motion revision**, not the historical 0.1.2 renders.
 
 ## Reproduce
 
 ```sh
 python -m unittest discover -s tests -q
-gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd
-gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd
-godot --headless --path lantern_game --editor --import
-godot --headless --path lantern_game --fixed-fps 60 --script res://tests.gd
-GODOT4_BIN=godot python tools/capture_lantern.py
-GODOT4_BIN=godot python tools/audit_lantern.py
+gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd
+gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd
+python tools/capture_lantern.py
+python tools/audit_lantern.py
+python tools/capture_lantern_motion.py
 python tools/package_lantern.py
 ```
 
-- Godot **4.7.2**, Compatibility renderer, CI Xvfb/software Mesa 1280×720.
-- **62 Python tests**, lint/format and **3629 Godot assertions**.
-- **24 general screenshots** here; **152 close-up frames** in `../lantern-audit/after/`.
-- `result.json` identifies the source/art/import settings by SHA256. Packaging requires
-  BOTH this successful result and the close-up result to match the current game digest.
-- PNGs are actual Godot viewport renders, not generated illustrations or mockups.
-- No claimed hardware FPS measurement; software rendering is diagnostic evidence only.
+Use `GODOT4_BIN` to select Godot 4.7.2. On this sandbox use `--portable` on all three capture commands; Linux CI uses Mesa/Xvfb. This is **not** a physical GPU FPS benchmark.
 
-## What is checked
+## Current results
 
-The diagnostic collision overlay comes from actual CollisionShape2D nodes. Tests cover
-938 shapes, practical movement into each of 341 trunks (1330 accessible approaches),
-every facade, the physical connectivity of 1183 free road-grid cells and all 12 door
-approaches, actual stopping at the lake bank, farm fence/gate, pauses, dialogue Z/X,
-ability/cooldown, equipment, direction animations and wildlife reactions.
+- **65 Python tests**, GDScript lint/format passed.
+- **4759 Godot assertions**: real collisions, 1330 approaches to all 341 trunks, 12 house fronts, connected free-road cells, menus/dialogue/tools/wildlife, plus live silhouette coverage, translation, frame and visibility synchronisation.
+- 24 general rendered screenshots here, 152 full-map close-ups in `../lantern-audit/after/`, covering all 430 manifest objects and 1284 painted road cells.
+- 48 motion frames / 10 fps GIF in `../lantern-motion/`. Actual Godot input, physics, wind and particles; no generated concept art, no post-production pan.
+- Isolated ground-shadow A/B images hide the actual actors, particles and sunlight overlay and stop their physics. Only simulation time changes to demonstrate wind-driven shadow movement independently.
+- All three result.json reports must PASS and match the game-source digest before packaging.
 
-For counts, all-object/road screenshot coverage, visual review and limitations, see
-[the detailed review](../lantern-audit/REVIEW.md). Assertions are not independent playthroughs.
-Captures intentionally position the actors and camera for reproducible views.
+## Reading the images honestly
 
-## Delivery
+The sunlight is offscreen northwest. Shadows are alpha silhouettes projected onto a common ground plane, not ray-traced light: they do not climb neighbouring facades or stop at another object's volume. All raised sprite objects, characters, current tools, animals, lanterns, flowers and seedlings participate. Flat terrain, atlas-painted ground decoration and water ripples are surfaces, not separate elevated casters. Houses and stones stay rigid; foliage, water, wildlife, characters and airborne leaves animate.
 
-Corrected prerelease: [lantern-valley-v0.1.2](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.2).
-The ZIP contains the separate source project, not a Windows executable. Open
-`LanternValley/project.godot` in Godot 4.7.2 and press F5. Use the SHA256 accompanying
-that specific ZIP: a locally rebuilt container can differ because of timestamps.
+`../lantern-audit/LIGHTING-REVISION.md` records the BEFORE defects and AFTER checks. The older `revision-clean-zip-*` files in this directory belong to historical 0.1.2; the current clean ZIP import/tests are in `../lantern-motion/clean-zip-*.log`.
 
-Old `clean-zip-*` logs from 0.1.0 are historical. Corrected-ZIP validation is recorded
-as `revision-clean-zip-*` after repackaging; do not confuse those two sets of evidence.
-
-Final successful publication: [Actions 43761225347](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43761225347), evidence/release commit `d336cf6`. Both reports match game SHA256
-`fa29cf5e91efefb737703e61c86f1994d10daa81ea3a833cdec54a43d3441edb`.
-The final source ZIP was freshly extracted, imported and passed all 3629 assertions;
-its original project files were compared byte-for-byte. See `revision-clean-zip-result.json`.
+Project: source ZIP, not an EXE. Open `LanternValley/project.godot`, F5.

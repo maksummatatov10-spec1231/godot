@@ -3,11 +3,14 @@ extends Node2D
 ## All map geometry is loaded from the same manifest as the art assembly.
 const Actor = preload("res://scripts/actor.gd")
 const Capture = preload("res://scripts/capture.gd")
+const FOLIAGE = preload("res://scripts/foliage.gdshader")
 const A = "res://assets/ninja/"
 var map: Dictionary
 var hero: CharacterBody2D
 var traveller: CharacterBody2D
 var actors := Node2D.new()
+var shadows := preload("res://scripts/shadows.gd").new()
+var foliage_materials: Array[ShaderMaterial] = []
 var camera := Camera2D.new()
 var mode := "main"
 var elapsed := 0.0
@@ -61,10 +64,10 @@ func _ready() -> void:
 	ground.centered = false
 	ground.z_index = -10
 	add_child(ground)
-	var shadows := Sprite2D.new()
-	shadows.texture = load("res://assets/world/sun_shadows.png")
-	shadows.centered = false
+	shadows.world = self
 	shadows.z_index = -5
+	# Synchronise after actor animation/physics, on the shared ground plane.
+	shadows.process_priority = 10
 	add_child(shadows)
 	var sunshine := ColorRect.new()
 	sunshine.size = Vector2(map.size[0], map.size[1])
@@ -87,8 +90,6 @@ func _ready() -> void:
 		shape.position = Vector2(values[0], values[1]) + rect.size / 2.0
 		shape.set_meta("kind", item.kind)
 		body.add_child(shape)
-	var sway_shader := Shader.new()
-	sway_shader.code = "shader_type canvas_item; uniform float phase=0.0; void vertex(){ VERTEX.x += sin(TIME*1.1+phase)*0.7*(1.0-UV.y); }"
 	for item in map.objects:
 		var sprite := Sprite2D.new()
 		sprite.texture = load("res://assets/world/" + item.art)
@@ -98,12 +99,18 @@ func _ready() -> void:
 		)
 		sprite.offset = Vector2(0, item.size[1] / 2.0 - item.sort_y)
 		sprite.set_meta("art", item.art)
-		if item.sway:
+		var windy: bool = item.sway or item.art == "pot.png"
+		if windy:
 			var sway_material := ShaderMaterial.new()
-			sway_material.shader = sway_shader
+			sway_material.shader = FOLIAGE
 			sway_material.set_shader_parameter("phase", float(item.position[0]) * 0.15)
+			sway_material.set_shader_parameter("crown_height", float(item.sort_y))
+			foliage_materials.append(sway_material)
 			sprite.material = sway_material
 		actors.add_child(sprite)
+		shadows.register(
+			sprite, sprite, false, windy, float(item.sort_y), float(item.position[0]) * 0.15
+		)
 	for item in map.animations:
 		_add_animated(item.kind, Vector2(item.position[0], item.position[1]))
 	hero = spawn_actor(Vector2(map.spawn[0], map.spawn[1]), "", true)
@@ -134,8 +141,17 @@ func _ready() -> void:
 	overlays.world = self
 	overlays.z_index = 100
 	add_child(overlays)
-	for i in range(80):
-		leaves.append(Vector3(randf() * 1536, randf() * 1152, randf() * TAU))
+	# Crown emitters, not a screen-wide sprinkle disconnected from the trees.
+	for item in map.objects:
+		if item.art.begins_with("tree_"):
+			for i in range(2):
+				leaves.append(
+					Vector3(
+						item.position[0] + item.size[0] * 0.5 + randf_range(-10, 10),
+						item.position[1] + 12,
+						randf() * 12.0
+					)
+				)
 	for i in range(60):
 		fireflies.append(Vector3(randf() * 1536, randf() * 1152, randf() * TAU))
 	add_child(tone_player)
@@ -205,6 +221,9 @@ func spawn_actor(at: Vector2, species: String = "", controlled: bool = false) ->
 	actor.world = self
 	actor.player_controlled = controlled
 	actors.add_child(actor)
+	shadows.register(actor.sprite, actor, true)
+	if controlled:
+		shadows.register(actor.tool, actor, true)
 	return actor
 
 
@@ -215,7 +234,23 @@ func _add_animated(kind: String, at: Vector2) -> void:
 		beacon_sprite.position = at + Vector2(8, 15)
 		beacon_sprite.offset = Vector2(0, -14)
 		actors.add_child(beacon_sprite)
+		shadows.register(beacon_sprite, beacon_sprite)
 		beacons.append({"position": at + Vector2(8, 15), "lit": false})
+		return
+	if kind == "seedling" or kind == "flowerbed":
+		var plant := Sprite2D.new()
+		plant.texture = load("res://assets/world/" + kind + ".png")
+		var dimensions := plant.texture.get_size()
+		plant.position = at + Vector2(dimensions.x * 0.5, dimensions.y)
+		plant.offset = Vector2(0, -dimensions.y * 0.5)
+		var breeze := ShaderMaterial.new()
+		breeze.shader = FOLIAGE
+		breeze.set_shader_parameter("phase", at.x * 0.15)
+		breeze.set_shader_parameter("crown_height", dimensions.y)
+		plant.material = breeze
+		foliage_materials.append(breeze)
+		actors.add_child(plant)
+		shadows.register(plant, plant, false, true, dimensions.y, at.x * 0.15)
 		return
 	var sprite := Sprite2D.new()
 	sprite.texture = load(
@@ -236,6 +271,17 @@ func _add_animated(kind: String, at: Vector2) -> void:
 	actors.add_child(sprite)
 	if kind == "ripple":
 		sprite.modulate.a = 0.25
+	else:
+		# Foot is the flower base, not the texture top-left.
+		sprite.position += Vector2(2.5, 8)
+		sprite.offset = Vector2(-2.5, -8)
+		var breeze := ShaderMaterial.new()
+		breeze.shader = FOLIAGE
+		breeze.set_shader_parameter("phase", at.x * 0.15)
+		breeze.set_shader_parameter("crown_height", 8.0)
+		sprite.material = breeze
+		foliage_materials.append(breeze)
+		shadows.register(sprite, sprite, true, true, 8.0, at.x * 0.15)
 	animated.append(
 		{
 			"sprite": sprite,
@@ -253,6 +299,8 @@ func _process(delta: float) -> void:
 				Vector2(int(elapsed * 4.0 + item.offset) % 4 * item.frame_size.x, 0),
 				item.frame_size
 			)
+	for foliage in foliage_materials:
+		foliage.set_shader_parameter("wind_time", elapsed)
 	if mode == "play":
 		ability_cooldown = maxf(0.0, ability_cooldown - delta)
 		camera.position = hero.position
@@ -270,6 +318,14 @@ func _process(delta: float) -> void:
 			play_tone(170.0 + float(dialog_page) * 24.0, 0.016, 0.035)
 	interact_button.visible = mode == "play" and interactable()
 	overlays.queue_redraw()
+
+
+func leaf_sample(leaf: Vector3) -> Vector3:
+	var progress := fposmod(elapsed + leaf.z, 12.0) / 12.0
+	var sway := sin(elapsed * 2.2 + leaf.z) * 5.0
+	return Vector3(
+		leaf.x + progress * 22.0 + sway, leaf.y + progress * 36.0, (1.0 - progress) * 38.0
+	)
 
 
 func clear_sight(from: Vector2, to: Vector2) -> bool:

@@ -11,12 +11,21 @@ func _draw() -> void:
 				draw_circle(p - Vector2(0, 19), float(10 + r * 5), Color(1.0, 0.77, 0.35, 0.014))
 	if world.particles_enabled:
 		for leaf in world.leaves:
-			var p := Vector2(
-				fposmod(leaf.x + t * 7.0, 1536.0),
-				fposmod(leaf.y + t * 3.0 + sin(t + leaf.z) * 5.0, 1152.0)
+			var sample: Vector3 = world.leaf_sample(leaf)
+			var phase := fposmod(t + leaf.z, 12.0) / 12.0
+			var alpha := smoothstep(0.0, 0.08, phase) * (1.0 - smoothstep(0.82, 1.0, phase))
+			var turn := sin(t * 3.6 + leaf.z)
+			var p := Vector2(sample.x, sample.y)
+			draw_set_transform(p, sin(t * 1.8 + leaf.z), Vector2(0.4 + absf(turn) * 0.6, 1))
+			var tint := Color("ebc66e") if int(leaf.z) % 3 else Color("b9ce70")
+			tint.a = alpha * 0.9
+			draw_colored_polygon(
+				PackedVector2Array(
+					[Vector2(-2.5, 0), Vector2(0, -1.5), Vector2(2.5, 0), Vector2(0, 1.5)]
+				),
+				tint
 			)
-			draw_set_transform(p, sin(t * 1.5 + leaf.z) * 0.8)
-			draw_line(Vector2(-2, 0), Vector2(2, 0), Color(0.86, 0.69, 0.35, 0.55), 1.0)
+			draw_line(Vector2(-1.5, 0), Vector2(2, 0), Color(0.42, 0.34, 0.16, alpha * 0.65), 0.6)
 		draw_set_transform(Vector2.ZERO)
 		for fly in world.fireflies:
 			var p := Vector2(fly.x + sin(t * 0.7 + fly.z) * 10, fly.y + cos(t + fly.z) * 6)

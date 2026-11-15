@@ -130,6 +130,35 @@ class LanternAssets(unittest.TestCase):
             self.assertFalse(any(x<a*16+16 and x+w>a*16 and y<b*16+16 and y+h>b*16
                                  for a,b in self.map['paths']),solid)
 
+    def test_live_shadows_replace_baked_runtime_layer(self):
+        code=(GAME/'scripts/game.gd').read_text()
+        self.assertNotIn('sun_shadows.png',code)
+        shadows=(GAME/'scripts/shadows.gd').read_text()
+        self.assertIn('source.global_transform',shadows)
+        self.assertIn('silhouette.region_rect = source.region_rect',shadows)
+        self.assertIn('silhouette.visible = source.is_visible_in_tree()',shadows)
+        self.assertIn('shadows.register(actor.tool, actor, true)',code)
+        self.assertNotIn('sun_shadows.png',(ROOT/'tools/build_lantern_map.py').read_text())
+
+    def test_plants_are_live_casters_not_baked_into_soil(self):
+        kinds=[a['kind'] for a in self.map['animations']]
+        self.assertEqual(kinds.count('seedling'),40)
+        self.assertEqual(kinds.count('flowerbed'),24)
+        for name in ['seedling','flowerbed']:
+            with Image.open(GAME/'assets/world'/f'{name}.png') as image:
+                self.assertIsNotNone(image.getbbox())
+
+    def test_foliage_and_shadow_use_identical_wind(self):
+        foliage=(GAME/'scripts/foliage.gdshader').read_text()
+        shadow=(GAME/'scripts/cast_shadow.gdshader').read_text()
+        # Changing source crown movement without its shadow is a regression.
+        for expression in ['clamp(-VERTEX.y / max(crown_height, 1.0), 0.0, 1.0)',
+                           'sin(wind_time * 1.7 + phase) * 1.25',
+                           'sin(wind_time * 0.63 + phase * 0.7) * 0.65',
+                           'breeze * height_weight * height_weight']:
+            self.assertIn(expression,foliage)
+            self.assertIn(expression,shadow)
+
     def test_no_mix_with_3d_project(self):
         self.assertNotIn('forest_game',(GAME/'project.godot').read_text())
         self.assertEqual(self.map['spawn'],[776,658])

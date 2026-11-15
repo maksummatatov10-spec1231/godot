@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl4mffrp5pcr3"
-path="res://.godot/imported/sun_shadows.png-6aa4c5decca24caf764dec564c97044e.ctex"
+uid="uid://b16ahdyo07oxm"
+path="res://.godot/imported/flowerbed.png-5c4aac6d0299931315bfac6f62caffda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/sun_shadows.png"
-dest_files=["res://.godot/imported/sun_shadows.png-6aa4c5decca24caf764dec564c97044e.ctex"]
+source_file="res://assets/world/flowerbed.png"
+dest_files=["res://.godot/imported/flowerbed.png-5c4aac6d0299931315bfac6f62caffda.ctex"]
 
 [params]
 

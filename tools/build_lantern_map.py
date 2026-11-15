@@ -134,9 +134,7 @@ for yy in (860,892,924,956):
     for xa,xb in ((1064,1112),(1176,1256)):
         bd.rounded_rectangle((xa,yy,xb,yy+16),radius=3,fill='#9e6e48',outline='#bd8e59')
         for xx in range(xa+5,xb-3,12):
-            bd.line((xx,yy+4,xx,yy+12),fill='#795c3c')
-            bd.line((xx-3,yy+5,xx,yy+9,xx+3,yy+4),fill='#547b38',width=2)
-            bd.point((xx-2,yy+4),fill='#bfd16b')
+            animations.append({'kind':'seedling','position':[xx-4,yy+2]})
 
 def fence_art(horizontal):
     im=Image.new('RGBA',(16,16));d=ImageDraw.Draw(im)
@@ -188,7 +186,7 @@ for i,(x,y,variant) in enumerate(houses):
     # Small flowerbeds placed BESIDE the facade, never under the doorway.
     bd.rounded_rectangle((x+68,y+56,x+88,y+74),radius=3,fill='#826645',outline='#b09b60')
     for xx in (x+70,x+80):
-        background.alpha_composite(crop('TilesetNature',1,11),(xx,y+54))
+        animations.append({'kind':'flowerbed','position':[xx,y+54]})
     if i%3==0:
         crate=Image.new('RGBA',(16,16));cd=ImageDraw.Draw(crate)
         cd.rectangle((1,2,14,15),fill='#aa8551',outline='#514a35')
@@ -262,29 +260,14 @@ for i in range(100):
     if any((x//16+dx,y//16+dy) in paths|lake for dx in (-1,0,1) for dy in (-1,0,1)) or 420<x<1312 and 284<y<1032:continue
     animations.append({'kind':'flower','position':[x,y]})
 
-# Static projected sunlight shadows: pixel silhouettes, unified NW -> SE direction.
-# One pre-baked translucent layer is cheap; no hundreds of live shadow-casting lights.
-shadow=Image.new('RGBA',(W,H));contact=ImageDraw.Draw(shadow)
-for item in objects:
-    x,y=item['position'];iw,ih=item['size'];base=y+item['sort_y']
-    art=Image.open(OUT/item['art']).convert('RGBA')
-    if item['art'].startswith('fence'):
-        length=6
-    elif item['art'].startswith('house'):
-        length=28
-    else:length=18 if item['sway'] else 9
-    # Project each source row onto the ground toward bottom-right.
-    mask=Image.new('L',(iw+length,ih+length))
-    for sy in range(ih):
-        height=max(0,item['sort_y']-sy)
-        dx=round(height*length/max(ih,1));dy=round(height*.27)
-        row=art.getchannel('A').crop((0,sy,iw,sy+1))
-        mask.paste(row,(dx,max(0,ih+dy-1)))
-    ink=Image.new('RGBA',mask.size,(35,57,48,0));ink.putalpha(mask.point(lambda a:round(a*.20)))
-    shadow.alpha_composite(ink,(x,base-ih))
-    contact.ellipse((x+iw*.27,base-3,x+iw*.77,base+3),fill=(35,53,41,48))
-# Terrain shadow alpha is zero over water: no painted artefacts on cyan collision samples.
-shadow.save(OUT/'sun_shadows.png')
+# Raised plants are live sprites so wind and directional shadows can follow them.
+seedling=Image.new('RGBA',(9,12));sd=ImageDraw.Draw(seedling)
+sd.line((4,2,4,10),fill='#795c3c')
+sd.line((1,3,4,7,7,2),fill='#547b38',width=2)
+sd.point((2,2),fill='#bfd16b')
+seedling.save(OUT/'seedling.png')
+crop('TilesetNature',1,11).save(OUT/'flowerbed.png')
+# Cast shadows now use the current sprite alpha in scripts/shadows.gd; no baked layer.
 for rect in [(0,0,W,20),(0,H-20,W,20),(0,0,20,H),(W-20,0,20,H)]:solid('boundary',*rect)
 background.save(OUT/'ground.png')
 manifest={'size':[W,H],'spawn':[776,658],'wanderer':[792,622], 'objects':objects,'solids':solids,'animations':animations,

@@ -26,5 +26,5 @@
 		"15-net"
 	],
 	"real_render": true,
-	"renderer": "llvmpipe (LLVM 20.1.2, 256 bits)"
+	"renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)"
 }

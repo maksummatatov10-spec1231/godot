@@ -14,6 +14,9 @@ def main():
     audit = json.loads((ROOT/'docs/evidence/lantern-audit/after/result.json').read_text())
     if not audit.get('passed') or audit['game_sha256'] != game_digest():
         raise RuntimeError('Full-map close-up audit is missing, failed or stale')
+    motion = json.loads((ROOT/'docs/evidence/lantern-motion/result.json').read_text())
+    if not motion.get('passed') or motion['game_sha256'] != game_digest():
+        raise RuntimeError('Motion/isolated-shadow evidence is missing, failed or stale')
     output = ROOT/'artifacts/lantern'
     output.mkdir(parents=True,exist_ok=True)
     archive = output/'Lantern-Valley-Godot-Project.zip'
@@ -22,6 +25,7 @@ def main():
             if path.is_file() and '.godot' not in path.parts:
                 bundle.write(path,Path('LanternValley')/path.relative_to(GAME))
         bundle.writestr('LanternValley/AUDIT_VALIDATION.json',json.dumps(audit,indent=2)+'\n')
+        bundle.writestr('LanternValley/MOTION_VALIDATION.json',json.dumps(motion,indent=2)+'\n')
         bundle.writestr('LanternValley/VALIDATION.json',json.dumps(evidence,indent=2)+'\n')
     sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     archive.with_suffix('.zip.sha256').write_text(f'{sha}  {archive.name}\n')
