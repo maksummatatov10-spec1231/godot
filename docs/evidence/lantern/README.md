@@ -1,4 +1,4 @@
-# Lantern Valley · 0.1.1 · actual-render evidence
+# Lantern Valley · 0.1.2 · actual-render evidence
 
 Standalone project: [`lantern_game`](../../../lantern_game/README.md), not `forest_game`.
 
@@ -41,7 +41,7 @@ Captures intentionally position the actors and camera for reproducible views.
 
 ## Delivery
 
-Corrected prerelease: [lantern-valley-v0.1.1](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.1).
+Corrected prerelease: [lantern-valley-v0.1.2](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.2).
 The ZIP contains the separate source project, not a Windows executable. Open
 `LanternValley/project.godot` in Godot 4.7.2 and press F5. Use the SHA256 accompanying
 that specific ZIP: a locally rebuilt container can differ because of timestamps.

@@ -207,7 +207,7 @@ obj('well',well,752,586,(2,12,28,18))
 for x,y in [(696,568),(788,568),(696,680),(788,680)]:
     obj('bench',crop('TilesetElement',12,1,2,1),x,y,(1,7,30,8))
 # Stalls are off the street, with counters and goods rather than empty roofs.
-for x,y in [(648,472),(720,472),(872,864)]:
+for x,y in [(648,472),(704,472),(872,864)]:
     stall=crop('TilesetHouse',16,3,3,3);sd=ImageDraw.Draw(stall)
     sd.rectangle((5,34,42,45),fill='#846342',outline='#493f31')
     sd.line((5,34,42,34),fill='#e1ba79',width=2)

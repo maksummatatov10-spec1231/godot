@@ -44,7 +44,7 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Restore verified CC0 art selection [skip ci]'
           git fetch origin arena/449f84de-godot
-          git rebase origin/arena/449f84de-godot
+          git rebase --autostash origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
   village:
     if: (github.event_name == 'push' || inputs.validate || inputs.publish) && github.ref_name == 'arena/449f84de-godot'
@@ -98,7 +98,7 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Record 2D village physics and full-map close-up evidence [skip ci]'
           git fetch origin arena/449f84de-godot
-          git rebase origin/arena/449f84de-godot
+          git rebase --autostash origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
       - name: Package evidence-matched standalone project
         run: python tools/package_lantern.py
@@ -107,7 +107,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create lantern-valley-v0.1.1 artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.1.1' --notes-file lantern_game/README.md --prerelease
+          gh release create lantern-valley-v0.1.2 artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.1.2' --notes-file lantern_game/README.md --prerelease
       - name: Preserve failure diagnostics on this branch
         if: failure() && github.event_name == 'workflow_dispatch'
         run: |
@@ -119,7 +119,7 @@ jobs:
           git add "$folder"
           git commit -m 'Record failed clean-run diagnostics [skip ci]'
           git fetch origin arena/449f84de-godot
-          git rebase origin/arena/449f84de-godot
+          git rebase --autostash origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
       - uses: actions/upload-artifact@v4
         if: always()
