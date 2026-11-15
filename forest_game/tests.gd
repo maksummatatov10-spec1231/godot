@@ -162,6 +162,66 @@ func run() -> void:
 		unique_tree_meshes.size() <= 10 and world.tree_render_batches.size() > 10,
 		"tree cells reuse per-species mesh and LOD resources"
 	)
+	var diagnostic := preload("res://scripts/performance_diagnostic.gd").new()
+	world.add_child(diagnostic)
+	var diagnostic_state := {
+		"profile": 1,
+		"scale": 1.0,
+		"shadows": true,
+		"trees": [],
+		"grass": [],
+		"effects_visible": true,
+		"effects_process": Node.PROCESS_MODE_INHERIT,
+		"player_process": true
+	}
+	for batch in world.tree_render_batches:
+		diagnostic_state.trees.append(batch.visible)
+	for batch in world.grass_batches:
+		diagnostic_state.grass.append(batch.visible)
+	diagnostic.apply_variant(world, "no_grass", diagnostic_state)
+	check(
+		not world.grass_batches[0].visible and world.tree_render_batches[0].visible,
+		"diagnostic removes grass independently, not just grass shadows"
+	)
+	diagnostic.apply_variant(world, "no_shadows", diagnostic_state)
+	check(
+		world.grass_batches[0].visible and not world.get_node("LateMorningSun").shadow_enabled,
+		"diagnostic resets previous ablation before changing shadows"
+	)
+	diagnostic.apply_variant(world, "legacy_high", diagnostic_state)
+	check(
+		(
+			world.shadow_atlas_size == 4096
+			and world.get_viewport().msaa_3d == Viewport.MSAA_2X
+			and world.get_node("LateMorningSun").light_angular_distance > 0
+		),
+		"diagnostic reconstructs legacy High shadow and AA stack"
+	)
+	diagnostic.apply_variant(world, "baseline", diagnostic_state)
+	check(
+		world.shadow_atlas_size == 2048 and world.get_node("LateMorningSun").shadow_enabled,
+		"diagnostic baseline restores optimized profile and shadow visibility"
+	)
+	var analysis: Dictionary = diagnostic.summarize(
+		[
+			{"variant": "baseline", "mean_frame_ms": 40.0},
+			{"variant": "no_shadows", "mean_frame_ms": 20.0},
+			{"variant": "no_grass", "mean_frame_ms": 40.0},
+			{"variant": "baseline_repeat", "mean_frame_ms": 40.0}
+		]
+	)
+	check(
+		analysis.stable and analysis.candidates.size() == 1,
+		"diagnostic does not blame grass when removing it makes no difference"
+	)
+	analysis = diagnostic.summarize(
+		[
+			{"variant": "baseline", "mean_frame_ms": 40.0},
+			{"variant": "baseline_repeat", "mean_frame_ms": 60.0}
+		]
+	)
+	check(not analysis.stable, "diagnostic flags background-load or thermal drift")
+	diagnostic.queue_free()
 	world.apply_profile(2)
 	player.position = Vector3(0, 0.05, 1)
 	player.velocity = Vector3.ZERO

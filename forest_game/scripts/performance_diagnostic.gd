@@ -135,6 +135,8 @@ func run(
 		"device": RenderingServer.get_video_adapter_name(),
 		"vendor": RenderingServer.get_video_adapter_vendor(),
 		"os": OS.get_name(),
+		"cpu": OS.get_processor_name(),
+		"render_target": viewport.get_texture().get_size(),
 		"engine": Engine.get_version_info().string,
 		"viewport": viewport.get_visible_rect().size,
 		"window": DisplayServer.window_get_size(),
@@ -235,6 +237,7 @@ func run(
 	get_tree().paused = state.paused
 	world.menu.visible = state.menu_visible
 	report["cancelled"] = cancelled
+	report["analysis"] = summarize(report.stages)
 	var file := FileAccess.open(output, FileAccess.WRITE)
 	if file != null:
 		file.store_string(JSON.stringify(report, "  "))
@@ -245,7 +248,9 @@ func run(
 		world.menu.clear("ДИАГНОСТИКА СОХРАНЕНА" if not cancelled else "ТЕСТ ОТМЕНЁН")
 		var label := Label.new()
 		label.text = (
-			"Настройки и камера восстановлены.\n"
+			str(report.analysis.message)
+			+ "\n"
+			+ "Настройки и камера восстановлены.\n"
 			+ "Отчёт: user://performance-diagnostic.json\n"
 			+ "Пришлите JSON для разбора именно вашего ПК."
 		)
@@ -253,3 +258,39 @@ func run(
 		world.menu.button("Открыть папку отчёта", func(): OS.shell_open(OS.get_user_data_dir()))
 		world.menu.button("Назад", world.menu.show_main)
 	return report
+
+
+static func summarize(stages: Array) -> Dictionary:
+	if stages.is_empty():
+		return {"message": "Нет данных", "candidates": [], "stable": false}
+	var baseline: float = stages[0].mean_frame_ms
+	var repeat_ms := baseline
+	var candidates: Array[Dictionary] = []
+	var labels := {
+		"no_shadows": "Тени",
+		"no_post": "Постэффекты",
+		"half_resolution": "Заполнение GPU",
+		"no_trees": "Деревья",
+		"no_grass": "Трава",
+		"frozen_animation": "Анимация",
+		"no_vfx": "VFX"
+	}
+	for stage in stages:
+		if stage.variant == "baseline_repeat":
+			repeat_ms = stage.mean_frame_ms
+		if labels.has(stage.variant):
+			var saving: float = 1.0 - stage.mean_frame_ms / maxf(baseline, 0.001)
+			if saving > 0.10:
+				candidates.append({"name": labels[stage.variant], "frame_time_saving": saving})
+	candidates.sort_custom(
+		func(a: Dictionary, b: Dictionary): return a.frame_time_saving > b.frame_time_saving
+	)
+	var stable := absf(repeat_ms / maxf(baseline, 0.001) - 1.0) < 0.15
+	var message := "База: %.1f FPS. " % (1000.0 / maxf(baseline, 0.001))
+	if not stable:
+		message += "Большие колебания: повторите тест без фоновых задач."
+	elif candidates.is_empty():
+		message += "Явного одного ограничения нет; нужен разбор JSON."
+	else:
+		message += "Кандидат на ограничение: " + str(candidates[0].name) + "."
+	return {"message": message, "candidates": candidates, "stable": stable}

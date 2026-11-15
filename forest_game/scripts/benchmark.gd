@@ -8,6 +8,9 @@ var path := "user://benchmark.json"
 var active := false
 var saved_yaw := 0.0
 var saved_pitch := 0.0
+var gpu_total := 0.0
+var cpu_total := 0.0
+var animation_total := 0.0
 
 
 func start(scene_world: Node3D) -> void:
@@ -22,6 +25,7 @@ func start(scene_world: Node3D) -> void:
 	world.player.pitch = -0.09
 	Engine.max_fps = 0
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	RenderingServer.viewport_set_measure_render_time(get_viewport().get_viewport_rid(), true)
 	active = true
 
 
@@ -34,6 +38,13 @@ func _process(delta: float) -> void:
 	# Discard 2 seconds of transition/warmup; then measure real delivered frame intervals.
 	if elapsed > 2:
 		frames.append(delta * 1000.0)
+		gpu_total += RenderingServer.viewport_get_measured_render_time_gpu(
+			get_viewport().get_viewport_rid()
+		)
+		cpu_total += RenderingServer.viewport_get_measured_render_time_cpu(
+			get_viewport().get_viewport_rid()
+		)
+		animation_total += world.player.animation_cpu_usec
 	world.player.yaw = sin(elapsed * 0.35) * 0.55
 	if elapsed >= next_cast:
 		next_cast += 3.0
@@ -46,6 +57,7 @@ func _process(delta: float) -> void:
 
 func finish() -> void:
 	active = false
+	RenderingServer.viewport_set_measure_render_time(get_viewport().get_viewport_rid(), false)
 	world.player.input_enabled = true
 	world.player.yaw = saved_yaw
 	world.player.pitch = saved_pitch
@@ -60,7 +72,14 @@ func finish() -> void:
 	var p99 := frames[mini(frames.size() - 1, int(frames.size() * 0.99))]
 	var report := {
 		"device": RenderingServer.get_video_adapter_name(),
+		"cpu": OS.get_processor_name(),
 		"resolution": DisplayServer.window_get_size(),
+		"render_target": get_viewport().get_texture().get_size(),
+		"first_person": world.player.first_person,
+		"gpu_ms": gpu_total / frames.size(),
+		"render_thread_cpu_ms": cpu_total / frames.size(),
+		"animation_cpu_us": animation_total / frames.size(),
+		"gpu_timer_available": gpu_total > 0,
 		"profile": world.profile,
 		"render_scale": get_viewport().scaling_3d_scale,
 		"frames": frames.size(),
