@@ -1,6 +1,6 @@
 extends SkeletonModifier3D
-## First-person pose correction AFTER the shared clips: real skin, fingers and grip.
-## Full-body idle elbows sit behind the eyes; this keeps them below the lens.
+## Retarget the REAL clip wrists into reachable camera space. Preserve their
+## animated rotation and every finger channel; solve elbows with two-bone IK.
 var controller: CharacterBody3D
 
 
@@ -8,53 +8,59 @@ func _process_modification() -> void:
 	if controller == null:
 		return
 	var skeleton := get_skeleton()
-	var swing := 0.0
-	if controller.attacking:
-		var phase: float = 1.0 - controller.action_timer / controller.attack_duration
-		swing = sin(clampf(phase, 0.0, 1.0) * PI)
-	var spell := 0.0
-	if controller.magic_cooldown > 1.65:
-		spell = sin((2.5 - controller.magic_cooldown) / 0.85 * PI)
-	pose_arm(
-		skeleton,
-		"r",
-		Vector3(0.57, -0.85, -0.05),
-		Vector3(0.42, -0.52, -0.37),
-		Vector3(0.28 - swing * 0.66, -0.34 + swing * 0.22, -0.64),
-		Basis(Vector3.FORWARD, -swing * 1.5) * Basis(Vector3.UP, Vector3.FORWARD, Vector3.LEFT)
+	var to_camera: Transform3D = (
+		controller.camera.global_transform.affine_inverse() * skeleton.global_transform
 	)
-	pose_arm(
-		skeleton,
-		"l",
-		Vector3(-0.57, -0.85, -0.05),
-		Vector3(-0.43, -0.57, -0.25),
-		Vector3(-0.26, -0.38 + spell * 0.16, -0.52 - spell * 0.17),
-		Basis(Vector3.DOWN, Vector3.FORWARD, Vector3.RIGHT)
-	)
+	var to_model := to_camera.affine_inverse()
+	for side in ["r", "l"]:
+		var upper := skeleton.find_bone("upperarm_" + side)
+		var lower := skeleton.find_bone("lowerarm_" + side)
+		var wrist := skeleton.find_bone("hand_" + side)
+		var source_upper := skeleton.get_bone_global_pose(upper)
+		var source_lower := skeleton.get_bone_global_pose(lower)
+		var source_wrist := skeleton.get_bone_global_pose(wrist)
+		var shoulder := Vector3(0.32 if side == "r" else -0.32, -0.60, 0.10)
+		var target: Vector3 = to_camera * source_wrist.origin
+		var reach := target - shoulder
+		var distance := clampf(reach.length(), 0.1, 0.76)
+		var direction := reach.normalized()
+		target = shoulder + direction * distance
+		# Fixed anatomical lengths, no disconnected forearms or stretched spaghetti.
+		var upper_length := 0.39
+		var lower_length := 0.39
+		var along := (
+			(upper_length * upper_length - lower_length * lower_length + distance * distance)
+			/ (2 * distance)
+		)
+		var height := sqrt(maxf(0.0, upper_length * upper_length - along * along))
+		var pole := Vector3(0.6 if side == "r" else -0.6, -1.0, -0.1)
+		var bend := (pole - shoulder) - direction * (pole - shoulder).dot(direction)
+		var elbow := shoulder + direction * along + bend.normalized() * height
+		var new_upper: Vector3 = to_model * shoulder
+		var new_lower: Vector3 = to_model * elbow
+		var new_wrist: Vector3 = to_model * target
+		set_segment(skeleton, upper, source_upper, source_lower.origin, new_upper, new_lower)
+		set_segment(skeleton, lower, source_lower, source_wrist.origin, new_lower, new_wrist)
+		# No Euler/sin replacement: A/B/C retain different blade orientations.
+		skeleton.set_bone_global_pose(wrist, Transform3D(source_wrist.basis, new_wrist))
 
 
-func pose_arm(
+func set_segment(
 	skeleton: Skeleton3D,
-	side: String,
-	shoulder: Vector3,
-	elbow: Vector3,
-	hand: Vector3,
-	hand_basis: Basis
+	bone: int,
+	source: Transform3D,
+	end: Vector3,
+	start: Vector3,
+	finish: Vector3
 ) -> void:
-	var upper := skeleton.find_bone("upperarm_" + side)
-	var lower := skeleton.find_bone("lowerarm_" + side)
-	var wrist := skeleton.find_bone("hand_" + side)
-	var upper_rest := skeleton.get_bone_global_rest(upper)
-	var lower_rest := skeleton.get_bone_global_rest(lower)
-	var hand_rest := skeleton.get_bone_global_rest(wrist)
-	var upper_turn := Quaternion(
-		(lower_rest.origin - upper_rest.origin).normalized(), (elbow - shoulder).normalized()
-	)
-	var lower_turn := Quaternion(
-		(hand_rest.origin - lower_rest.origin).normalized(), (hand - elbow).normalized()
-	)
-	skeleton.set_bone_global_pose(
-		upper, Transform3D(Basis(upper_turn) * upper_rest.basis, shoulder)
-	)
-	skeleton.set_bone_global_pose(lower, Transform3D(Basis(lower_turn) * lower_rest.basis, elbow))
-	skeleton.set_bone_global_pose(wrist, Transform3D(hand_basis, hand))
+	var before := end - source.origin
+	var after := finish - start
+	var turn := Basis(Quaternion(before.normalized(), after.normalized()))
+	# Axial stretch only: preserve sleeve width when fitting the camera anatomy.
+	var axis := before.normalized()
+	var amount := after.length() / maxf(0.001, before.length()) - 1.0
+	var stretch := Basis.IDENTITY
+	stretch.x += axis * axis.x * amount
+	stretch.y += axis * axis.y * amount
+	stretch.z += axis * axis.z * amount
+	skeleton.set_bone_global_pose(bone, Transform3D(turn * stretch * source.basis, start))

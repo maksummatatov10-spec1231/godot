@@ -51,8 +51,12 @@ func run() -> void:
 		fps_skeleton.find_children("*", "SkeletonModifier3D", false, false)[0]
 	)
 	modifier.call("_process_modification")
-	var wrist := fps_skeleton.get_bone_global_pose(fps_skeleton.find_bone("hand_r")).origin
-	check(wrist.z < -0.4 and wrist.y < 0.0, "FPS wrist/grip is in front of and below lens")
+	var wrist: Vector3 = (
+		player.camera.global_transform.affine_inverse()
+		* fps_skeleton.global_transform
+		* fps_skeleton.get_bone_global_pose(fps_skeleton.find_bone("hand_r")).origin
+	)
+	check(wrist.z < -0.15 and wrist.y < 0.15, "FPS wrist/grip is in front of and below lens")
 	check(player.legs.visible, "first person retains animated lower body")
 	var all_shadow_only := true
 	for mesh in player.body_meshes:

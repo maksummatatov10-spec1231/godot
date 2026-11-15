@@ -9,3 +9,6 @@ godot/native/
 godot/native_cpp/
 cpp/.sconsign*
 cpp/src/*.os
+
+model_lab/node_modules/
+model_lab/dist/

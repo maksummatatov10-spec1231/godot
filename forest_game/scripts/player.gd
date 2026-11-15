@@ -45,10 +45,16 @@ var boom_shape := SphereShape3D.new()
 var boom_query := PhysicsShapeQueryParameters3D.new()
 var camera_motion_enabled := true
 var sprinting := false
+var arm_skeleton: Skeleton3D
+var leg_skeleton: Skeleton3D
+var combat_pose: Dictionary
+var world_sword: Node3D
+var view_sword: Node3D
 var trail: MeshInstance3D
 
 
 func _ready() -> void:
+	combat_pose = JSON.parse_string(FileAccess.get_file_as_string("res://combat_pose.json"))
 	configure_input()
 	for sound_name in ["footstep", "sword", "arcane"]:
 		var sound := AudioStreamPlayer.new()
@@ -91,15 +97,15 @@ func _ready() -> void:
 	grip.bone_name = "hand_r"
 	skeleton.add_child(grip)
 	var sword: Node3D = SWORD.instantiate()
-	sword.scale = Vector3.ONE * 0.52
-	sword.rotation_degrees.z = -90
-	sword.position = Vector3(0.11, 0.09, 0.025)
+	world_sword = sword
+	apply_pose(sword, combat_pose.weapon)
 	grip.add_child(sword)
 	for mesh in visual.find_children("*", "MeshInstance3D", true, false):
 		mesh.layers = 1
 		body_meshes.append(mesh)
 	legs = LEGS.instantiate()
 	visual.add_child(legs)
+	leg_skeleton = legs.find_children("*", "Skeleton3D", true, false)[0]
 	legs_animator = legs.find_children("*", "AnimationPlayer", true, false)[0]
 	for clip in ["Idle", "Sword_Idle", "Walk", "Jog_Fwd", "Sprint", "Jump"]:
 		legs_animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
@@ -136,7 +142,32 @@ func _ready() -> void:
 	boom_query.collision_mask = 1
 	boom_query.exclude = [get_rid()]
 	create_viewmodel()
+	for animation_player in [animator, view_animator, legs_animator]:
+		animation_player.callback_mode_process = (
+			AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
+		)
 	play_clip("Sword_Idle")
+
+
+func apply_pose(node: Node3D, pose: Dictionary) -> void:
+	node.position = Vector3(pose.position[0], pose.position[1], pose.position[2])
+	node.rotation_degrees = Vector3(
+		pose.rotation_degrees[0], pose.rotation_degrees[1], pose.rotation_degrees[2]
+	)
+	node.scale = Vector3.ONE * float(pose.scale)
+
+
+func advance_animation(delta: float) -> void:
+	# The full-body rig is the ONLY authoritative animation clock and blend result.
+	animator.advance(delta)
+	view_animator.seek(animator.current_animation_position, true)
+	legs_animator.seek(animator.current_animation_position, true)
+	# Copy also static/unkeyed channels. IK must never feed last frame's pose
+	# back into the next frame or lose clip crossfades / fingers / reverse walk.
+	for bone in range(skeleton.get_bone_count()):
+		var pose := skeleton.get_bone_pose(bone)
+		arm_skeleton.set_bone_pose(bone, pose)
+		leg_skeleton.set_bone_pose(bone, pose)
 
 
 func configure_input() -> void:
@@ -172,12 +203,11 @@ func create_viewmodel() -> void:
 	viewmodel = load("res://assets/hero/warden_arms.gltf").instantiate()
 	viewmodel.name = "FirstPersonSkinnedArms"
 	camera.add_child(viewmodel)
-	viewmodel.position = Vector3.ZERO
-	viewmodel.rotation.y = 0
+	apply_pose(viewmodel, combat_pose.first_person)
 	view_animator = viewmodel.find_children("*", "AnimationPlayer", true, false)[0]
 	for clip in ["Idle", "Sword_Idle", "Walk", "Jog_Fwd", "Sprint", "Jump"]:
 		view_animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
-	var arm_skeleton: Skeleton3D = viewmodel.find_children("*", "Skeleton3D", true, false)[0]
+	arm_skeleton = viewmodel.find_children("*", "Skeleton3D", true, false)[0]
 	var correction := SkeletonModifier3D.new()
 	correction.set_script(FPS_ARMS)
 	correction.controller = self
@@ -186,9 +216,8 @@ func create_viewmodel() -> void:
 	grip.bone_name = "hand_r"
 	arm_skeleton.add_child(grip)
 	var sword: Node3D = SWORD.instantiate()
-	sword.scale = Vector3.ONE * 0.36
-	sword.rotation_degrees.z = -90
-	sword.position = Vector3(0.08, 0.09, 0.025)
+	view_sword = sword
+	apply_pose(sword, combat_pose.weapon)
 	grip.add_child(sword)
 	for mesh in viewmodel.find_children("*", "MeshInstance3D", true, false):
 		mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -286,6 +315,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(delta: float) -> void:
+	advance_animation(delta)
 	if camera_motion_enabled:
 		update_camera(delta, Vector2(velocity.x, velocity.z).length())
 
@@ -315,13 +345,6 @@ func update_camera(delta: float, moving: float) -> void:
 	camera.fov = lerpf(
 		camera.fov, 78.0 if moving > 4.0 else (68.0 if aim else 72.0), 1.0 - exp(-6.0 * delta)
 	)
-	viewmodel.position = (
-		Vector3.ZERO
-		+ Vector3(sin(elapsed * 9.0) * moving * 0.002, abs(cos(elapsed * 9.0)) * moving * 0.003, 0)
-	)
-	viewmodel.rotation = Vector3.ZERO
-	view_animator.speed_scale = animator.speed_scale
-	legs_animator.speed_scale = animator.speed_scale
 
 
 func set_first_person(value: bool) -> void:
