@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FOREST_READY trees=280 ground_cover=3400 seed=730221
+PERF_PROBE [{"animation_cpu_us_median":335.256,"first_person":false,"samples_us":[326.482,329.072,333.496,335.256,336.526,349.626,399.234]},{"animation_cpu_us_median":338.332,"first_person":true,"samples_us":[333.216,337.282,337.69,338.332,340.324,342.1,370.04]}]

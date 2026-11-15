@@ -22,6 +22,8 @@ def main():
               'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
               'renderer': 'Forward+', 'hardware_performance_test': False,
               'device_environment': os.environ.get('VK_ICD_FILENAMES', ''), 'steps': []}
+    # A cancelled/crashed capture must never leave yesterday's passing report.
+    (OUTPUT / 'result.json').write_text(json.dumps({**report, 'passed': False, 'incomplete': True}, indent=2) + '\n')
     base = [engine, '--path', str(ROOT / 'forest_game')]
 
     def run(name, args, marker=None, timeout=120):
