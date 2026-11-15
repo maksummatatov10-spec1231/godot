@@ -49,6 +49,9 @@ def main():
             passed = passed and marker in process.stdout
         report['steps'].append({'name': name, 'passed': passed, 'exit_code': process.returncode})
         print(name, 'PASS' if passed else 'FAIL', flush=True)
+        if not passed:
+            detail=process.stdout[-6000:].replace('%','%25').replace('\r','%0D').replace('\n','%0A')
+            print(f'::error title=Lantern {name}::{detail}',flush=True)
         return passed
 
     if run('import', base+['--headless', '--editor', '--import']):

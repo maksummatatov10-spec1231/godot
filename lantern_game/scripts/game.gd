@@ -47,6 +47,10 @@ var capture_running := false
 
 
 func _ready() -> void:
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--capture-dir="):
+			capture_path = arg.trim_prefix("--capture-dir=")
+	capture_running = not capture_path.is_empty()
 	seed(317)
 	_configure_input()
 	_load_settings()
@@ -127,7 +131,7 @@ func _ready() -> void:
 	(ambience_player.stream as AudioStreamWAV).loop_end = int(
 		ambience_player.stream.get_length() * 22050
 	)
-	if ambience_enabled and DisplayServer.get_name() != "headless":
+	if ambience_enabled and not capture_running and DisplayServer.get_name() != "headless":
 		ambience_player.play()
 	_build_ui()
 	show_menu("main")
@@ -434,6 +438,7 @@ func _build_ui() -> void:
 	column.add_child(help)
 	dialog_root.hide()
 	interact_button = _make_button("Z", interact)
+	interact_button.focus_mode = Control.FOCUS_NONE
 	interact_button.custom_minimum_size = Vector2(34, 30)
 	interact_button.position = Vector2(580, 302)
 	interact_button.size = Vector2(34, 30)
