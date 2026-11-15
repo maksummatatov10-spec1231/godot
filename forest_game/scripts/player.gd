@@ -50,6 +50,9 @@ var leg_skeleton: Skeleton3D
 var combat_pose: Dictionary
 var world_sword: Node3D
 var view_sword: Node3D
+var arm_modifier: SkeletonModifier3D
+var copied_bones_last_frame := 0
+var animation_cpu_usec := 0
 var trail: MeshInstance3D
 
 
@@ -146,6 +149,10 @@ func _ready() -> void:
 		animation_player.callback_mode_process = (
 			AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 		)
+	# Auxiliary rigs are pose consumers, never independent clip evaluators.
+	view_animator.active = false
+	legs_animator.active = false
+	set_first_person(false)
 	play_clip("Sword_Idle")
 
 
@@ -158,16 +165,21 @@ func apply_pose(node: Node3D, pose: Dictionary) -> void:
 
 
 func advance_animation(delta: float) -> void:
-	# The full-body rig is the ONLY authoritative animation clock and blend result.
+	var started := Time.get_ticks_usec()
 	animator.advance(delta)
-	view_animator.seek(animator.current_animation_position, true)
-	legs_animator.seek(animator.current_animation_position, true)
-	# Copy also static/unkeyed channels. IK must never feed last frame's pose
-	# back into the next frame or lose clip crossfades / fingers / reverse walk.
+	copied_bones_last_frame = 0
+	if first_person:
+		sync_first_person_pose()
+	animation_cpu_usec = Time.get_ticks_usec() - started
+
+
+func sync_first_person_pose() -> void:
+	# One evaluation, two consumers; also reset unkeyed channels before IK.
 	for bone in range(skeleton.get_bone_count()):
 		var pose := skeleton.get_bone_pose(bone)
 		arm_skeleton.set_bone_pose(bone, pose)
 		leg_skeleton.set_bone_pose(bone, pose)
+	copied_bones_last_frame = skeleton.get_bone_count() * 2
 
 
 func configure_input() -> void:
@@ -209,6 +221,7 @@ func create_viewmodel() -> void:
 		view_animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
 	arm_skeleton = viewmodel.find_children("*", "Skeleton3D", true, false)[0]
 	var correction := SkeletonModifier3D.new()
+	arm_modifier = correction
 	correction.set_script(FPS_ARMS)
 	correction.controller = self
 	arm_skeleton.add_child(correction)
@@ -352,6 +365,11 @@ func set_first_person(value: bool) -> void:
 	camera.cull_mask = 1
 	viewmodel.visible = value
 	legs.visible = value
+	arm_modifier.active = value
+	viewmodel.process_mode = Node.PROCESS_MODE_INHERIT if value else Node.PROCESS_MODE_DISABLED
+	legs.process_mode = Node.PROCESS_MODE_INHERIT if value else Node.PROCESS_MODE_DISABLED
+	if value:
+		sync_first_person_pose()
 	for mesh in body_meshes:
 		mesh.cast_shadow = (
 			GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
@@ -370,10 +388,6 @@ func play_clip(clip: String) -> void:
 	current_clip = clip
 	animator.speed_scale = 1.0
 	animator.play(clip, 0.14)
-	if view_animator != null:
-		view_animator.play(clip, 0.14)
-	if legs_animator != null:
-		legs_animator.play(clip, 0.14)
 
 
 func attack() -> void:

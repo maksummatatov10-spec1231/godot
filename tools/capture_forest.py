@@ -57,7 +57,7 @@ def main():
                          '09-sky-sun', '10-pause-menu', '11-graphics-settings', '12-audio-settings',
                          '13-main-menu', '14-controls-settings', '15-grip-close',
                          '16-fps-sword_regular_a', '17-fps-sword_regular_b', '18-fps-sword_regular_c',
-                         '19-fps-walk', '20-fps-jump', '21-fps-jump_land']:
+                         '19-fps-walk', '20-fps-jump', '21-fps-jump_land', '22-high-optimized']:
                 path = OUTPUT / (name + '.png')
                 if not path.is_file():
                     valid = False
@@ -68,6 +68,8 @@ def main():
             b = Image.open(OUTPUT / '02-first-person.png').convert('RGB')
             difference = sum(ImageStat.Stat(ImageChops.difference(a, b)).mean) / 3
             valid = valid and difference > 2
+            measurements = json.loads((OUTPUT / 'performance-ab.json').read_text())
+            valid = valid and len(measurements['stages']) == 12 and not measurements['cancelled']
             report['steps'].append({'name': 'image-checks', 'passed': bool(valid),
                                     'camera_difference': difference})
     report['passed'] = all(step['passed'] for step in report['steps'])

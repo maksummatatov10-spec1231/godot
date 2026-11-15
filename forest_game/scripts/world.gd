@@ -22,6 +22,8 @@ var effects: Node3D
 var birds: AudioStreamPlayer
 var wind: AudioStreamPlayer
 var grass_batches: Array[MultiMeshInstance3D] = []
+var tree_render_batches: Array[MultiMeshInstance3D] = []
+var shadow_atlas_size := 2048
 
 
 func _ready() -> void:
@@ -251,9 +253,13 @@ func forest() -> void:
 func add_tree(species: String, pos: Vector3, size: float) -> void:
 	var key := species + str(floori(pos.x / 16.0)) + ":" + str(floori(pos.z / 16.0))
 	if not tree_batches.has(key):
-		tree_batches[key] = {"species": species, "transforms": []}
+		tree_batches[key] = {
+			"species": species,
+			"transforms": [],
+			"origin": Vector3(floorf(pos.x / 16.0) * 16 + 8, 0, floorf(pos.z / 16.0) * 16 + 8)
+		}
 	var orientation := Basis(Vector3.UP, rng.randf_range(-PI, PI)).scaled(Vector3.ONE * size)
-	tree_batches[key].transforms.append(Transform3D(orientation, pos))
+	tree_batches[key].transforms.append(Transform3D(orientation, pos - tree_batches[key].origin))
 	var body := StaticBody3D.new()
 	var collision := CollisionShape3D.new()
 	var cylinder := CylinderShape3D.new()
@@ -267,22 +273,29 @@ func add_tree(species: String, pos: Vector3, size: float) -> void:
 
 
 func build_tree_batches() -> void:
+	var mesh_cache: Dictionary = {}
 	for entry in tree_batches.values():
 		var source: Node3D = model(entry.species).instantiate()
 		for piece in source.find_children("*", "MeshInstance3D", true, false):
 			var batch := MultiMeshInstance3D.new()
 			var mm := MultiMesh.new()
 			mm.transform_format = MultiMesh.TRANSFORM_3D
-			mm.mesh = piece.mesh.duplicate()
-			for surface in range(mm.mesh.get_surface_count()):
-				var original: Material = piece.get_active_material(surface)
-				if original is StandardMaterial3D and "Leaves" in original.resource_name:
-					mm.mesh.surface_set_material(surface, wind_material(original))
+			var key: String = entry.species + ":" + str(piece.mesh.get_rid().get_id())
+			if not mesh_cache.has(key):
+				var mesh: Mesh = piece.mesh.duplicate()
+				for surface in range(mesh.get_surface_count()):
+					var original: Material = piece.get_active_material(surface)
+					if original is StandardMaterial3D and "Leaves" in original.resource_name:
+						mesh.surface_set_material(surface, wind_material(original))
+				mesh_cache[key] = mesh
+			mm.mesh = mesh_cache[key]
 			mm.instance_count = entry.transforms.size()
 			for i in range(mm.instance_count):
 				mm.set_instance_transform(i, entry.transforms[i] * piece.transform)
 			batch.multimesh = mm
+			batch.position = entry.origin
 			add_child(batch)
+			tree_render_batches.append(batch)
 		source.free()
 
 
@@ -384,14 +397,42 @@ func apply_profile(value: int) -> void:
 	environment.volumetric_fog_enabled = high_quality
 	environment.ssao_enabled = profile >= 1
 	environment.ssr_enabled = high_quality
-	get_viewport().msaa_3d = Viewport.MSAA_2X if profile >= 1 else Viewport.MSAA_DISABLED
+	# High keeps foliage/hero shadows and SSAO, without always-on PCSS + 4K atlas
+	# and the previous MSAA+FXAA double AA cost. Ultra remains an explicit option.
+	get_viewport().msaa_3d = Viewport.MSAA_2X if high_quality else Viewport.MSAA_DISABLED
+	shadow_atlas_size = 4096 if high_quality else (1024 if profile == 0 else 2048)
+	RenderingServer.directional_shadow_atlas_set_size(shadow_atlas_size, true)
+	RenderingServer.directional_soft_shadow_filter_set_quality(
+		(
+			RenderingServer.SHADOW_QUALITY_SOFT_MEDIUM
+			if high_quality
+			else RenderingServer.SHADOW_QUALITY_SOFT_LOW
+		)
+	)
+	RenderingServer.environment_set_ssao_quality(
+		(
+			RenderingServer.ENV_SSAO_QUALITY_MEDIUM
+			if high_quality
+			else RenderingServer.ENV_SSAO_QUALITY_LOW
+		),
+		true,
+		0.5,
+		2,
+		35.0,
+		65.0
+	)
 	var sun: DirectionalLight3D = $LateMorningSun
-	sun.directional_shadow_max_distance = 55.0 if high_quality else 38.0
+	sun.light_angular_distance = 0.8 if high_quality else 0.0
+	sun.directional_shadow_blend_splits = high_quality
+	sun.directional_shadow_max_distance = [24.0, 38.0, 55.0][profile]
 	sun.directional_shadow_mode = (
 		DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
 		if high_quality
 		else DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS
 	)
+	for batch in tree_render_batches:
+		batch.visibility_range_end = [70.0, 90.0, 110.0][profile]
+		batch.lod_bias = [0.5, 0.8, 1.0][profile]
 	for batch in grass_batches:
 		batch.visibility_range_end = [22.0, 32.0, 42.0][profile]
 
@@ -539,6 +580,21 @@ func capture_suite(directory: String) -> void:
 			player.advance_animation(0)
 			await get_tree().process_frame
 		await save_frame(directory, "%02d-fps-%s" % [16 + index, clip.to_lower()])
+	apply_profile(1)
+	player.current_clip = ""
+	player.play_clip("Sword_Idle")
+	player.set_process(true)
+	for i in range(4):
+		await get_tree().process_frame
+	await save_frame(directory, "22-high-optimized")
+	var diagnostic := Node.new()
+	diagnostic.set_script(preload("res://scripts/performance_diagnostic.gd"))
+	add_child(diagnostic)
+	var measurements: Dictionary = await diagnostic.run(
+		self, directory.path_join("performance-ab.json"), true
+	)
+	assert(measurements.stages.size() == 12)
+	diagnostic.queue_free()
 	print("FOREST_CAPTURE_OK ", directory)
 	await stop_audio()
 	get_tree().quit(0)

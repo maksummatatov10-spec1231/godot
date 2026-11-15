@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+const DIAGNOSTIC = preload("res://scripts/performance_diagnostic.gd")
 const BENCHMARK = preload("res://scripts/benchmark.gd")
 ## Actual pause/main/settings screens; UI runs while world physics is paused.
 var world: Node3D
@@ -138,7 +139,7 @@ func pause() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if world.capture_mode:
+	if world.capture_mode or get_tree().has_group("performance_diagnostic"):
 		return
 	if event.is_action_pressed("ui_cancel"):
 		if visible and screen in ["settings", "graphics", "audio", "controls"]:
@@ -203,7 +204,7 @@ func show_graphics() -> void:
 	var presets := OptionButton.new()
 	for caption in [
 		"Низкий — максимум запаса",
-		"Высокий — начать с него на RX 580",
+		"Высокий — оптимизированные тени и FXAA",
 		"Ультра — более дорогой туман и отражения"
 	]:
 		presets.add_item(caption)
@@ -231,6 +232,7 @@ func show_graphics() -> void:
 	toggle("Полноэкранный режим", "fullscreen")
 	toggle("Показывать FPS и время кадра", "fps")
 	button("Проверить производительность на моём ПК (22 сек.)", run_benchmark)
+	button("Найти узкое место: 12 сравнений (~60 сек.)", run_diagnostic)
 	button("Назад", show_settings)
 
 
@@ -241,6 +243,17 @@ func run_benchmark() -> void:
 	benchmark.set_script(BENCHMARK)
 	world.add_child(benchmark)
 	benchmark.start(world)
+
+
+func run_diagnostic() -> void:
+	if not ready_to_play or get_tree().has_group("performance_diagnostic"):
+		return
+	var diagnostic := Node.new()
+	diagnostic.set_script(DIAGNOSTIC)
+	diagnostic.process_mode = Node.PROCESS_MODE_ALWAYS
+	world.add_child(diagnostic)
+	await diagnostic.run(world)
+	diagnostic.queue_free()
 
 
 func show_audio() -> void:

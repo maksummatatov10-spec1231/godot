@@ -2,20 +2,36 @@ extends SkeletonModifier3D
 ## Retarget the REAL clip wrists into reachable camera space. Preserve their
 ## animated rotation and every finger channel; solve elbows with two-bone IK.
 var controller: CharacterBody3D
+var arm_bones: Array[PackedInt32Array] = []
+
+
+func _ready() -> void:
+	var skeleton := get_skeleton()
+	for side in ["r", "l"]:
+		arm_bones.append(
+			PackedInt32Array(
+				[
+					skeleton.find_bone("upperarm_" + side),
+					skeleton.find_bone("lowerarm_" + side),
+					skeleton.find_bone("hand_" + side)
+				]
+			)
+		)
 
 
 func _process_modification() -> void:
-	if controller == null:
+	if controller == null or not controller.first_person:
 		return
 	var skeleton := get_skeleton()
 	var to_camera: Transform3D = (
 		controller.camera.global_transform.affine_inverse() * skeleton.global_transform
 	)
 	var to_model := to_camera.affine_inverse()
-	for side in ["r", "l"]:
-		var upper := skeleton.find_bone("upperarm_" + side)
-		var lower := skeleton.find_bone("lowerarm_" + side)
-		var wrist := skeleton.find_bone("hand_" + side)
+	for index in range(arm_bones.size()):
+		var side: String = "r" if index == 0 else "l"
+		var upper: int = arm_bones[index][0]
+		var lower: int = arm_bones[index][1]
+		var wrist: int = arm_bones[index][2]
 		var source_upper := skeleton.get_bone_global_pose(upper)
 		var source_lower := skeleton.get_bone_global_pose(lower)
 		var source_wrist := skeleton.get_bone_global_pose(wrist)

@@ -108,18 +108,8 @@ func run() -> void:
 				player.arm_skeleton.get_bone_pose(finger)
 			)
 		)
-		parity = (
-			parity
-			and (
-				absf(
-					(
-						player.animator.current_animation_position
-						- player.view_animator.current_animation_position
-					)
-				)
-				< 0.001
-			)
-		)
+		parity = parity and not player.view_animator.active and not player.legs_animator.active
+		parity = parity and player.copied_bones_last_frame == player.skeleton.get_bone_count() * 2
 		if clip.begins_with("Sword_Regular"):
 			blade_directions.append(adapted.basis.z.normalized())
 	check(parity, "FPS preserves original wrist rotation, finger channels and exact clip phase")
@@ -150,6 +140,29 @@ func run() -> void:
 		player.camera.cull_mask == 1 and not player.viewmodel.visible and not player.legs.visible,
 		"third person restores animated full body"
 	)
+	player.advance_animation(1.0 / 60.0)
+	check(
+		player.copied_bones_last_frame == 0 and not player.arm_modifier.active,
+		"third person skips hidden rig copies, duplicate evaluators and arm IK"
+	)
+	world.apply_profile(1)
+	check(
+		(
+			world.shadow_atlas_size == 2048
+			and is_zero_approx(world.get_node("LateMorningSun").light_angular_distance)
+			and world.get_viewport().msaa_3d == Viewport.MSAA_DISABLED
+			and world.environment.ssao_enabled
+		),
+		"balanced High keeps SSAO and shadows without 4K PCSS or double AA"
+	)
+	var unique_tree_meshes := {}
+	for batch in world.tree_render_batches:
+		unique_tree_meshes[batch.multimesh.mesh.get_rid()] = true
+	check(
+		unique_tree_meshes.size() <= 10 and world.tree_render_batches.size() > 10,
+		"tree cells reuse per-species mesh and LOD resources"
+	)
+	world.apply_profile(2)
 	player.position = Vector3(0, 0.05, 1)
 	player.velocity = Vector3.ZERO
 	await ticks(20)

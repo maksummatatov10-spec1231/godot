@@ -30,6 +30,7 @@ func _ready() -> void:
 			for particles in effect.find_children("*", "GPUParticles3D", true, false):
 				particles.amount = mini(particles.amount, 32)
 				particles.emitting = false
+			effect.process_mode = Node.PROCESS_MODE_DISABLED
 			effect.visible = false
 			pools[key].append(effect)
 
@@ -42,6 +43,7 @@ func acquire(key: String, at: Vector3, size: float, duration := 0.0) -> Node3D:
 	effect.set_meta("lease", serial)
 	effect.global_position = at
 	effect.scale = Vector3.ONE * size
+	effect.process_mode = Node.PROCESS_MODE_INHERIT
 	effect.visible = true
 	effect.call("play" if key == "cast" else "open")
 	for particles in effect.find_children("*", "GPUParticles3D", true, false):
@@ -59,6 +61,7 @@ func acquire(key: String, at: Vector3, size: float, duration := 0.0) -> Node3D:
 
 func release(effect: Node3D) -> void:
 	effect.visible = false
+	effect.process_mode = Node.PROCESS_MODE_DISABLED
 	for particles in effect.find_children("*", "GPUParticles3D", true, false):
 		particles.emitting = false
 	for animation in effect.find_children("*", "AnimationPlayer", true, false):
