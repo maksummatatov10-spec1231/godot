@@ -184,7 +184,39 @@ func _init():
 	access_resolved_depth = true
 	access_resolved_color = true
 	needs_motion_vectors = true
+	# A Resource's exported fields are deserialized AFTER _init(). Loading or
+	# mutating them from the render thread here races the resource loader.
+	_prepare_resources.call_deferred()
+
+var _resources_ready := false
+var _display_shader_regular: RDShaderFile
+var _display_shader_msaa: RDShaderFile
+
+func _prepare_resources() -> void:
+	var defaults := {
+		"dither_noise": "NoiseTextures/bluenoise_Dither.png",
+		"height_gradient": "NoiseTextures/HeightGradient.tres",
+		"extra_large_noise_patterns": "NoiseTextures/ExtraLargeScaleNoise.tres",
+		"large_scale_noise": "NoiseTextures/LargeScaleNoise.tres",
+		"medium_scale_noise": "NoiseTextures/MediumScaleNoise.tres",
+		"small_scale_noise": "NoiseTextures/SmallScaleNoise.tres",
+		"curl_noise": "NoiseTextures/curl_noise_varied.tga",
+		"compute_shader": "SunshineCloudsCompute.glsl",
+		"pre_pass_compute_shader": "SunshineCloudsPreCompute.glsl",
+	}
+	for property in defaults:
+		if get(property) == null:
+			set(property, load("res://addons/SunshineClouds2/" + defaults[property]))
+	_display_shader_regular = load("res://addons/SunshineClouds2/SunshineCloudsDisplay.glsl")
+	_display_shader_msaa = load("res://addons/SunshineClouds2/SunshineCloudsDisplay.msaa.glsl")
+	# Retain both post-pass resources on the main thread before RD work starts.
+	_post_shader_regular = load("res://addons/SunshineClouds2/SunshineCloudsPostCompute.glsl")
+	_post_shader_msaa = load("res://addons/SunshineClouds2/SunshineCloudsPostCompute.msaa.glsl")
+	_resources_ready = true
 	RenderingServer.call_on_render_thread(initialize_compute)
+
+var _post_shader_regular: RDShaderFile
+var _post_shader_msaa: RDShaderFile
 
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE and is_instance_valid(self):
@@ -331,11 +363,11 @@ func initialize_compute():
 		pre_pass_compute_shader = ResourceLoader.load("res://addons/SunshineClouds2/SunshineCloudsPreCompute.glsl")
 	var display_shader_file : RDShaderFile
 	if msaa_mode == RenderingServer.ViewportMSAA.VIEWPORT_MSAA_DISABLED:
-		post_pass_compute_shader = ResourceLoader.load("res://addons/SunshineClouds2/SunshineCloudsPostCompute.glsl")
-		display_shader_file = ResourceLoader.load("res://addons/SunshineClouds2/SunshineCloudsDisplay.glsl")
+		post_pass_compute_shader = _post_shader_regular
+		display_shader_file = _display_shader_regular
 	else:
-		post_pass_compute_shader = ResourceLoader.load("res://addons/SunshineClouds2/SunshineCloudsPostCompute.msaa.glsl")
-		display_shader_file = ResourceLoader.load("res://addons/SunshineClouds2/SunshineCloudsDisplay.msaa.glsl")
+		post_pass_compute_shader = _post_shader_msaa
+		display_shader_file = _display_shader_msaa
 
 	if not compute_shader or not pre_pass_compute_shader or not post_pass_compute_shader or not display_shader_file:
 		enabled = false
@@ -444,6 +476,8 @@ func initialize_raster_pipelines(color_texture : RID, depth_texture : RID):
 	display_pipeline = rd.render_pipeline_create(display_shader, framebuffer_format, display_vertex_format, RenderingDevice.RenderPrimitive.RENDER_PRIMITIVE_TRIANGLES, pipeline_rasterization_state, pipeline_multisample_state, pipeline_depthstencil_state, pipeline_colorblend_state)
 
 func _render_callback(effect_callback_type, render_data):
+	if not _resources_ready:
+		return
 	if rd == null:
 		initialize_compute()
 	elif pipeline.is_valid() and height_gradient and extra_large_noise_patterns and large_scale_noise and medium_scale_noise and small_scale_noise and dither_noise and curl_noise:

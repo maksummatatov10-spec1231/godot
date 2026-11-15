@@ -19,16 +19,9 @@ var minimum_x: float = 60.
 
 
 func _ready() -> void:
-	# Setup Display Scale
-	# 0 auto, 1 75%, 2 100%, 3 125%, 4 150%, 5 175%, 6 200%, 7 custom
-	var es: EditorSettings = EditorInterface.get_editor_settings()
-	var ds: int = es.get_setting("interface/editor/display_scale")
-	if ds == 0:
-		ds = 2
-	elif ds == 7:
-		display_scale = es.get_setting("interface/editor/custom_display_scale")
-	else:
-		display_scale = float(ds + 2) * .25
+	# EditorInterface handles auto/custom scaling and fresh 4.7 editor profiles.
+	# Legacy editor settings may not exist during the very first import.
+	display_scale = EditorInterface.get_editor_scale()
 
 	update_label()
 
