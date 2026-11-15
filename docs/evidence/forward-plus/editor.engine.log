@@ -1,70 +1,7 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 Vulkan 1.4.318 - Forward+ - Using Device #0: Unknown - llvmpipe (LLVM 20.1.2, 256 bits)
 
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/ring1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/hill2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/peak2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain6.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/stones.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
      at: load_from_file (core/io/image.cpp:2780)
      GDScript backtrace (most recent call first):
          [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
@@ -78,84 +15,7 @@ WARNING: Loaded resource as image file, this will not work on export: 'res://add
          [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
          [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
          [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/acrylic1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle0.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/hill1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
      at: load_from_file (core/io/image.cpp:2780)
      GDScript backtrace (most recent call first):
          [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
@@ -176,28 +36,14 @@ WARNING: Loaded resource as image file, this will not work on export: 'res://add
          [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
          [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
          [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
      at: load_from_file (core/io/image.cpp:2780)
      GDScript backtrace (most recent call first):
          [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
          [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
          [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
          [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/peak1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
-     at: load_from_file (core/io/image.cpp:2780)
-     GDScript backtrace (most recent call first):
-         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
-         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
-         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
-         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
      at: load_from_file (core/io/image.cpp:2780)
      GDScript backtrace (most recent call first):
          [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
@@ -211,7 +57,14 @@ WARNING: Loaded resource as image file, this will not work on export: 'res://add
          [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
          [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
          [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/peak1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
      at: load_from_file (core/io/image.cpp:2780)
      GDScript backtrace (most recent call first):
          [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
@@ -225,14 +78,56 @@ WARNING: Loaded resource as image file, this will not work on export: 'res://add
          [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
          [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
          [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/smoke.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
      at: load_from_file (core/io/image.cpp:2780)
      GDScript backtrace (most recent call first):
          [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
          [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
          [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
          [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
-WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/ring1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/stones.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain6.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
      at: load_from_file (core/io/image.cpp:2780)
      GDScript backtrace (most recent call first):
          [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
@@ -246,54 +141,112 @@ WARNING: Loaded resource as image file, this will not work on export: 'res://add
          [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
          [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
          [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/smoke.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/mountain2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle0.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/terrain5.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/peak2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/acrylic1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/circle4.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/hill1.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/texture3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/hill2.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
+WARNING: Loaded resource as image file, this will not work on export: 'res://addons/terrain_3d/brushes/square3.exr'. Instead, import the image file as an Image resource and load it normally as a resource.
+     at: load_from_file (core/io/image.cpp:2780)
+     GDScript backtrace (most recent call first):
+         [0] add_brushes (res://addons/terrain_3d/src/tool_settings.gd:284)
+         [1] _ready (res://addons/terrain_3d/src/tool_settings.gd:65)
+         [2] _enter_tree (res://addons/terrain_3d/src/ui.gd:106)
+         [3] _enter_tree (res://addons/terrain_3d/src/editor_plugin.gd:73)
 Assets2Godot: Plugin enabled
 Assets2Godot: Download path: /home/runner/work/godot/godot/godot/Assets2Godot/bk_assets/
 initial scene load
-Version conflict, updating and reimporting...
-ERROR: /root: The caller thread can't call the function `propagate_notification()` on this node. Use `call_deferred()` or `call_deferred_thread_group()` instead.
-   at: propagate_notification (scene/main/node.cpp:2578)
-ERROR: /root: The caller thread can't call the function `propagate_notification()` on this node. Use `call_deferred()` or `call_deferred_thread_group()` instead.
-   at: propagate_notification (scene/main/node.cpp:2578)
-
-================================================================
-
-================================================================
-handle_crash: Program crashed with signal 11
-Engine version: Godot Engine v4.7.2.stable.official (ed1daf0bf001b61586d9930840f2f1394092c079)
-Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
-handle_crash: Program crashed with signal 11
-Engine version: Godot Engine v4.7.2.stable.official (ed1daf0bf001b61586d9930840f2f1394092c079)
-Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
-Load address: 7fd0b3600000
-
-Load address: 7fd0b3600000
-
-[1] 7fd0b3645330 (main+45330) - /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7fd0b3645330]
-[1] 7fd0b3645330 (main+45330) - /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7fd0b3645330]
-[2] 495ca68 (Godot_v4.7.2-stable_linux.x86_64+455ca68) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x495ca68]
-[2] 495ca68 (Godot_v4.7.2-stable_linux.x86_64+455ca68) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x495ca68]
-[3] 4dd0f7e (Godot_v4.7.2-stable_linux.x86_64+49d0f7e) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x4dd0f7e]
-[3] 4dd0f7e (Godot_v4.7.2-stable_linux.x86_64+49d0f7e) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x4dd0f7e]
-[4] 45e9576 (Godot_v4.7.2-stable_linux.x86_64+41e9576) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x45e9576]
-[4] 45e9576 (Godot_v4.7.2-stable_linux.x86_64+41e9576) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x45e9576]
-[5] 458651e (Godot_v4.7.2-stable_linux.x86_64+418651e) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x458651e]
-[5] 458651e (Godot_v4.7.2-stable_linux.x86_64+418651e) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x458651e]
-[6] 1fd3037 (Godot_v4.7.2-stable_linux.x86_64+1bd3037) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x1fd3037]
-[6] 1fd3037 (Godot_v4.7.2-stable_linux.x86_64+1bd3037) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x1fd3037]
-[7] 1e6b93e (Godot_v4.7.2-stable_linux.x86_64+1a6b93e) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x1e6b93e]
-[7] 1e6b93e (Godot_v4.7.2-stable_linux.x86_64+1a6b93e) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x1e6b93e]
-[8] 1e6e1fa (Godot_v4.7.2-stable_linux.x86_64+1a6e1fa) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x1e6e1fa]
-[8] 1e6e1fa (Godot_v4.7.2-stable_linux.x86_64+1a6e1fa) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x1e6e1fa]
-[9] 4904c4d (Godot_v4.7.2-stable_linux.x86_64+4504c4d) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x4904c4d]
-[9] 4904c4d (Godot_v4.7.2-stable_linux.x86_64+4504c4d) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x4904c4d]
-[10] 490535c (Godot_v4.7.2-stable_linux.x86_64+450535c) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x490535c]
-[10] 490535c (Godot_v4.7.2-stable_linux.x86_64+450535c) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x490535c]
-[11] 4406195 (Godot_v4.7.2-stable_linux.x86_64+4006195) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x4406195]
-[11] 4406195 (Godot_v4.7.2-stable_linux.x86_64+4006195) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x4406195]
-[12] 52e6c23 (Godot_v4.7.2-stable_linux.x86_64+4ee6c23) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x52e6c23]
-[12] 52e6c23 (Godot_v4.7.2-stable_linux.x86_64+4ee6c23) - /home/runner/work/godot/godot/.tools/godot/Godot_v4.7.2-stable_linux.x86_64() [0x52e6c23]
-[13] 7fd0b369cb64 (main+9cb64) - /lib/x86_64-linux-gnu/libc.so.6(+0x9cb64) [0x7fd0b369cb64]
-[14] 7fd0b3729e8c (main+129e8c) - /lib/x86_64-linux-gnu/libc.so.6(+0x129e8c) [0x7fd0b3729e8c]
--- END OF C++ BACKTRACE --
-================================================================
-[13] 7fd0b369cb64 (main+9cb64) - /lib/x86_64-linux-gnu/libc.so.6(+0x9cb64) [0x7fd0b369cb64]
+Version correct, launching normally.

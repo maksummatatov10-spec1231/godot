@@ -4,23 +4,3 @@ Vulkan 1.4.318 - Forward+ - Using Device #0: Unknown - llvmpipe (LLVM 20.1.2, 25
 RENDER_STAGE clouds
 RENDER_STAGE hud
 RENDER_VALIDATION_OK /home/runner/work/godot/godot/docs/evidence/forward-plus/clouds-only.png
-WARNING: 1 RID of type "Pipeline" was leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8684)
-WARNING: 3 RIDs of type "Compute" were leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8686)
-WARNING: 1 RID of type "UniformSet" was leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8684)
-WARNING: 1 RID of type "StorageBuffer" was leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8684)
-WARNING: 3 RIDs of type "UniformBuffer" were leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8686)
-WARNING: 4 RIDs of type "Shader" were leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8686)
-WARNING: 1 RID of type "VertexArray" was leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8684)
-WARNING: 1 RID of type "VertexBuffer" was leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8684)
-WARNING: 3 RIDs of type "Sampler" were leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:8686)
-WARNING: 9 RIDs of type "Texture" were leaked.
-   at: finalize (servers/rendering/rendering_device.cpp:8900)
