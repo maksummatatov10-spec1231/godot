@@ -6,6 +6,7 @@
 лисы/кролики, свет фонаря и портретный Z/X-диалог со странником. Без постоянного HUD.
 Это исследовательская первая версия, ещё без интерьеров, боя и сбора урожая.
 [Реальные кадры и коллизии](docs/evidence/lantern/) · [CC0-источники](lantern_game/CREDITS.md).
+[Скачать ZIP первой версии](https://github.com/maksummatatov10-spec1231/godot/releases/download/lantern-valley-v0.1.0/Lantern-Valley-Godot-Project.zip).
 3D-игра ниже сохранена отдельно и не изменена этой работой.
 
 ![Фонарщик — кадр Godot](docs/evidence/lantern/02-village.png)

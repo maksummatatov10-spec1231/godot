@@ -2,6 +2,17 @@
 
 Standalone project: [`lantern_game`](../../../lantern_game/README.md), not `forest_game`.
 
+## Publication
+
+- [First playable source ZIP](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.0)
+  published by [Actions 43757336041](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43757336041).
+- Publication re-ran all checks from `204e38b`; release/evidence commit `7bdbcf9`.
+  The game content hash is identical to the visually reviewed run below:
+  `72b525451448f10623801b9dc5a8b98c9e7d4289ad3f58ed8adbb5403d78351b`.
+- All 24 PNGs and logs were byte-identical between those final two CI runs; only
+  the report timestamp/source-commit fields changed. Use the published `.sha256`
+  for the published ZIP; local ZIP timestamps can produce a different container hash.
+
 ## Reproduction / source identity
 
 - Successful rendered validation: [Actions 43757038240](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43757038240).
