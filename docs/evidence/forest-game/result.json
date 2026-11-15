@@ -1,14 +1,29 @@
 {
-  "timestamp_utc": "2026-11-15T16:20:28.751607+00:00",
-  "source_commit": "47a2984fa39a87f96c980c3d7c8fad4fc2e06365",
+  "timestamp_utc": "2026-11-15T16:21:53.790110+00:00",
+  "source_commit": "249f9cd71a7f53882bb1f58fcbd2db4bb2655e88",
   "renderer": "Forward+",
   "hardware_performance_test": false,
   "device_environment": "/usr/share/vulkan/icd.d/lvp_icd.json",
   "steps": [
     {
       "name": "import",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "gameplay",
       "passed": false,
       "exit_code": 0
+    },
+    {
+      "name": "render",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "image-checks",
+      "passed": true,
+      "camera_difference": 33.3697486255787
     }
   ],
   "passed": false
