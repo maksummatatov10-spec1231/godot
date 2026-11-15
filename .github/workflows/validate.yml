@@ -266,7 +266,9 @@ jobs:
           python-version: '3.11'
       - name: Read-only 2D archive catalog
         run: |
-          pip install gdown py7zr
+          sudo apt-get update
+          sudo apt-get install -y libarchive13
+          pip install gdown py7zr libarchive-c pillow
           python tools/inspect_2d_intake.py
       - name: Record metadata only
         run: |
@@ -275,5 +277,7 @@ jobs:
           git add docs/assets-2d
           if ! git diff --cached --quiet; then
             git commit -m 'Catalog separate user-supplied 2D archive [skip ci]'
+            git fetch origin arena/449f84de-godot
+            git rebase origin/arena/449f84de-godot
             git push origin HEAD:arena/449f84de-godot
           fi
