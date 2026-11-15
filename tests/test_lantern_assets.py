@@ -123,6 +123,13 @@ class LanternAssets(unittest.TestCase):
             self.assertGreaterEqual(y,836)
             self.assertLessEqual(y+h,988)
 
+    def test_market_counters_do_not_block_painted_streets(self):
+        for solid in self.map['solids']:
+            if solid['kind']!='stall':continue
+            x,y,w,h=solid['rect']
+            self.assertFalse(any(x<a*16+16 and x+w>a*16 and y<b*16+16 and y+h>b*16
+                                 for a,b in self.map['paths']),solid)
+
     def test_no_mix_with_3d_project(self):
         self.assertNotIn('forest_game',(GAME/'project.godot').read_text())
         self.assertEqual(self.map['spawn'],[776,658])

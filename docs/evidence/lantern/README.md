@@ -20,7 +20,7 @@ python tools/package_lantern.py
 ```
 
 - Godot **4.7.2**, Compatibility renderer, CI Xvfb/software Mesa 1280×720.
-- **61 Python tests**, lint/format and **3629 Godot assertions**.
+- **62 Python tests**, lint/format and **3629 Godot assertions**.
 - **24 general screenshots** here; **152 close-up frames** in `../lantern-audit/after/`.
 - `result.json` identifies the source/art/import settings by SHA256. Packaging requires
   BOTH this successful result and the close-up result to match the current game digest.
@@ -31,7 +31,7 @@ python tools/package_lantern.py
 
 The diagnostic collision overlay comes from actual CollisionShape2D nodes. Tests cover
 938 shapes, practical movement into each of 341 trunks (1330 accessible approaches),
-every facade, the physical connectivity of 1181 free road-grid cells and all 12 door
+every facade, the physical connectivity of 1183 free road-grid cells and all 12 door
 approaches, actual stopping at the lake bank, farm fence/gate, pauses, dialogue Z/X,
 ability/cooldown, equipment, direction animations and wildlife reactions.
 
