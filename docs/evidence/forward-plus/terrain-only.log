@@ -3,17 +3,4 @@ Vulkan 1.4.318 - Forward+ - Using Device #0: Unknown - llvmpipe (LLVM 20.1.2, 12
 
 RENDER_STAGE terrain
 RENDER_STAGE hud
-ERROR: /root: The caller thread can't call the function `propagate_notification()` on this node. Use `call_deferred()` or `call_deferred_thread_group()` instead.
-   at: propagate_notification (scene/main/node.cpp:2578)
-
-================================================================
-handle_crash: Program crashed with signal 11
-Engine version: Godot Engine v4.7.2.stable.official (ed1daf0bf001b61586d9930840f2f1394092c079)
-Dumping the backtrace. Please include this when reporting the bug on: https://github.com/godotengine/godot/issues
-Load address: 0
-
-[1] 7f0050c45330 (libc.so.6+45330) - /lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7f0050c45330]
-[2] 7f0044b6d6b8 (<unknown module>+7f0044b6d6b8) - [0x7f0044b6d6b8]
--- END OF C++ BACKTRACE --
-================================================================
-Aborted (core dumped)
+RENDER_VALIDATION_OK /home/runner/work/godot/godot/docs/evidence/forward-plus/terrain-only.png

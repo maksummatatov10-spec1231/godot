@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-11-15T15:50:15.416277+00:00",
-  "source_commit": "87049a4a7f930d54f37be2fbcefed0f8d5f2d35b",
+  "timestamp_utc": "2026-11-15T15:54:15.389751+00:00",
+  "source_commit": "16211a8d0886c1beba03d5f014558f9d336c9607",
   "runner": "true",
   "renderer": "forward_plus",
   "software_rendering": true,
@@ -30,9 +30,9 @@
     },
     {
       "name": "terrain-only",
-      "exit_code": 134,
-      "passed": false,
-      "image_error": "No fresh screenshot was produced"
+      "exit_code": 0,
+      "passed": true,
+      "image": "terrain-only.png"
     },
     {
       "name": "clouds-only",
@@ -42,14 +42,9 @@
     },
     {
       "name": "terrain-clouds",
-      "exit_code": 134,
-      "passed": false,
-      "image_error": "No fresh screenshot was produced"
-    },
-    {
-      "name": "terrain-clouds-backtrace",
-      "exit_code": 255,
-      "passed": false
+      "exit_code": 0,
+      "passed": true,
+      "image": "terrain-clouds.png"
     },
     {
       "name": "editor",
@@ -57,5 +52,5 @@
       "passed": true
     }
   ],
-  "passed": false
+  "passed": true
 }
