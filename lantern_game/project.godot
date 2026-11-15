@@ -24,3 +24,7 @@ environment/defaults/default_clear_color=Color(0.12,0.19,0.18,1)
 
 [audio]
 driver/enable_input=false
+
+[debug]
+gdscript/warnings/shadowed_variable_base_class=2
+gdscript/warnings/integer_division=2

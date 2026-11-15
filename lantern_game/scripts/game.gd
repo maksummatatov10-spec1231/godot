@@ -60,6 +60,19 @@ func _ready() -> void:
 	ground.centered = false
 	ground.z_index = -10
 	add_child(ground)
+	var shadows := Sprite2D.new()
+	shadows.texture = load("res://assets/world/sun_shadows.png")
+	shadows.centered = false
+	shadows.z_index = -5
+	add_child(shadows)
+	var sunshine := ColorRect.new()
+	sunshine.size = Vector2(map.size[0], map.size[1])
+	sunshine.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	sunshine.z_index = 80
+	var sun_material := ShaderMaterial.new()
+	sun_material.shader = load("res://scripts/sunlight.gdshader")
+	sunshine.material = sun_material
+	add_child(sunshine)
 	actors.y_sort_enabled = true
 	add_child(actors)
 	body.collision_layer = 1
@@ -80,14 +93,15 @@ func _ready() -> void:
 		sprite.texture = load("res://assets/world/" + item.art)
 		# Sort from feet while keeping the image origin exactly on its manifest.
 		sprite.position = Vector2(
-			item.position[0] + item.size[0] / 2.0, item.position[1] + item.size[1]
+			item.position[0] + item.size[0] / 2.0, item.position[1] + item.sort_y
 		)
-		sprite.offset = Vector2(0, -item.size[1] / 2.0)
+		sprite.offset = Vector2(0, item.size[1] / 2.0 - item.sort_y)
+		sprite.set_meta("art", item.art)
 		if item.sway:
-			var material := ShaderMaterial.new()
-			material.shader = sway_shader
-			material.set_shader_parameter("phase", float(item.position[0]) * 0.15)
-			sprite.material = material
+			var sway_material := ShaderMaterial.new()
+			sway_material.shader = sway_shader
+			sway_material.set_shader_parameter("phase", float(item.position[0]) * 0.15)
+			sprite.material = sway_material
 		actors.add_child(sprite)
 	for item in map.animations:
 		_add_animated(item.kind, Vector2(item.position[0], item.position[1]))
@@ -195,6 +209,11 @@ func spawn_actor(at: Vector2, species: String = "", controlled: bool = false) ->
 
 func _add_animated(kind: String, at: Vector2) -> void:
 	if kind == "lantern":
+		var beacon_sprite := Sprite2D.new()
+		beacon_sprite.texture = load("res://assets/world/lantern.png")
+		beacon_sprite.position = at + Vector2(8, 15)
+		beacon_sprite.offset = Vector2(0, -14)
+		actors.add_child(beacon_sprite)
 		beacons.append({"position": at + Vector2(8, 15), "lit": false})
 		return
 	var sprite := Sprite2D.new()
@@ -356,8 +375,9 @@ func play_tone(frequency: float, duration: float, volume: float) -> void:
 	stream.format = AudioStreamWAV.FORMAT_16_BITS
 	stream.mix_rate = 22050
 	var samples := PackedByteArray()
-	samples.resize(int(duration * 22050) * 2)
-	for i in range(samples.size() / 2):
+	var sample_count := int(duration * 22050)
+	samples.resize(sample_count * 2)
+	for i in range(sample_count):
 		var t := float(i) / 22050.0
 		var envelope := sin(PI * t / duration) * exp(-t * 4.0)
 		var sample := int(sin(t * frequency * TAU) * volume * envelope * 32700.0)

@@ -1,83 +1,50 @@
-# Lantern Valley — first playable evidence
+# Lantern Valley · 0.1.1 · actual-render evidence
 
 Standalone project: [`lantern_game`](../../../lantern_game/README.md), not `forest_game`.
 
-## Publication
+**The old 0.1.0 overview-only review missed real defects reported by the user.**
+It is superseded by the [before-fix defect register and full close-up review](../lantern-audit/REVIEW.md).
+The old release remains historical; it is not the corrected download.
 
-- [First playable source ZIP](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.0)
-  published by [Actions 43757336041](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43757336041).
-- Publication re-ran all checks from `204e38b`; release/evidence commit `7bdbcf9`.
-  The game content hash is identical to the visually reviewed run below:
-  `72b525451448f10623801b9dc5a8b98c9e7d4289ad3f58ed8adbb5403d78351b`.
-- All 24 PNGs and logs were byte-identical between those final two CI runs; only
-  the report timestamp/source-commit fields changed. Use the published `.sha256`
-  for the published ZIP; local ZIP timestamps can produce a different container hash.
+## Reproduce
 
-## Reproduction / source identity
+```sh
+python -m unittest discover -s tests -q
+gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd
+gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd
+godot --headless --path lantern_game --editor --import
+godot --headless --path lantern_game --fixed-fps 60 --script res://tests.gd
+GODOT4_BIN=godot python tools/capture_lantern.py
+GODOT4_BIN=godot python tools/audit_lantern.py
+python tools/package_lantern.py
+```
 
-- Successful rendered validation: [Actions 43757038240](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43757038240).
-- Gameplay source: **5afbcbbc02e997ffba624ebf66d48392dab68465**; evidence commit **6e99f54**.
-  The intervening README-only commit does not change the game.
-- `result.json` contains the SHA256 of all standalone source/art/import-settings files.
-  `tools/package_lantern.py` refuses packaging if this identity does not match.
-- Godot **4.7.2**, Compatibility, 1280×720, Xvfb + software Mesa llvmpipe on CI.
-  These are real viewport PNGs, **not mockups and not a physical GPU FPS benchmark**.
-- **56 Python tests** (50 existing + 6 new asset regressions), GDScript lint/format,
-  **1946 Godot assertions** pass. Of the latter, 1902 check positive geometry/physics
-  registration for 951 shapes; the remaining 44 check game/input behavior. They are
-  not 1946 independent gameplay scenarios.
-- Clean project ZIP was separately extracted into an empty folder, imported and
-  passed the same 1946 assertions. Logs: `clean-zip-{import,gameplay}.log`.
+- Godot **4.7.2**, Compatibility renderer, CI Xvfb/software Mesa 1280×720.
+- **61 Python tests**, lint/format and **3629 Godot assertions**.
+- **24 general screenshots** here; **152 close-up frames** in `../lantern-audit/after/`.
+- `result.json` identifies the source/art/import settings by SHA256. Packaging requires
+  BOTH this successful result and the close-up result to match the current game digest.
+- PNGs are actual Godot viewport renders, not generated illustrations or mockups.
+- No claimed hardware FPS measurement; software rendering is diagnostic evidence only.
 
-## Visual review
+## What is checked
 
-The following real renders were opened and inspected after the final CI run:
+The diagnostic collision overlay comes from actual CollisionShape2D nodes. Tests cover
+938 shapes, practical movement into each of 341 trunks (1330 accessible approaches),
+every facade, the physical connectivity of 1181 free road-grid cells and all 12 door
+approaches, actual stopping at the lake bank, farm fence/gate, pauses, dialogue Z/X,
+ability/cooldown, equipment, direction animations and wildlife reactions.
 
-- `00-map-overview`: all 12 cottages, connected village routes, lake, fenced farm,
-  forest ring and forest trails. The zoomed-out overview is a capture camera, not HUD.
-- `03-village-collisions`: pink rectangles follow lower cottage walls, pots, benches,
-  fountain and stall footprints. Roof overhangs and tree crowns intentionally do not
-  become giant impassable rectangles. The green circle is the player's feet collider.
-- `05-lake` / `06-lake-collisions`: cyan physical shapes trace the visible cyan-water
-  runs of each shoreline tile. The hero is placed on the **land-side jetty**, not in
-  the lake. Where branches overlap water, the diagnostic overlay also shows the
-  underlying water shape over the branch; this does not mean the crown is a collider.
-- `06-farm-collisions`: four rails line up with the fence art, a 48px north gate remains
-  free. Crops themselves are passable. Vertical fence art was corrected after an
-  earlier screenshot showed disconnected decorative stubs.
-- `05-forest`: hero and wildlife on the western trail, foreground tree sorting,
-  animated flowers/ripples and leaf particles. Small trunk shapes, not canopies, block.
-- `04-traveller`, `07-lantern-ability`, `08-sword`, `10-wildlife-surprise`: readable
-  portrait dialogue; visible pulse; a real weapon-layer swing; surprised hero and fox.
-- Menu/settings/pause frames are included; no permanent HUD text is drawn during play.
+For counts, all-object/road screenshot coverage, visual review and limitations, see
+[the detailed review](../lantern-audit/REVIEW.md). Assertions are not independent playthroughs.
+Captures intentionally position the actors and camera for reproducible views.
 
-The collision overlay is drawn **from the actual CollisionShape2D nodes**, not a
-second approximation. F3 also enables Godot's debug-collision hint. Water footprints
-are additionally checked against every underlying image pixel in the Python tests.
+## Delivery
 
-## Practical movement / interaction tests
+Corrected prerelease: [lantern-valley-v0.1.1](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.1).
+The ZIP contains the separate source project, not a Windows executable. Open
+`LanternValley/project.godot` in Godot 4.7.2 and press F5. Use the SHA256 accompanying
+that specific ZIP: a locally rebuilt container can differ because of timestamps.
 
-`gameplay.log` records tests that actually hold Input actions for physics frames:
-walking across the plaza; approaching a building from front/side; approaching the
-south farm fence; walking through the open north gate; approaching the west water
-bank and stopping within two pixels of the geometry-derived expected center point.
-
-Other checks cover Z menu activation, frozen player/wildlife on pause, nearby NPC
-interaction, gradual text, X reveal including final punctuation, Z page advancement
-and exit, lantern cooldown/beacons, five tool textures, four facing directions,
-fox fleeing away from the hero, surprise/back-step and fence-occluded line of sight.
-
-Scene captures intentionally position the camera/actors and select animation frames
-for reproducible evidence. They are not presented as an uninterrupted human playthrough.
-
-## Limits
-
-No interiors, enemy combat, inventory/harvesting, world progress saves or global
-wildlife pathfinding yet. Rectangular house/trunk foot colliders are intentional;
-water uses exact pixel-run rectangles. Wildlife/fountain sprites are original small
-palette-matched additions, not extra characters falsely attributed to Ninja Adventure.
-
-An earlier simultaneous manual run failed before evidence publication; the parallel
-push run passed. Screenshot mode was hardened to avoid starting audio streams at all
-and to expose subsequent CI failure details as annotations. The final run above and
-clean-ZIP checks pass without script errors, resource leaks or stale evidence.
+Old `clean-zip-*` logs from 0.1.0 are historical. Corrected-ZIP validation is recorded
+as `revision-clean-zip-*` after repackaging; do not confuse those two sets of evidence.

@@ -6,12 +6,6 @@ func _draw() -> void:
 	var t: float = world.elapsed
 	for beacon in world.beacons:
 		var p: Vector2 = beacon.position
-		draw_line(p, p - Vector2(0, 18), Color("514932"), 2)
-		draw_rect(Rect2(p - Vector2(4, 23), Vector2(8, 7)), Color("313e36"))
-		draw_rect(
-			Rect2(p - Vector2(2, 22), Vector2(4, 5)),
-			Color("ffe8a8") if beacon.lit else Color("81927a")
-		)
 		if beacon.lit:
 			for r in range(5):
 				draw_circle(p - Vector2(0, 19), float(10 + r * 5), Color(1.0, 0.77, 0.35, 0.014))

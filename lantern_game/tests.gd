@@ -95,6 +95,76 @@ func run() -> void:
 		end.x < bank and absf(end.x - (bank - 4.0)) < 2.0,
 		"Lake blocks actual movement within two pixels of visible west bank"
 	)
+	# Regression audit: actual swept movement against EVERY trunk, four approaches.
+	# Unlike old centre-point tests, this catches uncollidable visible side trunks.
+	game.mode = "capture"
+	var tree_moves := 0
+	var house_fronts := 0
+	for index in range(game.body.get_child_count()):
+		var shape: CollisionShape2D = game.body.get_child(index)
+		var kind: String = shape.get_meta("kind")
+		if kind == "tree":
+			var half: Vector2 = shape.shape.size / 2.0
+			var trunk_hits := 0
+			for direction in [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]:
+				var gap: Vector2 = half * direction + direction * 6.0
+				game.hero.position = shape.position + gap + Vector2(0, 3)
+				# A boundary/adjacent trunk can make a side physically inaccessible.
+				var query := PhysicsShapeQueryParameters2D.new()
+				query.shape = game.hero.get_child(0).shape
+				query.transform = Transform2D(0, game.hero.position + Vector2(0, -3))
+				query.collision_mask = 1
+				if not game.get_world_2d().direct_space_state.intersect_shape(query).is_empty():
+					continue
+				var collision: KinematicCollision2D = game.hero.move_and_collide(-gap * 2.0)
+				check(
+					collision != null and collision.get_collider_shape() == shape,
+					"Swept movement hits actual trunk %d from %s" % [index, direction]
+				)
+				tree_moves += 1
+				if collision != null and collision.get_collider_shape() == shape:
+					trunk_hits += 1
+			check(trunk_hits >= 2, "Every trunk stops movement on at least two accessible sides")
+		elif kind == "house":
+			game.hero.position = Vector2(shape.position.x - 8.0, shape.position.y + 40.0)
+			var collision: KinematicCollision2D = game.hero.move_and_collide(Vector2(0, -60))
+			check(collision != null, "Each facade stops actual movement")
+			var base_y: float = shape.position.y + shape.shape.size.y / 2.0
+			check(game.hero.position.y > base_y, "Hero standing at facade sorts IN FRONT of wall")
+			house_fronts += 1
+	check(tree_moves >= 1200 and house_fronts == 12, "Whole-map trunk/facade movement coverage")
+	# Sample the real physics space along the WHOLE street network, then flood-fill.
+	# Door thresholds/fence crossings are allowed to occupy painted edge tiles;
+	# every remaining walkable road cell must belong to the same connected network.
+	var road_query := PhysicsShapeQueryParameters2D.new()
+	var road_feet := CircleShape2D.new()
+	road_feet.radius = 4.0
+	road_query.shape = road_feet
+	road_query.collision_mask = 1
+	var walkable: Dictionary = {}
+	for cell in game.map.paths:
+		var point := Vector2i(int(cell[0]), int(cell[1]))
+		road_query.transform = Transform2D(0, Vector2(point * 16) + Vector2(8, 8))
+		if game.get_world_2d().direct_space_state.intersect_shape(road_query).is_empty():
+			walkable[point] = true
+	var first: Vector2i = walkable.keys()[0]
+	var reached: Dictionary = {}
+	reached[first] = true
+	var pending: Array[Vector2i] = [first]
+	while not pending.is_empty():
+		var point: Vector2i = pending.pop_back()
+		for step in [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]:
+			var neighbor: Vector2i = point + step
+			if walkable.has(neighbor) and not reached.has(neighbor):
+				reached[neighbor] = true
+				pending.append(neighbor)
+	check(reached.size() == walkable.size(), "All physically walkable street cells are connected")
+	for door in game.map.doors:
+		var approach := Vector2i(int(floor(door[0] / 16.0)), int(floor(door[1] / 16.0)) + 1)
+		check(reached.has(approach), "Every cottage door reaches the real walkable street network")
+	print("WALKABLE_ROAD_CELLS ", reached.size(), " OF ", game.map.paths.size())
+	print("TRUNK_MOVEMENT_COVERAGE ", tree_moves, " HOUSE_FRONTS ", house_fronts)
+	game.mode = "play"
 	# Pause and dialogue lock the actual player physics, not just menus.
 	game.hero.position = start
 	action("pause")

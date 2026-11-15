@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de8ppai7gmnug"
-path="res://.godot/imported/tree_4.png-3694018daa6c0ccf3388f834eae67034.ctex"
+uid="uid://3lr31lioiin7"
+path="res://.godot/imported/fencepost.png-d986e1026be10349c7805b98a54986eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/tree_4.png"
-dest_files=["res://.godot/imported/tree_4.png-3694018daa6c0ccf3388f834eae67034.ctex"]
+source_file="res://assets/world/fencepost.png"
+dest_files=["res://.godot/imported/fencepost.png-d986e1026be10349c7805b98a54986eb.ctex"]
 
 [params]
 

@@ -4,6 +4,7 @@ on:
     paths:
       - lantern_game/**
       - tools/*lantern*.py
+      - tools/lantern_audit.gd
       - tests/test_lantern_assets.py
       - .github/workflows/lantern.yml
   workflow_dispatch:
@@ -78,20 +79,24 @@ jobs:
       - name: Asset and syntax regressions
         run: |
           python -m unittest discover -s tests -q
-          gdlint lantern_game/scripts lantern_game/tests.gd
-          gdformat --check lantern_game/scripts lantern_game/tests.gd
+          gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd
+          gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd
       - name: Actual physics, menus and rendered collision screenshots
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
         run: python tools/capture_lantern.py
+      - name: Full-map close-up audit with per-object and per-road coverage
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: python tools/audit_lantern.py
       - name: Record evidence on this branch
         if: github.event_name == 'workflow_dispatch'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/evidence/lantern lantern_game
+          git add docs/evidence/lantern docs/evidence/lantern-audit/after lantern_game
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Record 2D village physics and 24 rendered evidence frames [skip ci]'
+          git commit -m 'Record 2D village physics and full-map close-up evidence [skip ci]'
           git fetch origin arena/449f84de-godot
           git rebase origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
@@ -102,11 +107,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create lantern-valley-v0.1.0 artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.1.0' --notes-file lantern_game/README.md --prerelease
+          gh release create lantern-valley-v0.1.1 artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.1.1' --notes-file lantern_game/README.md --prerelease
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: lantern-village-evidence-and-project
           path: |
             docs/evidence/lantern/
+            docs/evidence/lantern-audit/
             artifacts/lantern/

@@ -15,7 +15,9 @@
 
 ## Original work
 
-Map layout/assembly, fountain, fox/rabbit pixel sheets, synthesised woodland audio,
+Map layout/assembly, continuous farm fence/corner posts, wooden crates, shore platform,
+lantern posts, counter details, baked directional shadows, sunlight shader, fountain,
+fox/rabbit pixel sheets, synthesised woodland audio,
 action tones, interface, lighting/leaf effects, code and Russian story were created
 for this project. Wildlife sheets and fountain follow the source palette; they are
 not claimed to be original Ninja Adventure assets. Generated images are reproducible

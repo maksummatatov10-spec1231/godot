@@ -59,6 +59,70 @@ class LanternAssets(unittest.TestCase):
             with Image.open(GAME/f'assets/world/{name}.png') as im:
                 self.assertEqual(im.size,(64,64))
 
+    def test_whole_route_network_and_clear_tree_trunks(self):
+        paths={tuple(p) for p in self.map['paths']}
+        reached={next(iter(paths))}
+        todo=list(reached)
+        while todo:
+            x,y=todo.pop()
+            for p in [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]:
+                if p in paths and p not in reached:
+                    reached.add(p);todo.append(p)
+        self.assertEqual(reached, paths, 'No disconnected fragments of road')
+        for solid in self.map['solids']:
+            if solid['kind']!='tree':continue
+            x,y,w,h=solid['rect']
+            self.assertFalse(any(x<xx*16+16 and x+w>xx*16 and y<yy*16+16 and y+h>yy*16
+                                 for xx,yy in paths), solid)
+        for x,y in self.map['doors']:
+            self.assertIn((x//16,y//16),paths)
+            self.assertIn((x//16,y//16+1),paths)
+
+    def test_single_tree_crops_not_clusters_and_exact_sort_bases(self):
+        nature=Image.open(GAME/'assets/ninja/Backgrounds/Tilesets/TilesetNature.png').convert('RGBA')
+        for i,(x,y,w,h) in enumerate([(3,18,3,3),(2,0,2,2),(0,0,2,2),(0,18,3,3)]):
+            source=nature.crop((x*16,y*16,(x+w)*16,(y+h)*16))
+            actual=Image.open(GAME/f'assets/world/tree_{i}.png').convert('RGBA')
+            self.assertEqual(actual.tobytes(),source.tobytes())
+            self.assertEqual(actual.size,source.size)
+        for item in self.map['objects']:
+            self.assertGreater(item['sort_y'],0)
+            self.assertLessEqual(item['sort_y'],item['size'][1])
+            if item['art'].startswith('house'):
+                self.assertEqual(item['sort_y'],72)
+                self.assertEqual(item['size'][1],72)
+        self.assertEqual(len([o for o in self.map['objects'] if o['sway']]),
+                         len([s for s in self.map['solids'] if s['kind']=='tree']))
+
+    def test_no_shadowing_warning_or_implicit_pcm_integer_division(self):
+        code=(GAME/'scripts/game.gd').read_text()
+        self.assertNotIn('var material :=',code)
+        self.assertNotIn('samples.size() / 2',code)
+        self.assertIn('gdscript/warnings/shadowed_variable_base_class=2',
+                      (GAME/'project.godot').read_text())
+
+    def test_road_centre_uses_dirt_centre_not_sand_or_grass_edge(self):
+        ground=Image.open(GAME/'assets/world/ground.png').convert('RGBA')
+        source=Image.open(GAME/'assets/ninja/Backgrounds/Tilesets/TilesetFloor.png').convert('RGBA')
+        self.assertEqual(ground.crop((48*16,50*16,49*16,51*16)).tobytes(),
+                         source.crop((16,128,32,144)).tobytes())
+
+    def test_no_crowns_swallow_authored_buildings_or_props(self):
+        trees=[o for o in self.map['objects'] if o['sway']]
+        props=[o for o in self.map['objects'] if not o['sway']]
+        for tree in trees:
+            x,y=tree['position'];w,h=tree['size']
+            for prop in props:
+                a,b=prop['position'];c,d=prop['size']
+                self.assertFalse(x<a+c and x+w>a and y<b+d and y+h>b,(tree,prop))
+        for solid in self.map['solids']:
+            if solid['kind']!='fence':continue
+            x,y,w,h=solid['rect']
+            self.assertGreaterEqual(x,1045)
+            self.assertLessEqual(x+w,1277)
+            self.assertGreaterEqual(y,836)
+            self.assertLessEqual(y+h,988)
+
     def test_no_mix_with_3d_project(self):
         self.assertNotIn('forest_game',(GAME/'project.godot').read_text())
         self.assertEqual(self.map['spawn'],[776,658])
