@@ -1,17 +1,22 @@
 extends CanvasLayer
-## Resolution-independent, restrained game HUD; no external font dependency.
+## Fixed logical 1280x720 canvas, re-laid out on viewport resize without anchor drift.
 var player: CharacterBody3D
 var world: Node3D
 var status: Label
 var focus: ProgressBar
+var health: ProgressBar
 var notice: Label
 var quality: Label
+var controls: Label
+var tips: Label
+var reticle: Label
+var last_size := Vector2.ZERO
 
 
-func text(value: String, position_: Vector2, size: int, color: Color) -> Label:
+func text(value: String, point: Vector2, size: int, color: Color) -> Label:
 	var label := Label.new()
 	label.text = value
-	label.position = position_
+	label.position = point
 	label.add_theme_font_size_override("font_size", size)
 	label.add_theme_color_override("font_color", color)
 	label.add_theme_color_override("font_shadow_color", Color(0.015, 0.04, 0.03, 0.9))
@@ -21,70 +26,77 @@ func text(value: String, position_: Vector2, size: int, color: Color) -> Label:
 	return label
 
 
-func setup(player_: CharacterBody3D, world_: Node3D) -> void:
-	player = player_
-	world = world_
+func bar(width: float, height: float, color: Color) -> ProgressBar:
+	var result := ProgressBar.new()
+	result.show_percentage = false
+	result.custom_minimum_size = Vector2(width, height)
+	result.size = result.custom_minimum_size
+	var fill := StyleBoxFlat.new()
+	fill.bg_color = color
+	fill.set_corner_radius_all(2)
+	var background := StyleBoxFlat.new()
+	background.bg_color = Color(0.025, 0.06, 0.05, 0.65)
+	background.set_corner_radius_all(2)
+	result.add_theme_stylebox_override("fill", fill)
+	result.add_theme_stylebox_override("background", background)
+	add_child(result)
+	return result
+
+
+func setup(actor: CharacterBody3D, scene_world: Node3D) -> void:
+	player = actor
+	world = scene_world
 	var cream := Color("f1e8cb")
 	var sage := Color("b8d4bd")
 	text("W A R D E N", Vector2(36, 25), 27, cream)
 	text("T H E   E M E R A L D   W I L D", Vector2(38, 62), 11, sage)
-	var objective := text(
-		"THE OLD GROVE\nTest your blade on the ancient wards", Vector2(38, 108), 15, cream
+	text("THE OLD GROVE\nTest your blade on the ancient wards", Vector2(38, 108), 14, cream)
+	controls = text(
+		"V   FIRST / THIRD PERSON\nQ   ARCANE STRIKE     •     LMB   SWORD", Vector2.ZERO, 12, cream
 	)
-	objective.add_theme_constant_override("line_spacing", 5)
-	var controls := text(
-		"V   FIRST / THIRD PERSON\nQ   ARCANE STRIKE     •     LMB   SWORD",
-		Vector2(-380, 29),
-		13,
-		cream
-	)
-	controls.anchor_left = 1
-	controls.anchor_right = 1
 	controls.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	quality = text("ULTRA  /  FORWARD+", Vector2(-260, 79), 11, sage)
-	quality.anchor_left = 1
-	quality.anchor_right = 1
-	var reticle := text("·", Vector2(-5, -20), 32, cream)
-	reticle.anchor_left = 0.5
-	reticle.anchor_top = 0.5
-	status = text("WARDEN   /   SWORD READY", Vector2(38, -106), 13, cream)
-	status.anchor_top = 1
-	var health := ProgressBar.new()
-	health.position = Vector2(38, -76)
-	health.anchor_top = 1
-	health.size = Vector2(220, 5)
-	health.show_percentage = false
+	quality = text("ULTRA  /  FORWARD+", Vector2.ZERO, 11, sage)
+	quality.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	reticle = text("·", Vector2.ZERO, 32, cream)
+	status = text("WARDEN   /   SWORD READY", Vector2.ZERO, 12, cream)
+	health = bar(220, 6, Color("bfd59d"))
 	health.value = 100
-	var fill := StyleBoxFlat.new()
-	fill.bg_color = Color("bfd59d")
-	health.add_theme_stylebox_override("fill", fill)
-	add_child(health)
-	focus = ProgressBar.new()
-	focus.position = Vector2(38, -62)
-	focus.anchor_top = 1
-	focus.size = Vector2(165, 4)
-	focus.show_percentage = false
-	var gold := StyleBoxFlat.new()
-	gold.bg_color = Color("e9c878")
-	focus.add_theme_stylebox_override("fill", gold)
-	add_child(focus)
-	var tips := text(
-		"WASD  MOVE     SHIFT  RUN     SPACE  JUMP     RMB  STRAFE / AIM     ESC  CURSOR     F6  QUALITY     R  RESET",
-		Vector2(0, -30),
+	focus = bar(165, 4, Color("e9c878"))
+	tips = text(
+		"WASD  MOVE    SHIFT  RUN    SPACE  JUMP    RMB  AIM    ESC  CURSOR    F6  QUALITY    R  RESET",
+		Vector2.ZERO,
 		11,
 		cream
 	)
-	tips.anchor_top = 1
-	tips.anchor_left = 0.5
-	tips.position.x = -tips.get_minimum_size().x * 0.5
-	notice = text("", Vector2(-220, -84), 14, cream)
-	notice.anchor_left = 1
-	notice.anchor_top = 1
+	tips.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	notice = text("", Vector2.ZERO, 12, cream)
+	notice.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	layout()
+
+
+func layout() -> void:
+	last_size = get_viewport().get_visible_rect().size
+	var width := last_size.x
+	var height := last_size.y
+	controls.position = Vector2(width - 390, 29)
+	controls.size = Vector2(350, 48)
+	quality.position = Vector2(width - 290, 79)
+	quality.size = Vector2(250, 20)
+	reticle.position = Vector2(width / 2 - 5, height / 2 - 20)
+	status.position = Vector2(38, height - 96)
+	health.position = Vector2(38, height - 69)
+	focus.position = Vector2(38, height - 55)
+	tips.position = Vector2(20, height - 25)
+	tips.size = Vector2(width - 40, 20)
+	notice.position = Vector2(width - 250, height - 85)
+	notice.size = Vector2(210, 48)
 
 
 func _process(_delta: float) -> void:
 	if player == null:
 		return
+	if last_size != get_viewport().get_visible_rect().size:
+		layout()
 	focus.value = (1.0 - player.magic_cooldown / 2.5) * 100.0
 	status.text = (
 		"WARDEN   /   " + ("ARCANE STRIKE" if player.magic_cooldown > 1.8 else "SWORD READY")

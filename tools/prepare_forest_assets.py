@@ -7,7 +7,7 @@ import re
 import shutil
 import struct
 
-from PIL import Image
+from PIL import Image, ImageDraw, ImageEnhance, ImageChops
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = Path('/home/user/asset-library/extracted/assets')
@@ -104,6 +104,85 @@ def animations(character):
     character.unlink()
 
 
+def outfit_and_arms():
+    folder = DEST / 'assets/hero'
+    path = folder / 'warden.gltf'
+    data = json.loads(path.read_text())
+    payload = bytearray((folder / 'warden.bin').read_bytes())
+
+    def read_accessor(index):
+        acc = data['accessors'][index]
+        view = data['bufferViews'][acc['bufferView']]
+        count = {'SCALAR': 1, 'VEC2': 2, 'VEC3': 3, 'VEC4': 4}[acc['type']]
+        code = {5126: 'f', 5125: 'I', 5123: 'H', 5121: 'B'}[acc['componentType']]
+        fmt = '<' + code * count
+        stride = view.get('byteStride', struct.calcsize(fmt))
+        offset = view.get('byteOffset', 0) + acc.get('byteOffset', 0)
+        return [struct.unpack_from(fmt, payload, offset + i * stride) for i in range(acc['count'])]
+
+    material_id = next(i for i, mat in enumerate(data['materials']) if mat['name'] == 'MI_Superhero_Male')
+    body_id = next(i for i, mesh in enumerate(data['meshes'])
+                   if any(p.get('material') == material_id for p in mesh['primitives']))
+    primitive = data['meshes'][body_id]['primitives'][0]
+    positions = read_accessor(primitive['attributes']['POSITION'])
+    uv = read_accessor(primitive['attributes']['TEXCOORD_0'])
+    indices = [entry[0] for entry in read_accessor(primitive['indices'])]
+    tex_id = data['materials'][material_id]['pbrMetallicRoughness']['baseColorTexture']['index']
+    image_id = data['textures'][tex_id]['source']
+    texture = Image.open(folder / data['images'][image_id]['uri']).convert('RGB')
+    colors = Image.new('RGB', texture.size)
+    mask = Image.new('L', texture.size)
+    paint, mask_paint = ImageDraw.Draw(colors), ImageDraw.Draw(mask)
+    arm_indices = []
+    for start in range(0, len(indices), 3):
+        tri = indices[start:start + 3]
+        center = [sum(positions[v][a] for v in tri) / 3 for a in range(3)]
+        x, y, z = center
+        color = None
+        if y < 0.26:
+            color = '#302a26'
+        elif y < 0.91:
+            color = '#273a42'
+        elif y < 0.98:
+            color = '#655039'
+        elif y < 1.53 and abs(x) < 0.39:
+            color = '#20473f'
+        elif y > 1.27 and 0.27 < abs(x) < 0.64:
+            color = '#294e45'
+        elif y > 1.28 and abs(x) > 0.66:
+            color = '#42352a'
+        points = [(uv[v][0] * texture.width, uv[v][1] * texture.height) for v in tri]
+        if color:
+            paint.polygon(points, fill=color)
+            mask_paint.polygon(points, fill=255)
+        if abs(x) > 0.24 and y > 1.27:
+            arm_indices.extend(tri)
+    luminance = ImageEnhance.Brightness(texture.convert('L')).enhance(1.8).convert('RGB')
+    cloth = ImageChops.multiply(colors, luminance)
+    Image.composite(cloth, texture, mask).save(folder / 'Warden_Outfit.png', optimize=True)
+    data['images'][image_id]['uri'] = 'Warden_Outfit.png'
+    arms = copy.deepcopy(data)
+    for node in arms['nodes']:
+        if 'mesh' in node and node['mesh'] != body_id:
+            del node['mesh']
+    while len(payload) % 4:
+        payload.append(0)
+    offset = len(payload)
+    payload.extend(struct.pack('<' + 'I' * len(arm_indices), *arm_indices))
+    view_id = len(arms['bufferViews'])
+    arms['bufferViews'].append({'buffer': 0, 'byteOffset': offset, 'byteLength': len(arm_indices) * 4, 'target': 34963})
+    acc_id = len(arms['accessors'])
+    arms['accessors'].append({'bufferView': view_id, 'componentType': 5125,
+                              'count': len(arm_indices), 'type': 'SCALAR'})
+    arms['meshes'][body_id]['primitives'][0]['indices'] = acc_id
+    for doc in [data, arms]:
+        doc['buffers'][0]['byteLength'] = len(payload)
+    (folder / 'warden.bin').write_bytes(payload)
+    path.write_text(json.dumps(data, separators=(',', ':')))
+    (folder / 'warden_arms.gltf').write_text(json.dumps(arms, separators=(',', ':')))
+    print('Derived clothed body and actual skinned FPS arms:', len(arm_indices) // 3, 'arm triangles')
+
+
 def main():
     nature = SOURCE / 'Stylized Nature MegaKit_Standard_.zip.contents/glTF'
     for name in ['CommonTree_1', 'CommonTree_2', 'CommonTree_3', 'Pine_1', 'Pine_3',
@@ -113,6 +192,9 @@ def main():
         model(nature / (name + '.gltf'), 'nature')
     char = next(SOURCE.glob('Universal Base*/**/Godot - UE/Superhero_Male_FullBody.gltf'))
     animations(model(char, 'hero'))
+    outfit_and_arms()
+    hair = next(SOURCE.glob('Universal Base*/**/Origin at 0/glTF (Godot)/Hair_SimpleParted.gltf'))
+    model(hair, 'hero')
     sword = next(SOURCE.glob('KayKit_Fantasy*/**/gltf/sword_C.gltf'))
     model(sword, 'weapon')
     for pack, name in [('ElementalMagicFXFree', 'ElementalMagicFX'), ('BattleFXFree', 'BattleFX')]:

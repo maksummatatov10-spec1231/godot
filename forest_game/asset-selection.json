@@ -358,6 +358,26 @@
     "operation": "same named Universal rig; no retarget guessing"
   },
   {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/Hair_SimpleParted.bin",
+    "destination": "assets/hero/Hair_SimpleParted.bin",
+    "source_sha256": "57c6359703a37e346ee38a9c7ba55c8dee761c0a02da99847d06f5a91728f3cc"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/T_Hair_1_Normal.png",
+    "destination": "assets/hero/T_Hair_1_Normal.png",
+    "source_sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/T_Hair_1_BaseColor.png",
+    "destination": "assets/hero/T_Hair_1_BaseColor.png",
+    "source_sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+  },
+  {
+    "source": "Universal Base Characters_Standard_.zip.contents/Universal Base Characters[Standard]/Hairstyles/Origin at 0/glTF (Godot)/Hair_SimpleParted.gltf",
+    "destination": "assets/hero/Hair_SimpleParted.gltf",
+    "source_sha256": "ce6c666d00bcca2baa0c58d0442505f90f8feff952592effc4697a2341e9e56d"
+  },
+  {
     "source": "KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/sword_C.bin",
     "destination": "assets/weapon/sword_C.bin",
     "source_sha256": "d47c90f6991c4d8bcd551afc3903d2f7404b93b0ebfd469076b6f696e3a8b6ca"
@@ -371,11 +391,6 @@
     "source": "KayKit_FantasyWeaponsBits_1.0_FREE.zip.contents/KayKit_FantasyWeaponsBits_1.0_FREE/Assets/gltf/sword_C.gltf",
     "destination": "assets/weapon/sword_C.gltf",
     "source_sha256": "f18406c1792f90ba214bd836d88be06b498252f6e937a3bbd5e36a0617650573"
-  },
-  {
-    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/scene_empty.tscn",
-    "destination": "assets/BinbunVFX_Vol2/shared/scene_empty.tscn",
-    "source_sha256": "3ab59f36534067a45bf4679cd5d19d45f818692b31342c875baeb93fc6db268a"
   },
   {
     "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/shared/shader/checker.gdshader",
@@ -401,11 +416,6 @@
     "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/license.txt",
     "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/license.txt",
     "source_sha256": "c673038ad3327f4244eecf157de5f993272bed1ecfa0ec604a889be420a11507"
-  },
-  {
-    "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/elemental_magic_scene_free.tscn",
-    "destination": "assets/BinbunVFX_Vol2/ElementalMagicFX/elemental_magic_scene_free.tscn",
-    "source_sha256": "0621b5cebacb486e604a94889aa6f9167e9857d0e9cd5f27dc6bb74afd3d1070"
   },
   {
     "source": "Effects/ElementalMagicFXFree.zip.contents/ElementalMagicFXFree/assets/BinbunVFX_Vol2/ElementalMagicFX/shader/projectile_core.gdshader",
@@ -478,11 +488,6 @@
     "source_sha256": "965849919bce5939066299e18a39502244f2f70385321cc5d6109fc1867e6981"
   },
   {
-    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/suzanne.obj",
-    "destination": "assets/BinbunVFX_Vol2/shared/suzanne.obj",
-    "source_sha256": "c9bc8a308e0d48f1529e533aa465652948754b9a786d697ca3dc8a7e67c2a8b9"
-  },
-  {
     "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
     "destination": "assets/BinbunVFX_Vol2/shared/shader/sky.gdshader",
     "source_sha256": "74401c20aedec49b5f7d104662bc908c860807ec4e8b19285bf4ca63a0481b48"
@@ -511,11 +516,6 @@
     "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/license.txt",
     "destination": "assets/BinbunVFX_Vol2/BattleFX/license.txt",
     "source_sha256": "8a63837d53b3049221fb215d375da909b69762b05dc66f33adc69baac8facb08"
-  },
-  {
-    "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/battle_fx_scene_free.tscn",
-    "destination": "assets/BinbunVFX_Vol2/BattleFX/battle_fx_scene_free.tscn",
-    "source_sha256": "191e92e930a9e98f9232cef10f224e0e4a43bc8a9abf1eb7d0043a3652737c71"
   },
   {
     "source": "Effects/BattleFXFree.zip.contents/BattleFXFree/assets/BinbunVFX_Vol2/BattleFX/shader/shield_aura.gdshader",

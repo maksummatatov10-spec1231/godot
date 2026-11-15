@@ -1,10 +1,12 @@
 extends CharacterBody3D
 ## Camera-relative locomotion; real Universal skeletal clips crossfade on one rig.
 
+const SWORD = preload("res://assets/weapon/sword_C.gltf")
 const PROJECTILE = preload("res://scripts/projectile.gd")
 var visual: Node3D
 var skeleton: Skeleton3D
 var animator: AnimationPlayer
+var view_animator: AnimationPlayer
 var camera: Camera3D
 var viewmodel: Node3D
 var hud: CanvasLayer
@@ -59,11 +61,17 @@ func _ready() -> void:
 	for clip in ["Idle", "Sword_Idle", "Walk", "Jog_Fwd", "Sprint", "Jump"]:
 		if animator.has_animation(clip):
 			animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
+	var hair_grip := BoneAttachment3D.new()
+	hair_grip.bone_name = "Head"
+	skeleton.add_child(hair_grip)
+	var hair: Node3D = load("res://assets/hero/Hair_SimpleParted.gltf").instantiate()
+	hair_grip.add_child(hair)
+	hair.transform = skeleton.get_bone_global_rest(skeleton.find_bone("Head")).affine_inverse()
 	animator.playback_default_blend_time = 0.16
 	var grip := BoneAttachment3D.new()
 	grip.bone_name = "hand_r"
 	skeleton.add_child(grip)
-	var sword: Node3D = load("res://assets/weapon/sword_C.gltf").instantiate()
+	var sword: Node3D = SWORD.instantiate()
 	sword.scale = Vector3.ONE * 0.52
 	sword.rotation_degrees.z = -90
 	sword.position = Vector3(0.02, 0.08, 0.02)
@@ -112,38 +120,24 @@ func configure_input() -> void:
 
 
 func create_viewmodel() -> void:
-	viewmodel = Node3D.new()
-	viewmodel.name = "FirstPersonHandsAndSword"
+	# Actual skin-weighted character arms, not primitive mitten placeholders.
+	viewmodel = load("res://assets/hero/warden_arms.gltf").instantiate()
+	viewmodel.name = "FirstPersonSkinnedArms"
 	camera.add_child(viewmodel)
-	var sleeve := StandardMaterial3D.new()
-	sleeve.albedo_color = Color("203944")
-	sleeve.roughness = 0.7
-	var leather := StandardMaterial3D.new()
-	leather.albedo_color = Color("533b2d")
-	leather.roughness = 0.8
-	for x in [-0.27, 0.28]:
-		var arm := MeshInstance3D.new()
-		var shape := CapsuleMesh.new()
-		shape.radius = 0.065
-		shape.height = 0.44
-		arm.mesh = shape
-		arm.material_override = sleeve
-		arm.position = Vector3(x, -0.40, -0.38)
-		arm.rotation_degrees = Vector3(-68, 0, -12 if x < 0 else 12)
-		viewmodel.add_child(arm)
-		var hand := MeshInstance3D.new()
-		var glove := SphereMesh.new()
-		glove.radius = 0.07
-		glove.height = 0.15
-		hand.mesh = glove
-		hand.material_override = leather
-		hand.position = Vector3(x, -0.30, -0.59)
-		viewmodel.add_child(hand)
-	var sword: Node3D = load("res://assets/weapon/sword_C.gltf").instantiate()
-	sword.position = Vector3(0.28, -0.32, -0.59)
+	viewmodel.position = Vector3(0, -1.1, -0.1)
+	viewmodel.rotation.y = PI
+	view_animator = viewmodel.find_children("*", "AnimationPlayer", true, false)[0]
+	for clip in ["Idle", "Sword_Idle", "Walk", "Jog_Fwd", "Sprint", "Jump"]:
+		view_animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
+	var arm_skeleton: Skeleton3D = viewmodel.find_children("*", "Skeleton3D", true, false)[0]
+	var grip := BoneAttachment3D.new()
+	grip.bone_name = "hand_r"
+	arm_skeleton.add_child(grip)
+	var sword: Node3D = SWORD.instantiate()
 	sword.scale = Vector3.ONE * 0.48
-	sword.rotation_degrees = Vector3(-12, -8, -18)
-	viewmodel.add_child(sword)
+	sword.rotation_degrees.z = -90
+	sword.position = Vector3(0.02, 0.08, 0.02)
+	grip.add_child(sword)
 	viewmodel.visible = false
 
 
@@ -262,17 +256,12 @@ func update_camera(delta: float, moving: float) -> void:
 	camera.fov = lerpf(
 		camera.fov, 78.0 if moving > 4.0 else (68.0 if aim else 72.0), 1.0 - exp(-6.0 * delta)
 	)
-	viewmodel.position = Vector3(
-		sin(elapsed * 9.0) * moving * 0.002, abs(cos(elapsed * 9.0)) * moving * 0.003, 0
+	viewmodel.position = (
+		Vector3(0, -1.1, -0.1)
+		+ Vector3(sin(elapsed * 9.0) * moving * 0.002, abs(cos(elapsed * 9.0)) * moving * 0.003, 0)
 	)
-	if action_timer > 0.0:
-		viewmodel.rotation = Vector3(
-			sin(action_timer * 9.0) * 0.35,
-			sin(action_timer * 9.0) * 0.5,
-			sin(action_timer * 9.0) * -0.5
-		)
-	else:
-		viewmodel.rotation = viewmodel.rotation.lerp(Vector3.ZERO, 0.2)
+	viewmodel.rotation = Vector3(0, PI, 0)
+	view_animator.speed_scale = animator.speed_scale
 
 
 func set_first_person(value: bool) -> void:
@@ -290,6 +279,8 @@ func play_clip(clip: String) -> void:
 	current_clip = clip
 	animator.speed_scale = 1.0
 	animator.play(clip, 0.14)
+	if view_animator != null:
+		view_animator.play(clip, 0.14)
 
 
 func attack() -> void:
@@ -330,6 +321,7 @@ func melee_contact() -> void:
 		as Node3D
 	)
 	get_parent().add_child(fx)
+	fx.add_to_group("transient_slash")
 	fx.global_position = global_position + forward * 1.1 + Vector3.UP
 	fx.rotation.y = yaw
 	fx.scale = Vector3.ONE * 0.65
@@ -345,6 +337,16 @@ func cast_magic() -> void:
 	action_timer = 0.85
 	visual.rotation.y = yaw + PI
 	play_clip("Spell_Simple_Shoot")
+	var cast: Node3D = (
+		load("res://assets/BinbunVFX_Vol2/ElementalMagicFX/effects/cast/vfx_fire_cast_01.tscn")
+		. instantiate()
+	)
+	get_parent().add_child(cast)
+	cast.global_position = global_position + Vector3(0, 1.35, 0) - Basis(Vector3.UP, yaw).z * 0.6
+	cast.scale = Vector3.ONE * 0.42
+	cast.set("one_shot", true)
+	cast.call("play")
+	get_tree().create_timer(1.2).timeout.connect(cast.queue_free)
 	get_tree().create_timer(0.22).timeout.connect(launch_magic)
 
 

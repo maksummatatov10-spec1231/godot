@@ -41,7 +41,7 @@ func _ready() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture-dir="):
 			capture_suite.call_deferred(arg.trim_prefix("--capture-dir="))
-	print("FOREST_READY trees=124 ground_cover=2600 seed=730221")
+	print("FOREST_READY trees=124 ground_cover=1660 seed=730221")
 
 
 static func height_at(x: float, z: float) -> float:
@@ -73,9 +73,9 @@ func lighting() -> void:
 	sky.sky_material = sky_mat
 	environment.sky = sky
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
-	environment.ambient_light_energy = 0.75
+	environment.ambient_light_energy = 0.65
 	environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
-	environment.tonemap_exposure = 1.1
+	environment.tonemap_exposure = 1.05
 	environment.glow_enabled = true
 	environment.glow_intensity = 0.55
 	environment.ssao_enabled = true
@@ -83,19 +83,19 @@ func lighting() -> void:
 	environment.ssao_intensity = 1.5
 	environment.ssr_enabled = true
 	environment.fog_enabled = true
-	environment.fog_light_color = Color("a3c9a4")
-	environment.fog_density = 0.004
+	environment.fog_light_color = Color("aac5cf")
+	environment.fog_density = 0.0018
 	environment.fog_sun_scatter = 0.55
 	environment.volumetric_fog_enabled = true
-	environment.volumetric_fog_density = 0.013
-	environment.volumetric_fog_albedo = Color("b4c5a5")
+	environment.volumetric_fog_density = 0.003
+	environment.volumetric_fog_albedo = Color("c5d4d0")
 	environment.volumetric_fog_length = 75.0
 	add_child(world)
 	var sun := DirectionalLight3D.new()
 	sun.name = "LateMorningSun"
 	sun.rotation_degrees = Vector3(-42, -38, 0)
 	sun.light_color = Color("fff1d0")
-	sun.light_energy = 1.5
+	sun.light_energy = 1.3
 	sun.shadow_enabled = true
 	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
 	sun.directional_shadow_max_distance = 95.0
@@ -145,14 +145,14 @@ func terrain() -> void:
 	add_child(lake)
 
 
-func model(name_: String) -> PackedScene:
-	if not loaded_models.has(name_):
-		loaded_models[name_] = load("res://assets/nature/" + name_ + ".gltf")
-	return loaded_models[name_]
+func model(model_name: String) -> PackedScene:
+	if not loaded_models.has(model_name):
+		loaded_models[model_name] = load("res://assets/nature/" + model_name + ".gltf")
+	return loaded_models[model_name]
 
 
-func plant(name_: String, pos: Vector3, size: float, collide := false) -> Node3D:
-	var obj := model(name_).instantiate() as Node3D
+func plant(model_name: String, pos: Vector3, size: float, collide := false) -> Node3D:
+	var obj := model(model_name).instantiate() as Node3D
 	obj.position = pos
 	obj.rotation.y = rng.randf_range(-PI, PI)
 	obj.scale = Vector3.ONE * size
@@ -208,7 +208,7 @@ func forest() -> void:
 			continue
 		plant("Rock_Medium_1" if i % 2 else "Rock_Medium_2", p, rng.randf_range(0.35, 0.85))
 	for species in ["Grass_Common_Short", "Grass_Wispy_Tall", "Flower_3_Group", "Flower_4_Group"]:
-		ground_cover(species, 650)
+		ground_cover(species, 180 if "Flower" in species else 650)
 
 
 func wind_material(original: StandardMaterial3D) -> ShaderMaterial:
@@ -252,8 +252,14 @@ func ground_cover(species: String, count: int) -> void:
 			if path_distance < 2.0 or Vector2(p.x + 12, (p.z + 3) / 1.6).length() < 6.0:
 				p.y -= 5.0
 			var size := rng.randf_range(0.65, 1.25)
-			var basis_ := Basis(Vector3.UP, rng.randf_range(0, TAU)).scaled(Vector3.ONE * size)
-			mm.set_instance_transform(i, Transform3D(basis_, p))
+			if "Flower" in species:
+				size *= 0.24
+			elif "Tall" in species:
+				size *= 0.65
+			var instance_basis := Basis(Vector3.UP, rng.randf_range(0, TAU)).scaled(
+				Vector3.ONE * size
+			)
+			mm.set_instance_transform(i, Transform3D(instance_basis, p))
 	source.free()
 
 
@@ -289,6 +295,16 @@ func toggle_quality() -> void:
 	get_viewport().msaa_3d = Viewport.MSAA_2X if high_quality else Viewport.MSAA_DISABLED
 
 
+func stop_audio() -> void:
+	for audio in find_children("*", "AudioStreamPlayer", true, false):
+		audio.stop()
+		audio.stream = null
+	# Fixed-fps headless tests can outpace the independent audio mixer thread.
+	OS.delay_msec(100)
+	await get_tree().process_frame
+	await get_tree().process_frame
+
+
 func capture_suite(directory: String) -> void:
 	DirAccess.make_dir_recursive_absolute(directory)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -305,6 +321,8 @@ func capture_suite(directory: String) -> void:
 		await get_tree().process_frame
 	await save_frame(directory, "03-sword")
 	player.action_timer = 0.0
+	for slash in get_tree().get_nodes_in_group("transient_slash"):
+		slash.queue_free()
 	player.magic_cooldown = 0.0
 	player.cast_magic()
 	for i in range(12):
@@ -330,11 +348,12 @@ func capture_suite(directory: String) -> void:
 		await get_tree().process_frame
 	await save_frame(directory, "07-forest-overview")
 	print("FOREST_CAPTURE_OK ", directory)
+	await stop_audio()
 	get_tree().quit(0)
 
 
-func save_frame(directory: String, name_: String) -> void:
+func save_frame(directory: String, model_name: String) -> void:
 	await RenderingServer.frame_post_draw
-	var path := directory.path_join(name_ + ".png")
+	var path := directory.path_join(model_name + ".png")
 	get_viewport().get_texture().get_image().save_png(path)
-	print("FOREST_FRAME ", name_, " player=", player.position)
+	print("FOREST_FRAME ", model_name, " player=", player.position)

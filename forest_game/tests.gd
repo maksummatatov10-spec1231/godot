@@ -107,4 +107,5 @@ func run() -> void:
 	)
 	if failures.is_empty():
 		print("FOREST_TEST_OK")
+	await world.stop_audio()
 	quit(0 if failures.is_empty() else 1)
