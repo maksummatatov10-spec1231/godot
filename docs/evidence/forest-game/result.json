@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-11-15T16:21:53.790110+00:00",
-  "source_commit": "249f9cd71a7f53882bb1f58fcbd2db4bb2655e88",
+  "timestamp_utc": "2026-11-15T16:31:32.662992+00:00",
+  "source_commit": "12cfa73213dc3be9a3b3f69663dfe7d23127335e",
   "renderer": "Forward+",
   "hardware_performance_test": false,
   "device_environment": "/usr/share/vulkan/icd.d/lvp_icd.json",
@@ -12,7 +12,7 @@
     },
     {
       "name": "gameplay",
-      "passed": false,
+      "passed": true,
       "exit_code": 0
     },
     {
@@ -23,8 +23,8 @@
     {
       "name": "image-checks",
       "passed": true,
-      "camera_difference": 33.3697486255787
+      "camera_difference": 40.87883355034722
     }
   ],
-  "passed": false
+  "passed": true
 }
