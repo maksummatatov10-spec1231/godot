@@ -48,3 +48,8 @@ that specific ZIP: a locally rebuilt container can differ because of timestamps.
 
 Old `clean-zip-*` logs from 0.1.0 are historical. Corrected-ZIP validation is recorded
 as `revision-clean-zip-*` after repackaging; do not confuse those two sets of evidence.
+
+Final successful publication: [Actions 43761225347](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43761225347), evidence/release commit `d336cf6`. Both reports match game SHA256
+`fa29cf5e91efefb737703e61c86f1994d10daa81ea3a833cdec54a43d3441edb`.
+The final source ZIP was freshly extracted, imported and passed all 3629 assertions;
+its original project files were compared byte-for-byte. See `revision-clean-zip-result.json`.

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "version": "0.1.2",
+  "source_files_byte_identical": 104,
+  "game_sha256": "fa29cf5e91efefb737703e61c86f1994d10daa81ea3a833cdec54a43d3441edb",
+  "local_zip_sha256": "b0f6fecda247d462342eda616e6d867d836df5c5d61e22cf14aff0e6df4724e3",
+  "godot_assertions": 3629,
+  "walkable_road_cells": 1183,
+  "trunk_approaches": 1330,
+  "tested_trunks": 341,
+  "ci_run": 43761225347,
+  "release_target": "d336cf61aadb05966b07eb4479f5acd6df8f4edc"
+}
