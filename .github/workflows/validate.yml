@@ -238,4 +238,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python tools/package_forest.py
-          gh release create warden-forest-v0.1.0 .tools/releases/Warden-Forest-Godot-Project.zip .tools/releases/Warden-Forest-Godot-Project.zip.sha256 --target "$GITHUB_SHA" --title 'WARDEN — The Emerald Wild | Forest prototype v0.1.0' --notes-file docs/FOREST_RELEASE.md
+          gh release create warden-forest-v0.2.0 .tools/releases/Warden-Forest-Godot-Project.zip .tools/releases/Warden-Forest-Godot-Project.zip.sha256 --target "$GITHUB_SHA" --title 'WARDEN — The Emerald Wild | Forest prototype v0.2.0' --notes-file docs/FOREST_RELEASE.md

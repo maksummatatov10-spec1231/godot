@@ -1,5 +1,8 @@
 # WARDEN — The Emerald Wild
 
+**v0.2: камера, тело/тени в FPS, бег в обеих камерах, прогрев магии и полноценные меню.**
+[Релиз v0.2](https://github.com/maksummatatov10-spec1231/godot/releases/tag/warden-forest-v0.2.0) · [Оптимизация и ограничения RX 580](docs/FOREST_OPTIMIZATION.md)
+
 **Новая самостоятельная 3D-тестовая игра:** [проект и инструкция](forest_game/README.md).
 Открывать **`forest_game/project.godot`**, не старый лабораторный проект `godot/`.
 Лес днём, персонаж с мечом, первое/третье лицо, ходьба/бег/прыжок, серия ударов
