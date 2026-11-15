@@ -113,27 +113,6 @@ jobs:
           unzip "$archive"
           chmod +x "${archive%.zip}"
           echo "GODOT4_BIN=$PWD/${archive%.zip}" >> "$GITHUB_ENV"
-      - name: Prepare pinned modern Lavapipe for complex terrain shaders
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p .tools/lavapipe docs/evidence/forward-plus
-          gh release download mesa-mesa-26.3.0 --repo rokuz/lavapipe-binaries --pattern lavapipe-linux-x86_64-release.zip --dir .tools/lavapipe
-          echo '678c753b809562b5eb1612e27e2f7576d4cdae645a1889d2222e8da776375cad  .tools/lavapipe/lavapipe-linux-x86_64-release.zip' | sha256sum --check --strict -
-          unzip -q .tools/lavapipe/lavapipe-linux-x86_64-release.zip -d .tools/lavapipe/runtime
-          find .tools/lavapipe/runtime -type f > docs/evidence/forward-plus/vulkan-runtime.log
-          driver=$(find .tools/lavapipe/runtime -name libvulkan_lvp.so -print -quit)
-          ldd "$driver" >> docs/evidence/forward-plus/vulkan-runtime.log
-          if ldd "$driver" | grep -q 'libLLVM.*not found'; then
-            sudo apt-get install -y libllvm21
-          fi
-          ldd "$driver" >> docs/evidence/forward-plus/vulkan-runtime.log
-          icd=$(find "$PWD/.tools/lavapipe/runtime" -name '*lvp*json' -print -quit)
-          test -n "$icd"
-          echo "CAPTURE_VULKAN_ICD=$icd" >> "$GITHUB_ENV"
-          echo "CAPTURE_VULKAN_LIB=$(dirname "$PWD/$driver")" >> "$GITHUB_ENV"
       - name: Capture actual Forward+ frames
         id: capture
         continue-on-error: true
@@ -141,12 +120,12 @@ jobs:
         run: |
           set -euo pipefail
           # Never let the loader silently choose another ICD or OpenGL.
-          icd="$CAPTURE_VULKAN_ICD"
+          icd=$(find /usr/share/vulkan/icd.d -name '*lvp*json' -print -quit)
           test -n "$icd"
           export VK_ICD_FILENAMES="$icd"
-          export LD_LIBRARY_PATH="$CAPTURE_VULKAN_LIB:${LD_LIBRARY_PATH:-}"
           export LIBGL_ALWAYS_SOFTWARE=1
-          export LP_NUM_THREADS=2
+          export LP_NUM_THREADS=1
+          export LP_NATIVE_VECTOR_WIDTH=128
           python tools/capture_rendering.py --output docs/evidence/forward-plus --timeout 240
       - name: Publish screenshots and logs to the same working branch
         if: always()
