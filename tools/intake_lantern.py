@@ -28,6 +28,8 @@ def main():
             archive.extract(path=temporary, targets=[name])
         output = ROOT / 'lantern_game/assets/ninja'
         records = []
+        selection_file = output.parent / "intake.json"
+        selection = {r["path"] for r in json.loads(selection_file.read_text())["files"]} if selection_file.exists() else None
         with zipfile.ZipFile(Path(temporary, name)) as pack:
             names = pack.namelist()
             license_name = next(n for n in names if n.endswith('/LICENSE.txt'))
@@ -35,6 +37,8 @@ def main():
                 raise ValueError('Expected CC0 license absent')
             for item in pack.infolist():
                 relative = PurePosixPath(item.filename).relative_to('Ninja Adventure - Asset Pack')
+                if selection is not None and str(relative) not in selection:
+                    continue
                 if item.is_dir() or relative.suffix.lower() not in {'.png', '.txt', '.md'}:
                     continue
                 if '..' in relative.parts or relative.is_absolute() or item.file_size > 2_000_000:

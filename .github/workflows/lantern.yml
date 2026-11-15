@@ -2,24 +2,29 @@ name: Lantern village 2D
 on:
   push:
     paths:
-      - tools/intake_lantern.py
+      - lantern_game/**
+      - tools/*lantern*.py
+      - tests/test_lantern_assets.py
       - .github/workflows/lantern.yml
   workflow_dispatch:
     inputs:
       intake:
+        description: Restore selected CC0 art from the verified user archive
         type: boolean
         default: false
       validate:
+        description: Record screenshots and physics evidence on the current branch
         type: boolean
         default: false
       publish:
+        description: Validate, record evidence and publish the standalone source ZIP
         type: boolean
         default: false
 permissions:
   contents: write
 jobs:
   intake:
-    if: (github.event_name == 'push' || inputs.intake) && github.ref_name == 'arena/449f84de-godot'
+    if: github.event_name == 'workflow_dispatch' && inputs.intake && github.ref_name == 'arena/449f84de-godot'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -36,7 +41,72 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add lantern_game/assets
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Import verified CC0 Ninja Adventure selection for separate 2D game [skip ci]'
+          git commit -m 'Restore verified CC0 art selection [skip ci]'
           git fetch origin arena/449f84de-godot
           git rebase origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
+  village:
+    if: (github.event_name == 'push' || inputs.validate || inputs.publish) && github.ref_name == 'arena/449f84de-godot'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/449f84de-godot
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install checks and graphics
+        run: |
+          pip install -r requirements-dev.txt
+          sudo apt-get update
+          sudo apt-get install -y xvfb xauth libgl1-mesa-dri libglx-mesa0
+      - name: Verified Godot 4.7.2
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag=$(cat .godot-version)
+          archive="Godot_v${tag}_linux.x86_64.zip"
+          mkdir -p .tools/godot
+          gh release download "$tag" --repo godotengine/godot --pattern "$archive" --pattern SHA512-SUMS.txt --dir .tools/godot
+          cd .tools/godot
+          grep -F " $archive" SHA512-SUMS.txt | sha512sum --check --strict -
+          unzip "$archive"
+          chmod +x "${archive%.zip}"
+          echo "GODOT4_BIN=$PWD/${archive%.zip}" >> "$GITHUB_ENV"
+      - name: Asset and syntax regressions
+        run: |
+          python -m unittest discover -s tests -q
+          gdlint lantern_game/scripts lantern_game/tests.gd
+          gdformat --check lantern_game/scripts lantern_game/tests.gd
+      - name: Actual physics, menus and rendered collision screenshots
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: python tools/capture_lantern.py
+      - name: Record evidence on this branch
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/evidence/lantern lantern_game
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Record 2D village physics and 24 rendered evidence frames [skip ci]'
+          git fetch origin arena/449f84de-godot
+          git rebase origin/arena/449f84de-godot
+          git push origin HEAD:arena/449f84de-godot
+      - name: Package evidence-matched standalone project
+        run: python tools/package_lantern.py
+      - name: Publish first playable source project
+        if: inputs.publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create lantern-valley-v0.1.0 artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.1.0' --notes-file lantern_game/README.md --prerelease
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lantern-village-evidence-and-project
+          path: |
+            docs/evidence/lantern/
+            artifacts/lantern/
