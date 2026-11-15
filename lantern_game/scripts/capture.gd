@@ -4,16 +4,16 @@ var output := ""
 var images: Array[String] = []
 
 
-func shot(name: String) -> void:
+func shot(label: String) -> void:
 	for i in range(8):
 		await get_tree().process_frame
 	await RenderingServer.frame_post_draw
 	var error := game.get_viewport().get_texture().get_image().save_png(
-		output.path_join(name + ".png")
+		output.path_join(label + ".png")
 	)
 	assert(error == OK)
-	images.append(name)
-	print("CAPTURE ", name)
+	images.append(label)
+	print("CAPTURE ", label)
 
 
 func view(at: Vector2) -> void:

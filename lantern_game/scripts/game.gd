@@ -2,6 +2,7 @@ extends Node2D
 # gdlint: disable=max-line-length
 ## All map geometry is loaded from the same manifest as the art assembly.
 const Actor = preload("res://scripts/actor.gd")
+const Capture = preload("res://scripts/capture.gd")
 const A = "res://assets/ninja/"
 var map: Dictionary
 var hero: CharacterBody2D
@@ -577,7 +578,7 @@ func _update_dialogue() -> void:
 func run_capture() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
-	var driver: Node = load("res://scripts/capture.gd").new()
+	var driver: Node = Capture.new()
 	add_child(driver)
 	await driver.run(self, capture_path)
 	driver.queue_free()
@@ -585,8 +586,10 @@ func run_capture() -> void:
 	await get_tree().process_frame
 	tone_player.stop()
 	ambience_player.stop()
-	await get_tree().create_timer(0.1).timeout
-	get_tree().quit()
+	# Release world shaders/canvas resources while the renderer is still running.
+	# A tree-owned timer survives this node and quits only after queued deletion.
+	get_tree().create_timer(0.15).timeout.connect(get_tree().quit)
+	queue_free()
 
 
 func _open_submenu(submenu: String, origin: String) -> void:
