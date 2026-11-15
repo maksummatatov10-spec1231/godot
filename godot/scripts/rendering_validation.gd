@@ -44,8 +44,9 @@ func _ready() -> void:
 		terrain.set("free_editor_textures", false)
 		terrain.set("tessellation_level", 0)
 		terrain.set("mesh_lods", 3)
-		# Exercise the vendor's optimized material with actual texture layers,
-		# not an empty texture array in the heavyweight default shader.
+		terrain.set("region_size", 1024)
+		# Bounded derivative of the vendor's lightweight heightfield shader;
+		# actual terrain texture layers, not a substitute ground mesh.
 		var material := ClassDB.instantiate("Terrain3DMaterial") as Resource
 		material.set("shader_override", load("res://shaders/terrain_safe_lightweight.gdshader"))
 		material.set("shader_override_enabled", true)

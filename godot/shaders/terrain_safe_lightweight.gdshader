@@ -1,5 +1,5 @@
 // Copyright © 2023-2026 Cory Petkovsek, Roope Palmroos, and Contributors.
-// This shader is the minimum needed to allow the terrain to function, without any texturing.
+// Lightweight Terrain3D example with texture layers; bounded local derivative.
 
 // Local derivative: bound uniform-array and absent-region texture accesses.
 shader_type spatial;
