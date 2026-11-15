@@ -47,7 +47,7 @@ func _ready() -> void:
 		# not an empty texture array in the heavyweight default shader.
 		var material := ClassDB.instantiate("Terrain3DMaterial") as Resource
 		material.set(
-			"shader_override", load("res://addons/terrain_3d/extras/shaders/lightweight.gdshader")
+			"shader_override", load("res://addons/terrain_3d/extras/shaders/minimum.gdshader")
 		)
 		material.set("shader_override_enabled", true)
 		terrain.set("material", material)
@@ -109,7 +109,7 @@ func _ready() -> void:
 		+ (
 			"Sky"
 			if OS.get_cmdline_user_args().has("--without-terrain")
-			else "Terrain3D lightweight"
+			else "Terrain3D minimum diagnostic"
 		)
 		+ " / "
 		+ ("No clouds" if OS.get_cmdline_user_args().has("--without-clouds") else "SunshineClouds2")
