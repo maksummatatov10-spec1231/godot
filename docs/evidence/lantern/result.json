@@ -1,7 +1,7 @@
 {
-  "timestamp_utc": "2026-11-15T20:58:07.658950+00:00",
-  "source_commit": "f93f8407ba9cb8a85caa9759bef9270d7c747936",
-  "game_sha256": "e2db4b1df42ab66e7ad851b8dd9448675e7545ee1f02919480234589d10b0f99",
+  "timestamp_utc": "2026-11-15T21:01:20.710902+00:00",
+  "source_commit": "030fab5a26c452970f21aa36a81ac55882efacc5",
+  "game_sha256": "fa29cf5e91efefb737703e61c86f1994d10daa81ea3a833cdec54a43d3441edb",
   "passed": true,
   "incomplete": false,
   "steps": [
@@ -24,7 +24,7 @@
       "name": "image-validation",
       "passed": true,
       "overlay_mean_difference": {
-        "02-village": 1.3403837528935185,
+        "02-village": 1.3420073784722222,
         "05-lake": 7.223624855324073,
         "05-farm": 2.071163917824074
       }
