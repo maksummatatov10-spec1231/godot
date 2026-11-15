@@ -1,6 +1,7 @@
 extends CharacterBody3D
 ## Camera-relative locomotion; real Universal skeletal clips crossfade on one rig.
 
+const FPS_ARMS = preload("res://scripts/fps_arms.gd")
 const SWORD = preload("res://assets/weapon/sword_C.gltf")
 const PROJECTILE = preload("res://scripts/projectile.gd")
 var visual: Node3D
@@ -17,6 +18,7 @@ var action_timer := 0.0
 var magic_cooldown := 0.0
 var combo := 0
 var attack_serial := 0
+var attack_duration := 0.9
 var damage_events := 0
 var magic_hits := 0
 var current_clip := ""
@@ -67,6 +69,11 @@ func _ready() -> void:
 	var hair: Node3D = load("res://assets/hero/Hair_SimpleParted.gltf").instantiate()
 	hair_grip.add_child(hair)
 	hair.transform = skeleton.get_bone_global_rest(skeleton.find_bone("Head")).affine_inverse()
+	for mesh in hair.find_children("*", "MeshInstance3D", true, false):
+		for surface in range(mesh.mesh.get_surface_count()):
+			var mat: StandardMaterial3D = mesh.get_active_material(surface).duplicate()
+			mat.albedo_color = Color(0.20, 0.11, 0.055)
+			mesh.set_surface_override_material(surface, mat)
 	animator.playback_default_blend_time = 0.16
 	var grip := BoneAttachment3D.new()
 	grip.bone_name = "hand_r"
@@ -124,17 +131,21 @@ func create_viewmodel() -> void:
 	viewmodel = load("res://assets/hero/warden_arms.gltf").instantiate()
 	viewmodel.name = "FirstPersonSkinnedArms"
 	camera.add_child(viewmodel)
-	viewmodel.position = Vector3(0, -1.1, -0.1)
-	viewmodel.rotation.y = PI
+	viewmodel.position = Vector3.ZERO
+	viewmodel.rotation.y = 0
 	view_animator = viewmodel.find_children("*", "AnimationPlayer", true, false)[0]
 	for clip in ["Idle", "Sword_Idle", "Walk", "Jog_Fwd", "Sprint", "Jump"]:
 		view_animator.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
 	var arm_skeleton: Skeleton3D = viewmodel.find_children("*", "Skeleton3D", true, false)[0]
+	var correction := SkeletonModifier3D.new()
+	correction.set_script(FPS_ARMS)
+	correction.controller = self
+	arm_skeleton.add_child(correction)
 	var grip := BoneAttachment3D.new()
 	grip.bone_name = "hand_r"
 	arm_skeleton.add_child(grip)
 	var sword: Node3D = SWORD.instantiate()
-	sword.scale = Vector3.ONE * 0.48
+	sword.scale = Vector3.ONE * 0.42
 	sword.rotation_degrees.z = -90
 	sword.position = Vector3(0.02, 0.08, 0.02)
 	grip.add_child(sword)
@@ -257,10 +268,10 @@ func update_camera(delta: float, moving: float) -> void:
 		camera.fov, 78.0 if moving > 4.0 else (68.0 if aim else 72.0), 1.0 - exp(-6.0 * delta)
 	)
 	viewmodel.position = (
-		Vector3(0, -1.1, -0.1)
+		Vector3.ZERO
 		+ Vector3(sin(elapsed * 9.0) * moving * 0.002, abs(cos(elapsed * 9.0)) * moving * 0.003, 0)
 	)
-	viewmodel.rotation = Vector3(0, PI, 0)
+	viewmodel.rotation = Vector3.ZERO
 	view_animator.speed_scale = animator.speed_scale
 
 
@@ -294,6 +305,7 @@ func attack() -> void:
 	var clip: String = ["Sword_Regular_A", "Sword_Regular_B", "Sword_Regular_C"][combo % 3]
 	combo += 1
 	action_timer = minf(animator.get_animation(clip).length, 0.9)
+	attack_duration = action_timer
 	attacking = true
 	visual.rotation.y = yaw + PI
 	play_clip(clip)

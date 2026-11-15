@@ -11,6 +11,7 @@ var environment: Environment
 var targets: Array[Node3D] = []
 var loaded_models: Dictionary = {}
 var foliage_materials: Dictionary = {}
+var tree_batches: Dictionary = {}
 var capture_mode := false
 var high_quality := true
 
@@ -41,7 +42,7 @@ func _ready() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture-dir="):
 			capture_suite.call_deferred(arg.trim_prefix("--capture-dir="))
-	print("FOREST_READY trees=124 ground_cover=1660 seed=730221")
+	print("FOREST_READY trees=280 ground_cover=3400 seed=730221")
 
 
 static func height_at(x: float, z: float) -> float:
@@ -64,12 +65,8 @@ func lighting() -> void:
 	world.environment = environment
 	environment.background_mode = Environment.BG_SKY
 	var sky := Sky.new()
-	var sky_mat := ProceduralSkyMaterial.new()
-	sky_mat.sky_top_color = Color("397fa0")
-	sky_mat.sky_horizon_color = Color("b9d6cb")
-	sky_mat.ground_bottom_color = Color("29483c")
-	sky_mat.ground_horizon_color = Color("b9d6cb")
-	sky_mat.sun_angle_max = 5.0
+	var sky_mat := ShaderMaterial.new()
+	sky_mat.shader = load("res://shaders/day_sky.gdshader")
 	sky.sky_material = sky_mat
 	environment.sky = sky
 	environment.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
@@ -162,6 +159,9 @@ func plant(model_name: String, pos: Vector3, size: float, collide := false) -> N
 			var original: Material = mesh.get_active_material(surface)
 			if original is StandardMaterial3D and "Leaves" in original.resource_name:
 				mesh.set_surface_override_material(surface, wind_material(original))
+	if model_name.begins_with("Rock_Medium"):
+		for mesh in obj.find_children("*", "MeshInstance3D", true, false):
+			mesh.create_convex_collision()
 	if collide:
 		var body := StaticBody3D.new()
 		var shape := CollisionShape3D.new()
@@ -188,15 +188,16 @@ func forest() -> void:
 		Vector3(6, 0, -18)
 	]:
 		p.y = height_at(p.x, p.z)
-		plant(trees[rng.randi_range(0, 2)], p, rng.randf_range(1.2, 1.6), true)
-	for i in range(118):
+		add_tree(trees[rng.randi_range(0, 2)], p, rng.randf_range(1.2, 1.6))
+	for i in range(274):
 		var angle := rng.randf_range(-PI, PI)
 		var radius := sqrt(rng.randf_range(180, 4000))
 		var p := Vector3(cos(angle) * radius, 0, sin(angle) * radius)
 		if abs(p.x) < 3.5 and p.z < 15:
 			p.x += 7.0
 		p.y = height_at(p.x, p.z)
-		plant(trees[i % trees.size()], p, rng.randf_range(0.95, 1.65), true)
+		add_tree(trees[i % trees.size()], p, rng.randf_range(0.95, 1.65))
+	build_tree_batches()
 	for i in range(100):
 		var p := scatter_point(42.0)
 		if abs(p.x) < 3.0:
@@ -208,7 +209,47 @@ func forest() -> void:
 			continue
 		plant("Rock_Medium_1" if i % 2 else "Rock_Medium_2", p, rng.randf_range(0.35, 0.85))
 	for species in ["Grass_Common_Short", "Grass_Wispy_Tall", "Flower_3_Group", "Flower_4_Group"]:
-		ground_cover(species, 180 if "Flower" in species else 650)
+		ground_cover(
+			species, 200 if "Flower" in species else (1800 if "Short" in species else 1200)
+		)
+
+
+func add_tree(species: String, pos: Vector3, size: float) -> void:
+	var key := species + str(int(pos.x > 0)) + str(int(pos.z > 0))
+	if not tree_batches.has(key):
+		tree_batches[key] = {"species": species, "transforms": []}
+	var orientation := Basis(Vector3.UP, rng.randf_range(-PI, PI)).scaled(Vector3.ONE * size)
+	tree_batches[key].transforms.append(Transform3D(orientation, pos))
+	var body := StaticBody3D.new()
+	var collision := CollisionShape3D.new()
+	var cylinder := CylinderShape3D.new()
+	cylinder.radius = 0.32 * size
+	cylinder.height = 5.5 * size
+	collision.shape = cylinder
+	collision.position.y = cylinder.height / 2.0
+	body.add_child(collision)
+	add_child(body)
+	body.position = pos
+
+
+func build_tree_batches() -> void:
+	for entry in tree_batches.values():
+		var source: Node3D = model(entry.species).instantiate()
+		for piece in source.find_children("*", "MeshInstance3D", true, false):
+			var batch := MultiMeshInstance3D.new()
+			var mm := MultiMesh.new()
+			mm.transform_format = MultiMesh.TRANSFORM_3D
+			mm.mesh = piece.mesh.duplicate()
+			for surface in range(mm.mesh.get_surface_count()):
+				var original: Material = piece.get_active_material(surface)
+				if original is StandardMaterial3D and "Leaves" in original.resource_name:
+					mm.mesh.surface_set_material(surface, wind_material(original))
+			mm.instance_count = entry.transforms.size()
+			for i in range(mm.instance_count):
+				mm.set_instance_transform(i, entry.transforms[i] * piece.transform)
+			batch.multimesh = mm
+			add_child(batch)
+		source.free()
 
 
 func wind_material(original: StandardMaterial3D) -> ShaderMaterial:

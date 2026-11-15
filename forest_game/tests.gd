@@ -46,6 +46,13 @@ func run() -> void:
 		player.camera.cull_mask == 1 and player.viewmodel.visible,
 		"first person shows viewmodel, hides head/body clipping"
 	)
+	var fps_skeleton: Skeleton3D = player.viewmodel.find_children("*", "Skeleton3D", true, false)[0]
+	var modifier: SkeletonModifier3D = (
+		fps_skeleton.find_children("*", "SkeletonModifier3D", false, false)[0]
+	)
+	modifier.call("_process_modification")
+	var wrist := fps_skeleton.get_bone_global_pose(fps_skeleton.find_bone("hand_r")).origin
+	check(wrist.z < -0.4 and wrist.y < 0.0, "FPS wrist/grip is in front of and below lens")
 	player.set_first_person(false)
 	check(
 		player.camera.cull_mask == 3 and not player.viewmodel.visible,
@@ -88,6 +95,37 @@ func run() -> void:
 	)
 	await ticks(180)
 	check(ward.health == 100, "shattered training ward reforms for repeatable testing")
+	player.position = Vector3(0, 0.05, 5)
+	player.velocity = Vector3.ZERO
+	await ticks(12)
+	var diagonal_start := player.position
+	Input.action_press("forward")
+	Input.action_press("right")
+	await ticks(60)
+	Input.action_release("forward")
+	Input.action_release("right")
+	var diagonal_distance := player.position.distance_to(diagonal_start)
+	check(
+		diagonal_distance > 2.4 and diagonal_distance < 3.5,
+		"diagonal movement is normalized, not sqrt(2) faster"
+	)
+	player.position = Vector3(0, 0.05, 7)
+	player.velocity = Vector3.ZERO
+	var wall := StaticBody3D.new()
+	var shape := CollisionShape3D.new()
+	var box := BoxShape3D.new()
+	box.size = Vector3(1, 2, 0.2)
+	shape.shape = box
+	wall.add_child(shape)
+	world.add_child(wall)
+	wall.position = Vector3(0.4, 1.7, 9)
+	await ticks(12)
+	check(
+		player.camera.global_position.distance_to(player.global_position + Vector3.UP * 1.55) < 3,
+		"camera retracts before collidable obstacle"
+	)
+	wall.queue_free()
+	await ticks(6)
 	world.toggle_quality()
 	check(
 		not world.environment.volumetric_fog_enabled,

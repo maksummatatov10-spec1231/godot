@@ -130,6 +130,7 @@ def outfit_and_arms():
     tex_id = data['materials'][material_id]['pbrMetallicRoughness']['baseColorTexture']['index']
     image_id = data['textures'][tex_id]['source']
     texture = Image.open(folder / data['images'][image_id]['uri']).convert('RGB')
+    texture.thumbnail((1024, 1024), Image.Resampling.LANCZOS)
     colors = Image.new('RGB', texture.size)
     mask = Image.new('L', texture.size)
     paint, mask_paint = ImageDraw.Draw(colors), ImageDraw.Draw(mask)
@@ -155,7 +156,7 @@ def outfit_and_arms():
         if color:
             paint.polygon(points, fill=color)
             mask_paint.polygon(points, fill=255)
-        if abs(x) > 0.24 and y > 1.27:
+        if abs(x) > 0.48 and y > 1.27:
             arm_indices.extend(tri)
     luminance = ImageEnhance.Brightness(texture.convert('L')).enhance(1.8).convert('RGB')
     cloth = ImageChops.multiply(colors, luminance)
