@@ -106,6 +106,8 @@ def main():
                 '--args', *base, '--disable-crash-handler', '--rendering-method',
                 'forward_plus', '--audio-driver', 'Dummy', '--resolution', '960x540',
                 scene, '--', f'--capture={image}'])
+    run('cloud-image-regression', [sys.executable, str(ROOT / 'tools/verify_cloud_images.py'),
+                                   '--directory', str(output)], 'CLOUD_IMAGE_REGRESSION_OK')
     editor_prefix = prefix
     if prefix:
         editor_prefix = [prefix[0], '-a', '-s', '-screen 0 1280x800x24']

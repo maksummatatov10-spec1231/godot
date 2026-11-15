@@ -47,7 +47,7 @@ func _ready() -> void:
 		# Exercise the vendor's optimized material with actual texture layers,
 		# not an empty texture array in the heavyweight default shader.
 		var material := ClassDB.instantiate("Terrain3DMaterial") as Resource
-		material.set("shader_override", load("res://shaders/terrain_safe_minimum.gdshader"))
+		material.set("shader_override", load("res://shaders/terrain_safe_lightweight.gdshader"))
 		material.set("shader_override_enabled", true)
 		terrain.set("material", material)
 		var assets := ClassDB.instantiate("Terrain3DAssets") as Resource
@@ -63,7 +63,17 @@ func _ready() -> void:
 		assets.set("texture_list", [texture_asset])
 		terrain.set("assets", assets)
 		add_child(terrain)
-		terrain.get("data").call("add_region_blank", Vector2i.ZERO)
+		var data: Object = terrain.get("data")
+		data.call("add_region_blank", Vector2i.ZERO)
+		var heights := Image.create(1024, 1024, false, Image.FORMAT_RF)
+		for z in range(1024):
+			for x in range(1024):
+				var left := Vector2(x - 65.0, z - 230.0).length_squared() / 2200.0
+				var right := Vector2(x - 200.0, z - 280.0).length_squared() / 4000.0
+				heights.set_pixel(x, z, Color(14.0 * exp(-left) + 22.0 * exp(-right), 0, 0))
+		var region: Object = data.call("get_region", Vector2i.ZERO)
+		region.call("set_height_map", heights)
+		data.call("update_maps")
 
 	var camera := Camera3D.new()
 	camera.position = Vector3(128.0, 12.0, 100.0)
@@ -103,17 +113,23 @@ func _ready() -> void:
 	add_child(hud)
 	var label := Label.new()
 	label.position = Vector2(20.0, 20.0)
+	label.add_theme_color_override("font_outline_color", Color.BLACK)
+	label.add_theme_constant_override("outline_size", 6)
 	label.text = (
 		"Forward+ / "
 		+ (
 			"Sky"
 			if OS.get_cmdline_user_args().has("--without-terrain")
-			else "Terrain3D minimum diagnostic"
+			else "Terrain3D bounded lightweight"
 		)
 		+ " / "
 		+ ("No clouds" if OS.get_cmdline_user_args().has("--without-clouds") else "SunshineClouds2")
 		+ "\n"
-		+ "Balanced clouds: quarter resolution, 64 view steps, 8 lighting steps\n"
+		+ (
+			"Clouds disabled\n"
+			if OS.get_cmdline_user_args().has("--without-clouds")
+			else "Balanced clouds: quarter resolution, 64 view steps, 8 lighting steps\n"
+		)
 		+ RenderingServer.get_rendering_device().get_device_name()
 	)
 	hud.add_child(label)
