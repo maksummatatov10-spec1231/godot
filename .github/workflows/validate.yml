@@ -211,8 +211,15 @@ jobs:
           git add -- docs/evidence/forest-game
           if ! git diff --cached --quiet; then
             git commit -m 'Record real forest game screenshots and gameplay tests [skip ci]'
+            git fetch origin arena/449f84de-godot
+            git rebase origin/arena/449f84de-godot
             git push origin HEAD:arena/449f84de-godot
           fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forest-render-evidence
+          path: docs/evidence/forest-game
       - name: Reject failed game checks
         if: steps.forest.outcome != 'success'
         run: exit 1
