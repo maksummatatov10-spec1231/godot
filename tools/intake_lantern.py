@@ -8,8 +8,6 @@ import gdown
 import py7zr
 
 ROOT = Path(__file__).resolve().parents[1]
-FILE_ID = '1oYbF42doEsKE8kN6EVzFVdoZtz_TLZhr'
-# Preserve the case-sensitive verified source ID.
 FILE_ID = '1oYbF42doEsEK8kN6EVzFVdoZtz_TLZhr'
 EXPECTED = 'cd56f13d4ceb33f0e90a1447a86ad8c5'
 

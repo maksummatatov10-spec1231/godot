@@ -1,5 +1,9 @@
 name: Lantern village 2D
 on:
+  push:
+    paths:
+      - tools/intake_lantern.py
+      - .github/workflows/lantern.yml
   workflow_dispatch:
     inputs:
       intake:
@@ -15,7 +19,7 @@ permissions:
   contents: write
 jobs:
   intake:
-    if: inputs.intake && github.ref_name == 'arena/449f84de-godot'
+    if: (github.event_name == 'push' || inputs.intake) && github.ref_name == 'arena/449f84de-godot'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -31,6 +35,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add lantern_game/assets
+          if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Import verified CC0 Ninja Adventure selection for separate 2D game [skip ci]'
           git fetch origin arena/449f84de-godot
           git rebase origin/arena/449f84de-godot
