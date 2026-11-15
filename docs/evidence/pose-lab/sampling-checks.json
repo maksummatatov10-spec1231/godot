@@ -1,0 +1,58 @@
+[
+  {
+    "clip": "Idle_Loop",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Jog_Fwd_Loop",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Jump_Land",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Jump_Loop",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Jump_Start",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Spell_Simple_Shoot",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Sprint_Loop",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Sword_Attack",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Sword_Idle",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Walk_Loop",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Sword_Heavy_Combo",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Sword_Regular_A",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Sword_Regular_B",
+    "repeat_error": 0
+  },
+  {
+    "clip": "Sword_Regular_C",
+    "repeat_error": 0
+  }
+]

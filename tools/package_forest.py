@@ -21,6 +21,9 @@ def package(output: Path):
                  if (lab / name).is_file()]
     entries = [(path, path.relative_to(source).as_posix()) for path in files]
     entries += [(path, 'model_lab/' + path.name) for path in lab_files]
+    preview_notes = ROOT / 'docs/FOREST_PREVIEW_RELEASE.md'
+    if preview_notes.is_file():
+        entries.append((preview_notes, 'PREVIEW_NOTES.md'))
     manifest = {'project': 'WARDEN — The Emerald Wild',
                 'engine': 'Godot 4.7.2 Standard / Forward+',
                 'repository_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),

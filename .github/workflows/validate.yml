@@ -244,6 +244,11 @@ jobs:
           subprocess.run(['git', 'fetch', '--no-tags', '--depth=1', 'origin', evidence['source_commit']], check=True)
           subprocess.run(['git', 'diff', '--exit-code', evidence['source_commit'], 'HEAD', '--', 'forest_game'], check=True)
           PYTHON
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate laboratory build
+        run: npm ci --omit=dev --prefix model_lab && npm run build --prefix model_lab
       - name: Package source ZIP and publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
