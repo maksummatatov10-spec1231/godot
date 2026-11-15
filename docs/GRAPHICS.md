@@ -1,5 +1,100 @@
 # Реальные скриншоты в среде агента
 
+## Новый результат: Forward+ и окно редактора (2026-11-15)
+
+Захват и просмотр **проверены на практике**, не только найдены в документации.
+В GitHub Actions Ubuntu 24.04 используется Xvfb + системный Mesa Lavapipe:
+Godot сообщает Vulkan 1.4.318, Forward+, llvmpipe LLVM 20.1.2. Это CPU Vulkan,
+**не тест FPS/быстродействия видеокарты**. Локальный SwiftShader по-прежнему
+не предоставляет нужную X11 surface; это ограничение обошли удалённым runner.
+
+Открыты и визуально просмотрены:
+
+- [Реальный Forward+ кадр стенда](evidence/forward-plus/lab.png).
+- [Небо, солнце и контрольный 3D-объект без плагина облаков](evidence/forward-plus/sky-only.png).
+- [Те же объекты с SunshineClouds2](evidence/forward-plus/clouds-only.png).
+- [Terrain3D отдельно](evidence/forward-plus/terrain-only.png) и
+  [Terrain3D вместе с облаками](evidence/forward-plus/terrain-clouds.png).
+- [Окно Godot с включёнными плагинами](evidence/forward-plus/editor.png).
+
+Снимок окна редактора — именно X11 framebuffer через `PIL.ImageGrab`, не
+изображение game viewport. Видны Scene/FileSystem/Inspector и Terrain3D dock.
+Поскольку `lab.gd` строит сцену только при запуске, в редакторе виден её корневой
+узел, а не игровой lab. Есть ступенчатые артефакты сетки viewport на software
+renderer; этот снимок не принимается за доказательство идеальной 3D-картинки.
+Прежний кадр с диалогом reimport был отвергнут; версия include синхронизирована
+с Godot 4.7, и новый editor log не содержит прежнего краша.
+
+В облачном шейдере найдено неопределённое поведение: `smoothstep` с одинаковыми
+границами, потенциальное деление на ноль в интеграции атмосферы. Добавлены
+определённый `step`, защита знаменателя и отключение атмосферного прохода при
+нулевой плотности. **После изменения небо перестало быть чёрным**, центральный
+объект сохраняется. Облака пока пересвечены/мягкие при четверти разрешения;
+это функциональный диагностический кадр, не финальный художественный результат.
+Закрытие cloud fixture теперь освобождает RD до завершения RenderingServer;
+в текущем clouds-only log нет прежних RID leak warnings.
+
+**Terrain3D:** прежние default/lightweight/minimum шейдеры воспроизводили signal 11.
+В примерах найдены незащищённые uniform-array индексы и чтение array textures
+с layer=-1 для отсутствующих регионов. Созданы MIT derivatives в
+`godot/shaders/` с проверкой границ; fixture ограничен тремя mesh LODs.
+С bounded minimum вариантом **первый полный прогон стал зелёным**:
+[43732396266](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43732396266),
+source `16211a8d0886c1beba03d5f014558f9d336c9607`.
+Реально открыты кадры земли с тенью контрольного объекта, отдельно и вместе
+с облаками. Это настоящий Terrain3D clipmap, не подставная плоскость MeshInstance.
+Проверки bounds и mesh LODs менялись вместе, поэтому единственная причина
+старого краша **не доказана отдельным bisect**; старый backtrace оставлен для
+исторической диагностики, а не как ошибка последнего успешного кадра.
+
+Лёгкий профиль не доказывает работу всех опций полного vendor shader или всех
+сетевых функций Assets2Godot. Последние статусы и точный source commit находятся
+в [result.json](evidence/forward-plus/result.json). `passed` отдельного capture
+означает техническую проверку процесса/PNG/log, не автоматическую художественную
+приёмку. Дополнительный image regression сравнивает небо/облака: сохраняется
+центральный объект, нет чёрного фона, есть видимый вклад облаков.
+
+### Воспроизведение и просмотр
+
+В `.github/workflows/validate.yml` запуск `workflow_dispatch` на рабочей ветке
+создаёт screenshots/logs и публикует их в **ту же ветку**, даже при падении.
+Весь workflow остаётся красным, если хотя бы одна обязательная проверка не прошла.
+
+```sh
+sudo apt-get update
+sudo apt-get install -y xvfb xauth mesa-vulkan-drivers libvulkan1 gdb
+pip install -r requirements-dev.txt
+export GODOT4_BIN=/absolute/path/to/Godot_v4.7.2-stable_linux.x86_64
+export VK_ICD_FILENAMES=$(find /usr/share/vulkan/icd.d -name '*lvp*json' -print -quit)
+export LIBGL_ALWAYS_SOFTWARE=1 LP_NUM_THREADS=1 LP_NATIVE_VECTOR_WIDTH=128
+python tools/capture_rendering.py --output artifacts/forward-plus
+# Даже после ненулевого exit диагностические PNG/log остаются в output.
+python tools/verify_cloud_images.py --directory artifacts/forward-plus
+# Отдельный настоящий снимок редактора:
+xvfb-run -a -s '-screen 0 1280x800x24' python tools/capture_editor.py \
+  --output artifacts/editor.png
+```
+
+Игровой capture ждёт `RenderingServer.frame_post_draw`, затем вызывает
+`get_viewport().get_texture().get_image().save_png(...)`. Runner проверяет
+фактическую строку Forward+ device, код выхода, ошибки и свежесть/размер PNG.
+Editor capture проверяет, что процесс ещё жив, и отвергает fatal/script errors.
+После этого агент **открывает PNG инструментом просмотра изображений**; наличие
+файла без просмотра не считается визуальной проверкой.
+
+Бинарная сборка Lavapipe 26.3 из `rokuz/lavapipe-binaries` тоже исследована с
+проверкой SHA-256, но отвергнута: ей нужны более новые glibc/LLVM22, чем на runner.
+Она не была молча объявлена рабочей; `vulkan-runtime.log` сохраняет диагностику.
+
+Источники реализации:
+[официальный Viewport API](https://docs.godotengine.org/en/stable/classes/class_viewport.html),
+[пример screen capture Godot](https://github.com/godotengine/godot-demo-projects/blob/master/viewport/screen_capture/screen_capture.gd).
+
+---
+
+## Исторические C++/Compatibility проверки
+
+
 ## Результат
 
 На 15 ноября 2026 воспроизводимо получены **настоящие кадры viewport Godot 4.7.2**,

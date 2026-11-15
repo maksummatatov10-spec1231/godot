@@ -7,7 +7,7 @@ import unittest
 from PIL import Image, ImageDraw
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from verify_cloud_images import verify
+from verify_cloud_images import verify, verify_terrain
 
 
 class CloudImagesTests(unittest.TestCase):
@@ -23,6 +23,13 @@ class CloudImagesTests(unittest.TestCase):
             sky.save(a)
             clouds.save(b)
             return verify(a, b)
+
+    def test_black_terrain_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'terrain.png'
+            Image.new('RGB', (960, 540), 'black').save(path)
+            with self.assertRaisesRegex(RuntimeError, 'Terrain material is mostly black'):
+                verify_terrain(path)
 
     def test_clouds_preserve_sky_and_foreground(self):
         self.assertEqual(self.check_images()['reference_error'], 0)

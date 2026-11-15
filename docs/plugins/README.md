@@ -35,8 +35,9 @@ Compatibility не предоставляет compute/compositor-путь Sunshi
 
 ### Terrain3D
 
-Установлены исходники редакторских инструментов, кисти, шейдеры и **все
-поставленные платформенные бинарники**, не только Linux. Фактически проверен
+Установлены исходники редакторских инструментов, кисти, шейдеры и платформенные
+бинарники Linux/Windows/Android/iOS/Web. macOS framework в текущем Git checkout
+отсутствуют — установка на macOS не заявлена готовой. Фактически проверен
 Linux x86_64; наличие DLL/dylib/wasm не означает тест на этих платформах.
 Демо и игровые текстуры из внешнего архива не импортированы в игру.
 
@@ -66,7 +67,10 @@ IDE-мусор и старые demo-ресурсы с отсутствующим
 Для сцены нужны WorldEnvironment с Environment и Compositor, cloud resource,
 SunshineCloudsDriverGD и tracked DirectionalLight3D. Подготовлен реальный GPU-стенд
 `res://scenes/rendering_validation.tscn` с Terrain3D и balanced clouds. Он не является
-главной сценой игры и **ещё не проверен визуально на поддерживаемой GPU**.
+главной сценой игры. Clouds-only реально отрендерен через Vulkan Forward+
+на software Lavapipe и просмотрен; Terrain3D с bounded minimum материалом
+также отрендерен отдельно и вместе с облаками без краша. На аппаратной
+GPU ещё не проверен. Подробные снимки и ограничения: [GRAPHICS.md](../GRAPHICS.md).
 
 ### Assets2Godot: честное ограничение `nobin`
 
@@ -101,10 +105,16 @@ ERROR и без сообщений об утечках. Ограниченные
   непустых SPIR-V артефактов (compute, pre/post, MSAA, display, mask), без compile errors.
 - GDScript lint/format собственного кода — PASS. Vendor-код не переформатируется массово.
 - Python-тесты — результат в `docs/evidence/plugins/validation.json`.
-- **Forward+ кадр/GPU-производительность не подтверждены.** Реальный Vulkan/X11
-  запуск был предпринят и отказал: `VK_KHR_xlib_surface` отсутствует в доступном
-  SwiftShader. `--headless` не подменяет эту проверку. Старые screenshots в
-  `docs/evidence/` относятся к Compatibility, не к этому профилю.
+- **Forward+ кадры получены и открыты:** lab, отдельное небо, облака с небом и
+  контрольным объектом, X11 окно редактора. См. [evidence](../evidence/forward-plus/).
+  Это software Vulkan, не аппаратные performance-измерения.
+- Terrain3D-only и Terrain3D+clouds с bounded minimum материалом прошли полный
+  прогон 43732396266. PNG земли/объекта/тени/облаков реально открыты. Прежний
+  signal 11 обойдён bounded shader + ограничением mesh LODs; это не гарантия
+  работоспособности всех функций исходного полного vendor shader.
+- Исправлены Sunshine resource-init на main thread, shader include версии 4.7,
+  неопределённая математика fog; clouds fixture освобождает RD до shutdown.
+  Чёрный фон облаков устранён и проверен по реально открытым PNG.
 - Terrain3D выдаёт предупреждения о чтении editor-кистей EXR через Image API;
   это не ошибка компиляции и не доказательство проблемы игровых текстур.
 - Экспорт, runtime облаков/MSAA, Windows/macOS и целевая GPU требуют отдельных прогонов.

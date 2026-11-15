@@ -32,9 +32,21 @@ def verify(sky_path: Path, clouds_path: Path) -> dict:
             'cloud_difference': cloud_difference}
 
 
+def verify_terrain(path: Path) -> dict:
+    with Image.open(path) as source:
+        image = source.convert('RGB')
+    ground = image.crop((30, 400, 930, 530))
+    black_fraction = sum(max(pixel) < 8 for pixel in ground.get_flattened_data()) / (
+        ground.width * ground.height)
+    if black_fraction > 0.4:
+        raise RuntimeError('Terrain material is mostly black; check referenced texture layers')
+    return {'ground_black_fraction': black_fraction}
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', type=Path, default=Path('docs/evidence/forward-plus'))
     args = parser.parse_args()
     print('CLOUD_IMAGE_REGRESSION_OK', verify(
-        args.directory / 'sky-only.png', args.directory / 'clouds-only.png'))
+        args.directory / 'sky-only.png', args.directory / 'clouds-only.png'),
+        verify_terrain(args.directory / 'terrain-clouds.png'))

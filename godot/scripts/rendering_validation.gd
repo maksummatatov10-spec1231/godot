@@ -61,7 +61,14 @@ func _ready() -> void:
 		normal.fill(Color(0.5, 0.5, 1.0, 1.0))
 		normal.generate_mipmaps()
 		texture_asset.set("normal_texture", ImageTexture.create_from_image(normal))
-		assets.set("texture_list", [texture_asset])
+		# The auto shader references base=0 and overlay=1. Both must exist.
+		var overlay_asset := texture_asset.duplicate() as Resource
+		overlay_asset.set("id", 1)
+		var overlay := Image.create(16, 16, false, Image.FORMAT_RGBA8)
+		overlay.fill(Color(0.32, 0.42, 0.18, 1.0))
+		overlay.generate_mipmaps()
+		overlay_asset.set("albedo_texture", ImageTexture.create_from_image(overlay))
+		assets.set("texture_list", [texture_asset, overlay_asset])
 		terrain.set("assets", assets)
 		add_child(terrain)
 		var data: Object = terrain.get("data")

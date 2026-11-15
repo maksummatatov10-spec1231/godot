@@ -152,7 +152,7 @@
     {
       "path": "godot/addons/SunshineClouds2/CloudsInc.comp",
       "bytes": 9022,
-      "sha256": "8da0d86475ab114483e47c1ed9f419c3bbcc83d5dce1b6d531e5b440e8a54f58"
+      "sha256": "c67b9f4a9f7d9b1fccf75c3ab8badc9c7e19fb08ceb4afa6d0185e8ed10bd334"
     },
     {
       "path": "godot/addons/SunshineClouds2/CloudsInc.txt",
@@ -381,8 +381,8 @@
     },
     {
       "path": "godot/addons/SunshineClouds2/SunshineClouds.gd",
-      "bytes": 51989,
-      "sha256": "71fb1cd0e3891c218f22a52784e8c6406cf50bc2756533882d0885a2de16ec8a"
+      "bytes": 53348,
+      "sha256": "43fe68f26bc4ce3f677419e482b7aa570554b9f13e00d9b35910442252b31e78"
     },
     {
       "path": "godot/addons/SunshineClouds2/SunshineClouds.gd.uid",
@@ -451,8 +451,8 @@
     },
     {
       "path": "godot/addons/SunshineClouds2/SunshineCloudsPostCompute.comp",
-      "bytes": 14602,
-      "sha256": "55d7bcb5c5cff086ff88d3b88a4d8db309c46f545bf8e3bbfd0cf6fd94f96930"
+      "bytes": 14614,
+      "sha256": "7e3e0fb9bb3d8b4f9e05de7970315235fbc6ab572ef26df29249af97f4169037"
     },
     {
       "path": "godot/addons/SunshineClouds2/SunshineCloudsPostCompute.glsl",
@@ -2101,8 +2101,8 @@
     },
     {
       "path": "godot/addons/terrain_3d/src/double_slider.gd",
-      "bytes": 4363,
-      "sha256": "888c8382c719cc89fedb1c159d9272bb613cd4737b17140e214a6834c56df6ee"
+      "bytes": 4189,
+      "sha256": "712fbc75f1368abb73117132f22cbd5d0440037ad9ea4b77b6026471ca720dfe"
     },
     {
       "path": "godot/addons/terrain_3d/src/double_slider.gd.uid",
