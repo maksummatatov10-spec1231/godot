@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-11-15T15:31:46.281392+00:00",
+  "timestamp_utc": "2026-11-15T15:34:53.019355+00:00",
   "renderer": "forward_plus",
   "software_rendering": true,
   "purpose": "Frame correctness, not hardware performance",
@@ -7,7 +7,7 @@
     {
       "name": "import",
       "exit_code": 0,
-      "passed": false
+      "passed": true
     },
     {
       "name": "plugins",
