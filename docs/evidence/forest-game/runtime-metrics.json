@@ -16,7 +16,7 @@
     "RENDERING_INFO_PIPELINE_COMPILATIONS_SPECIALIZATION": 39,
     "RENDERING_INFO_PIPELINE_COMPILATIONS_SURFACE": 36
   },
-  "static_ram_bytes": 85584197.0,
+  "static_ram_bytes": 85616941.0,
   "vfx_pool_nodes": 9,
-  "video_memory_bytes": 316016672.0
+  "video_memory_bytes": 316049248.0
 }

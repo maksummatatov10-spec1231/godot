@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-11-15T17:25:29.713449+00:00",
-  "source_commit": "bc9f3a47c53d8b84960dedf158728de4a369345b",
+  "timestamp_utc": "2026-11-15T18:06:25.048688+00:00",
+  "source_commit": "9df6942ef2bf01303f4e08d1edb72ecd3d274013",
   "renderer": "Forward+",
   "hardware_performance_test": false,
   "device_environment": "/usr/share/vulkan/icd.d/lvp_icd.json",
@@ -23,7 +23,7 @@
     {
       "name": "image-checks",
       "passed": true,
-      "camera_difference": 33.833769169560185
+      "camera_difference": 33.876693431712965
     }
   ],
   "passed": true
