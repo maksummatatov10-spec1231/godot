@@ -41,16 +41,27 @@ def main():
     base = [engine, '--path', str(GAME)]
 
     def run(name, command, marker=None, env=None):
-        process = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                 text=True, env=env, timeout=240)
-        (OUTPUT / (name+'.log')).write_text(process.stdout)
-        passed = process.returncode == 0 and 'ERROR:' not in process.stdout and 'leaked' not in process.stdout
+        log_path = OUTPUT / (name+'.log')
+        timed_out = False
+        with log_path.open('w') as logfile:
+            try:
+                process = subprocess.run(command, stdout=logfile, stderr=subprocess.STDOUT,
+                                         text=True, env=env, timeout=240)
+                code = process.returncode
+            except subprocess.TimeoutExpired:
+                code = 124
+                timed_out = True
+        text = log_path.read_text()
+        if timed_out:
+            text += '\nCAPTURE_SUBPROCESS_TIMEOUT after 240 seconds\n'
+            log_path.write_text(text)
+        passed = code == 0 and 'ERROR:' not in text and 'leaked' not in text
         if marker:
-            passed = passed and marker in process.stdout
-        report['steps'].append({'name': name, 'passed': passed, 'exit_code': process.returncode})
+            passed = passed and marker in text
+        report['steps'].append({'name': name, 'passed': passed, 'exit_code': code})
         print(name, 'PASS' if passed else 'FAIL', flush=True)
         if not passed:
-            detail=process.stdout[-6000:].replace('%','%25').replace('\r','%0D').replace('\n','%0A')
+            detail=text[-6000:].replace('%','%25').replace('\r','%0D').replace('\n','%0A')
             print(f'::error title=Lantern {name}::{detail}',flush=True)
         return passed
 

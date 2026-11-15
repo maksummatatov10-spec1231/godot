@@ -108,6 +108,19 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create lantern-valley-v0.1.1 artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.1.1' --notes-file lantern_game/README.md --prerelease
+      - name: Preserve failure diagnostics on this branch
+        if: failure() && github.event_name == 'workflow_dispatch'
+        run: |
+          folder="docs/evidence/lantern-ci-failure/${{ github.run_id }}"
+          mkdir -p "$folder"
+          cp docs/evidence/lantern/*.log docs/evidence/lantern/result.json "$folder/" || true
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$folder"
+          git commit -m 'Record failed clean-run diagnostics [skip ci]'
+          git fetch origin arena/449f84de-godot
+          git rebase origin/arena/449f84de-godot
+          git push origin HEAD:arena/449f84de-godot
       - uses: actions/upload-artifact@v4
         if: always()
         with:
