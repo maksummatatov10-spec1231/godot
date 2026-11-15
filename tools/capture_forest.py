@@ -55,7 +55,9 @@ def main():
             for name in ['01-third-person', '02-first-person', '03-sword', '04-magic',
                          '05-jump', '06-walking', '07-forest-overview', '08-fps-body-shadow',
                          '09-sky-sun', '10-pause-menu', '11-graphics-settings', '12-audio-settings',
-                         '13-main-menu', '14-controls-settings']:
+                         '13-main-menu', '14-controls-settings', '15-grip-close',
+                         '16-fps-sword_regular_a', '17-fps-sword_regular_b', '18-fps-sword_regular_c',
+                         '19-fps-walk', '20-fps-jump', '21-fps-jump_land']:
                 path = OUTPUT / (name + '.png')
                 if not path.is_file():
                     valid = False

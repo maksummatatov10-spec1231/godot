@@ -78,6 +78,64 @@ func run() -> void:
 	Input.action_release("forward")
 	Input.action_release("sprint")
 	await ticks(20)
+	var blade_directions: Array[Vector3] = []
+	var parity := true
+	for clip in [
+		"Sword_Regular_A", "Sword_Regular_B", "Sword_Regular_C", "Walk", "Jump", "Jump_Land"
+	]:
+		player.current_clip = ""
+		player.play_clip(clip)
+		player.animator.play(clip, 0)
+		player.animator.seek(0.3, true)
+		player.advance_animation(0)
+		var bone: int = player.skeleton.find_bone("hand_r")
+		var original: Transform3D = player.arm_skeleton.get_bone_global_pose(bone)
+		modifier.call("_process_modification")
+		var adapted: Transform3D = player.arm_skeleton.get_bone_global_pose(bone)
+		parity = (
+			parity
+			and (
+				original.basis.orthonormalized().get_rotation_quaternion().angle_to(
+					adapted.basis.orthonormalized().get_rotation_quaternion()
+				)
+				< 0.002
+			)
+		)
+		var finger: int = player.skeleton.find_bone("index_02_r")
+		parity = (
+			parity
+			and player.skeleton.get_bone_pose(finger).is_equal_approx(
+				player.arm_skeleton.get_bone_pose(finger)
+			)
+		)
+		parity = (
+			parity
+			and (
+				absf(
+					(
+						player.animator.current_animation_position
+						- player.view_animator.current_animation_position
+					)
+				)
+				< 0.001
+			)
+		)
+		if clip.begins_with("Sword_Regular"):
+			blade_directions.append(adapted.basis.z.normalized())
+	check(parity, "FPS preserves original wrist rotation, finger channels and exact clip phase")
+	check(
+		(
+			blade_directions[0].distance_to(blade_directions[1]) > 0.2
+			and blade_directions[1].distance_to(blade_directions[2]) > 0.2
+		),
+		"FPS A/B/C use three distinct source blade directions, not one generic swing"
+	)
+	check(
+		player.world_sword.transform.is_equal_approx(player.view_sword.transform),
+		"both views share exactly the calibrated palm socket and weapon scale"
+	)
+	player.current_clip = ""
+	player.play_clip("Sword_Idle")
 	player.set_first_person(false)
 	check(
 		player.camera.cull_mask == 1 and not player.viewmodel.visible and not player.legs.visible,

@@ -504,6 +504,41 @@ func capture_suite(directory: String) -> void:
 	menu.show_controls()
 	await save_frame(directory, "14-controls-settings")
 	get_tree().paused = false
+	menu.visible = false
+	player.set_physics_process(false)
+	player.set_process(false)
+	player.yaw = 0
+	player.pitch = -0.09
+	player.current_clip = ""
+	player.play_clip("Sword_Idle")
+	player.animator.play("Sword_Idle", 0)
+	player.animator.seek(0.3, true)
+	player.advance_animation(0)
+	player.set_first_person(false)
+	var hand: Transform3D = (
+		player.skeleton.global_transform
+		* player.skeleton.get_bone_global_pose(player.skeleton.find_bone("hand_r"))
+	)
+	player.camera.global_position = hand.origin + Vector3(0.28, 0.14, 0.27)
+	player.camera.look_at(hand.origin)
+	for i in range(3):
+		await get_tree().process_frame
+	await save_frame(directory, "15-grip-close")
+	player.set_first_person(true)
+	player.update_camera(1.0, 0)
+	var clips := [
+		"Sword_Regular_A", "Sword_Regular_B", "Sword_Regular_C", "Walk", "Jump", "Jump_Land"
+	]
+	for index in range(clips.size()):
+		var clip: String = clips[index]
+		player.current_clip = ""
+		player.play_clip(clip)
+		player.animator.play(clip, 0)
+		player.animator.seek(0.3, true)
+		for i in range(3):
+			player.advance_animation(0)
+			await get_tree().process_frame
+		await save_frame(directory, "%02d-fps-%s" % [16 + index, clip.to_lower()])
 	print("FOREST_CAPTURE_OK ", directory)
 	await stop_audio()
 	get_tree().quit(0)
