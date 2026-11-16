@@ -63,7 +63,8 @@ def main():
     travel = round(result['screen_travel'])
     adb('shell', 'input', 'touchscreen', 'swipe', x, y, x + travel, y, '1000')
     wait_for('LANTERN_ANDROID_OS_TOUCH_OK', 30)
-    windows = adb('shell', 'dumpsys', 'window', 'windows')
+    # The Android35 'windows' subsection omits mCurrentFocus; request the full dump.
+    windows = adb('shell', 'dumpsys', 'window')
     (OUT / 'android-window.log').write_text(windows)
     focus = next((line for line in windows.splitlines() if 'mCurrentFocus=' in line), '')
     if PACKAGE not in focus or 'ImmersiveModeConfirmation' in focus:
