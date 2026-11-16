@@ -4,11 +4,11 @@
 	"views": [
 		{
 			"draw_calls_median": 124.0,
-			"rendered_frame_ms_median": 25.667,
-			"rendered_frame_ms_p95": 27.011,
+			"rendered_frame_ms_median": 39.436,
+			"rendered_frame_ms_p95": 41.172,
 			"samples": 120,
-			"shadow_cpu_ms_median": 2.225,
-			"shadow_cpu_ms_p95": 3.084,
+			"shadow_cpu_ms_median": 2.507,
+			"shadow_cpu_ms_p95": 3.959,
 			"shadow_work": {
 				"active_moving_casters": 14,
 				"active_static_casters": 149,
@@ -30,11 +30,11 @@
 		},
 		{
 			"draw_calls_median": 339.0,
-			"rendered_frame_ms_median": 27.493,
-			"rendered_frame_ms_p95": 29.742,
+			"rendered_frame_ms_median": 41.721,
+			"rendered_frame_ms_p95": 44.016,
 			"samples": 120,
-			"shadow_cpu_ms_median": 1.952,
-			"shadow_cpu_ms_p95": 2.221,
+			"shadow_cpu_ms_median": 2.278,
+			"shadow_cpu_ms_p95": 2.619,
 			"shadow_work": {
 				"active_moving_casters": 16,
 				"active_static_casters": 146,
@@ -56,11 +56,11 @@
 		},
 		{
 			"draw_calls_median": 234.0,
-			"rendered_frame_ms_median": 26.351,
-			"rendered_frame_ms_p95": 28.566,
+			"rendered_frame_ms_median": 38.741,
+			"rendered_frame_ms_p95": 40.115,
 			"samples": 120,
-			"shadow_cpu_ms_median": 1.697,
-			"shadow_cpu_ms_p95": 2.067,
+			"shadow_cpu_ms_median": 1.909,
+			"shadow_cpu_ms_p95": 2.459,
 			"shadow_work": {
 				"active_moving_casters": 13,
 				"active_static_casters": 148,
@@ -72,7 +72,7 @@
 					512
 				],
 				"moving_mesh_rebuilds": 423,
-				"pose_templates_built": 606,
+				"pose_templates_built": 607,
 				"registered_casters": 561,
 				"shared_ground_materials": 11,
 				"shared_receiver_materials": 11,
