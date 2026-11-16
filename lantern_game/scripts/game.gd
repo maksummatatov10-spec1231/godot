@@ -47,6 +47,8 @@ var settings_path := "user://valley-settings.cfg"
 var returning_to := "main"
 var capture_path := ""
 var capture_running := false
+# Android emits both GO_BACK_REQUEST and an Escape key for one OS Back press.
+var back_request_frame := -10
 var foundation := preload("res://scripts/foundation.gd").new()
 var platform_options := preload("res://scripts/platform_options.gd").new()
 var touch_controls := preload("res://scripts/touch_controls.gd").new()
@@ -392,6 +394,12 @@ func use_ability() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if (
+		event is InputEventKey
+		and event.keycode == KEY_ESCAPE
+		and back_request_frame == Engine.get_process_frames()
+	):
+		return
 	if event is InputEventKey and event.echo:
 		return
 	if mode == "touch_layout":
@@ -661,6 +669,7 @@ func _notification(what: int) -> void:
 			if mode in ["play", "dialogue"]:
 				show_menu("pause")
 	elif what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		back_request_frame = Engine.get_process_frames()
 		var event := InputEventAction.new()
 		event.action = "pause"
 		event.pressed = true

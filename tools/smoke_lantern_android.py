@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import subprocess
 import time
-from PIL import Image
+from PIL import Image, ImageStat
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs/evidence/lantern-platforms'
@@ -27,7 +27,8 @@ def wait_for(marker, timeout=100):
     while time.monotonic() < until:
         text = logs()
         (OUT / 'android-logcat.log').write_text(text)
-        if 'LANTERN_ANDROID_SMOKE_FAIL' in text or 'PLATFORM_FAIL' in text or 'FATAL EXCEPTION' in text:
+        if any(marker in text for marker in ['LANTERN_ANDROID_SMOKE_FAIL', 'PLATFORM_FAIL',
+                                                'FATAL EXCEPTION', 'E/godot', 'SCRIPT ERROR:']):
             raise RuntimeError('Android runtime failure:\n' + text[-10000:])
         if marker in text:
             return text
@@ -67,6 +68,8 @@ def main():
     dimensions = []
     for name in ['play', 'pause', 'restored']:
         with Image.open(OUT / ('android-emulator-' + name + '.png')) as im:
+            if max(ImageStat.Stat(im.convert('RGB')).stddev) < 12:
+                raise RuntimeError('Android output is blank: ' + name)
             if im.width <= im.height:
                 raise RuntimeError('Android output is not landscape')
             dimensions.append(list(im.size))
