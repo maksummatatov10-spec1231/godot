@@ -8,23 +8,8 @@ args: [-p, org.lanternvalley.game.smoke, -c, android.intent.category.LAUNCHER, 1
 data="org.lanternvalley.game.smoke"
 data="android.intent.category.LAUNCHER"
 Traceback (most recent call last):
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 93, in <module>
+  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 102, in <module>
     main()
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 48, in main
-    text = wait_for('LANTERN_ANDROID_SMOKE_OK')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 28, in wait_for
-    text = logs()
-           ^^^^^^
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 22, in logs
-    return adb('logcat', '-d', '-v', 'brief')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 18, in adb
-    return subprocess.check_output(['adb', *map(str, args)], timeout=120, text=not binary)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/subprocess.py", line 466, in check_output
-    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/subprocess.py", line 571, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['adb', 'logcat', '-d', '-v', 'brief']' returned non-zero exit status 255.
+  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 70, in main
+    raise RuntimeError('Android OS overlay prevents app input; inspect android-window.log')
+RuntimeError: Android OS overlay prevents app input; inspect android-window.log
