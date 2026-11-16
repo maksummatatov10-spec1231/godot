@@ -139,7 +139,7 @@ func run() -> void:
 		foundation.safe_position(wall_contact) == wall_contact,
 		"Valid four-pixel wall contact is preserved"
 	)
-	var corner_clear := Vector2(448, 398.1)
+	var corner_clear := Vector2(512, 398.1)
 	check(
 		foundation.safe_position(corner_clear) == corner_clear,
 		"Circle-clear wall corners are preserved"
