@@ -175,6 +175,7 @@ func run(owner_world: Node2D) -> Dictionary:
 	game._notification(NOTIFICATION_WM_GO_BACK_REQUEST)
 	var back_key := InputEventKey.new()
 	back_key.keycode = KEY_ESCAPE
+	back_key.physical_keycode = KEY_ESCAPE
 	back_key.pressed = true
 	game._unhandled_input(back_key)
 	check(game.mode == "pause", "Android notification plus Escape pauses once, not twice")
