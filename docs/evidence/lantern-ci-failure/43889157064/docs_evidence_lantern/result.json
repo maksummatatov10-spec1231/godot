@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-11-16T14:46:32.765299+00:00",
+  "source_commit": "6ba13742f998cd6af74a13cac6cbe8c2c172fef8",
+  "game_sha256": "aee54226d1fac0f7950bb518eb8cc162efc65db077ff6bccde71e47d4407e9b0",
+  "passed": true,
+  "incomplete": false,
+  "steps": [
+    {
+      "name": "import",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "drivers",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "gameplay",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "render",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "image-validation",
+      "passed": true,
+      "overlay_mean_difference": {
+        "02-village": 1.5744748263888886,
+        "05-lake": 7.211770109953704,
+        "05-farm": 2.0076280381944445
+      }
+    }
+  ],
+  "renderer": "Compatibility",
+  "physical_gpu_benchmark": false
+}
