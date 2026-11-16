@@ -1,1 +1,35 @@
-{"passed": false}
+{
+  "android_runtime": true,
+  "checks": 43,
+  "failed": [],
+  "landscape": true,
+  "mobile_profile": true,
+  "renderer": "Android Emulator OpenGL ES Translator (llvmpipe (LLVM 20.1.2, 256 bits))",
+  "screen_travel": 81.78,
+  "stick_screen": [
+    253.200012207031,
+    835.800048828125
+  ],
+  "viewport_render": true,
+  "passed": true,
+  "native_os_touch": true,
+  "android_back_pause": true,
+  "lifecycle_save_resume": true,
+  "physical_device_tested": false,
+  "emulator_abi": "x86_64",
+  "screenshots": [
+    [
+      1920,
+      1080
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "arm_apk_runtime_tested": false
+}

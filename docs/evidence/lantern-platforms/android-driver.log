@@ -7,24 +7,12 @@ args: [-p, org.lanternvalley.game.smoke, -c, android.intent.category.LAUNCHER, 1
  arg: "1"
 data="org.lanternvalley.game.smoke"
 data="android.intent.category.LAUNCHER"
-Traceback (most recent call last):
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 93, in <module>
-    main()
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 48, in main
-    text = wait_for('LANTERN_ANDROID_SMOKE_OK')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 28, in wait_for
-    text = logs()
-           ^^^^^^
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 22, in logs
-    return adb('logcat', '-d', '-v', 'brief')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 18, in adb
-    return subprocess.check_output(['adb', *map(str, args)], timeout=120, text=not binary)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/subprocess.py", line 466, in check_output
-    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/subprocess.py", line 571, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['adb', 'logcat', '-d', '-v', 'brief']' returned non-zero exit status 255.
+args: [-p, org.lanternvalley.game.smoke, -c, android.intent.category.LAUNCHER, 1]
+ arg: "-p"
+ arg: "org.lanternvalley.game.smoke"
+ arg: "-c"
+ arg: "android.intent.category.LAUNCHER"
+ arg: "1"
+data="org.lanternvalley.game.smoke"
+data="android.intent.category.LAUNCHER"
+LANTERN_ANDROID_ACCEPTED {"android_runtime": true, "checks": 43, "failed": [], "landscape": true, "mobile_profile": true, "renderer": "Android Emulator OpenGL ES Translator (llvmpipe (LLVM 20.1.2, 256 bits))", "screen_travel": 81.78, "stick_screen": [253.200012207031, 835.800048828125], "viewport_render": true, "passed": true, "native_os_touch": true, "android_back_pause": true, "lifecycle_save_resume": true, "physical_device_tested": false, "emulator_abi": "x86_64", "screenshots": [[1920, 1080], [1920, 1080], [1920, 1080]], "arm_apk_runtime_tested": false}
