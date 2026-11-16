@@ -57,10 +57,11 @@ func run() -> void:
 			if actor.species == "fox":
 				actor.position = Vector2(399, 454)
 			else:
-				actor.position = Vector2(427, 454)
+				actor.position = Vector2(440, 454)
 			actor.facing = 3
 			actor.state = "walk"
 			actor.clock = 0.22
+			actor.stride_phase = 0.22
 			actor.animate()
 	# Only the first fox and rabbit should occupy the portrait, not all eleven.
 	var visible_species: Array[String] = []

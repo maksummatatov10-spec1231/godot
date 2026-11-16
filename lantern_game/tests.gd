@@ -49,6 +49,7 @@ func run() -> void:
 	check_shadow_receivers()
 	check_local_shadows()
 	check_wildlife_sleep()
+	check_alpha_contacts()
 	action("interact")
 	await frame(2)
 	check(game.mode == "play", "Z activates focused main-menu button")
@@ -320,7 +321,9 @@ func check_live_shadows() -> void:
 		if entry.source == game.hero.sprite:
 			hero_entry = entry
 	check(not hero_entry.is_empty(), "Hero has a directional silhouette, not only a contact oval")
+	game.hero.set_physics_process(false)
 	var old_position: Vector2 = game.hero.position
+	game.shadows.sync(hero_entry)
 	var before: Vector2 = hero_entry.shadow.global_position
 	game.hero.position += Vector2(20, 10)
 	await frame(3)
@@ -348,6 +351,7 @@ func check_live_shadows() -> void:
 	game.hero.state = "idle"
 	game.hero.timer = 0.0
 	game.hero.animate()
+	game.hero.set_physics_process(true)
 	check(game.leaves.size() >= 600, "Crown-local falling leaf emitters cover the forest")
 	var old_time: float = game.elapsed
 	var sample: Vector3 = game.leaf_sample(Vector3(100, 100, 0))
@@ -515,3 +519,87 @@ func check_wildlife_sleep() -> void:
 		game.mode = old_mode
 		actor.animate()
 		return
+
+
+func check_alpha_contacts() -> void:
+	for entry in game.shadows.casters:
+		game.shadows.sync(entry)
+		var anchor: Vector2 = game.shadows.contact_foot(entry)
+		var local := Vector2(0, entry.contact_local_y)
+		var projected: Vector2 = entry.shadow.global_transform * local
+		check(
+			projected.distance_to(anchor) < 0.001,
+			"Ground silhouette touches actual alpha contact plane"
+		)
+		check(
+			entry.receiver.ink.get_shader_parameter("feet_local_y") == entry.contact_local_y,
+			"Raised receiver and ground silhouette use identical alpha contact"
+		)
+		check(
+			game.shadows.light_depth.project_pixel(anchor, anchor.y).distance_to(anchor) < 0.001,
+			"Light-depth contact has zero displacement"
+		)
+	for actor in game.actors.get_children():
+		if not actor is CharacterBody2D:
+			continue
+		var original := [
+			actor.position,
+			actor.facing,
+			actor.state,
+			actor.clock,
+			actor.stride_phase,
+			actor.flee_time
+		]
+		actor.position += Vector2(0.125, 0.375)
+		for direction in range(4):
+			for gait in range(3):
+				for phase in range(12):
+					actor.facing = direction
+					actor.state = "idle" if gait == 0 else "walk"
+					actor.flee_time = 1.0 if gait == 2 else 0.0
+					actor.clock = float(phase) / 6.0
+					actor.stride_phase = (float(phase) + 0.1) / 12.0
+					actor.animate()
+					for entry in game.shadows.moving:
+						if entry.foot != actor:
+							continue
+						game.shadows.sync(entry)
+						var contact: Vector2 = game.shadows.contact_foot(entry)
+						var point: Vector2 = (
+							entry.shadow.global_transform * Vector2(0, entry.contact_local_y)
+						)
+						check(
+							point.distance_to(contact) < 0.001,
+							"Fractional animated poses keep shadow attached"
+						)
+					check(
+						(
+							absf(
+								(
+									(
+										(
+											actor.sprite.global_transform
+											* Vector2(
+												0,
+												game.shadows.contact_local_y(
+													{"source": actor.sprite, "foot": actor}
+												)
+											)
+										)
+										. y
+									)
+									- actor.global_position.y
+									+ 3.0
+								)
+							)
+							< 0.001
+						),
+						"Breathing and gait changes keep the visible feet planted"
+					)
+		actor.position = original[0]
+		actor.facing = original[1]
+		actor.state = original[2]
+		actor.clock = original[3]
+		actor.stride_phase = original[4]
+		actor.flee_time = original[5]
+		actor.animate()

@@ -6,7 +6,7 @@ global uniform vec4 light_rect;
 
 uniform bool wind = true;
 uniform bool receive_shadows = true;
-uniform float feet_offset = 0.0;
+uniform float feet_local_y = 0.0;
 varying float feet_y;
 uniform sampler2D static_depth : filter_nearest, repeat_disable;
 uniform sampler2D moving_depth : filter_nearest, repeat_disable;
@@ -15,9 +15,9 @@ varying vec2 world_pixel;
 
 void vertex() {
     // Local zero is the trunk foot. The trunk stays planted, the crown bends.
-    float phase = MODEL_MATRIX[3].x * 0.15;
-    feet_y = MODEL_MATRIX[3].y + feet_offset;
-    float height_weight = clamp(-VERTEX.y / max(crown_height, 1.0), 0.0, 1.0);
+    float phase = (MODEL_MATRIX * vec4(0.0, feet_local_y, 0.0, 1.0)).x * 0.15;
+    feet_y = (MODEL_MATRIX * vec4(0.0, feet_local_y, 0.0, 1.0)).y;
+    float height_weight = clamp((feet_local_y - VERTEX.y) / max(crown_height, 1.0), 0.0, 1.0);
     float breeze = sin(wind_time * 1.7 + phase) * 1.25
         + sin(wind_time * 0.63 + phase * 0.7) * 0.65;
     if (wind) {

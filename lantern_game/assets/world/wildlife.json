@@ -1,0 +1,18 @@
+{
+  "cell_size": 32,
+  "frames": 12,
+  "directions": [
+    "down",
+    "up",
+    "left",
+    "right"
+  ],
+  "gaits": [
+    "idle",
+    "walk",
+    "bound"
+  ],
+  "license": "CC0-1.0",
+  "author": "Lantern Valley contributors",
+  "source": "tools/build_lantern_wildlife.py"
+}

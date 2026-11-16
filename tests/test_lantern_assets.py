@@ -57,7 +57,7 @@ class LanternAssets(unittest.TestCase):
                 self.assertEqual(im.size,(256,256))
         for name in ['fox','rabbit']:
             with Image.open(GAME/f'assets/world/{name}.png') as im:
-                self.assertEqual(im.size,(64,64))
+                self.assertEqual(im.size,(384,384))
 
     def test_whole_route_network_and_clear_tree_trunks(self):
         paths={tuple(p) for p in self.map['paths']}
@@ -152,7 +152,7 @@ class LanternAssets(unittest.TestCase):
         foliage=(GAME/'scripts/foliage.gdshader').read_text()
         shadow=(GAME/'scripts/cast_shadow.gdshader').read_text()
         # Changing source crown movement without its shadow is a regression.
-        for expression in ['clamp(-VERTEX.y / max(crown_height, 1.0), 0.0, 1.0)',
+        for expression in ['clamp((feet_local_y - VERTEX.y) / max(crown_height, 1.0), 0.0, 1.0)',
                            'sin(wind_time * 1.7 + phase) * 1.25',
                            'sin(wind_time * 0.63 + phase * 0.7) * 0.65',
                            'breeze * height_weight * height_weight']:
@@ -175,6 +175,41 @@ class LanternAssets(unittest.TestCase):
         self.assertIn('discard;',ink)
         self.assertIn('blend_disabled',ink)
         self.assertNotIn('blend_add',ink)
+
+    def test_no_legacy_contact_ellipse_or_old_placeholder_generator(self):
+        actor=(GAME/'scripts/actor.gd').read_text()
+        self.assertNotIn('draw_ellipse_shadow',actor)
+        self.assertNotIn('draw_circle(Vector2.ZERO, 6',actor)
+        self.assertIn('position.distance_to(before_move) / stride_length',actor)
+        self.assertIn('local_floor * sprite.scale.y',actor)
+        self.assertNotIn("bob=frame%2",(ROOT/'tools/build_lantern_map.py').read_text())
+
+    def test_wildlife_has_separate_detailed_articulated_cycles(self):
+        manifest=json.loads((GAME/'assets/world/wildlife.json').read_text())
+        self.assertEqual(manifest['frames'],12)
+        self.assertEqual(manifest['gaits'],['idle','walk','bound'])
+        for species in ['fox','rabbit']:
+            with Image.open(GAME/f'assets/world/{species}.png') as source:
+                sheet=source.convert('RGBA')
+                for gait in [1,2]:
+                    for face in range(4):
+                        frames=[sheet.crop((i*32,(gait*4+face)*32,i*32+32,(gait*4+face+1)*32))
+                                for i in range(12)]
+                        self.assertGreaterEqual(len({f.tobytes() for f in frames}),8)
+                        self.assertGreaterEqual(len({p for f in frames for _,p in f.getcolors(1024) if p[3]}),8)
+
+    def test_all_shadow_passes_share_alpha_contact_not_physics_origin(self):
+        shadow=(GAME/'scripts/shadows.gd').read_text()
+        self.assertIn('get_used_rect()',shadow)
+        self.assertIn('contact_profiles',shadow)
+        self.assertIn('foot - PROJECTION * foot',shadow)
+        self.assertNotIn('var foot: Vector2 = entry.foot.global_position',shadow)
+        depth=(GAME/'scripts/light_depth.gd').read_text()
+        self.assertIn('world.shadows.contact_foot(entry)',depth)
+        for name in ['foliage.gdshader','cast_shadow.gdshader']:
+            shader=(GAME/'scripts'/name).read_text()
+            self.assertIn('feet_local_y',shader)
+            self.assertIn('feet_local_y - VERTEX.y',shader)
 
     def test_no_mix_with_3d_project(self):
         self.assertNotIn('forest_game',(GAME/'project.godot').read_text())

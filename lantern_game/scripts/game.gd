@@ -249,6 +249,7 @@ func _add_animated(kind: String, at: Vector2) -> void:
 		)
 	)
 	sprite.region_enabled = true
+	sprite.region_rect = Rect2(Vector2.ZERO, Vector2(16, 16) if kind == "ripple" else Vector2(5, 8))
 	sprite.position = at
 	sprite.centered = false
 	# Flowers/ripples belong to the floor, not above the hero.

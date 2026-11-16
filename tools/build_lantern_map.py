@@ -275,31 +275,8 @@ manifest={'size':[W,H],'spawn':[776,658],'wanderer':[792,622], 'objects':objects
           'sun_direction':[0.8,0.6],
           'views':{'village':[768,620],'lake':[1152,610],'farm':[1136,894],'forest':[300,496]}}
 (OUT/'map.json').write_text(json.dumps(manifest,separators=(',',':'))+'\n')
-# Original small wildlife sheets: four directions x four phases, matching source palette.
-for species in ['fox','rabbit']:
-    sheet=Image.new('RGBA',(64,64))
-    for direction in range(4):
-        for frame in range(4):
-            tile=Image.new('RGBA',(16,16));d=ImageDraw.Draw(tile)
-            outline='#343e3b';fur='#d58b49' if species=='fox' else '#dcd4ba'; light='#f5e5c4'
-            bob=frame%2; side=direction>=2
-            if side:
-                d.rectangle((3,7+bob,11,12+bob),fill=outline);d.rectangle((4,7+bob,11,11+bob),fill=fur)
-                d.polygon([(1,8),(0,5),(5,8),(6,11),(2,11)],fill=fur)
-                d.rectangle((0,5,1,7),fill=light)
-                d.rectangle((10,5+bob,14,10+bob),fill=fur)
-                d.polygon([(10,6),(10,2 if species=='rabbit' else 4),(12,5)],fill=fur)
-                d.polygon([(13,6),(14,2 if species=='rabbit' else 4),(15,7)],fill=fur)
-                d.point((13,7+bob),fill=outline);d.rectangle((13,10+bob,15,11+bob),fill=light)
-                if direction==2:tile=tile.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
-            else:
-                d.ellipse((4,5+bob,12,13+bob),fill=outline);d.ellipse((5,5+bob,11,12+bob),fill=fur)
-                d.rectangle((5,2,6,6),fill=fur);d.rectangle((10,2,11,6),fill=fur)
-                if direction==0:
-                    d.rectangle((6,10+bob,10,12+bob),fill=light);d.point((6,7+bob),fill=outline);d.point((10,7+bob),fill=outline)
-                else:d.rectangle((7,11+bob,9,14+bob),fill=light)
-            d.rectangle((4+(frame%2),12,5+(frame%2),14),fill=outline)
-            d.rectangle((10-(frame%2),12,11-(frame%2),14),fill=outline)
-            sheet.alpha_composite(tile,(frame*16,direction*16))
-    sheet.save(OUT/(species+'.png'))
+# Wildlife has its own reproducible detailed-art builder; never regenerate the
+# obsolete 16px rectangle placeholders when changing the map.
+from build_lantern_wildlife import main as build_wildlife
+build_wildlife()
 print('MAP_BUILT', len(objects),'objects,',len(solids),'solid shapes')

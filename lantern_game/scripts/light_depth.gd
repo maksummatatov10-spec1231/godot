@@ -51,24 +51,31 @@ func _create_target(view: SubViewport) -> void:
 	add_child(view)
 
 
-func register_receiver(
-	source: Sprite2D, foot: Node2D, windy: bool, crown_height: float = 32.0
-) -> void:
-	# MODEL_MATRIX already contains source position; only a fixed sprite/feet offset
-	# is needed. Shared wind/crop globals replace thousands of per-frame API writes.
-	var offset := foot.global_position.y - source.global_position.y
-	var key := Vector3(1.0 if windy else 0.0, crown_height if windy else 0.0, offset)
+func receiver_material(
+	source: Sprite2D, windy: bool, crown_height: float, local_contact: float
+) -> ShaderMaterial:
+	var key := Vector3(1.0 if windy else 0.0, crown_height if windy else 0.0, local_contact)
 	if not shared_receivers.has(key):
 		var ink := ShaderMaterial.new()
 		ink.shader = RECEIVER_SHADER
 		ink.set_shader_parameter("wind", windy)
 		ink.set_shader_parameter("crown_height", crown_height)
-		ink.set_shader_parameter("feet_offset", offset)
+		ink.set_shader_parameter("feet_local_y", local_contact)
 		ink.set_shader_parameter("static_depth", static_view.get_texture())
 		ink.set_shader_parameter("moving_depth", moving_view.get_texture())
 		shared_receivers[key] = ink
 	source.material = shared_receivers[key]
-	receiver_materials.append({"ink": source.material, "foot": foot})
+	return source.material
+
+
+func register_receiver(
+	source: Sprite2D, foot: Node2D, windy: bool, crown_height: float, local_contact: float
+) -> Dictionary:
+	var receiver := {
+		"ink": receiver_material(source, windy, crown_height, local_contact), "foot": foot
+	}
+	receiver_materials.append(receiver)
+	return receiver
 
 
 func build_atlas(entries: Array[Dictionary]) -> void:
@@ -106,7 +113,7 @@ func build_atlas(entries: Array[Dictionary]) -> void:
 func projected_bounds(entry: Dictionary) -> Rect2:
 	var source: Sprite2D = entry.source
 	var bounds := source.get_rect()
-	var foot: Vector2 = entry.foot.global_position
+	var foot: Vector2 = world.shadows.contact_foot(entry)
 	var points := [
 		bounds.position,
 		bounds.end,
@@ -220,6 +227,7 @@ func update(entries: Array[Dictionary], elapsed: float) -> void:
 				source.texture.get_instance_id(),
 				source.region_rect,
 				source.global_transform,
+				entry.contact_local_y,
 				source.visible
 			]
 		)
@@ -257,7 +265,7 @@ func _entry_rows(entry: Dictionary) -> Array:
 		else Rect2(Vector2.ZERO, source.texture.get_size())
 	)
 	var bounds := source.get_rect()
-	var foot: Vector2 = entry.foot.global_position
+	var foot: Vector2 = world.shadows.contact_foot(entry)
 	var transform := source.global_transform
 	transform.origin -= foot
 	var key := [
@@ -283,7 +291,10 @@ func _entry_rows(entry: Dictionary) -> Array:
 			var pixel: Vector2 = transform * local
 			var height := -pixel.y
 			var weight := (
-				pow(clampf(-local.y / maxf(entry.crown_height, 1.0), 0, 1), 2)
+				pow(
+					clampf((entry.contact_local_y - local.y) / maxf(entry.crown_height, 1.0), 0, 1),
+					2
+				)
 				if entry.windy
 				else 0.0
 			)
@@ -324,7 +335,7 @@ func _build_cached_mesh(entries: Array) -> ArrayMesh:
 	for entry in entries:
 		if not is_instance_valid(entry.source) or entry.source.texture == null:
 			continue
-		var foot: Vector2 = entry.foot.global_position
+		var foot: Vector2 = world.shadows.contact_foot(entry)
 		for row in _entry_rows(entry):
 			row.origin = foot
 			rows.append(row)

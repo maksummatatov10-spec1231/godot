@@ -5,6 +5,7 @@ var sprite := Sprite2D.new()
 var tool: Sprite2D
 var facing := 0
 var clock := 0.0
+var stride_phase := 0.0
 var state := "idle"
 var timer := 0.0
 var equipped := 0
@@ -102,7 +103,13 @@ func _physics_process(delta: float) -> void:
 		animal_step(delta)
 	else:
 		velocity = Vector2.ZERO
+	var before_move := position
 	move_and_slide()
+	if not species.is_empty():
+		var stride_length := 28.0 if flee_time > 0.0 else 14.0
+		stride_phase = fposmod(
+			stride_phase + position.distance_to(before_move) / stride_length, 1.0
+		)
 	animate()
 
 
@@ -176,26 +183,26 @@ func animate() -> void:
 		tool.region_rect = Rect2(facing * 32, weapon_row * 32, 32, 32)
 		tool.z_index = -1 if facing == 1 else 1
 	elif not species.is_empty():
-		var frame := int(clock * (18.0 if flee_time > 0.0 else 6.0)) % 4 if state == "walk" else 0
-		sprite.region_rect = Rect2(frame * 16, facing * 16, 16, 16)
+		var gait := 0 if state == "idle" else (2 if flee_time > 0.0 else 1)
+		var frame := int(clock * 6.0) % 12 if gait == 0 else int(stride_phase * 12.0) % 12
+		sprite.region_rect = Rect2(frame * 32, (gait * 4 + facing) * 32, 32, 32)
 	else:
 		# Original regular sheets: each column a direction; rows 0..3 walking.
 		sprite.region_rect = Rect2(facing * 16, 0, 16, 16)
 	# Small idle breathing, not full-body bobbing or moving collision shapes.
 	var breath := sin(clock * 2.6) * 0.018 if state == "idle" else 0.0
 	sprite.scale = Vector2(1.0 + breath * 0.5, 1.0 - breath)
+	var local_floor: float = world.shadows.contact_local_y({"source": sprite, "foot": self})
+	sprite.position.y = -3.0 - local_floor * sprite.scale.y
+	if player_controlled:
+		# Held equipment shares the body's contact plane, not its own lowest tip.
+		tool.scale = sprite.scale
+		tool.position = sprite.position
 	queue_redraw()
 
 
 func _draw() -> void:
-	draw_ellipse_shadow()
 	if startled > 0.0:
 		var p := Vector2(0, -26)
 		draw_line(p, p + Vector2(0, 5), Color("fff1c2"), 2)
 		draw_circle(p + Vector2(0, 8), 1, Color("fff1c2"))
-
-
-func draw_ellipse_shadow() -> void:
-	draw_set_transform(Vector2(0, -1), 0.0, Vector2(1.0, 0.4))
-	draw_circle(Vector2.ZERO, 6, Color(0.08, 0.16, 0.14, 0.25))
-	draw_set_transform(Vector2.ZERO)

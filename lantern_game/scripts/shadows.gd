@@ -7,6 +7,8 @@ var world: Node2D
 var casters: Array[Dictionary] = []
 var moving: Array[Dictionary] = []
 var shared_ground: Dictionary = {}
+var contact_profiles: Dictionary = {}
+var contact_images: Dictionary = {}
 var visible_leaves: Array[Vector3] = []
 var visible_fireflies: Array[Vector3] = []
 var visibility_rect := Rect2()
@@ -29,15 +31,6 @@ func register(
 	phase: float = 0.0
 ) -> Sprite2D:
 	var silhouette := Sprite2D.new()
-	var key := Vector2(1.0 if windy else 0.0, crown_height if windy else 0.0)
-	if not shared_ground.has(key):
-		var ink := ShaderMaterial.new()
-		ink.shader = INK
-		ink.set_shader_parameter("wind", windy)
-		ink.set_shader_parameter("crown_height", crown_height)
-		shared_ground[key] = ink
-	silhouette.material = shared_ground[key]
-	phase = foot.global_position.x * 0.15
 	add_child(silhouette)
 	var entry := {
 		"source": source,
@@ -48,7 +41,13 @@ func register(
 		"crown_height": crown_height,
 		"phase": phase
 	}
-	light_depth.register_receiver(source, foot, windy, crown_height)
+	entry.contact_local_y = contact_local_y(entry)
+	phase = contact_foot(entry).x * 0.15
+	entry.phase = phase
+	entry.receiver = light_depth.register_receiver(
+		source, foot, windy, crown_height, entry.contact_local_y
+	)
+	_apply_ground_material(entry)
 	visibility_rect = Rect2()
 	light_depth.invalidate()
 	casters.append(entry)
@@ -61,7 +60,8 @@ func register(
 func sync(entry: Dictionary) -> void:
 	var source: Sprite2D = entry.source
 	var silhouette: Sprite2D = entry.shadow
-	var foot: Vector2 = entry.foot.global_position
+	refresh_contact(entry)
+	var foot := contact_foot(entry)
 	silhouette.texture = source.texture
 	silhouette.region_enabled = source.region_enabled
 	silhouette.region_rect = source.region_rect
@@ -98,6 +98,7 @@ func _process(_delta: float) -> void:
 				visible_fireflies.append(fly)
 	for entry in moving:
 		if is_instance_valid(entry.source):
+			refresh_contact(entry)
 			entry.light_bounds = light_depth.projected_bounds(entry)
 			if entry.light_bounds.intersects(visibility_rect):
 				sync(entry)
@@ -148,3 +149,67 @@ func _draw() -> void:
 		draw_set_transform(p, 0.0, Vector2(1, 0.45))
 		draw_circle(Vector2.ZERO, 1.5, Color(0.075, 0.12, 0.18, alpha * 0.19))
 	draw_set_transform(Vector2.ZERO)
+
+
+func contact_local_y(entry: Dictionary) -> float:
+	var source: Sprite2D = entry.source
+	if entry.foot is CharacterBody2D:
+		source = entry.foot.sprite
+	var region := (
+		source.region_rect
+		if source.region_enabled
+		else Rect2(Vector2.ZERO, source.texture.get_size())
+	)
+	var signature := [source.texture.get_instance_id(), region, source.get_rect(), source.flip_v]
+	if source.get_meta("contact_signature", []) == signature:
+		return source.get_meta("contact_local_y")
+	var key := str(
+		source.texture.get_instance_id(), ":", region, ":", source.get_rect(), ":", source.flip_v
+	)
+	if not contact_profiles.has(key):
+		var texture_id := source.texture.get_instance_id()
+		if not contact_images.has(texture_id):
+			contact_images[texture_id] = source.texture.get_image()
+		var image: Image = contact_images[texture_id]
+		var used := image.get_region(Rect2i(region)).get_used_rect()
+		var bottom := float(used.end.y) - 0.5
+		if source.flip_v:
+			bottom = region.size.y - float(used.position.y) - 0.5
+		contact_profiles[key] = source.get_rect().position.y + bottom
+	source.set_meta("contact_signature", signature)
+	source.set_meta("contact_local_y", contact_profiles[key])
+	return contact_profiles[key]
+
+
+func contact_foot(entry: Dictionary) -> Vector2:
+	var anchor: Sprite2D = entry.source
+	if entry.foot is CharacterBody2D:
+		anchor = entry.foot.sprite
+	return anchor.global_transform * Vector2(0, entry.contact_local_y)
+
+
+func _apply_ground_material(entry: Dictionary) -> void:
+	var key := Vector3(
+		1.0 if entry.windy else 0.0,
+		entry.crown_height if entry.windy else 0.0,
+		entry.contact_local_y
+	)
+	if not shared_ground.has(key):
+		var ink := ShaderMaterial.new()
+		ink.shader = INK
+		ink.set_shader_parameter("wind", entry.windy)
+		ink.set_shader_parameter("crown_height", entry.crown_height)
+		ink.set_shader_parameter("feet_local_y", entry.contact_local_y)
+		shared_ground[key] = ink
+	entry.shadow.material = shared_ground[key]
+
+
+func refresh_contact(entry: Dictionary) -> void:
+	var source: Sprite2D = entry.source
+	var local_contact := contact_local_y(entry)
+	if entry.contact_local_y != local_contact:
+		entry.contact_local_y = local_contact
+		_apply_ground_material(entry)
+		entry.receiver.ink = light_depth.receiver_material(
+			source, entry.windy, entry.crown_height, local_contact
+		)
