@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "game_sha256": "688880a2ff5811c0e93ce34b7c5a608dbae8506a049795be386403e5120c0297",
+  "physical_gpu_tested": false,
+  "android_device_tested": false,
+  "tests": {
+    "android_runtime": false,
+    "checks": 42,
+    "failed": [],
+    "renderer": ""
+  },
+  "capture": {
+    "images": [
+      {
+        "height": 1080,
+        "name": "01-pc-fullhd",
+        "width": 1920
+      },
+      {
+        "height": 1080,
+        "name": "02-pc-screen-controls",
+        "width": 1920
+      },
+      {
+        "height": 1080,
+        "name": "03-layout-editor",
+        "width": 1920
+      },
+      {
+        "height": 360,
+        "name": "04-mobile-budget-play",
+        "width": 640
+      },
+      {
+        "height": 360,
+        "name": "05-analog-stick-tilted",
+        "width": 640
+      },
+      {
+        "height": 360,
+        "name": "06-mobile-settings",
+        "width": 640
+      },
+      {
+        "height": 360,
+        "name": "07-mobile-prologue",
+        "width": 640
+      },
+      {
+        "height": 360,
+        "name": "08-mobile-dialogue",
+        "width": 640
+      }
+    ],
+    "mobile_capture_is_desktop_simulation": true,
+    "ui_overflows": []
+  },
+  "real_render": true,
+  "pc_target_fps": 75,
+  "android_default_cap": 60,
+  "logical_viewport": [
+    640,
+    360
+  ],
+  "tested_os": "Linux / Mesa software",
+  "analog_pointer_tests": "injected viewport screen events, actual physics; not physical fingers"
+}
