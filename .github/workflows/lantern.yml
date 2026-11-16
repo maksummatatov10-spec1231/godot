@@ -376,7 +376,15 @@ jobs:
           run-id: ${{ inputs.apps_run }}
           github-token: ${{ github.token }}
       - name: Require every render/gameplay report to match the unchanged game
-        run: python tools/package_lantern.py
+        run: |
+          git restore -- docs/evidence/lantern-platforms/AUDIT.md
+          python tools/package_lantern.py
+      - name: Recover complete failed workflow logs when diagnosis requested
+        if: inputs.diagnose_only
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PRIOR_RUN: ${{ inputs.apps_run }}
+        run: gh run view "$PRIOR_RUN" --log-failed > "docs/evidence/lantern-platforms/failed-run-$PRIOR_RUN.log"
       - name: Record recovered build diagnostics on the same branch
         run: |
           git config user.name 'github-actions[bot]'
