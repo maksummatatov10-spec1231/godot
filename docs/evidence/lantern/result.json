@@ -1,12 +1,17 @@
 {
-  "timestamp_utc": "2026-11-15T21:37:58.532749+00:00",
-  "source_commit": "e34d0a4f3a5bf909b7809ef7f078b69db46f79b2",
-  "game_sha256": "8732798009aa87ad5679452bb1d6138b7edc43c8df0602823e923cb1c04b02b4",
+  "timestamp_utc": "2026-11-16T04:38:43.357726+00:00",
+  "source_commit": "38d3025696c114efedc731fa6141214e90ea0949",
+  "game_sha256": "82f209aed2242af0e695676da2cbc37c0112cb79acda2265c5e7987296f954fd",
   "passed": true,
   "incomplete": false,
   "steps": [
     {
       "name": "import",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "drivers",
       "passed": true,
       "exit_code": 0
     },
@@ -24,9 +29,9 @@
       "name": "image-validation",
       "passed": true,
       "overlay_mean_difference": {
-        "02-village": 1.6077857349537037,
-        "05-lake": 7.190902054398149,
-        "05-farm": 1.9876974826388887
+        "02-village": 1.6174421296296295,
+        "05-lake": 7.193934823495371,
+        "05-farm": 1.9891153067129632
       }
     }
   ],

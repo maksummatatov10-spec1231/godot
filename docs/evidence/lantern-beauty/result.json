@@ -1,7 +1,14 @@
 {
-  "passed": false,
-  "game_sha256": "7e178eb7294bfe0bb3b21a7983b47f12a637ad52afdfe27b8c7450f8d0ac4c4b",
+  "passed": true,
+  "game_sha256": "82f209aed2242af0e695676da2cbc37c0112cb79acda2265c5e7987296f954fd",
   "real_render": true,
   "player_visible": true,
-  "physical_gpu_benchmark": false
+  "physical_gpu_benchmark": false,
+  "images": 6,
+  "facade_receiver_changed_pixels": 418,
+  "hero_receiver_changed_pixels": 2224,
+  "difference_threshold": 12,
+  "fixed_camera": true,
+  "unchanged_time_and_pose": true,
+  "wildlife_portrait": "Existing game actors staged for a readable close-up, not painted in"
 }
