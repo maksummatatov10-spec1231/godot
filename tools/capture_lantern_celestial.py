@@ -27,8 +27,13 @@ def main():
     run(['xvfb-run', '-a', '-s', '-screen 0 1280x720x24', *base,
          '--fixed-fps', '30', '--resolution', '1280x720', '--script',
          str(ROOT / 'tools/lantern_celestial.gd')], OUTPUT / 'render.log',
-        'LANTERN_CELESTIAL_CAPTURE_OK 16', dict(os.environ, CELESTIAL_DIR=str(OUTPUT)))
+        'LANTERN_CELESTIAL_CAPTURE_OK 30', dict(os.environ, CELESTIAL_DIR=str(OUTPUT)))
     capture = json.loads((OUTPUT / 'capture.json').read_text())
+    from benchmark_lantern import changed_pixels
+    acne = {name: changed_pixels(OUTPUT / (name + '-on.png'), OUTPUT / (name + '-off.png'))
+            for name in capture['acne_pairs']}
+    if len(acne) != 7 or max(acne.values()) != 0:
+        raise RuntimeError('Isolated caster falsely shadows itself: ' + str(acne))
     contrast = {}
     for name in ['orbit-0000', 'orbit-1200']:
         on = Image.open(OUTPUT / (name + '.png')).convert('RGB')
@@ -43,7 +48,7 @@ def main():
         frame.close()
     if game_digest() != report['game_sha256']:
         raise RuntimeError('Source changed during celestial capture')
-    report.update(passed=True, math=math, images=16, contrast_mean_rgb=contrast,
+    report.update(passed=True, math=math, images=30, self_shadow_changed_pixels_over_12=acne, contrast_mean_rgb=contrast,
                   night_to_day_contrast=contrast['orbit-0000'] / contrast['orbit-1200'],
                   clock_pose_rebuilds=capture['clock_pose_rebuilds'],
                   clock_mesh_rebuilds=capture['clock_mesh_rebuilds'])

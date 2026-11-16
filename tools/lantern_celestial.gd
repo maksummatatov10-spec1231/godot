@@ -78,6 +78,9 @@ func run() -> void:
 		printerr("ERROR: Continuous clock rebuilt unchanged moving geometry")
 		quit(1)
 		return
+	var clock_mesh_rebuilds: int = depth.mesh_rebuilds - rebuilds
+	var clock_pose_rebuilds: int = depth.pose_builds - poses
+	var acne_pairs: Array = await self_shadow_samples()
 	var file := FileAccess.open(output.path_join("capture.json"), FileAccess.WRITE)
 	file.store_string(
 		JSON.stringify(
@@ -85,8 +88,9 @@ func run() -> void:
 				"samples": samples,
 				"sweep_moving_rebuilds": sweep_rebuilds,
 				"sweep_pose_builds": sweep_poses,
-				"clock_pose_rebuilds": depth.pose_builds - poses,
-				"clock_mesh_rebuilds": depth.mesh_rebuilds - rebuilds
+				"clock_pose_rebuilds": clock_pose_rebuilds,
+				"acne_pairs": acne_pairs,
+				"clock_mesh_rebuilds": clock_mesh_rebuilds
 			}
 		)
 	)
@@ -97,5 +101,35 @@ func run() -> void:
 	game.queue_free()
 	for frame in range(4):
 		await process_frame
-	print("LANTERN_CELESTIAL_CAPTURE_OK 16")
+	print("LANTERN_CELESTIAL_CAPTURE_OK 30")
 	quit()
+
+
+func self_shadow_samples() -> Array:
+	# A single real house caster/receiver: no external blocker can justify stripes.
+	var chosen: Dictionary = {}
+	for entry in game.shadows.casters:
+		entry.shadow.hide()
+		if entry.source.get_meta("art", "") == "house_0.png":
+			chosen = entry
+	for actor in game.actors.get_children():
+		if actor is CanvasItem:
+			actor.hide()
+	chosen.source.show()
+	game.camera.position = chosen.source.global_transform * chosen.source.get_rect().get_center()
+	game.camera.zoom = Vector2.ONE * 3.0
+	game.camera.force_update_scroll()
+	game.shadows.casters.assign([chosen])
+	game.shadows.moving.clear()
+	game.shadows.light_depth.invalidate()
+	var pairs: Array = []
+	for hour in [13.4, 13.5, 13.6, 14.0, 14.45, 14.8, 16.0]:
+		game.foundation.clock.hour = hour
+		game.shadows._process(0)
+		var name := "self-%04d" % int(hour * 100)
+		chosen.receiver.ink.set_shader_parameter("receive_shadows", true)
+		await shot(name + "-on")
+		chosen.receiver.ink.set_shader_parameter("receive_shadows", false)
+		await shot(name + "-off")
+		pairs.append(name)
+	return pairs

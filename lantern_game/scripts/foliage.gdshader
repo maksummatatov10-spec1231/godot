@@ -36,7 +36,11 @@ void fragment() {
     vec2 light_uv = (floor(q + vec2(0.0001)) + vec2(0.5) - light_rect.xy) / light_rect.zw;
     float obstruction = max(texture(static_depth, light_uv).r, texture(moving_depth, light_uv).r) * 128.0;
     bool inside = all(greaterThanEqual(light_uv, vec2(0.0))) && all(lessThan(light_uv, vec2(1.0)));
-    float visibility = (receive_shadows && inside) ? smoothstep(1.4, 2.4, obstruction - height) : 0.0;
+    // One light-map texel spans more height as the billboard projection flattens.
+    // Scale the raster bias continuously by that Jacobian, not by clock buckets.
+    // This prevents our own neighbouring strip from becoming a false blocker.
+    float raster_bias = 0.5 + 0.75 / sqrt(shadow_light.y * shadow_light.y + 0.000001);
+    float visibility = (receive_shadows && inside) ? smoothstep(raster_bias, raster_bias + 1.0, obstruction - height) : 0.0;
     albedo.rgb *= mix(vec3(1.0), vec3(0.50, 0.59, 0.73), visibility * clamp(shadow_light.z / 0.38, 0.0, 1.0));
     COLOR = albedo;
 }
