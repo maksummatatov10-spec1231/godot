@@ -19,7 +19,16 @@ def adb(*args, binary=False):
 
 
 def logs():
-    return adb('logcat', '-d', '-v', 'brief')
+    # Early-boot logd can close a dump while rotating buffers; retain partial
+    # diagnostics, then retry. Missing markers/transport still fail the deadline.
+    result = subprocess.run(['adb', 'logcat', '-d', '-b', 'main', '-b', 'crash',
+                             '-v', 'brief'], timeout=30, capture_output=True, text=True)
+    if result.returncode:
+        with (OUT / 'android-adb.log').open('a') as out:
+            out.write(f'logcat exit {result.returncode}: {result.stderr}\n')
+            out.write(result.stdout[-2000:] + '\n')
+        return ''
+    return result.stdout
 
 
 def wait_for(marker, timeout=100):
