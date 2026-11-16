@@ -387,7 +387,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PRIOR_RUN: ${{ inputs.apps_run }}
-        run: gh run view "$PRIOR_RUN" --log-failed > "docs/evidence/lantern-platforms/failed-run-$PRIOR_RUN.log"
+        run: |
+          job=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$PRIOR_RUN/jobs" --jq '.jobs[] | select(.name == "android-smoke") | .id')
+          gh run view "$PRIOR_RUN" --job "$job" --log > "docs/evidence/lantern-platforms/failed-run-$PRIOR_RUN.log"
       - name: Record recovered build diagnostics on the same branch
         run: |
           git config user.name 'github-actions[bot]'
