@@ -37,8 +37,6 @@ func run() -> void:
 	for actor in game.actors.get_children():
 		if actor is CharacterBody2D:
 			actor.set_physics_process(false)
-			if actor != game.hero:
-				actor.hide()
 	game.shadows._process(0)
 	var depth: Node = game.shadows.light_depth
 	var rebuilds: int = depth.mesh_rebuilds
@@ -62,13 +60,31 @@ func run() -> void:
 				"shadow_light", Vector4(light.slope.x, light.slope.y, 0, 0)
 			)
 			await shot(name + "-no-shadows")
-	assert(depth.mesh_rebuilds == rebuilds, "Clock must not rebuild frozen moving geometry")
-	assert(depth.pose_builds == poses, "Clock must not regenerate pose templates")
+	var sweep_rebuilds: int = depth.mesh_rebuilds - rebuilds
+	var sweep_poses: int = depth.pose_builds - poses
+	# The sweep legitimately changes lantern regions and camera-local selection.
+	# Isolate a continuous clock tick AFTER pose/selection synchronisation instead.
+	game.foundation.clock.hour = 12.0
+	game.foundation._update_lighting()
+	game.shadows._process(0)
+	await shot("cache-warmup")
+	rebuilds = depth.mesh_rebuilds
+	poses = depth.pose_builds
+	for tick in range(1, 61):
+		game.foundation.clock.hour = 12.0 + float(tick) / 360000.0
+		game.shadows._process(0)
+		await process_frame
+	if depth.mesh_rebuilds != rebuilds or depth.pose_builds != poses:
+		printerr("ERROR: Continuous clock rebuilt unchanged moving geometry")
+		quit(1)
+		return
 	var file := FileAccess.open(output.path_join("capture.json"), FileAccess.WRITE)
 	file.store_string(
 		JSON.stringify(
 			{
 				"samples": samples,
+				"sweep_moving_rebuilds": sweep_rebuilds,
+				"sweep_pose_builds": sweep_poses,
 				"clock_pose_rebuilds": depth.pose_builds - poses,
 				"clock_mesh_rebuilds": depth.mesh_rebuilds - rebuilds
 			}

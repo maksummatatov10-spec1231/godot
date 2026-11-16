@@ -139,7 +139,12 @@ func _update_lighting() -> void:
 	if not lights_enabled:
 		powers.fill(0)
 	grade_material.set_shader_parameter("powers", powers)
-	world.get_node("Sunshine").modulate.a = 1.0 - clock.darkness() * 0.94
+	var celestial: Dictionary = clock.celestial()
+	world.get_node("Sunshine").modulate.a = smoothstep(0.0, 0.16, celestial.sun_altitude)
+	grade_material.set_shader_parameter(
+		"moonlight", smoothstep(0.0, 0.12, celestial.moon_altitude) * celestial.moon_illumination
+	)
+	grade_material.set_shader_parameter("moon_angle", celestial.moon_angle)
 	moon.queue_redraw()
 
 
@@ -249,6 +254,10 @@ func show_intro(replay: bool = false) -> void:
 func _render_story() -> void:
 	_clear()
 	world.mode = "intro"
+	var backdrop := ColorRect.new()
+	backdrop.color = Color("0c1520")
+	backdrop.size = Vector2(640, 360)
+	world.menu_root.add_child(backdrop)
 	var image := TextureRect.new()
 	image.texture = STORY_ART[story_page]
 	image.position = Vector2(0, 0)

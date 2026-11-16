@@ -3,6 +3,8 @@ render_mode unshaded;
 uniform sampler2D screen : hint_screen_texture, repeat_disable, filter_nearest;
 uniform vec4 grade : source_color = vec4(1.0);
 uniform float night = 0.0;
+uniform float moonlight = 0.0;
+uniform float moon_angle = 0.0;
 uniform float clock_time = 0.0;
 uniform vec4 world_rect = vec4(0.0, 0.0, 640.0, 360.0);
 uniform vec2 lamps[7];
@@ -28,11 +30,11 @@ void fragment() {
     if (p.x > 1200.0 && p.x < 1260.0 && p.y > 536.0 && p.y < 642.0) {
         float row = floor((p.y - 536.0) / 5.0);
         float width = mix(3.0, 12.0, (p.y - 536.0) / 106.0);
-        float center = 1230.0 + sin(row * 1.9 + clock_time * 0.6) * 7.0;
+        float center = 1230.0 + cos(moon_angle) * 10.0 + sin(row * 1.9 + clock_time * 0.6) * 7.0;
         float ripple = 1.0 - smoothstep(0.6, 1.3, abs(mod(p.y - 536.0, 5.0) - 2.5));
         float path = 1.0 - smoothstep(width * 0.3, width, abs(p.x - center));
         float ends = smoothstep(536.0, 550.0, p.y) * (1.0 - smoothstep(615.0, 642.0, p.y));
-        color += vec3(0.20, 0.28, 0.35) * ripple * path * ends * night * 0.55;
+        color += vec3(0.20, 0.28, 0.35) * ripple * path * ends * night * moonlight * 0.55;
     }
     // Soft, low-amplitude edge atmosphere; no blur or extra viewport passes.
     float vignette = smoothstep(0.25, 0.85, length(UV - vec2(0.5)));
