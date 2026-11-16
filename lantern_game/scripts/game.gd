@@ -54,7 +54,7 @@ func _ready() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture-dir="):
 			capture_path = arg.trim_prefix("--capture-dir=")
-	capture_running = not capture_path.is_empty()
+	capture_running = capture_running or not capture_path.is_empty()
 	seed(317)
 	_configure_input()
 	_load_settings()
@@ -642,6 +642,9 @@ func run_capture() -> void:
 	await get_tree().process_frame
 	tone_player.stop()
 	ambience_player.stop()
+	shadows.light_depth.release_render_targets()
+	for i in range(4):
+		await get_tree().process_frame
 	# Release world shaders/canvas resources while the renderer is still running.
 	# A tree-owned timer survives this node and quits only after queued deletion.
 	get_tree().create_timer(0.15).timeout.connect(get_tree().quit)

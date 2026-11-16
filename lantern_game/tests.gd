@@ -46,6 +46,7 @@ func run() -> void:
 	check(game.mode == "main", "Main menu opens before movement")
 	check(game.hero.position == Vector2(776, 658), "Central village spawn")
 	await check_live_shadows()
+	check_shadow_receivers()
 	action("interact")
 	await frame(2)
 	check(game.mode == "play", "Z activates focused main-menu button")
@@ -273,6 +274,8 @@ func run() -> void:
 	game.tone_player.stop()
 	game.ambience_player.stop()
 	await create_timer(0.1).timeout
+	game.shadows.light_depth.release_render_targets()
+	await frame(4)
 	game.queue_free()
 	await frame(3)
 	print("LANTERN_TEST_RESULT ", JSON.stringify({"checks": checks, "failed": failures}))
@@ -339,3 +342,54 @@ func check_live_shadows() -> void:
 	check(not sample.is_equal_approx(later), "Leaves drift and fall with simulation time")
 	game.elapsed = old_time
 	await frame(3)
+
+
+func check_shadow_receivers() -> void:
+	var depth: Node = game.shadows.light_depth
+	check(depth.built, "Light-space atlas is ready before gameplay")
+	check(depth.static_view.size == Vector2i(1536, 1152), "Static depth covers the full world")
+	check(
+		depth.moving_view.size == depth.static_view.size,
+		"Dynamic depth shares exact light coordinates"
+	)
+	check(
+		depth.static_view.world_2d != game.get_world_2d(), "Depth pass is isolated from main world"
+	)
+	check(
+		depth.receiver_materials.size() == game.shadows.casters.size(),
+		"Every raised caster is also a receiver"
+	)
+	check(depth.static_mesh.mesh.get_surface_count() == 1, "Static depth is a batched sorted mesh")
+	check(
+		depth.moving_mesh.mesh.get_surface_count() == 1,
+		"Moving depth is an independent sorted mesh"
+	)
+	for receiver in depth.receiver_materials:
+		check(
+			receiver.ink.get_shader_parameter("static_depth") != null,
+			"Receiver samples static sunlight blockers"
+		)
+		check(
+			receiver.ink.get_shader_parameter("moving_depth") != null,
+			"Receiver samples moving sunlight blockers"
+		)
+	var foot := Vector2(100, 100)
+	var top := foot - Vector2(0, 30)
+	var projected: Vector2 = depth.project_pixel(top, foot.y)
+	check(
+		projected.is_equal_approx(Vector2(125.5, 114.4)),
+		"Billboard top projects down-right in shared light space"
+	)
+	check(
+		depth.project_pixel(foot, foot.y) == foot, "Feet remain attached to ground in light space"
+	)
+	# Two elevations on the SAME sunlight ray share q, allowing a depth comparison.
+	var receiver_height := 10.0
+	var receiver_pixel := projected - Vector2(0.85, 1.48) * receiver_height
+	check(
+		depth.project_pixel(receiver_pixel, receiver_pixel.y + receiver_height).is_equal_approx(
+			projected
+		),
+		"Different receivers on a sun ray share the same lookup"
+	)
+	check(depth.textures.size() >= 5, "Atlas keeps strong texture references across tool switches")

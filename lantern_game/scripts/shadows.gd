@@ -7,6 +7,11 @@ var world: Node2D
 var casters: Array[Dictionary] = []
 var moving: Array[Dictionary] = []
 var wind_materials: Array[ShaderMaterial] = []
+var light_depth := preload("res://scripts/light_depth.gd").new()
+
+
+func _ready() -> void:
+	add_child(light_depth)
 
 
 func register(
@@ -25,7 +30,17 @@ func register(
 	ink.set_shader_parameter("phase", phase)
 	silhouette.material = ink
 	add_child(silhouette)
-	var entry := {"source": source, "foot": foot, "shadow": silhouette}
+	var entry := {
+		"source": source,
+		"foot": foot,
+		"shadow": silhouette,
+		"follows": follows,
+		"windy": windy,
+		"crown_height": crown_height,
+		"phase": phase
+	}
+	light_depth.register_receiver(source, foot, windy)
+	light_depth.invalidate()
 	casters.append(entry)
 	if follows:
 		moving.append(entry)
@@ -58,6 +73,7 @@ func _process(_delta: float) -> void:
 			sync(entry)
 		else:
 			entry.shadow.hide()
+	light_depth.update(casters, world.elapsed)
 	for ink in wind_materials:
 		ink.set_shader_parameter("wind_time", world.elapsed)
 	queue_redraw()

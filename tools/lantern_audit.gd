@@ -32,6 +32,7 @@ func run() -> void:
 	output = OS.get_environment("AUDIT_DIR")
 	DirAccess.make_dir_recursive_absolute(output)
 	game = load("res://main.tscn").instantiate()
+	game.capture_running = true
 	root.add_child(game)
 	await process_frame
 	game.resume()
@@ -91,6 +92,9 @@ func run() -> void:
 		)
 	)
 	file.close()
+	game.shadows.light_depth.release_render_targets()
+	for i in range(4):
+		await process_frame
 	game.queue_free()
 	await process_frame
 	print("AUDIT_CAPTURE_OK ", entries.size())

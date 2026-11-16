@@ -159,6 +159,23 @@ class LanternAssets(unittest.TestCase):
             self.assertIn(expression,foliage)
             self.assertIn(expression,shadow)
 
+    def test_elevated_receivers_compare_both_light_depth_maps(self):
+        shader=(GAME/'scripts/foliage.gdshader').read_text()
+        self.assertIn('texture(static_depth, light_uv).r',shader)
+        self.assertIn('texture(moving_depth, light_uv).r',shader)
+        self.assertIn('obstruction - height',shader)
+        self.assertIn('world_pixel + vec2(0.85, 1.48) * height',shader)
+        self.assertNotIn('texture(TEXTURE, UV) * COLOR',shader)
+        depth=(GAME/'scripts/light_depth.gd').read_text()
+        self.assertIn('rows.sort_custom',depth)
+        self.assertIn('var textures: Array[Texture2D] = []',depth)
+        self.assertIn('var moving_view := SubViewport.new()',depth)
+        self.assertIn('var static_view := SubViewport.new()',depth)
+        ink=(GAME/'scripts/light_depth.gdshader').read_text()
+        self.assertIn('discard;',ink)
+        self.assertIn('blend_disabled',ink)
+        self.assertNotIn('blend_add',ink)
+
     def test_no_mix_with_3d_project(self):
         self.assertNotIn('forest_game',(GAME/'project.godot').read_text())
         self.assertEqual(self.map['spawn'],[776,658])

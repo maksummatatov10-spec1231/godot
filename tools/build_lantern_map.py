@@ -234,7 +234,7 @@ for y in range(48,H-24,43):
         tree_positions.append((xx,yy))
 # Composed village trees, separated from front doors and through routes.
 for x,y in [(424,355),(424,515),(424,707),(552,310),(936,310),
-            (552,478),(936,478),(552,662),(936,662),(672,772),(912,772)]:
+            (552,478),(936,478),(536,728),(936,662),(672,772),(912,772)]:
     tree_positions.append((x,y))
 for x,y in tree_positions:
     choice=rng.choices(range(4),weights=[58,26,13,3])[0]

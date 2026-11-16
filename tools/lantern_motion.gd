@@ -28,6 +28,7 @@ func shot(label: String) -> void:
 
 func run() -> void:
 	game = load("res://main.tscn").instantiate()
+	game.capture_running = true
 	root.add_child(game)
 	await wait_frames(4)
 	game.resume()
@@ -85,6 +86,9 @@ func run() -> void:
 	print("LANTERN_MOTION_OK ", frames.size())
 	game.tone_player.stop()
 	game.ambience_player.stop()
+	game.shadows.light_depth.release_render_targets()
+	for i in range(4):
+		await process_frame
 	game.queue_free()
 	# Return from the coroutine BEFORE quitting: release local FileAccess/script refs.
 	create_timer(0.4).timeout.connect(quit)

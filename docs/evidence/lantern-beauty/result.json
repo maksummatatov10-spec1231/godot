@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "game_sha256": "7e178eb7294bfe0bb3b21a7983b47f12a637ad52afdfe27b8c7450f8d0ac4c4b",
+  "real_render": true,
+  "player_visible": true,
+  "physical_gpu_benchmark": false
+}
