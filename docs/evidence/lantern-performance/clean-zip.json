@@ -1,0 +1,9 @@
+{
+  "source_files_matched": 116,
+  "archive_sha256": "1eccaa26b37e722759953969c0483561663fbd2f18211e1e9af15d61039b9d98",
+  "archive_bytes": 1063559,
+  "fresh_import_passed": true,
+  "fresh_gameplay_tests_passed": true,
+  "godot_checks": 6417,
+  "remote_release_archive_independently_downloaded": false
+}

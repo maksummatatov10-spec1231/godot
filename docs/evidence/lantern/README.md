@@ -1,5 +1,7 @@
 # Lantern Valley · 0.1.4 · actual-render evidence
 
+> **0.1.5 — текущая версия:** [Оптимизация и замеры](../lantern-performance/PERFORMANCE.md). Полный pipeline повторён; тени локальны камере, приём фасадами и героем сохранён. [Релиз 0.1.5](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.5).
+
 This directory now contains the **lighting/motion revision**, not the historical 0.1.2 renders.
 
 ## Reproduce
