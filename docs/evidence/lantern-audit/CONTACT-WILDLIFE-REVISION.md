@@ -35,4 +35,34 @@ Both first full runs passed 11,988 physics/contact assertions, 77 Python regress
 
 Diagnostics: half-pixel alpha-contact planes can place projected row edges exactly on a light-target pixel centre (`0.48*n - 0.26` reaches .5). Tiny viewport projection/fill rounding changes then select a different source texel at a strip edge. Added an explicit 1/256-pixel tie-break ONLY in the offscreen depth raster and explicit atlas texel-centre alpha sampling. The visible ground silhouette and contact anchor are NOT offset, and the zero-difference locality gate is NOT relaxed. Added preservation of benchmark exceptions/raw comparison pairs, since the old failure collector lost subdirectory diagnostics.
 
-Final canonical recheck pending.
+## Final canonical verification — 0.1.6
+
+**PASS** supported Compatibility/Mesa validation [43890568763](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43890568763) and independent full publication run [43891272709](https://github.com/maksummatatov10-spec1231/godot/actions/runs/43891272709). All renderer exit codes zero, no engine errors/leaks. Kept failed diagnostics; did not weaken the zero-difference locality gate.
+
+- **77 Python regressions and 11,988 actual Godot assertions PASS**. Alpha contacts covered across static props/trees and animated characters, four directions, three gait groups, twelve phases and fractional world coordinates, plus breathing and the body/tool contact plane. Existing real water/fence/building/trunk movement, pause, controls and ability checks still pass.
+- Existing **24 general views, 152 map closeups, 48 gameplay motion frames plus isolated-shadow A/B, 6 beauty captures PASS**. Additional **77 real rendered contact/articulation captures PASS**: 4 direction portraits, 24 frames each idle/walk/bound, 1 tree/prop contact closeup at a fractional camera position. Animation GIFs use 40ms/frame for movement, 80ms for the two-second idle sample; no whole-frame cross-fade.
+- **All six local-vs-full-world comparisons: 0 changed pixels over RGB12** after the raster tie-break fix. Includes facade, forest edge, farm, village and both sides of a crop boundary. Ground silhouettes are not shifted by the depth-only tie-break.
+- Actual raised reception remains: **327 facade and 2,224 hero pixels** differ in fixed-pose reception A/B. Old actor ellipse function/call is absent, not merely hidden by another sprite.
+- Independently opened and visually reviewed the real 1280×720 side/front animal portraits, forest/pine trunk contact closeup and canonical forest wildlife/player view. Rabbit is now crouched with a rounded haunch/short forelegs; fox has a distinct brush tail, muzzle/ruff and articulated paws. Hero and animals have only the directional silhouettes, and the pine/root contacts no longer use the padded crop base. This is pixel-art detail at a new 32px source cell, not photorealistic fur or a resized old 16px placeholder.
+- Source art remains original/reproducible; full image sheets have 144 cells each. Collision/art placements in the world manifest and `forest_game/` are unchanged.
+
+### Performance retained (software Mesa, NOT a physical-GPU FPS claim)
+
+Same-scene 0.1.4 baseline vs released 0.1.6, 20 warm-ups and 120 samples per view. The extra contact processing/32px wildlife geometry costs some CPU vs simpler 0.1.5, but remains bounded/cached, and the camera-local optimization is retained. No return to whole-world processing, no per-frame image scans/readbacks, no art-resolution downgrade.
+
+| View | Shadow CPU median ms, 0.1.4 → 0.1.6 | Software rendered frame median ms |
+|---|---:|---:|
+| village | 7.981 → 1.065 | 62.249 → 26.234 |
+| forest | 7.997 → 1.336 | 62.838 → 29.618 |
+| farm | 7.990 → 1.090 | 64.002 → 26.495 |
+
+Raw authoritative measurements: `../lantern-performance/result.json`. Global targets still use **753,664–800,768 pixels** in these views, instead of 3,538,944. CPU shadow speedup vs the unoptimized implementation is **5.99–7.49×** on this run. No universal FPS promise.
+
+### Delivery
+
+- [Release 0.1.6](https://github.com/maksummatatov10-spec1231/godot/releases/tag/lantern-valley-v0.1.6), twelve uploaded assets including source ZIP, new side portrait and walk GIF.
+- [New real closeup PNG](../lantern-contact/wildlife-direction-3.png), [walk GIF](../lantern-contact/wildlife-walk.gif), [bound GIF](../lantern-contact/wildlife-bound.gif), [tree contact PNG](../lantern-contact/tree-contact-fractional.png).
+- Release/evidence commit `7dd1b018b8a5a199d7845d94afb7c6a4d21f2bf2`; all six reports match game SHA `59a71fd1d33870487fc3f39b553dd7a9b4f2b257de97c9fe5585400dccee90ef`.
+- Local repackaged ZIP freshly extracted: **117 source files byte-identical**, clean import and all **11,988 assertions PASS**, no errors/leaks. Logs and local archive hash: `../lantern-contact/clean-zip.json`. The remote GitHub ZIP has not been independently downloaded/rehashed in this sandbox; ZIP timestamps can differ between local and CI packaging.
+
+Private portable ANGLE/SwiftShader still intermittently exits -11 at shutdown (as in earlier revisions). Its images are not substituted for passing canonical evidence; both normal Mesa runs above pass strict exits. Artistic preference is subjective; the included new closeups and motion are the actual deliverable for inspection, not a claim that a test can certify “beauty”.
