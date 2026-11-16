@@ -93,7 +93,7 @@ func run() -> void:
 	)
 	file.close()
 	game.shadows.light_depth.release_render_targets()
-	for i in range(4):
+	for release_frame in range(4):
 		await process_frame
 	game.queue_free()
 	await process_frame

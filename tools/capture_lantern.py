@@ -65,7 +65,9 @@ def main():
             print(f'::error title=Lantern {name}::{detail}',flush=True)
         return passed
 
-    if run('import', base+['--headless', '--editor', '--import']):
+    if (run('import', base+['--headless', '--editor', '--import'])
+            and run('drivers', base+['--headless', '--script', str(ROOT/'tools/validate_lantern_drivers.gd')],
+                    'LANTERN_DRIVER_PARSE_OK')):
         run('gameplay',base+['--headless','--audio-driver','Dummy','--fixed-fps','60',
                              '--script','res://tests.gd'], 'LANTERN_TEST_OK')
         render = base+['--audio-driver','Dummy','--fixed-fps','30','--resolution',
