@@ -1,16 +1,16 @@
 {
   "passed": true,
-  "game_sha256": "1713942228c4ebe848188343a7566dcdf8468d17a285d58bc8adb955a9b5a49d",
+  "game_sha256": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
   "real_render": true,
   "physical_gpu_benchmark": false,
   "images": 22,
   "ui_overflows": [],
   "levels": {
-    "noon": 123.37119429976853,
-    "night": 46.74682508680556,
-    "sunrise": 74.86462999131945,
+    "noon": 123.37120442708334,
+    "night": 46.7467650462963,
+    "sunrise": 74.86453342013888,
     "evening": 87.37637876157407,
-    "predawn": 53.12815863715278
+    "predawn": 53.127099609375
   },
   "night_lighting_changed_pixels_over_12": 136672,
   "restart_processes": 2,

@@ -1,18 +1,27 @@
 {
   "passed": true,
-  "game_sha256": "1713942228c4ebe848188343a7566dcdf8468d17a285d58bc8adb955a9b5a49d",
+  "game_sha256": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
   "real_render": true,
   "physical_gpu_benchmark": false,
   "math": {
     "checks": 70319,
     "failed": []
   },
-  "images": 16,
-  "contrast_mean_rgb": {
-    "orbit-0000": 0.1806759982638889,
-    "orbit-1200": 3.0752882667824077
+  "images": 30,
+  "self_shadow_changed_pixels_over_12": {
+    "self-1340": 0,
+    "self-1350": 0,
+    "self-1360": 0,
+    "self-1400": 0,
+    "self-1445": 0,
+    "self-1480": 0,
+    "self-1600": 0
   },
-  "night_to_day_contrast": 0.058750914577814645,
+  "contrast_mean_rgb": {
+    "orbit-0000": 0.18067310474537035,
+    "orbit-1200": 3.0752810329861116
+  },
+  "night_to_day_contrast": 0.058750111878372285,
   "clock_pose_rebuilds": 0,
   "clock_mesh_rebuilds": 0
 }

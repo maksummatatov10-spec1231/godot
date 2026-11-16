@@ -3,7 +3,7 @@ WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by 
      at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
 OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
 
-BENCH {"draw_calls_median":2288.0,"rendered_frame_ms_median":45.773,"rendered_frame_ms_p95":47.443,"samples":120,"shadow_cpu_ms_median":6.439,"shadow_cpu_ms_p95":6.715,"view":"village"}
-BENCH {"draw_calls_median":2282.0,"rendered_frame_ms_median":47.01,"rendered_frame_ms_p95":48.543,"samples":120,"shadow_cpu_ms_median":6.493,"shadow_cpu_ms_p95":6.8,"view":"forest"}
-BENCH {"draw_calls_median":2442.0,"rendered_frame_ms_median":47.011,"rendered_frame_ms_p95":48.6,"samples":120,"shadow_cpu_ms_median":6.334,"shadow_cpu_ms_p95":6.62,"view":"farm"}
+BENCH {"draw_calls_median":2288.0,"rendered_frame_ms_median":43.532,"rendered_frame_ms_p95":44.53,"samples":120,"shadow_cpu_ms_median":5.821,"shadow_cpu_ms_p95":5.95,"view":"village"}
+BENCH {"draw_calls_median":2282.0,"rendered_frame_ms_median":44.291,"rendered_frame_ms_p95":45.476,"samples":120,"shadow_cpu_ms_median":5.789,"shadow_cpu_ms_p95":5.925,"view":"forest"}
+BENCH {"draw_calls_median":2442.0,"rendered_frame_ms_median":44.855,"rendered_frame_ms_p95":45.998,"samples":120,"shadow_cpu_ms_median":5.824,"shadow_cpu_ms_p95":5.997,"view":"farm"}
 LANTERN_BENCH_OK
