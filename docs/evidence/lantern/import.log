@@ -9,71 +9,81 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
 [92m[ DONE ][39m [1mfirst_scan_filesystem[22m
 [0m
-[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (7 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (12 steps)[39m[0m
 [   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  37% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [92m[ DONE ][39m [1mupdate_scripts_classes[22m
 [0m
-[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (43 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (47 steps)[39m[0m
 [   0% ] [90m[1m_update_scan_actions[22m | Faceset.png[39m[0m
 [   2% ] [90m[1m_update_scan_actions[22m | SpriteSheet.png[39m[0m
 [   4% ] [90m[1m_update_scan_actions[22m | SpriteSheet.png[39m[0m
 [   6% ] [90m[1m_update_scan_actions[22m | Axe.png[39m[0m
-[   9% ] [90m[1m_update_scan_actions[22m | Hammer.png[39m[0m
-[  11% ] [90m[1m_update_scan_actions[22m | Katana.png[39m[0m
-[  13% ] [90m[1m_update_scan_actions[22m | Net.png[39m[0m
-[  15% ] [90m[1m_update_scan_actions[22m | Pickaxe.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | Hammer.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | Katana.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | Net.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | Pickaxe.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | SpriteSheet16x16.png[39m[0m
 [  18% ] [90m[1m_update_scan_actions[22m | SpriteSheet16x16.png[39m[0m
-[  20% ] [90m[1m_update_scan_actions[22m | SpriteSheet16x16.png[39m[0m
-[  22% ] [90m[1m_update_scan_actions[22m | TilesetElement.png[39m[0m
-[  25% ] [90m[1m_update_scan_actions[22m | TilesetField.png[39m[0m
-[  27% ] [90m[1m_update_scan_actions[22m | TilesetFloor.png[39m[0m
-[  29% ] [90m[1m_update_scan_actions[22m | TilesetHouse.png[39m[0m
-[  31% ] [90m[1m_update_scan_actions[22m | TilesetNature.png[39m[0m
-[  34% ] [90m[1m_update_scan_actions[22m | TilesetWater.png[39m[0m
-[  36% ] [90m[1m_update_scan_actions[22m | Palette.png[39m[0m
-[  38% ] [90m[1m_update_scan_actions[22m | bench.png[39m[0m
-[  40% ] [90m[1m_update_scan_actions[22m | crate.png[39m[0m
-[  43% ] [90m[1m_update_scan_actions[22m | fencepost.png[39m[0m
-[  45% ] [90m[1m_update_scan_actions[22m | fence_h.png[39m[0m
-[  47% ] [90m[1m_update_scan_actions[22m | fence_h_left.png[39m[0m
-[  50% ] [90m[1m_update_scan_actions[22m | fence_h_right.png[39m[0m
-[  52% ] [90m[1m_update_scan_actions[22m | fence_v.png[39m[0m
-[  54% ] [90m[1m_update_scan_actions[22m | fence_v_bottom.png[39m[0m
-[  56% ] [90m[1m_update_scan_actions[22m | fence_v_top.png[39m[0m
-[  59% ] [90m[1m_update_scan_actions[22m | flowerbed.png[39m[0m
-[  61% ] [90m[1m_update_scan_actions[22m | fox.png[39m[0m
-[  63% ] [90m[1m_update_scan_actions[22m | ground.png[39m[0m
-[  65% ] [90m[1m_update_scan_actions[22m | house_0.png[39m[0m
-[  68% ] [90m[1m_update_scan_actions[22m | house_1.png[39m[0m
-[  70% ] [90m[1m_update_scan_actions[22m | house_2.png[39m[0m
-[  72% ] [90m[1m_update_scan_actions[22m | lantern.png[39m[0m
-[  75% ] [90m[1m_update_scan_actions[22m | pot.png[39m[0m
-[  77% ] [90m[1m_update_scan_actions[22m | rabbit.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | TilesetElement.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | TilesetField.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | TilesetFloor.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | TilesetHouse.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | TilesetNature.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | TilesetWater.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | Palette.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | valley-memory.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | bench.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | crate.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | fencepost.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | fence_h.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | fence_h_left.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | fence_h_right.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | fence_v.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | fence_v_bottom.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | fence_v_top.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | flowerbed.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | fox.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | ground.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | house_0.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | house_1.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | house_2.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | lantern-animated.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | lantern.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | pot.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | rabbit.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | seedling-animated.png[39m[0m
 [  79% ] [90m[1m_update_scan_actions[22m | seedling.png[39m[0m
 [  81% ] [90m[1m_update_scan_actions[22m | stall.png[39m[0m
-[  84% ] [90m[1m_update_scan_actions[22m | tree_0.png[39m[0m
-[  86% ] [90m[1m_update_scan_actions[22m | tree_1.png[39m[0m
-[  88% ] [90m[1m_update_scan_actions[22m | tree_2.png[39m[0m
-[  90% ] [90m[1m_update_scan_actions[22m | tree_3.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | tree_0.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | tree_1.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | tree_2.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | tree_3.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | well-animated.png[39m[0m
 [  93% ] [90m[1m_update_scan_actions[22m | well.png[39m[0m
 [  95% ] [90m[1m_update_scan_actions[22m | woodland.wav[39m[0m
 [92m[ DONE ][39m [1m_update_scan_actions[22m
 [0m
-[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (43 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (47 steps)[39m[0m
 [   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [   2% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [   4% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [   6% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[   9% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  11% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  13% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  15% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   8% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  10% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  12% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  14% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  16% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  18% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  20% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  22% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
@@ -81,10 +91,11 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [  27% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  29% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  31% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  34% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  36% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  38% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  40% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  35% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  37% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  39% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  41% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  43% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  45% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  47% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
@@ -92,10 +103,11 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [  52% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  54% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  56% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  59% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  61% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  63% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  65% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  58% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  60% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  62% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  68% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  70% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  72% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
@@ -103,60 +115,65 @@ Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 [  77% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  79% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  81% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  84% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  86% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  88% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-[  90% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  83% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  85% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  87% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  89% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  91% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  93% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  95% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
-[   0% ] [90m[1mreimport[22m | fence_h_left.png[39m[0m
-[   2% ] [90m[1mreimport[22m | fence_h_right.png[39m[0m
-[   4% ] [90m[1mreimport[22m | fence_v.png[39m[0m
-[   6% ] [90m[1mreimport[22m | fence_v_bottom.png[39m[0m
-[   9% ] [90m[1mreimport[22m | fence_v_top.png[39m[0m
-[  11% ] [90m[1mreimport[22m | flowerbed.png[39m[0m
-[  13% ] [90m[1mreimport[22m | fox.png[39m[0m
-[  15% ] [90m[1mreimport[22m | ground.png[39m[0m
-[  18% ] [90m[1mreimport[22m | house_0.png[39m[0m
-[  20% ] [90m[1mreimport[22m | house_1.png[39m[0m
-[  22% ] [90m[1mreimport[22m | house_2.png[39m[0m
-[  25% ] [90m[1mreimport[22m | lantern.png[39m[0m
-[  27% ] [90m[1mreimport[22m | pot.png[39m[0m
-[  29% ] [90m[1mreimport[22m | rabbit.png[39m[0m
+[   0% ] [90m[1mreimport[22m | fence_h_right.png[39m[0m
+[   2% ] [90m[1mreimport[22m | fence_v.png[39m[0m
+[   4% ] [90m[1mreimport[22m | fence_v_bottom.png[39m[0m
+[   6% ] [90m[1mreimport[22m | fence_v_top.png[39m[0m
+[   8% ] [90m[1mreimport[22m | flowerbed.png[39m[0m
+[  10% ] [90m[1mreimport[22m | fox.png[39m[0m
+[  12% ] [90m[1mreimport[22m | ground.png[39m[0m
+[  14% ] [90m[1mreimport[22m | house_0.png[39m[0m
+[  16% ] [90m[1mreimport[22m | house_1.png[39m[0m
+[  18% ] [90m[1mreimport[22m | house_2.png[39m[0m
+[  20% ] [90m[1mreimport[22m | lantern-animated.png[39m[0m
+[  22% ] [90m[1mreimport[22m | lantern.png[39m[0m
+[  25% ] [90m[1mreimport[22m | pot.png[39m[0m
+[  27% ] [90m[1mreimport[22m | rabbit.png[39m[0m
+[  29% ] [90m[1mreimport[22m | seedling-animated.png[39m[0m
 [  31% ] [90m[1mreimport[22m | seedling.png[39m[0m
-[  34% ] [90m[1mreimport[22m | stall.png[39m[0m
-[  36% ] [90m[1mreimport[22m | tree_0.png[39m[0m
-[  38% ] [90m[1mreimport[22m | tree_1.png[39m[0m
-[  40% ] [90m[1mreimport[22m | tree_2.png[39m[0m
-[  43% ] [90m[1mreimport[22m | tree_3.png[39m[0m
+[  33% ] [90m[1mreimport[22m | stall.png[39m[0m
+[  35% ] [90m[1mreimport[22m | tree_0.png[39m[0m
+[  37% ] [90m[1mreimport[22m | tree_1.png[39m[0m
+[  39% ] [90m[1mreimport[22m | tree_2.png[39m[0m
+[  41% ] [90m[1mreimport[22m | tree_3.png[39m[0m
+[  43% ] [90m[1mreimport[22m | well-animated.png[39m[0m
 [  45% ] [90m[1mreimport[22m | well.png[39m[0m
 [  47% ] [90m[1mreimport[22m | Faceset.png[39m[0m
 [  50% ] [90m[1mreimport[22m | SpriteSheet.png[39m[0m
 [  52% ] [90m[1mreimport[22m | SpriteSheet.png[39m[0m
 [  54% ] [90m[1mreimport[22m | Axe.png[39m[0m
 [  56% ] [90m[1mreimport[22m | Hammer.png[39m[0m
-[  59% ] [90m[1mreimport[22m | Katana.png[39m[0m
-[  61% ] [90m[1mreimport[22m | Net.png[39m[0m
-[  63% ] [90m[1mreimport[22m | Pickaxe.png[39m[0m
-[  65% ] [90m[1mreimport[22m | SpriteSheet16x16.png[39m[0m
-[  68% ] [90m[1mreimport[22m | SpriteSheet16x16.png[39m[0m
-[  70% ] [90m[1mreimport[22m | TilesetElement.png[39m[0m
-[  72% ] [90m[1mreimport[22m | TilesetField.png[39m[0m
-[  75% ] [90m[1mreimport[22m | TilesetFloor.png[39m[0m
-[  77% ] [90m[1mreimport[22m | TilesetHouse.png[39m[0m
-[  79% ] [90m[1mreimport[22m | TilesetNature.png[39m[0m
-[  81% ] [90m[1mreimport[22m | TilesetWater.png[39m[0m
-[  84% ] [90m[1mreimport[22m | Palette.png[39m[0m
-[  86% ] [90m[1mreimport[22m | bench.png[39m[0m
-[  88% ] [90m[1mreimport[22m | crate.png[39m[0m
-[  90% ] [90m[1mreimport[22m | fencepost.png[39m[0m
-[  93% ] [90m[1mreimport[22m | fence_h.png[39m[0m
+[  58% ] [90m[1mreimport[22m | Katana.png[39m[0m
+[  60% ] [90m[1mreimport[22m | Net.png[39m[0m
+[  62% ] [90m[1mreimport[22m | Pickaxe.png[39m[0m
+[  64% ] [90m[1mreimport[22m | SpriteSheet16x16.png[39m[0m
+[  66% ] [90m[1mreimport[22m | SpriteSheet16x16.png[39m[0m
+[  68% ] [90m[1mreimport[22m | TilesetElement.png[39m[0m
+[  70% ] [90m[1mreimport[22m | TilesetField.png[39m[0m
+[  72% ] [90m[1mreimport[22m | TilesetFloor.png[39m[0m
+[  75% ] [90m[1mreimport[22m | TilesetHouse.png[39m[0m
+[  77% ] [90m[1mreimport[22m | TilesetNature.png[39m[0m
+[  79% ] [90m[1mreimport[22m | TilesetWater.png[39m[0m
+[  81% ] [90m[1mreimport[22m | Palette.png[39m[0m
+[  83% ] [90m[1mreimport[22m | valley-memory.png[39m[0m
+[  85% ] [90m[1mreimport[22m | bench.png[39m[0m
+[  87% ] [90m[1mreimport[22m | crate.png[39m[0m
+[  89% ] [90m[1mreimport[22m | fencepost.png[39m[0m
+[  91% ] [90m[1mreimport[22m | fence_h.png[39m[0m
+[  93% ] [90m[1mreimport[22m | fence_h_left.png[39m[0m
 [  95% ] [90m[1mreimport[22m | woodland.wav[39m[0m
 [  97% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
 [92m[ DONE ][39m [1mreimport[22m
 [0m
-[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (43 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (47 steps)[39m[0m
 [   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
 [92m[ DONE ][39m [1mreimport[22m
 [0m

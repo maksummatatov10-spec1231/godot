@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "game_sha256": "59a71fd1d33870487fc3f39b553dd7a9b4f2b257de97c9fe5585400dccee90ef",
+  "game_sha256": "729933f004b52dc61ad83a4714be4590987cb36322eb84bea6637d4c068ac819",
   "real_render": true,
   "physical_gpu_benchmark": false,
   "frames": 48,

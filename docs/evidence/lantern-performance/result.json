@@ -1,7 +1,7 @@
 {
   "passed": true,
   "baseline_commit": "15892813fe0437e4739049159ec854c2cd322b4a",
-  "game_sha256": "59a71fd1d33870487fc3f39b553dd7a9b4f2b257de97c9fe5585400dccee90ef",
+  "game_sha256": "729933f004b52dc61ad83a4714be4590987cb36322eb84bea6637d4c068ac819",
   "physical_gpu_benchmark": false,
   "cpu_only": false,
   "method": "20 warm-ups + 120 samples/view; identical scene/camera/player animation",
@@ -15,8 +15,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 7.981,
-        "shadow_cpu_ms_p95": 8.116,
+        "shadow_cpu_ms_median": 4.81,
+        "shadow_cpu_ms_p95": 5.248,
         "view": "village"
       },
       {
@@ -24,8 +24,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 7.997,
-        "shadow_cpu_ms_p95": 8.14,
+        "shadow_cpu_ms_median": 4.747,
+        "shadow_cpu_ms_p95": 4.828,
         "view": "forest"
       },
       {
@@ -33,8 +33,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 7.99,
-        "shadow_cpu_ms_p95": 8.141,
+        "shadow_cpu_ms_median": 4.729,
+        "shadow_cpu_ms_p95": 4.839,
         "view": "farm"
       }
     ]
@@ -45,29 +45,29 @@
     "views": [
       {
         "draw_calls_median": 2288.0,
-        "rendered_frame_ms_median": 62.249,
-        "rendered_frame_ms_p95": 64.459,
+        "rendered_frame_ms_median": 42.836,
+        "rendered_frame_ms_p95": 48.255,
         "samples": 120,
-        "shadow_cpu_ms_median": 8.998,
-        "shadow_cpu_ms_p95": 9.371,
+        "shadow_cpu_ms_median": 6.341,
+        "shadow_cpu_ms_p95": 7.066,
         "view": "village"
       },
       {
         "draw_calls_median": 2282.0,
-        "rendered_frame_ms_median": 62.838,
-        "rendered_frame_ms_p95": 65.582,
+        "rendered_frame_ms_median": 44.997,
+        "rendered_frame_ms_p95": 47.434,
         "samples": 120,
-        "shadow_cpu_ms_median": 8.896,
-        "shadow_cpu_ms_p95": 9.175,
+        "shadow_cpu_ms_median": 6.547,
+        "shadow_cpu_ms_p95": 6.916,
         "view": "forest"
       },
       {
         "draw_calls_median": 2442.0,
-        "rendered_frame_ms_median": 64.002,
-        "rendered_frame_ms_p95": 66.154,
+        "rendered_frame_ms_median": 45.266,
+        "rendered_frame_ms_p95": 50.855,
         "samples": 120,
-        "shadow_cpu_ms_median": 8.932,
-        "shadow_cpu_ms_p95": 9.296,
+        "shadow_cpu_ms_median": 6.498,
+        "shadow_cpu_ms_p95": 7.257,
         "view": "farm"
       }
     ]
@@ -81,11 +81,11 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.065,
-        "shadow_cpu_ms_p95": 1.346,
+        "shadow_cpu_ms_median": 1.137,
+        "shadow_cpu_ms_p95": 1.306,
         "shadow_work": {
-          "active_moving_casters": 7,
-          "active_static_casters": 156,
+          "active_moving_casters": 14,
+          "active_static_casters": 149,
           "active_static_tiles": 14,
           "cached_static_tiles": 19,
           "depth_pixels": 786432,
@@ -93,8 +93,8 @@
             768,
             512
           ],
-          "moving_mesh_rebuilds": 143,
-          "pose_templates_built": 277,
+          "moving_mesh_rebuilds": 144,
+          "pose_templates_built": 287,
           "registered_casters": 561,
           "shared_ground_materials": 11,
           "shared_receiver_materials": 11,
@@ -107,11 +107,11 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.336,
-        "shadow_cpu_ms_p95": 1.606,
+        "shadow_cpu_ms_median": 1.0,
+        "shadow_cpu_ms_p95": 1.162,
         "shadow_work": {
-          "active_moving_casters": 13,
-          "active_static_casters": 150,
+          "active_moving_casters": 16,
+          "active_static_casters": 146,
           "active_static_tiles": 16,
           "cached_static_tiles": 29,
           "depth_pixels": 800768,
@@ -119,8 +119,8 @@
             736,
             544
           ],
-          "moving_mesh_rebuilds": 283,
-          "pose_templates_built": 409,
+          "moving_mesh_rebuilds": 284,
+          "pose_templates_built": 420,
           "registered_casters": 561,
           "shared_ground_materials": 11,
           "shared_receiver_materials": 11,
@@ -133,11 +133,11 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.09,
-        "shadow_cpu_ms_p95": 1.371,
+        "shadow_cpu_ms_median": 0.832,
+        "shadow_cpu_ms_p95": 0.991,
         "shadow_work": {
-          "active_moving_casters": 11,
-          "active_static_casters": 152,
+          "active_moving_casters": 13,
+          "active_static_casters": 148,
           "active_static_tiles": 15,
           "cached_static_tiles": 36,
           "depth_pixels": 753664,
@@ -145,8 +145,8 @@
             736,
             512
           ],
-          "moving_mesh_rebuilds": 423,
-          "pose_templates_built": 460,
+          "moving_mesh_rebuilds": 424,
+          "pose_templates_built": 471,
           "registered_casters": 561,
           "shared_ground_materials": 11,
           "shared_receiver_materials": 11,
@@ -161,15 +161,15 @@
     "rendered": true,
     "views": [
       {
-        "draw_calls_median": 123.0,
-        "rendered_frame_ms_median": 26.234,
-        "rendered_frame_ms_p95": 27.604,
+        "draw_calls_median": 124.0,
+        "rendered_frame_ms_median": 25.667,
+        "rendered_frame_ms_p95": 27.011,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.578,
-        "shadow_cpu_ms_p95": 1.878,
+        "shadow_cpu_ms_median": 2.225,
+        "shadow_cpu_ms_p95": 3.084,
         "shadow_work": {
-          "active_moving_casters": 7,
-          "active_static_casters": 156,
+          "active_moving_casters": 14,
+          "active_static_casters": 149,
           "active_static_tiles": 14,
           "cached_static_tiles": 19,
           "depth_pixels": 786432,
@@ -178,7 +178,7 @@
             512
           ],
           "moving_mesh_rebuilds": 143,
-          "pose_templates_built": 280,
+          "pose_templates_built": 379,
           "registered_casters": 561,
           "shared_ground_materials": 11,
           "shared_receiver_materials": 11,
@@ -187,15 +187,15 @@
         "view": "village"
       },
       {
-        "draw_calls_median": 338.0,
-        "rendered_frame_ms_median": 29.618,
-        "rendered_frame_ms_p95": 30.575,
+        "draw_calls_median": 339.0,
+        "rendered_frame_ms_median": 27.493,
+        "rendered_frame_ms_p95": 29.742,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.877,
-        "shadow_cpu_ms_p95": 2.213,
+        "shadow_cpu_ms_median": 1.952,
+        "shadow_cpu_ms_p95": 2.221,
         "shadow_work": {
-          "active_moving_casters": 13,
-          "active_static_casters": 150,
+          "active_moving_casters": 16,
+          "active_static_casters": 146,
           "active_static_tiles": 16,
           "cached_static_tiles": 29,
           "depth_pixels": 800768,
@@ -204,7 +204,7 @@
             544
           ],
           "moving_mesh_rebuilds": 283,
-          "pose_templates_built": 412,
+          "pose_templates_built": 525,
           "registered_casters": 561,
           "shared_ground_materials": 11,
           "shared_receiver_materials": 11,
@@ -213,15 +213,15 @@
         "view": "forest"
       },
       {
-        "draw_calls_median": 233.0,
-        "rendered_frame_ms_median": 26.495,
-        "rendered_frame_ms_p95": 28.521,
+        "draw_calls_median": 234.0,
+        "rendered_frame_ms_median": 26.351,
+        "rendered_frame_ms_p95": 28.566,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.607,
-        "shadow_cpu_ms_p95": 1.95,
+        "shadow_cpu_ms_median": 1.697,
+        "shadow_cpu_ms_p95": 2.067,
         "shadow_work": {
-          "active_moving_casters": 11,
-          "active_static_casters": 152,
+          "active_moving_casters": 13,
+          "active_static_casters": 148,
           "active_static_tiles": 15,
           "cached_static_tiles": 36,
           "depth_pixels": 753664,
@@ -230,7 +230,7 @@
             512
           ],
           "moving_mesh_rebuilds": 423,
-          "pose_templates_built": 463,
+          "pose_templates_built": 606,
           "registered_casters": 561,
           "shared_ground_materials": 11,
           "shared_receiver_materials": 11,
@@ -241,9 +241,9 @@
     ]
   },
   "shadow_cpu_speedup": {
-    "village": 7.49,
-    "forest": 5.99,
-    "farm": 7.33
+    "village": 4.23,
+    "forest": 4.75,
+    "farm": 5.68
   },
   "local_vs_full_world_changed_pixels_over_12": {
     "village": 0,

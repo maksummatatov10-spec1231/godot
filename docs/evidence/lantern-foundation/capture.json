@@ -1,0 +1,32 @@
+{
+	"images": [
+		"01-first-menu",
+		"02-story-0",
+		"02-story-1",
+		"02-story-2",
+		"02-story-3",
+		"03-village-predawn",
+		"03-village-sunrise",
+		"03-village-morning",
+		"03-village-noon",
+		"03-village-evening",
+		"03-village-twilight",
+		"03-village-night",
+		"04-night-lights-off",
+		"04-lake-moon",
+		"05-farm-night",
+		"06-pause-save",
+		"07-settings",
+		"08-controls",
+		"09-continue-menu",
+		"10-overwrite-confirm",
+		"11-farm-collisions",
+		"12-lake-collisions"
+	],
+	"real_render": true,
+	"size": [
+		1280,
+		720
+	],
+	"ui_overflows": []
+}

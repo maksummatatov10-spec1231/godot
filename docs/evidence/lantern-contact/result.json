@@ -1,22 +1,22 @@
 {
   "passed": true,
-  "game_sha256": "59a71fd1d33870487fc3f39b553dd7a9b4f2b257de97c9fe5585400dccee90ef",
+  "game_sha256": "729933f004b52dc61ad83a4714be4590987cb36322eb84bea6637d4c068ac819",
   "real_render": true,
   "physical_gpu_benchmark": false,
   "images": 77,
   "directional_views": 4,
   "fixed_camera_articulation_changed_pixels": {
     "idle": [
-      2477,
-      2322
+      3818,
+      2313
     ],
     "walk": [
-      7681,
-      6662
+      5547,
+      8451
     ],
     "bound": [
-      10959,
-      10786
+      9981,
+      8281
     ]
   },
   "note": "Fixed-pose contact closeups; genuine moving gameplay remains in lantern-motion."
