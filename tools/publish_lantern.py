@@ -54,7 +54,14 @@ def main():
     subprocess.run(['gh', 'release', 'create', 'lantern-valley-v' + version, *assets,
                     '--target', subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
                     '--title', 'Фонарщик — ПК и Android ' + version,
-                    '--notes-file', str(GAME / 'README.md'), '--prerelease'], check=True)
+                    '--notes-file', str(GAME / 'README.md'), '--prerelease', '--draft'], check=True)
+    release = json.loads(subprocess.check_output(['gh', 'release', 'view', 'lantern-valley-v' + version, '--json', 'assets,isDraft'], text=True))
+    uploaded = {asset['name']: asset['size'] for asset in release['assets']}
+    for asset in assets:
+        path = Path(asset)
+        if uploaded.get(path.name) != path.stat().st_size:
+            raise RuntimeError('Draft upload incomplete: ' + path.name)
+    subprocess.run(['gh', 'release', 'edit', 'lantern-valley-v' + version, '--draft=false'], check=True)
     print('LANTERN_RELEASE_PUBLISHED', version, digest)
 
 

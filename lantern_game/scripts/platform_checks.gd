@@ -117,6 +117,18 @@ func run(owner_world: Node2D) -> Dictionary:
 		"Release stops both input and actual actor"
 	)
 	touch(13, stick, true)
+	drag(13, stick + Vector2(controls.radii.stick * 0.58 * (0.16 + 0.05 * 0.84), 0))
+	game.hero.player_step(0.016)
+	check(
+		game.hero.state == "walk" and game.hero.velocity.length() > 0,
+		"Tiny analog tilt animates walking, not idle sliding"
+	)
+	var gait_before: float = game.hero.clock
+	game.hero._physics_process(0.1)
+	check(
+		is_equal_approx(game.hero.clock - gait_before, 0.005),
+		"Partial analog tilt slows gait clock continuously"
+	)
 	drag(13, stick + Vector2(100, 0))
 	options.auto_run = false
 	game.hero.player_step(0.016)

@@ -91,7 +91,10 @@ func _physics_process(delta: float) -> void:
 		):
 			velocity = Vector2.ZERO
 			return
-	clock += delta
+	var pace: float = (
+		world.movement_input().length() if player_controlled and state == "walk" else 1.0
+	)
+	clock += delta * pace
 	startled = maxf(0.0, startled - delta)
 	if world.mode != "play":
 		velocity = Vector2.ZERO
@@ -125,8 +128,8 @@ func player_step(delta: float) -> void:
 		return
 	var movement: Vector2 = world.movement_input()
 	velocity = movement * (112.0 if world.running() else 76.0)
-	state = "walk" if movement.length() > 0.1 else "idle"
-	if movement.length() > 0.1:
+	state = "walk" if movement.length() > 0.001 else "idle"
+	if movement.length() > 0.001:
 		facing = direction_row(movement)
 
 
