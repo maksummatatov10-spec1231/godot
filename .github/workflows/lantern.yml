@@ -113,7 +113,7 @@ jobs:
       - name: Same-scene CPU/render benchmarks and full-world culling reference
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
-        run: python tools/benchmark_lantern.py
+        run: python tools/benchmark_lantern.py > docs/evidence/lantern-performance/runner.log 2>&1
       - name: Record evidence on this branch
         if: github.event_name == 'workflow_dispatch'
         run: |
@@ -143,6 +143,7 @@ jobs:
             mkdir -p "$folder/$label"
             cp "$source"/*.log "$source"/result.json "$folder/$label/" || true
           done
+          cp -r docs/evidence/lantern-performance/locality docs/evidence/lantern-performance/*-cpu docs/evidence/lantern-performance/*-rendered "$folder/" || true
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add "$folder"
