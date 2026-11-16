@@ -24,6 +24,12 @@ def game_digest():
     return digest.hexdigest()
 
 
+def steps_passed(steps):
+    required = {'import', 'drivers', 'gameplay', 'render', 'image-validation'}
+    return (len(steps) == len(required) and {step['name'] for step in steps} == required
+            and all(step['passed'] for step in steps))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--portable', action='store_true')
@@ -92,7 +98,7 @@ def main():
                 valid = valid and difference>0.15
                 differences[clean]=difference
             report['steps'].append({'name':'image-validation','passed':bool(valid),'overlay_mean_difference':differences})
-    report['passed'] = len(report['steps'])==4 and all(s['passed'] for s in report['steps'])
+    report['passed'] = steps_passed(report['steps'])
     report['incomplete'] = False
     # Editor imports may add .import files on a clean checkout. Record final content identity.
     report['game_sha256'] = game_digest()

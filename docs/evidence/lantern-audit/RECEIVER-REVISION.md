@@ -24,3 +24,7 @@ Local PNGs rendered correctly but the legacy sandbox ANGLE/SwiftShader fallback 
 
 The normal supported Compatibility/Mesa pipeline will independently render and validate all current sources in CI before packaging/publication. Pending that result, the local portable exit must NOT be described as fixed or as a passing full pipeline.
 
+
+Additional CI diagnostic: the first normal Mesa run passed import, 5892 assertions and all 24 general renders. The full-map driver failed at parse time because its new resource-release loop reused a function-local `i`. Fixed with `release_frame`. Added a real Godot parse/instantiate check for ALL external audit/motion/beauty drivers before any render; project import and GDScript formatting alone do not validate scripts outside res://. This failure is distinct from the local SwiftShader native-exit issue.
+
+The next Mesa run passed ALL five general stages, but the report aggregator still expected the historical four-stage count and correctly refused publication. Replaced the brittle count with an exact required-stage-name set including `drivers` and added acceptance/rejection tests (missing stage, duplicate stage, failed stage). No failing render status was converted to PASS.
