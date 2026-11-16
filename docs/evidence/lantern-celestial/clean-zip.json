@@ -1,0 +1,26 @@
+{
+  "version": "0.3.0",
+  "passed": true,
+  "game_sha256": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+  "zip_bytes": 12900467,
+  "sha256": "5ee795f7259681b1f8ab3ae414060190656e60452dd7f0931875df6c788df204",
+  "source_files_identical": 147,
+  "report_game_hashes": {
+    "lantern": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+    "lantern-audit/after": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+    "lantern-motion": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+    "lantern-beauty": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+    "lantern-performance": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+    "lantern-contact": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+    "lantern-foundation": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+    "lantern-celestial": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45"
+  },
+  "checks": {
+    "gameplay": 11961,
+    "math": 70319,
+    "writer": 54,
+    "reader": 27
+  },
+  "physical_gpu_tested": false,
+  "windows_native_tested": false
+}

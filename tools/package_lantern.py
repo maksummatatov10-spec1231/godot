@@ -57,8 +57,12 @@ def main():
             bundle.write(ROOT/'docs/evidence/lantern-beauty'/(name+'.png'),name+'.png')
         for name in ['wildlife-direction-3','tree-contact-fractional']:
             bundle.write(ROOT/'docs/evidence/lantern-contact'/(name+'.png'),name+'.png')
-        for name in ['01-first-menu', '02-story-3', '03-village-night', '06-pause-save', '07-settings']:
+        for name in ['01-first-menu', '02-story-0', '02-story-1', '02-story-2', '02-story-3',
+                     '03-village-night', '06-pause-save', '07-settings']:
             bundle.write(ROOT/'docs/evidence/lantern-foundation'/(name+'.png'),name+'.png')
+        for name in ['orbit-0000.png', 'orbit-0625.png', 'orbit-0800.png', 'orbit-1200.png',
+                     'orbit-1400.png', 'orbit-1600.png', 'celestial-cycle.gif']:
+            bundle.write(ROOT/'docs/evidence/lantern-celestial'/name, name)
     print('LANTERN_PACKAGE_OK',archive,archive.stat().st_size,sha)
     print('LANTERN_SCREENSHOTS_OK',pictures)
 
