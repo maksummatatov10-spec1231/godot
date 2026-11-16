@@ -1,0 +1,22 @@
+{
+  "version": "0.2.1",
+  "source_files_identical": 137,
+  "zip_bytes": 3432232,
+  "sha256": "51842f67d5b7aae1e1376bbb49029fd3034b0c0d91b3813fc71d337fbd907163",
+  "report_game_hashes": {
+    "lantern": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4",
+    "lantern-audit/after": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4",
+    "lantern-motion": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4",
+    "lantern-beauty": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4",
+    "lantern-performance": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4",
+    "lantern-contact": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4",
+    "lantern-foundation": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4"
+  },
+  "tested_project": ".tools/lantern/foundation-0.2.1-clean-zip/LanternValley",
+  "physical_gpu_tested": false,
+  "windows_native_tested": false,
+  "passed": true,
+  "gameplay_checks": 11990,
+  "writer_checks": 53,
+  "independent_reader_checks": 27
+}

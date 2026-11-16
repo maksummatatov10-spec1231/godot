@@ -1,3 +1,5 @@
+> Historical 0.1.6 revision. Current wildlife/contact PNGs beside this report are now regenerated for **0.2.1**. See [foundation release report](../lantern-foundation/RELEASE.md) for the current redraw, checks and delivery. Original 0.1.6 evidence is preserved in its release/source commit.
+
 # Wildlife and shadow-contact revision — defects recorded before fixes
 
 Baseline: 0.1.5, `63cc077`. User crops: image-17.png (rabbit), image-18.png (hero/contact ellipse and gap), image-19.png (tree/shadow gap).

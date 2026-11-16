@@ -1,6 +1,6 @@
 # 2D performance revision — inspect/measure BEFORE fixing
 
-> **Current 0.1.6:** the raw `result.json` and image pairs beside this file now match 0.1.6. The 0.1.5 timings/verification below are historical; see [the current wildlife/contact revision](../lantern-audit/CONTACT-WILDLIFE-REVISION.md) for current results and release.
+> **Current 0.2.1:** raw `result.json` and image pairs beside this file match the new foundation build. The original 0.1.5 figures below are historical; see [current foundation report](../lantern-foundation/RELEASE.md). New grading/light pools add rendering work; no physical-GPU FPS guarantee is made.
 
 Baseline: 0.1.4, commit `15892813fe0437e4739049159ec854c2cd322b4a`, source game SHA `82f209aed2242af0e695676da2cbc37c0112cb79acda2265c5e7987296f954fd`.
 
