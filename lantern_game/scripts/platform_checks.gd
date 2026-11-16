@@ -174,18 +174,20 @@ func run(owner_world: Node2D) -> Dictionary:
 	check(game.mode == "play", "C closes dialogue")
 	game._notification(NOTIFICATION_WM_GO_BACK_REQUEST)
 	var back_key := InputEventKey.new()
-	back_key.keycode = KEY_ESCAPE
-	back_key.physical_keycode = KEY_ESCAPE
+	back_key.keycode = KEY_BACK
+	back_key.physical_keycode = KEY_BACK
 	back_key.pressed = true
 	game._unhandled_input(back_key)
-	check(game.mode == "pause", "Android notification plus Escape pauses once, not twice")
+	check(game.mode == "pause", "Android notification plus Back key pauses once")
 	await frames()
 	game._notification(NOTIFICATION_WM_GO_BACK_REQUEST)
 	game._unhandled_input(back_key)
 	check(game.mode == "play", "Second Android Back resumes exactly once")
 	await frames()
+	back_key.keycode = KEY_ESCAPE
+	back_key.physical_keycode = KEY_ESCAPE
 	game._unhandled_input(back_key)
-	check(game.mode == "pause", "Ordinary Escape still pauses without a Back notification")
+	check(game.mode == "pause", "Ordinary Escape pauses without a Back notification")
 	game.show_menu("settings")
 	options.show_settings()
 	await frames()

@@ -40,6 +40,9 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / 'android.json').write_text(json.dumps({'passed': False}) + '\n')
     adb('install', '-r', ROOT / 'artifacts/lantern/Lantern-Valley-Android-Smoke.apk')
+    # The first-launch Android full-screen tutorial consumes Back before the app.
+    # Acknowledge this OS tutorial in the test fixture, not in game code.
+    adb('shell', 'settings', 'put', 'secure', 'immersive_mode_confirmations', 'confirmed')
     adb('logcat', '-c')
     adb('shell', 'monkey', '-p', PACKAGE, '-c', 'android.intent.category.LAUNCHER', '1')
     text = wait_for('LANTERN_ANDROID_SMOKE_OK')
@@ -50,7 +53,12 @@ def main():
     x, y = map(round, result['stick_screen'])
     travel = round(result['screen_travel'])
     adb('shell', 'input', 'touchscreen', 'swipe', x, y, x + travel, y, '1000')
-    wait_for('LANTERN_ANDROID_OS_TOUCH_OK', 15)
+    wait_for('LANTERN_ANDROID_OS_TOUCH_OK', 30)
+    windows = adb('shell', 'dumpsys', 'window', 'windows')
+    (OUT / 'android-window.log').write_text(windows)
+    focus = next((line for line in windows.splitlines() if 'mCurrentFocus=' in line), '')
+    if PACKAGE not in focus or 'ImmersiveModeConfirmation' in focus:
+        raise RuntimeError('Android OS overlay prevents app input; inspect android-window.log')
     (OUT / 'android-emulator-play.png').write_bytes(adb('exec-out', 'screencap', '-p', binary=True))
     adb('shell', 'input', 'keyevent', '4')
     wait_for('LANTERN_ANDROID_MODE pause', 15)
