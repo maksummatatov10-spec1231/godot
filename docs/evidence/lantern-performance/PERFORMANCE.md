@@ -12,7 +12,7 @@ Real Godot 4.7.2 headless execution of the unchanged game copied from Git into a
 | Forest | 9.670 | 10.198 |
 | Farm | 9.910 | 13.312 |
 
-Raw results: `before-cpu/benchmark.json`. This confirms a significant CPU regression in the new shadow implementation independently of grass rendering.
+Initial inspection results: `inspection-before-cpu.json` (the repeatable runner writes new samples into `before-cpu/benchmark.json`). This confirms a significant CPU regression in the new shadow implementation independently of grass rendering.
 
 ## Defects recorded BEFORE game changes
 
@@ -39,4 +39,14 @@ Planned applicable changes:
 
 Not blindly applied: switching to Vulkan/Forward+, forcing texture compression on tiny pixel sprites, reducing world collision fidelity, hiding the problem by disabling grass, reducing all graphics quality, multithreading scene-tree mutations, or implementing GPU particle systems without evidence they remain a bottleneck after culling. Those approaches have trade-offs or change correctness/quality; “all possible methods” includes mutually incompatible techniques. Apply and verify the ones relevant to this game.
 
-Implementation and after-results pending.
+## Implementation check (before canonical Mesa run)
+
+Implemented P01–P05. The main window remains native-resolution `canvas_items`; all original art and collision shapes remain. The atlas is retained, depth rows remain height-sorted, and received shadows still sample static AND moving blockers. Only a camera-local light region is rendered; static tiles are built on first use and cached, dynamic templates are retained for unchanged poses. One global wind update replaces material-by-material updates; 561 receivers use eight shared variants, ground shadows seven.
+
+Actual Godot import, external-driver parsing, strict lint/format, and 6,417 physics/gameplay/locality assertions pass. New assertions include camera teleport/zoom, offscreen casters that reach the screen, receiver heights up to 80px, cached mesh RID retention, pause/no rebuild, far-wildlife sleep/wake and preserved colliders. Offscreen hidden ground silhouettes intentionally do NOT copy invisible atlas frames every tick; when relevant, they sync to the current source before drawing. Existing tests were updated to assert this visible behavior, not force the old whole-world work.
+
+First portable rendered local/reference comparison exposed up to 59 differing shadow pixels near exact integer q boundaries: changing texture dimensions changed nearest-sample floating-point rounding. Fixed by sampling explicit light-texel centres with a small boundary epsilon. Repeated six comparisons: **0 changed pixels over RGB12 in each pair**. This includes cameras on either side of a crop boundary. Kept the failed private portable run honest: it generated those images but exited -11 in the known private ANGLE/SwiftShader shutdown path, so it is not used as the canonical passing renderer gate. The normal supported Mesa run is required before packaging.
+
+`tools/benchmark_lantern.py` now reproduces baseline/current CPU and rendered measurements and compares six local/full-world reference image pairs. It rejects missing render markers, errors/leaks, nonzero exits, stale game hashes, lack of at least 2× median shadow CPU improvement, nonlocal targets, or ANY changed shadow pixel over RGB12. Four Python unit tests cover the image-comparison gate itself.
+
+Canonical Mesa results and final visual review pending.

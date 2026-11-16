@@ -3,14 +3,12 @@ extends Node2D
 ## All map geometry is loaded from the same manifest as the art assembly.
 const Actor = preload("res://scripts/actor.gd")
 const Capture = preload("res://scripts/capture.gd")
-const FOLIAGE = preload("res://scripts/foliage.gdshader")
 const A = "res://assets/ninja/"
 var map: Dictionary
 var hero: CharacterBody2D
 var traveller: CharacterBody2D
 var actors := Node2D.new()
 var shadows := preload("res://scripts/shadows.gd").new()
-var foliage_materials: Array[ShaderMaterial] = []
 var camera := Camera2D.new()
 var mode := "main"
 var elapsed := 0.0
@@ -100,13 +98,6 @@ func _ready() -> void:
 		sprite.offset = Vector2(0, item.size[1] / 2.0 - item.sort_y)
 		sprite.set_meta("art", item.art)
 		var windy: bool = item.sway or item.art == "pot.png"
-		if windy:
-			var sway_material := ShaderMaterial.new()
-			sway_material.shader = FOLIAGE
-			sway_material.set_shader_parameter("phase", float(item.position[0]) * 0.15)
-			sway_material.set_shader_parameter("crown_height", float(item.sort_y))
-			foliage_materials.append(sway_material)
-			sprite.material = sway_material
 		actors.add_child(sprite)
 		shadows.register(
 			sprite, sprite, false, windy, float(item.sort_y), float(item.position[0]) * 0.15
@@ -243,12 +234,6 @@ func _add_animated(kind: String, at: Vector2) -> void:
 		var dimensions := plant.texture.get_size()
 		plant.position = at + Vector2(dimensions.x * 0.5, dimensions.y)
 		plant.offset = Vector2(0, -dimensions.y * 0.5)
-		var breeze := ShaderMaterial.new()
-		breeze.shader = FOLIAGE
-		breeze.set_shader_parameter("phase", at.x * 0.15)
-		breeze.set_shader_parameter("crown_height", dimensions.y)
-		plant.material = breeze
-		foliage_materials.append(breeze)
 		actors.add_child(plant)
 		shadows.register(plant, plant, false, true, dimensions.y, at.x * 0.15)
 		return
@@ -275,12 +260,6 @@ func _add_animated(kind: String, at: Vector2) -> void:
 		# Foot is the flower base, not the texture top-left.
 		sprite.position += Vector2(2.5, 8)
 		sprite.offset = Vector2(-2.5, -8)
-		var breeze := ShaderMaterial.new()
-		breeze.shader = FOLIAGE
-		breeze.set_shader_parameter("phase", at.x * 0.15)
-		breeze.set_shader_parameter("crown_height", 8.0)
-		sprite.material = breeze
-		foliage_materials.append(breeze)
 		shadows.register(sprite, sprite, true, true, 8.0, at.x * 0.15)
 	animated.append(
 		{
@@ -294,13 +273,16 @@ func _add_animated(kind: String, at: Vector2) -> void:
 func _process(delta: float) -> void:
 	if mode == "play" or mode == "main":
 		elapsed += delta
+		var animation_area := world_view_rect().grow(128.0)
 		for item in animated:
-			item.sprite.region_rect = Rect2(
+			if not animation_area.has_point(item.sprite.global_position):
+				continue
+			var next_frame := Rect2(
 				Vector2(int(elapsed * 4.0 + item.offset) % 4 * item.frame_size.x, 0),
 				item.frame_size
 			)
-	for foliage in foliage_materials:
-		foliage.set_shader_parameter("wind_time", elapsed)
+			if item.sprite.region_rect != next_frame:
+				item.sprite.region_rect = next_frame
 	if mode == "play":
 		ability_cooldown = maxf(0.0, ability_cooldown - delta)
 		camera.position = hero.position
@@ -317,7 +299,6 @@ func _process(delta: float) -> void:
 		if before < dialogue_text.visible_characters and int(type_clock) % 3 == 0:
 			play_tone(170.0 + float(dialog_page) * 24.0, 0.016, 0.035)
 	interact_button.visible = mode == "play" and interactable()
-	overlays.queue_redraw()
 
 
 func leaf_sample(leaf: Vector3) -> Vector3:
@@ -680,3 +661,7 @@ func _toggle_fullscreen() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+
+func world_view_rect() -> Rect2:
+	return get_viewport().get_canvas_transform().affine_inverse() * get_viewport_rect()

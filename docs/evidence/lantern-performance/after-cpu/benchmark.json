@@ -1,0 +1,84 @@
+{
+	"physical_gpu_benchmark": false,
+	"rendered": false,
+	"views": [
+		{
+			"draw_calls_median": 0.0,
+			"rendered_frame_ms_median": 0.0,
+			"rendered_frame_ms_p95": 0.0,
+			"samples": 120,
+			"shadow_cpu_ms_median": 0.629,
+			"shadow_cpu_ms_p95": 0.898,
+			"shadow_work": {
+				"active_moving_casters": 6,
+				"active_static_casters": 156,
+				"active_static_tiles": 14,
+				"cached_static_tiles": 19,
+				"depth_pixels": 786432,
+				"depth_size": [
+					768,
+					512
+				],
+				"moving_mesh_rebuilds": 143,
+				"pose_templates_built": 277,
+				"registered_casters": 561,
+				"shared_ground_materials": 7,
+				"shared_receiver_materials": 8,
+				"visible_leaf_emitters": 55
+			},
+			"view": "village"
+		},
+		{
+			"draw_calls_median": 0.0,
+			"rendered_frame_ms_median": 0.0,
+			"rendered_frame_ms_p95": 0.0,
+			"samples": 120,
+			"shadow_cpu_ms_median": 0.706,
+			"shadow_cpu_ms_p95": 0.994,
+			"shadow_work": {
+				"active_moving_casters": 13,
+				"active_static_casters": 150,
+				"active_static_tiles": 16,
+				"cached_static_tiles": 29,
+				"depth_pixels": 800768,
+				"depth_size": [
+					736,
+					544
+				],
+				"moving_mesh_rebuilds": 283,
+				"pose_templates_built": 409,
+				"registered_casters": 561,
+				"shared_ground_materials": 7,
+				"shared_receiver_materials": 8,
+				"visible_leaf_emitters": 160
+			},
+			"view": "forest"
+		},
+		{
+			"draw_calls_median": 0.0,
+			"rendered_frame_ms_median": 0.0,
+			"rendered_frame_ms_p95": 0.0,
+			"samples": 120,
+			"shadow_cpu_ms_median": 0.595,
+			"shadow_cpu_ms_p95": 0.887,
+			"shadow_work": {
+				"active_moving_casters": 11,
+				"active_static_casters": 153,
+				"active_static_tiles": 15,
+				"cached_static_tiles": 36,
+				"depth_pixels": 753664,
+				"depth_size": [
+					736,
+					512
+				],
+				"moving_mesh_rebuilds": 423,
+				"pose_templates_built": 461,
+				"registered_casters": 561,
+				"shared_ground_materials": 7,
+				"shared_receiver_materials": 8,
+				"visible_leaf_emitters": 91
+			},
+			"view": "farm"
+		}
+	]
+}

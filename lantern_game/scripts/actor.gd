@@ -44,6 +44,7 @@ func _ready() -> void:
 	else:
 		sprite.texture = load("res://assets/ninja/Actor/Character/Master/SpriteSheet.png")
 	home = position
+	animate()
 
 
 func update_tool() -> void:
@@ -77,6 +78,18 @@ func surprise(from: Vector2) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if world.mode != "play" and world.mode != "main":
+		velocity = Vector2.ZERO
+		return
+	# Sleep distant wildlife only; collision bodies remain registered and nearby
+	# wildlife wakes before it can see/startle the player (reaction radius 66).
+	if not species.is_empty() and world.mode == "play":
+		if (
+			global_position.distance_squared_to(world.hero.global_position) > 25600.0
+			and not world.world_view_rect().grow(96).has_point(global_position)
+		):
+			velocity = Vector2.ZERO
+			return
 	clock += delta
 	startled = maxf(0.0, startled - delta)
 	if world.mode != "play":

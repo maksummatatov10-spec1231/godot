@@ -47,6 +47,8 @@ func run() -> void:
 	check(game.hero.position == Vector2(776, 658), "Central village spawn")
 	await check_live_shadows()
 	check_shadow_receivers()
+	check_local_shadows()
+	check_wildlife_sleep()
 	action("interact")
 	await frame(2)
 	check(game.mode == "play", "Z activates focused main-menu button")
@@ -182,8 +184,20 @@ func run() -> void:
 			animal = actor
 			break
 	var animal_before: Vector2 = animal.position
+	var paused_rebuilds: int = game.shadows.light_depth.mesh_rebuilds
 	await frame(12)
 	check(animal.position == animal_before, "Pause freezes wildlife")
+	check(
+		game.shadows.light_depth.mesh_rebuilds == paused_rebuilds,
+		"Real paused physics reuses moving light geometry"
+	)
+	check(
+		(
+			game.shadows.light_depth.static_view.render_target_update_mode
+			== SubViewport.UPDATE_DISABLED
+		),
+		"Real pause stops repeated static light rendering"
+	)
 	action("pause")
 	game.hero.position = game.traveller.position + Vector2(0, 23)
 	check(game.interactable(), "Nearby wanderer enables interaction button")
@@ -300,8 +314,8 @@ func check_live_shadows() -> void:
 	for entry in game.shadows.casters:
 		check(entry.shadow.texture == entry.source.texture, "Shadow shares actual source texture")
 		check(
-			entry.shadow.region_rect == entry.source.region_rect,
-			"Shadow matches current atlas frame"
+			not entry.shadow.visible or entry.shadow.region_rect == entry.source.region_rect,
+			"Visible shadow matches current atlas frame (offscreen sync sleeps)"
 		)
 		if entry.source == game.hero.sprite:
 			hero_entry = entry
@@ -347,7 +361,10 @@ func check_live_shadows() -> void:
 func check_shadow_receivers() -> void:
 	var depth: Node = game.shadows.light_depth
 	check(depth.built, "Light-space atlas is ready before gameplay")
-	check(depth.static_view.size == Vector2i(1536, 1152), "Static depth covers the full world")
+	check(
+		depth.static_view.size.x < 1000 and depth.static_view.size.y < 700,
+		"Static depth is camera-local, not the full world"
+	)
 	check(
 		depth.moving_view.size == depth.static_view.size,
 		"Dynamic depth shares exact light coordinates"
@@ -359,7 +376,12 @@ func check_shadow_receivers() -> void:
 		depth.receiver_materials.size() == game.shadows.casters.size(),
 		"Every raised caster is also a receiver"
 	)
-	check(depth.static_mesh.mesh.get_surface_count() == 1, "Static depth is a batched sorted mesh")
+	check(not depth.active_tiles.is_empty(), "Camera selects cached static depth tiles")
+	for cell in depth.active_tiles:
+		check(
+			depth.static_tiles[cell].mesh.get_surface_count() == 1,
+			"Static tile is a batched height-sorted mesh"
+		)
 	check(
 		depth.moving_mesh.mesh.get_surface_count() == 1,
 		"Moving depth is an independent sorted mesh"
@@ -393,3 +415,103 @@ func check_shadow_receivers() -> void:
 		"Different receivers on a sun ray share the same lookup"
 	)
 	check(depth.textures.size() >= 5, "Atlas keeps strong texture references across tool switches")
+
+
+func check_local_shadows() -> void:
+	var depth: Node = game.shadows.light_depth
+	var old_position: Vector2 = game.camera.position
+	var old_zoom: Vector2 = game.camera.zoom
+	var smoothing: bool = game.camera.position_smoothing_enabled
+	game.camera.position_smoothing_enabled = false
+	game.camera.force_update_scroll()
+	game.shadows._process(0)
+	var rect: Rect2 = depth.light_rect
+	var rebuilds: int = depth.mesh_rebuilds
+	var poses: int = depth.pose_builds
+	game.shadows._process(0)
+	check(depth.mesh_rebuilds == rebuilds, "Unchanged poses reuse dynamic depth mesh")
+	check(depth.pose_builds == poses, "Unchanged sprite poses reuse cached geometry")
+	check(
+		depth.static_view.render_target_update_mode == SubViewport.UPDATE_DISABLED,
+		"Paused time disables static light pass"
+	)
+	check(
+		depth.moving_view.render_target_update_mode == SubViewport.UPDATE_DISABLED,
+		"Paused unchanged poses disable moving light pass"
+	)
+	var offscreen_casts := 0
+	var screen: Rect2 = game.world_view_rect()
+	for entry in game.shadows.casters:
+		if entry.follows:
+			continue
+		var bounds: Rect2 = entry.source.global_transform * entry.source.get_rect()
+		if not bounds.intersects(screen) and entry.light_bounds.intersects(screen):
+			check(entry.shadow.visible, "Offscreen caster with onscreen ground shadow stays active")
+			offscreen_casts += 1
+		if not entry.light_bounds.intersects(game.shadows.visibility_rect):
+			check(not entry.shadow.visible, "Unrelated offscreen ground shadow is culled")
+	check(offscreen_casts > 0, "Boundary test exercises actual offscreen shadow casters")
+	for cell in depth.active_tiles:
+		var cell_rect := Rect2(Vector2(cell) * depth.TILE, Vector2.ONE * depth.TILE)
+		check(cell_rect.intersects(rect), "Only intersecting static light tiles are active")
+	# Local light crop must include the ray of any visible elevated receiver.
+	for point in [screen.position, screen.end, screen.get_center()]:
+		for height in [0.0, 32.0, 72.0, 80.0]:
+			var q: Vector2 = point + Vector2(0.85, 1.48) * height
+			check(
+				rect.has_point(q), "Receiver lookup includes maximum height and screen boundaries"
+			)
+	check(depth.shared_receivers.size() < 16, "Receivers batch into shared materials")
+	check(game.shadows.shared_ground.size() < 16, "Ground shadows batch into shared materials")
+	check(
+		game.shadows.visible_leaves.size() < game.leaves.size(),
+		"Particle processing selects only nearby emitters"
+	)
+	# A camera move/zoom invalidates coordinates, not the static geometry cache.
+	game.camera.zoom = Vector2(2, 2)
+	game.camera.position = Vector2(350, 428)
+	game.camera.force_update_scroll()
+	game.shadows._process(0)
+	check(depth.light_rect != rect, "Teleport and zoom update local light coordinates")
+	check(depth.static_view.size.x < 500, "Zoom-in reduces light target work")
+	for entry in depth.selected_moving:
+		check(
+			entry.light_bounds.intersects(depth.light_rect),
+			"Only relevant moving casters enter depth pass"
+		)
+	var original_meshes := {}
+	for cell in depth.static_tiles:
+		original_meshes[cell] = depth.static_tiles[cell].mesh.get_rid()
+	game.camera.position = old_position
+	game.camera.zoom = old_zoom
+	game.camera.force_update_scroll()
+	game.shadows._process(0)
+	for cell in original_meshes:
+		check(
+			original_meshes[cell] == depth.static_tiles[cell].mesh.get_rid(),
+			"Camera movement retains static mesh resources"
+		)
+	check(depth.light_rect == rect, "Returning camera restores exact shared light crop")
+	game.camera.position_smoothing_enabled = smoothing
+
+
+func check_wildlife_sleep() -> void:
+	for actor in game.actors.get_children():
+		if not actor is CharacterBody2D or actor.species.is_empty():
+			continue
+		var old_mode: String = game.mode
+		var original_position: Vector2 = actor.position
+		var original_clock: float = actor.clock
+		game.mode = "play"
+		actor.position = Vector2(64, 64)
+		actor._physics_process(0.01)
+		check(actor.clock == original_clock, "Distant offscreen wildlife skips animation and AI")
+		check(actor.get_child(0).disabled == false, "Sleeping wildlife keeps its collider")
+		actor.position = game.hero.position + Vector2(80, 0)
+		actor._physics_process(0.01)
+		check(actor.clock > original_clock, "Wildlife wakes before entering reaction radius")
+		actor.position = original_position
+		actor.clock = original_clock
+		game.mode = old_mode
+		actor.animate()
+		return
