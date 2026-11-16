@@ -16,11 +16,17 @@ void vertex() {
         + sin(wind_time * 0.63 + slow_phase) * 0.65;
     VERTEX.x += breeze * COLOR.a;
     world_q = VERTEX;
+    // Alpha-contact planes can put strip edges exactly on a depth texel centre.
+    // A sub-raster-grid tie-break avoids viewport-size-dependent fill rounding.
+    // This affects only the offscreen depth raster, NEVER the visible silhouette.
+    VERTEX += vec2(1.0 / 256.0);
 }
 
 void fragment() {
     if (clip_enabled && (any(lessThan(world_q, clip_rect.xy)) || any(greaterThanEqual(world_q, clip_rect.xy + clip_rect.zw)))) { discard; }
-    if (texture(TEXTURE, UV).a < 0.5) {
+    // Sample explicit atlas texel centres, including interpolated strip edges.
+    vec2 atlas_uv = (floor(UV / TEXTURE_PIXEL_SIZE + vec2(0.001)) + vec2(0.5)) * TEXTURE_PIXEL_SIZE;
+    if (texture(TEXTURE, atlas_uv).a < 0.5) {
         discard;
     }
     COLOR = vec4(light_height, 0.0, 0.0, 1.0);

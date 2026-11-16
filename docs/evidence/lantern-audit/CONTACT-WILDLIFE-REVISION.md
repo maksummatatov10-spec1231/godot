@@ -29,4 +29,10 @@ Baseline: 0.1.5, `63cc077`. User crops: image-17.png (rabbit), image-18.png (her
 - Updated translation test to synchronize the current pose before its baseline snapshot; it still verifies exact translation, not a relaxed tolerance. Added exhaustive static contact checks and four-direction/three-gait/twelve-phase fractional-position tests, including tool/breathing. **11,988 actual Godot assertions pass**, plus Python art/motion/absence-of-ellipse regressions.
 - New rendered driver captures four direction portraits, 24 real rendered frames each of idle/walk/bound and a fractional-position tree closeup, with strict marker/error/exit/hash and independent animal-ROI motion checks. These are articulation/contact evidence; real gameplay movement remains tested separately by the existing motion driver.
 
-Canonical Mesa screenshots, locality parity and release recheck pending.
+## Rendered regression found and fixed before delivery
+
+Both first full runs passed 11,988 physics/contact assertions, 77 Python regressions, normal renders, full-map audit, actual gameplay motion, raised reception A/B and the new 77-frame closeup/motion gate. The strict Mesa locality comparison correctly BLOCKED packaging: 14 forest / 57 facade pixels differed from full-world reference, although private ANGLE comparison was zero. Failures preserved in `lantern-ci-failure/43889157064` and `43889818018`, not marked passed.
+
+Diagnostics: half-pixel alpha-contact planes can place projected row edges exactly on a light-target pixel centre (`0.48*n - 0.26` reaches .5). Tiny viewport projection/fill rounding changes then select a different source texel at a strip edge. Added an explicit 1/256-pixel tie-break ONLY in the offscreen depth raster and explicit atlas texel-centre alpha sampling. The visible ground silhouette and contact anchor are NOT offset, and the zero-difference locality gate is NOT relaxed. Added preservation of benchmark exceptions/raw comparison pairs, since the old failure collector lost subdirectory diagnostics.
+
+Final canonical recheck pending.
