@@ -4,7 +4,7 @@
   "apks": {
     "Lantern-Valley-Android.apk": {
       "bytes": 59201251,
-      "sha256": "2badab9bc35dbdc9b3e91407f2ba7fe2dbaa2bc6333d04ed25039df2344885c3",
+      "sha256": "a0bf1f93d24c0cbdc6c31fc0d35a11aca5f0c78560a000f485f935af4fd94a7a",
       "package": "org.lanternvalley.game",
       "abis": [
         "arm64-v8a",
@@ -15,7 +15,7 @@
     },
     "Lantern-Valley-Android-Smoke.apk": {
       "bytes": 34645566,
-      "sha256": "bc300a8f97accb734f5f88dfa7ef5050ddd49c5fee0d561b082d8d49bf199aa6",
+      "sha256": "ed7b3c950acf6cf51de11132d48bde748b549bfd9c9b47dfe69c74a17a4ad398",
       "package": "org.lanternvalley.game.smoke",
       "abis": [
         "x86_64"
