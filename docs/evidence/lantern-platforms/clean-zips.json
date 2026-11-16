@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "game_sha256": "331b4e2123135e907c713e2489d5fb11f03ddb770425b47dccc10548a7f7905b",
+  "profiles": {
+    "pc": {
+      "bytes": 12919320,
+      "sha256": "a8daf0d1b88f948ae0a2fa025f744f1ba0c00a952ccb49a133ae664a9afdc548",
+      "source_files_identical": 171,
+      "checks": {
+        "profile": true,
+        "controls": 45,
+        "gameplay": 11961,
+        "math": 70319,
+        "writer": 54,
+        "reader": 27
+      }
+    },
+    "android": {
+      "bytes": 12919577,
+      "sha256": "50ebf996eb97f017a2423239c8e42378faadc93a612c4d1dbcffac59db5a1972",
+      "source_files_identical": 171,
+      "checks": {
+        "profile": true,
+        "controls": 43,
+        "gameplay": 11961,
+        "math": 70319,
+        "writer": 54,
+        "reader": 27
+      }
+    }
+  },
+  "physical_gpu_tested": false,
+  "android_arm_runtime_tested": false
+}
