@@ -1,0 +1,12 @@
+{
+  "byte_identical": true,
+  "source_files": 116,
+  "zip_bytes": 1057863,
+  "zip_sha256": "12838f045a7858bb3b243101e6224f8502bfec4f3fb16f675bcae282acf6acfc",
+  "release_assets_uploaded": true,
+  "release_download_independently_rehashed": false,
+  "release_commit": "1c9c7bf745c74b20b968b21d11e05b892770aa61",
+  "import_passed": true,
+  "tests_passed": true,
+  "assertions": 5892
+}
