@@ -46,7 +46,7 @@ def main():
         bundle.writestr('LanternValley/VALIDATION.json',json.dumps(evidence,indent=2)+'\n')
     sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     archive.with_suffix('.zip.sha256').write_text(f'{sha}  {archive.name}\n')
-    pictures = output/'Lantern-Valley-0.2.0-Screenshots.zip'
+    pictures = output/'Lantern-Valley-0.2.1-Screenshots.zip'
     with zipfile.ZipFile(pictures,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as bundle:
         for name in ['01-village-player-shadows','02-forest-player-leaves',
                      '03-farm-player-shadows','04-received-shadow','05-wildlife-player-shadows']:

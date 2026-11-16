@@ -206,9 +206,14 @@ func apply_state(data: Dictionary) -> void:
 
 
 func safe_position(candidate: Vector2) -> Vector2:
+	var foot := candidate - Vector2(0, 3)
 	for solid in world.map.solids:
 		var r: Array = solid.rect
-		if Rect2(r[0], r[1], r[2], r[3]).grow(5).has_point(candidate - Vector2(0, 3)):
+		var rect := Rect2(r[0], r[1], r[2], r[3])
+		var closest := foot.clamp(rect.position, rect.end)
+		# Match actor.gd's 4px circle, including clear space around rectangle corners.
+		# Do not reject legitimate physics contacts using a larger square margin.
+		if foot.distance_squared_to(closest) < 16.0:
 			return Vector2(world.map.spawn[0], world.map.spawn[1])
 	return candidate
 

@@ -134,6 +134,23 @@ func run() -> void:
 		foundation.safe_position(blocked) == Vector2(776, 658),
 		"Solid-position saves recover to safe spawn"
 	)
+	var wall_contact := Vector2(480, 399.1)
+	check(
+		foundation.safe_position(wall_contact) == wall_contact,
+		"Valid four-pixel wall contact is preserved"
+	)
+	var corner_clear := Vector2(448, 398.1)
+	check(
+		foundation.safe_position(corner_clear) == corner_clear,
+		"Circle-clear wall corners are preserved"
+	)
+	var beside_wall: Dictionary = data.duplicate(true)
+	beside_wall.x = wall_contact.x
+	beside_wall.y = wall_contact.y
+	foundation.apply_state(beside_wall)
+	check(
+		game.hero.position == wall_contact, "Continue does not teleport a legal wall-adjacent save"
+	)
 	var bad: Dictionary = data.duplicate(true)
 	bad.x = -10
 	check(not foundation.store.save(bad), "Out-of-bounds state rejected")
