@@ -4,29 +4,29 @@
 	"views": [
 		{
 			"draw_calls_median": 2288.0,
-			"rendered_frame_ms_median": 51.879,
-			"rendered_frame_ms_p95": 52.987,
+			"rendered_frame_ms_median": 62.249,
+			"rendered_frame_ms_p95": 64.459,
 			"samples": 120,
-			"shadow_cpu_ms_median": 7.178,
-			"shadow_cpu_ms_p95": 7.444,
+			"shadow_cpu_ms_median": 8.998,
+			"shadow_cpu_ms_p95": 9.371,
 			"view": "village"
 		},
 		{
 			"draw_calls_median": 2282.0,
-			"rendered_frame_ms_median": 52.992,
-			"rendered_frame_ms_p95": 54.955,
+			"rendered_frame_ms_median": 62.838,
+			"rendered_frame_ms_p95": 65.582,
 			"samples": 120,
-			"shadow_cpu_ms_median": 7.222,
-			"shadow_cpu_ms_p95": 7.553,
+			"shadow_cpu_ms_median": 8.896,
+			"shadow_cpu_ms_p95": 9.175,
 			"view": "forest"
 		},
 		{
 			"draw_calls_median": 2442.0,
-			"rendered_frame_ms_median": 53.639,
-			"rendered_frame_ms_p95": 55.063,
+			"rendered_frame_ms_median": 64.002,
+			"rendered_frame_ms_p95": 66.154,
 			"samples": 120,
-			"shadow_cpu_ms_median": 7.174,
-			"shadow_cpu_ms_p95": 7.446,
+			"shadow_cpu_ms_median": 8.932,
+			"shadow_cpu_ms_p95": 9.296,
 			"view": "farm"
 		}
 	]
