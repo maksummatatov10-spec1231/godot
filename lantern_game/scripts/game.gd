@@ -1,5 +1,5 @@
 extends Node2D
-# gdlint: disable=max-line-length
+# gdlint: disable=max-line-length,max-returns
 ## All map geometry is loaded from the same manifest as the art assembly.
 const Actor = preload("res://scripts/actor.gd")
 const Capture = preload("res://scripts/capture.gd")
@@ -43,9 +43,11 @@ var leaves: Array[Vector3] = []
 var tone_player := AudioStreamPlayer.new()
 var ambience_player := AudioStreamPlayer.new()
 var settings := ConfigFile.new()
+var settings_path := "user://valley-settings.cfg"
 var returning_to := "main"
 var capture_path := ""
 var capture_running := false
+var foundation := preload("res://scripts/foundation.gd").new()
 
 
 func _ready() -> void:
@@ -68,6 +70,7 @@ func _ready() -> void:
 	shadows.process_priority = 10
 	add_child(shadows)
 	var sunshine := ColorRect.new()
+	sunshine.name = "Sunshine"
 	sunshine.size = Vector2(map.size[0], map.size[1])
 	sunshine.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	sunshine.z_index = 80
@@ -91,6 +94,10 @@ func _ready() -> void:
 	for item in map.objects:
 		var sprite := Sprite2D.new()
 		sprite.texture = load("res://assets/world/" + item.art)
+		if item.art == "well.png":
+			sprite.texture = preload("res://assets/world/well-animated.png")
+			sprite.region_enabled = true
+			sprite.region_rect = Rect2(0, 0, 32, 32)
 		# Sort from feet while keeping the image origin exactly on its manifest.
 		sprite.position = Vector2(
 			item.position[0] + item.size[0] / 2.0, item.position[1] + item.sort_y
@@ -100,7 +107,12 @@ func _ready() -> void:
 		var windy: bool = item.sway or item.art == "pot.png"
 		actors.add_child(sprite)
 		shadows.register(
-			sprite, sprite, false, windy, float(item.sort_y), float(item.position[0]) * 0.15
+			sprite,
+			sprite,
+			item.art == "well.png",
+			windy,
+			float(item.sort_y),
+			float(item.position[0]) * 0.15
 		)
 	for item in map.animations:
 		_add_animated(item.kind, Vector2(item.position[0], item.position[1]))
@@ -156,6 +168,8 @@ func _ready() -> void:
 	if ambience_enabled and not capture_running and DisplayServer.get_name() != "headless":
 		ambience_player.play()
 	_build_ui()
+	add_child(foundation)
+	foundation.setup(self)
 	show_menu("main")
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture-dir="):
@@ -190,7 +204,10 @@ func _configure_input() -> void:
 
 
 func _load_settings() -> void:
-	if settings.load("user://valley-settings.cfg") == OK:
+	if capture_running:
+		AudioServer.set_bus_volume_db(0, -6.0)
+		return
+	if settings.load(settings_path) == OK:
 		particles_enabled = settings.get_value("visual", "leaves", true)
 		ambience_enabled = settings.get_value("audio", "ambience", true)
 		AudioServer.set_bus_volume_db(0, settings.get_value("audio", "volume", -6.0))
@@ -199,10 +216,12 @@ func _load_settings() -> void:
 
 
 func _save_settings() -> void:
+	if capture_running:
+		return
 	settings.set_value("visual", "leaves", particles_enabled)
 	settings.set_value("audio", "ambience", ambience_enabled)
 	settings.set_value("audio", "volume", AudioServer.get_bus_volume_db(0))
-	settings.save("user://valley-settings.cfg")
+	settings.save(settings_path)
 
 
 func spawn_actor(at: Vector2, species: String = "", controlled: bool = false) -> CharacterBody2D:
@@ -221,12 +240,14 @@ func spawn_actor(at: Vector2, species: String = "", controlled: bool = false) ->
 func _add_animated(kind: String, at: Vector2) -> void:
 	if kind == "lantern":
 		var beacon_sprite := Sprite2D.new()
-		beacon_sprite.texture = load("res://assets/world/lantern.png")
+		beacon_sprite.texture = preload("res://assets/world/lantern-animated.png")
+		beacon_sprite.region_enabled = true
+		beacon_sprite.region_rect = Rect2(0, 0, 12, 28)
 		beacon_sprite.position = at + Vector2(8, 15)
 		beacon_sprite.offset = Vector2(0, -14)
 		actors.add_child(beacon_sprite)
-		shadows.register(beacon_sprite, beacon_sprite)
-		beacons.append({"position": at + Vector2(8, 15), "lit": false})
+		shadows.register(beacon_sprite, beacon_sprite, true)
+		beacons.append({"position": at + Vector2(8, 15), "lit": false, "sprite": beacon_sprite})
 		return
 	if kind == "seedling" or kind == "flowerbed":
 		var plant := Sprite2D.new()
@@ -360,6 +381,12 @@ func use_ability() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.echo:
 		return
+	if foundation.handle(event):
+		return
+	if mode == "confirm":
+		if event.is_action_pressed("pause") or event.is_action_pressed("cancel"):
+			foundation.cancel_confirm()
+			return
 	if event.is_action_pressed("collision"):
 		debug_collision = not debug_collision
 		get_tree().debug_collisions_hint = debug_collision
@@ -391,7 +418,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if mode != "play":
 		if event.is_action_pressed("interact"):
 			var focused := get_viewport().gui_get_focus_owner()
-			if focused is BaseButton:
+			if focused is OptionButton:
+				focused.show_popup()
+			elif focused is BaseButton:
 				if focused.toggle_mode:
 					focused.button_pressed = not focused.button_pressed
 				focused.pressed.emit()
@@ -458,6 +487,10 @@ func _make_button(text: String, callback: Callable) -> Button:
 	node.add_theme_stylebox_override("hover", _panel_style(Color("3e5140"), Color("c6b779")))
 	node.add_theme_stylebox_override("focus", _panel_style(Color(0, 0, 0, 0), Color("dac68d"), 2))
 	node.add_theme_stylebox_override("pressed", _panel_style(Color("55644a"), Color("f3d695")))
+	for state_name in ["normal", "hover", "focus", "pressed"]:
+		var style: StyleBoxFlat = node.get_theme_stylebox(state_name)
+		style.content_margin_top = 5
+		style.content_margin_bottom = 5
 	node.pressed.connect(callback)
 	return node
 
@@ -506,92 +539,7 @@ func _build_ui() -> void:
 
 
 func show_menu(which: String) -> void:
-	mode = which
-	menu_root.show()
-	for child in menu_root.get_children():
-		menu_root.remove_child(child)
-		child.queue_free()
-	var shade := ColorRect.new()
-	shade.color = Color(0.025, 0.07, 0.075, 0.71)
-	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	menu_root.add_child(shade)
-	var brand := VBoxContainer.new()
-	brand.position = Vector2(40, 80)
-	brand.add_theme_constant_override("separation", 8)
-	menu_root.add_child(brand)
-	brand.add_child(_label("ТИХАЯ ДОЛИНА", 11, Color("d1ba7c")))
-	brand.add_child(_label("ФОНАРЩИК", 32))
-	brand.add_child(_label("У каждой тропы есть память.", 12, Color("b4c5ac")))
-	brand.add_child(_label("", 16))
-	brand.add_child(_label("Исследуй. Слушай. Зажигай огни.", 11, Color("a2b39d")))
-	brand.add_child(
-		_label(
-			"Ninja Adventure · Pixel-boy & AAA\nОригинальная история и карта", 9, Color("8c9e8b")
-		)
-	)
-	var box := VBoxContainer.new()
-	box.position = Vector2(398, 54)
-	box.add_theme_constant_override("separation", 7)
-	menu_root.add_child(box)
-	box.add_child(
-		_label(
-			{
-				"main": "ДОБРО ПОЖАЛОВАТЬ",
-				"pause": "ПРИВАЛ",
-				"settings": "НАСТРОЙКИ",
-				"controls": "УПРАВЛЕНИЕ"
-			}[which],
-			12,
-			Color("d1ba7c")
-		)
-	)
-	box.add_child(HSeparator.new())
-	var first: Control
-	if which == "main" or which == "pause":
-		first = _make_button("Войти в долину" if which == "main" else "Продолжить", resume)
-		box.add_child(first)
-		box.add_child(_make_button("Настройки", _open_submenu.bind("settings", which)))
-		box.add_child(_make_button("Управление", _open_submenu.bind("controls", which)))
-		if which == "pause":
-			box.add_child(_make_button("Главное меню", func(): show_menu("main")))
-		box.add_child(_make_button("Выйти", func(): get_tree().quit()))
-	elif which == "settings":
-		var sound := CheckButton.new()
-		sound.text = "Звуки леса"
-		sound.button_pressed = ambience_enabled
-		sound.add_theme_font_size_override("font_size", 13)
-		sound.toggled.connect(_set_ambience)
-		box.add_child(sound)
-		first = sound
-		box.add_child(_label("Громкость", 11))
-		var volume := HSlider.new()
-		volume.min_value = -40
-		volume.max_value = 0
-		volume.value = AudioServer.get_bus_volume_db(0)
-		volume.custom_minimum_size = Vector2(192, 18)
-		volume.value_changed.connect(_set_volume)
-		box.add_child(volume)
-		var leaves_toggle := CheckButton.new()
-		leaves_toggle.text = "Листья и светлячки"
-		leaves_toggle.add_theme_font_size_override("font_size", 13)
-		leaves_toggle.button_pressed = particles_enabled
-		leaves_toggle.toggled.connect(_set_leaves)
-		box.add_child(leaves_toggle)
-		var full := _make_button("Окно / полный экран", _toggle_fullscreen)
-		box.add_child(full)
-		box.add_child(_make_button("Назад", func(): show_menu(returning_to)))
-	else:
-		var guide := _label(
-			"WASD / стрелки — идти\nShift — бежать\nZ / Enter — взаимодействие\nX / J — взмах оружием\nQ / Tab — сменить предмет\nПробел — свет фонаря\nC / Esc — пауза\nF3 — коллизии\n\nВ диалоге: Z — дальше,\nX — показать строку целиком",
-			11
-		)
-		box.add_child(guide)
-		first = _make_button("Назад", func(): show_menu(returning_to))
-		box.add_child(first)
-	first.grab_focus()
-	var footer := _label("Z / ENTER  выбрать     X  назад", 9, Color("b6b695"))
-	footer.position = Vector2(40, 326)
-	menu_root.add_child(footer)
+	foundation.show_menu(which)
 
 
 func resume() -> void:

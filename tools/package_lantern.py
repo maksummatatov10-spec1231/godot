@@ -27,6 +27,9 @@ def main():
     contact = json.loads((ROOT/'docs/evidence/lantern-contact/result.json').read_text())
     if not contact.get('passed') or contact['game_sha256'] != game_digest():
         raise RuntimeError('Wildlife/contact evidence is missing, failed or stale')
+    foundation = json.loads((ROOT/'docs/evidence/lantern-foundation/result.json').read_text())
+    if not foundation.get('passed') or foundation['game_sha256'] != game_digest():
+        raise RuntimeError('Foundation persistence/day-night/UI evidence is missing, failed or stale')
     output = ROOT/'artifacts/lantern'
     output.mkdir(parents=True,exist_ok=True)
     archive = output/'Lantern-Valley-Godot-Project.zip'
@@ -38,17 +41,20 @@ def main():
         bundle.writestr('LanternValley/BEAUTY_VALIDATION.json',json.dumps(beauty,indent=2)+'\n')
         bundle.writestr('LanternValley/MOTION_VALIDATION.json',json.dumps(motion,indent=2)+'\n')
         bundle.writestr('LanternValley/PERFORMANCE_VALIDATION.json',json.dumps(performance,indent=2)+'\n')
+        bundle.writestr('LanternValley/FOUNDATION_VALIDATION.json',json.dumps(foundation,indent=2)+'\n')
         bundle.writestr('LanternValley/CONTACT_VALIDATION.json',json.dumps(contact,indent=2)+'\n')
         bundle.writestr('LanternValley/VALIDATION.json',json.dumps(evidence,indent=2)+'\n')
     sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     archive.with_suffix('.zip.sha256').write_text(f'{sha}  {archive.name}\n')
-    pictures = output/'Lantern-Valley-0.1.6-Screenshots.zip'
+    pictures = output/'Lantern-Valley-0.2.0-Screenshots.zip'
     with zipfile.ZipFile(pictures,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as bundle:
         for name in ['01-village-player-shadows','02-forest-player-leaves',
                      '03-farm-player-shadows','04-received-shadow','05-wildlife-player-shadows']:
             bundle.write(ROOT/'docs/evidence/lantern-beauty'/(name+'.png'),name+'.png')
         for name in ['wildlife-direction-3','tree-contact-fractional']:
             bundle.write(ROOT/'docs/evidence/lantern-contact'/(name+'.png'),name+'.png')
+        for name in ['01-first-menu', '02-story-3', '03-village-night', '06-pause-save', '07-settings']:
+            bundle.write(ROOT/'docs/evidence/lantern-foundation'/(name+'.png'),name+'.png')
     print('LANTERN_PACKAGE_OK',archive,archive.stat().st_size,sha)
     print('LANTERN_SCREENSHOTS_OK',pictures)
 

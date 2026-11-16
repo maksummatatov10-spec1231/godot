@@ -10,7 +10,8 @@ func _initialize() -> void:
 		"lantern_beauty.gd",
 		"lantern_benchmark.gd",
 		"lantern_locality.gd",
-		"lantern_contact.gd"
+		"lantern_contact.gd",
+		"lantern_foundation.gd"
 	]:
 		var script: Script = load(directory.path_join(driver))
 		if script == null or not script.can_instantiate():

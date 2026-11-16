@@ -57,8 +57,22 @@ func _draw() -> void:
 			if not view.has_point(p):
 				continue
 			var alpha := (sin(t * 1.2 + fly.z) + 1.0) * 0.23
+			alpha *= world.foundation.clock.darkness()
 			draw_circle(p, 4, Color(1, 0.94, 0.5, alpha * 0.1))
 			draw_circle(p, 1, Color(1, 0.95, 0.6, alpha))
+	# Broken lunar reflection stays on the lake, not on the village or UI.
+	var moonlight: float = world.foundation.clock.darkness()
+	if moonlight > 0.05 and view.intersects(Rect2(1190, 530, 80, 130)):
+		for i in range(20):
+			var yy := 540.0 + i * 5.0
+			var xx := 1230.0 + sin(t * 0.6 + i * 1.9) * 8.0
+			var width := 2.0 + sin(i * 1.3) * 2.0 + float(i) * 0.28
+			draw_line(
+				Vector2(xx - width, yy),
+				Vector2(xx + width, yy),
+				Color(0.69, 0.83, 0.92, moonlight * 0.24),
+				1.0
+			)
 	# Water highlights are subtle and deterministic; ripples use the actual pack animation.
 	if world.pulse >= 0.0:
 		var radius: float = world.pulse * 115.0

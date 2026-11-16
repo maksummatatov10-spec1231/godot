@@ -14,5 +14,6 @@
   ],
   "license": "CC0-1.0",
   "author": "Lantern Valley contributors",
+  "revision": "foundation-2",
   "source": "tools/build_lantern_wildlife.py"
 }

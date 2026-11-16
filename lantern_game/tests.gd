@@ -41,6 +41,7 @@ func walk(from: Vector2, direction: String, frames: int) -> Vector2:
 
 func run() -> void:
 	game = load("res://main.tscn").instantiate()
+	game.capture_running = true
 	root.add_child(game)
 	await frame(3)
 	check(game.mode == "main", "Main menu opens before movement")
@@ -52,7 +53,10 @@ func run() -> void:
 	check_alpha_contacts()
 	action("interact")
 	await frame(2)
-	check(game.mode == "play", "Z activates focused main-menu button")
+	check(game.mode == "intro", "Z starts first-run prologue")
+	game.foundation.complete_intro()
+	await frame(2)
+	check(game.mode == "play", "Completing prologue starts play")
 	check(
 		game.body.get_child_count() == game.map.solids.size(),
 		"All manifest solids are physical shapes"

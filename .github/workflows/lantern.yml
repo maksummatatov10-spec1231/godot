@@ -10,6 +10,7 @@ on:
       - tools/lantern_benchmark.gd
       - tools/lantern_locality.gd
       - tools/lantern_contact.gd
+      - tools/lantern_foundation.gd
       - tools/validate_lantern_drivers.gd
       - tests/test_lantern_assets.py
       - tests/test_lantern_performance.py
@@ -88,8 +89,8 @@ jobs:
       - name: Asset and syntax regressions
         run: |
           python -m unittest discover -s tests -q
-          gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd
-          gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd
+          gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd lantern_game/foundation_tests.gd tools/lantern_foundation.gd
+          gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd lantern_game/foundation_tests.gd tools/lantern_foundation.gd
       - name: Actual physics, menus and rendered collision screenshots
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
@@ -110,6 +111,10 @@ jobs:
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
         run: python tools/capture_lantern_contact.py
+      - name: Foundation persistence, story, day-night and local light A-B
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: python tools/capture_lantern_foundation.py
       - name: Same-scene CPU/render benchmarks and full-world culling reference
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
@@ -119,7 +124,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact lantern_game
+          git add docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact docs/evidence/lantern-foundation lantern_game
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Record 2D village physics and full-map close-up evidence [skip ci]'
           git fetch origin arena/449f84de-godot
@@ -132,13 +137,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create lantern-valley-v0.1.6 artifacts/lantern/Lantern-Valley-0.1.6-Screenshots.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png docs/evidence/lantern-motion/sunlight-wind-wildlife.gif docs/evidence/lantern-beauty/01-village-player-shadows.png docs/evidence/lantern-beauty/02-forest-player-leaves.png docs/evidence/lantern-beauty/04-received-shadow.png docs/evidence/lantern-beauty/05-wildlife-player-shadows.png docs/evidence/lantern-contact/wildlife-direction-3.png docs/evidence/lantern-contact/wildlife-walk.gif --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.1.6' --notes-file lantern_game/README.md --prerelease
+          gh release create lantern-valley-v0.2.0 artifacts/lantern/Lantern-Valley-0.2.0-Screenshots.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png docs/evidence/lantern-motion/sunlight-wind-wildlife.gif docs/evidence/lantern-beauty/01-village-player-shadows.png docs/evidence/lantern-beauty/02-forest-player-leaves.png docs/evidence/lantern-beauty/04-received-shadow.png docs/evidence/lantern-beauty/05-wildlife-player-shadows.png docs/evidence/lantern-contact/wildlife-direction-3.png docs/evidence/lantern-contact/wildlife-walk.gif docs/evidence/lantern-foundation/day-night.gif docs/evidence/lantern-foundation/03-village-night.png docs/evidence/lantern-foundation/01-first-menu.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.2.0' --notes-file lantern_game/README.md --prerelease
       - name: Preserve failure diagnostics on this branch
         if: failure() && github.event_name == 'workflow_dispatch'
         run: |
           folder="docs/evidence/lantern-ci-failure/${{ github.run_id }}"
           mkdir -p "$folder"
-          for source in docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact; do
+          for source in docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact docs/evidence/lantern-foundation; do
             label=$(echo "$source" | tr / _)
             mkdir -p "$folder/$label"
             cp "$source"/*.log "$source"/result.json "$folder/$label/" || true
@@ -162,4 +167,5 @@ jobs:
             docs/evidence/lantern-beauty/
             docs/evidence/lantern-performance/
             docs/evidence/lantern-contact/
+            docs/evidence/lantern-foundation/
             artifacts/lantern/
