@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "game_sha256": "1713942228c4ebe848188343a7566dcdf8468d17a285d58bc8adb955a9b5a49d",
+  "real_render": true,
+  "physical_gpu_benchmark": false,
+  "math": {
+    "checks": 70319,
+    "failed": []
+  },
+  "images": 16,
+  "contrast_mean_rgb": {
+    "orbit-0000": 0.1806759982638889,
+    "orbit-1200": 3.0752882667824077
+  },
+  "night_to_day_contrast": 0.058750914577814645,
+  "clock_pose_rebuilds": 0,
+  "clock_mesh_rebuilds": 0
+}

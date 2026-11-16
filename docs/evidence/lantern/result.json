@@ -1,7 +1,7 @@
 {
-  "timestamp_utc": "2026-11-16T19:13:39.700803+00:00",
-  "source_commit": "1a308660e3c02f0aefe7753cc40f919724706ea4",
-  "game_sha256": "b993477eccaabbdb29c7e01000b2e61071977399ad5d718d26b6139ea7f955e4",
+  "timestamp_utc": "2026-11-16T19:46:11.975919+00:00",
+  "source_commit": "63824f3e082138192724426829c26fd50017570d",
+  "game_sha256": "1713942228c4ebe848188343a7566dcdf8468d17a285d58bc8adb955a9b5a49d",
   "passed": true,
   "incomplete": false,
   "steps": [
@@ -29,9 +29,9 @@
       "name": "image-validation",
       "passed": true,
       "overlay_mean_difference": {
-        "02-village": 1.6108156105324074,
-        "05-lake": 7.267890263310186,
-        "05-farm": 1.9492675781250002
+        "02-village": 1.6119560185185187,
+        "05-lake": 7.16336009837963,
+        "05-farm": 1.9272771990740738
       }
     }
   ],
