@@ -28,6 +28,14 @@ on:
         description: Record screenshots and physics evidence on the current branch
         type: boolean
         default: false
+      apps_run:
+        description: Reuse matching nine-gate evidence from this run ID when only build tooling changed
+        type: string
+        default: ''
+      diagnose_only:
+        description: Recover prior application logs without building
+        type: boolean
+        default: false
       release_run:
         description: Publish all assets from an already successful validation run ID (leave empty to validate/build)
         type: string
@@ -63,7 +71,7 @@ jobs:
           git rebase --autostash origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
   village:
-    if: (github.event_name == 'push' || inputs.validate) && !inputs.release_run && github.ref_name == 'arena/449f84de-godot'
+    if: (github.event_name == 'push' || inputs.validate) && !inputs.release_run && !inputs.apps_run && github.ref_name == 'arena/449f84de-godot'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     outputs:
@@ -186,13 +194,14 @@ jobs:
             docs/evidence/lantern-platforms/
             artifacts/lantern/
   applications:
-    needs: village
+    needs: [village, reuse]
+    if: always() && !inputs.diagnose_only && (needs.village.result == 'success' || needs.reuse.result == 'success')
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.village.outputs.sha }}
+          ref: ${{ needs.village.outputs.sha || needs.reuse.outputs.sha }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -208,7 +217,7 @@ jobs:
       - name: Official verified engine/templates and Android toolchain
         env:
           GH_TOKEN: ${{ github.token }}
-        run: bash tools/install_lantern_exports.sh
+        run: bash tools/install_lantern_exports.sh > docs/evidence/lantern-platforms/toolchain.log 2>&1
       - name: Cache preview-only Android signing identity (never a production key)
         uses: actions/cache@v4
         with:
@@ -240,11 +249,12 @@ jobs:
       - name: Release-mode PC/Android exports, APK signature, manifest and ABI validation
         run: python tools/build_lantern_apps.py
       - name: Record binary validation on the same branch
-        if: github.event_name == 'workflow_dispatch'
+        if: always() && github.event_name == 'workflow_dispatch'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs/evidence/lantern-platforms
+          if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Record PC and Android release-mode export validation [skip ci]'
           git fetch origin arena/449f84de-godot
           git rebase --autostash origin/arena/449f84de-godot
@@ -257,13 +267,14 @@ jobs:
             artifacts/lantern/
             docs/evidence/lantern-platforms/
   android-smoke:
-    needs: [village, applications]
+    needs: [village, reuse, applications]
+    if: always() && needs.applications.result == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.village.outputs.sha }}
+          ref: ${{ needs.village.outputs.sha || needs.reuse.outputs.sha }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -335,3 +346,49 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VALIDATION_RUN: ${{ inputs.release_run }}
         run: python tools/publish_lantern.py
+
+  reuse:
+    if: github.event_name == 'workflow_dispatch' && inputs.apps_run != '' && inputs.release_run == '' && github.ref_name == 'arena/449f84de-godot'
+    runs-on: ubuntu-24.04
+    outputs:
+      sha: ${{ steps.revision.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/449f84de-godot
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install Pillow==13.0.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: lantern-village-evidence-and-project
+          run-id: ${{ inputs.apps_run }}
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: lantern-app-candidates
+          run-id: ${{ inputs.apps_run }}
+          github-token: ${{ github.token }}
+      - name: Require every render/gameplay report to match the unchanged game
+        run: python tools/package_lantern.py
+      - name: Record recovered build diagnostics on the same branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/evidence/lantern-platforms
+          if ! git diff --cached --quiet; then
+            git commit -m 'Recover verified source build diagnostics [skip ci]'
+            git fetch origin arena/449f84de-godot
+            git rebase --autostash origin/arena/449f84de-godot
+            git push origin HEAD:arena/449f84de-godot
+          fi
+      - id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lantern-village-evidence-and-project
+          path: |
+            docs/evidence/
+            artifacts/lantern/
