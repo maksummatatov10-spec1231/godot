@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "game_sha256": "816e7a273bac037a96658ffc8167cf0b37a40ca87153a7c6bc5c2a45765898f8",
+  "real_render": true,
+  "physical_gpu_benchmark": false,
+  "images": 22,
+  "ui_overflows": [],
+  "levels": {
+    "noon": 123.39008572048611,
+    "night": 48.08645797164352,
+    "sunrise": 76.93781937210649,
+    "evening": 89.74726779513888,
+    "predawn": 54.62131655092593
+  },
+  "night_lighting_changed_pixels_over_12": 138637,
+  "restart_processes": 2,
+  "slot": "isolated validation directories only"
+}
