@@ -1,11 +1,11 @@
 {
   "passed": true,
   "baseline_commit": "15892813fe0437e4739049159ec854c2cd322b4a",
-  "game_sha256": "c58b8cdf5ef0be25a8c45d917c2a020d49b877d479939a9ad65af2a8aac04b21",
+  "game_sha256": "4be764190f8483e54d9734f2874562096e7d12534bee5e6ae1f4700f3912a995",
   "physical_gpu_benchmark": false,
-  "cpu_only": true,
+  "cpu_only": false,
   "method": "20 warm-ups + 120 samples/view; identical scene/camera/player animation",
-  "renderer": "headless CPU only",
+  "renderer": "Compatibility / Mesa software",
   "before-cpu": {
     "physical_gpu_benchmark": false,
     "rendered": false,
@@ -15,8 +15,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 10.092,
-        "shadow_cpu_ms_p95": 13.477,
+        "shadow_cpu_ms_median": 8.223,
+        "shadow_cpu_ms_p95": 8.681,
         "view": "village"
       },
       {
@@ -24,8 +24,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 9.945,
-        "shadow_cpu_ms_p95": 12.672,
+        "shadow_cpu_ms_median": 8.146,
+        "shadow_cpu_ms_p95": 8.732,
         "view": "forest"
       },
       {
@@ -33,8 +33,41 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 9.875,
-        "shadow_cpu_ms_p95": 17.044,
+        "shadow_cpu_ms_median": 8.115,
+        "shadow_cpu_ms_p95": 8.863,
+        "view": "farm"
+      }
+    ]
+  },
+  "before-rendered": {
+    "physical_gpu_benchmark": false,
+    "rendered": true,
+    "views": [
+      {
+        "draw_calls_median": 2288.0,
+        "rendered_frame_ms_median": 64.06,
+        "rendered_frame_ms_p95": 66.102,
+        "samples": 120,
+        "shadow_cpu_ms_median": 9.502,
+        "shadow_cpu_ms_p95": 10.09,
+        "view": "village"
+      },
+      {
+        "draw_calls_median": 2282.0,
+        "rendered_frame_ms_median": 65.149,
+        "rendered_frame_ms_p95": 67.644,
+        "samples": 120,
+        "shadow_cpu_ms_median": 9.393,
+        "shadow_cpu_ms_p95": 9.8,
+        "view": "forest"
+      },
+      {
+        "draw_calls_median": 2442.0,
+        "rendered_frame_ms_median": 65.416,
+        "rendered_frame_ms_p95": 68.07,
+        "samples": 120,
+        "shadow_cpu_ms_median": 9.347,
+        "shadow_cpu_ms_p95": 9.849,
         "view": "farm"
       }
     ]
@@ -48,8 +81,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 0.629,
-        "shadow_cpu_ms_p95": 0.898,
+        "shadow_cpu_ms_median": 0.627,
+        "shadow_cpu_ms_p95": 0.899,
         "shadow_work": {
           "active_moving_casters": 6,
           "active_static_casters": 156,
@@ -74,8 +107,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 0.706,
-        "shadow_cpu_ms_p95": 0.994,
+        "shadow_cpu_ms_median": 0.7,
+        "shadow_cpu_ms_p95": 0.972,
         "shadow_work": {
           "active_moving_casters": 13,
           "active_static_casters": 150,
@@ -101,7 +134,7 @@
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
         "shadow_cpu_ms_median": 0.595,
-        "shadow_cpu_ms_p95": 0.887,
+        "shadow_cpu_ms_p95": 0.867,
         "shadow_work": {
           "active_moving_casters": 11,
           "active_static_casters": 153,
@@ -123,9 +156,101 @@
       }
     ]
   },
+  "after-rendered": {
+    "physical_gpu_benchmark": false,
+    "rendered": true,
+    "views": [
+      {
+        "draw_calls_median": 128.0,
+        "rendered_frame_ms_median": 26.244,
+        "rendered_frame_ms_p95": 27.683,
+        "samples": 120,
+        "shadow_cpu_ms_median": 1.008,
+        "shadow_cpu_ms_p95": 1.335,
+        "shadow_work": {
+          "active_moving_casters": 6,
+          "active_static_casters": 156,
+          "active_static_tiles": 14,
+          "cached_static_tiles": 19,
+          "depth_pixels": 786432,
+          "depth_size": [
+            768,
+            512
+          ],
+          "moving_mesh_rebuilds": 143,
+          "pose_templates_built": 276,
+          "registered_casters": 561,
+          "shared_ground_materials": 7,
+          "shared_receiver_materials": 8,
+          "visible_leaf_emitters": 55
+        },
+        "view": "village"
+      },
+      {
+        "draw_calls_median": 340.0,
+        "rendered_frame_ms_median": 28.715,
+        "rendered_frame_ms_p95": 29.826,
+        "samples": 120,
+        "shadow_cpu_ms_median": 1.079,
+        "shadow_cpu_ms_p95": 1.404,
+        "shadow_work": {
+          "active_moving_casters": 13,
+          "active_static_casters": 150,
+          "active_static_tiles": 16,
+          "cached_static_tiles": 29,
+          "depth_pixels": 800768,
+          "depth_size": [
+            736,
+            544
+          ],
+          "moving_mesh_rebuilds": 283,
+          "pose_templates_built": 408,
+          "registered_casters": 561,
+          "shared_ground_materials": 7,
+          "shared_receiver_materials": 8,
+          "visible_leaf_emitters": 160
+        },
+        "view": "forest"
+      },
+      {
+        "draw_calls_median": 237.0,
+        "rendered_frame_ms_median": 25.655,
+        "rendered_frame_ms_p95": 26.431,
+        "samples": 120,
+        "shadow_cpu_ms_median": 0.966,
+        "shadow_cpu_ms_p95": 1.31,
+        "shadow_work": {
+          "active_moving_casters": 11,
+          "active_static_casters": 153,
+          "active_static_tiles": 15,
+          "cached_static_tiles": 36,
+          "depth_pixels": 753664,
+          "depth_size": [
+            736,
+            512
+          ],
+          "moving_mesh_rebuilds": 423,
+          "pose_templates_built": 460,
+          "registered_casters": 561,
+          "shared_ground_materials": 7,
+          "shared_receiver_materials": 8,
+          "visible_leaf_emitters": 91
+        },
+        "view": "farm"
+      }
+    ]
+  },
   "shadow_cpu_speedup": {
-    "village": 16.04,
-    "forest": 14.09,
-    "farm": 16.6
+    "village": 13.11,
+    "forest": 11.64,
+    "farm": 13.64
+  },
+  "local_vs_full_world_changed_pixels_over_12": {
+    "village": 0,
+    "forest-edge": 0,
+    "farm": 0,
+    "facade": 0,
+    "crop-boundary-left": 0,
+    "crop-boundary-right": 0
   }
 }

@@ -1,0 +1,33 @@
+{
+	"physical_gpu_benchmark": false,
+	"rendered": true,
+	"views": [
+		{
+			"draw_calls_median": 2288.0,
+			"rendered_frame_ms_median": 64.06,
+			"rendered_frame_ms_p95": 66.102,
+			"samples": 120,
+			"shadow_cpu_ms_median": 9.502,
+			"shadow_cpu_ms_p95": 10.09,
+			"view": "village"
+		},
+		{
+			"draw_calls_median": 2282.0,
+			"rendered_frame_ms_median": 65.149,
+			"rendered_frame_ms_p95": 67.644,
+			"samples": 120,
+			"shadow_cpu_ms_median": 9.393,
+			"shadow_cpu_ms_p95": 9.8,
+			"view": "forest"
+		},
+		{
+			"draw_calls_median": 2442.0,
+			"rendered_frame_ms_median": 65.416,
+			"rendered_frame_ms_p95": 68.07,
+			"samples": 120,
+			"shadow_cpu_ms_median": 9.347,
+			"shadow_cpu_ms_p95": 9.849,
+			"view": "farm"
+		}
+	]
+}

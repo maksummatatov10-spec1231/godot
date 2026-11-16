@@ -1,6 +1,6 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 
-BENCH {"draw_calls_median":0.0,"rendered_frame_ms_median":0.0,"rendered_frame_ms_p95":0.0,"samples":120,"shadow_cpu_ms_median":10.092,"shadow_cpu_ms_p95":13.477,"view":"village"}
-BENCH {"draw_calls_median":0.0,"rendered_frame_ms_median":0.0,"rendered_frame_ms_p95":0.0,"samples":120,"shadow_cpu_ms_median":9.945,"shadow_cpu_ms_p95":12.672,"view":"forest"}
-BENCH {"draw_calls_median":0.0,"rendered_frame_ms_median":0.0,"rendered_frame_ms_p95":0.0,"samples":120,"shadow_cpu_ms_median":9.875,"shadow_cpu_ms_p95":17.044,"view":"farm"}
+BENCH {"draw_calls_median":0.0,"rendered_frame_ms_median":0.0,"rendered_frame_ms_p95":0.0,"samples":120,"shadow_cpu_ms_median":8.223,"shadow_cpu_ms_p95":8.681,"view":"village"}
+BENCH {"draw_calls_median":0.0,"rendered_frame_ms_median":0.0,"rendered_frame_ms_p95":0.0,"samples":120,"shadow_cpu_ms_median":8.146,"shadow_cpu_ms_p95":8.732,"view":"forest"}
+BENCH {"draw_calls_median":0.0,"rendered_frame_ms_median":0.0,"rendered_frame_ms_p95":0.0,"samples":120,"shadow_cpu_ms_median":8.115,"shadow_cpu_ms_p95":8.863,"view":"farm"}
 LANTERN_BENCH_OK
