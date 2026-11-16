@@ -95,6 +95,7 @@ func run() -> void:
 	check(game.mode == "intro", "Cancel skip returns to story")
 	foundation.complete_intro()
 	check(game.mode == "play" and foundation.store.exists(), "Story completion starts and saves")
+	check(is_equal_approx(foundation.clock.hour, Clock.START_HOUR), "New journey starts at 06:15")
 	game.hero.equipped = 3
 	game.hero.facing = 2
 	foundation.clock.day = 4

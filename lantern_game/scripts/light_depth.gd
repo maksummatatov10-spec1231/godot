@@ -27,6 +27,7 @@ var light_rect := Rect2()
 var selected_moving: Array[Dictionary] = []
 var last_signature: Array = []
 var last_time := -1.0
+var last_slope := Vector2(INF, INF)
 var mesh_rebuilds := 0
 var pose_builds := 0
 var active_static_count := 0
@@ -126,14 +127,34 @@ func projected_bounds(entry: Dictionary) -> Rect2:
 	return result.grow(3.0)  # Wind can move a silhouette across a tile edge.
 
 
+## Conservative sun-independent envelope: build/index a static object only once.
+func swept_bounds(entry: Dictionary) -> Rect2:
+	var source: Sprite2D = entry.source
+	var bounds := source.get_rect()
+	var foot: Vector2 = world.shadows.contact_foot(entry)
+	var result := Rect2(foot, Vector2.ZERO)
+	for point in [
+		bounds.position,
+		bounds.end,
+		Vector2(bounds.end.x, bounds.position.y),
+		Vector2(bounds.position.x, bounds.end.y)
+	]:
+		var pixel: Vector2 = source.global_transform * point
+		var radius := absf(foot.y - pixel.y) * 2.2
+		result = result.expand(Vector2(pixel.x - radius, foot.y - radius))
+		result = result.expand(Vector2(pixel.x + radius, foot.y + radius))
+	return result.grow(3.0)
+
+
 func crop_for_screen(screen: Rect2) -> Rect2:
-	# q lies down-right of a raised receiver; include offscreen blockers whose
-	# projected silhouette can reach these q values. No whole-world guard band.
+	# Receiver rays can extend in ANY direction. Follow the current continuous
+	# slope; quantise only the render-target crop, never the actual light angle.
+	var ray: Vector2 = world.shadows.slope + Vector2(0, 1)
 	var expanded := screen.grow(8.0)
-	expanded = expanded.expand(expanded.end + Vector2(0.85, 1.48) * RECEIVER_HEIGHT)
+	expanded = expanded.merge(Rect2(screen.position + ray * RECEIVER_HEIGHT, screen.size).grow(8))
 	var first := (expanded.position / CROP_STEP).floor() * CROP_STEP
 	var last := (expanded.end / CROP_STEP).ceil() * CROP_STEP
-	return Rect2(first, last - first).intersection(Rect2(-128, -128, 1792, 1408))
+	return Rect2(first, last - first).intersection(Rect2(-256, -256, 2048, 1664))
 
 
 func _index_static(entries: Array[Dictionary]) -> void:
@@ -141,7 +162,7 @@ func _index_static(entries: Array[Dictionary]) -> void:
 	for entry in entries:
 		if entry.follows:
 			continue
-		entry.light_bounds = projected_bounds(entry)
+		entry.light_bounds = swept_bounds(entry)
 		var bounds: Rect2 = entry.light_bounds
 		for y in range(int(floor(bounds.position.y / TILE)), int(floor(bounds.end.y / TILE)) + 1):
 			for x in range(
@@ -237,13 +258,15 @@ func update(entries: Array[Dictionary], elapsed: float) -> void:
 		moving_mesh.mesh = _build_cached_mesh(selected_moving)
 		last_signature = signature
 		mesh_rebuilds += 1
-	var time_changed := elapsed != last_time
+	var slope_changed: bool = world.shadows.slope != last_slope
+	var time_changed: bool = elapsed != last_time or slope_changed
+	last_slope = world.shadows.slope
 	static_view.render_target_update_mode = (
 		SubViewport.UPDATE_ONCE if crop_changed or time_changed else SubViewport.UPDATE_DISABLED
 	)
 	moving_view.render_target_update_mode = (
 		SubViewport.UPDATE_ONCE
-		if moving_changed or crop_changed or (time_changed and moving_wind)
+		if moving_changed or crop_changed or slope_changed or (time_changed and moving_wind)
 		else SubViewport.UPDATE_DISABLED
 	)
 	last_time = elapsed
@@ -298,7 +321,7 @@ func _entry_rows(entry: Dictionary) -> Array:
 				if entry.windy
 				else 0.0
 			)
-			vertices.append(project_pixel(pixel, 0.0))
+			vertices.append(pixel + Vector2(0.85, 1.48) * (-pixel.y))
 			var uv := Vector2(
 				local.x - bounds.position.x, float(row) + (1.0 if index >= 2 else 0.0)
 			)
@@ -309,7 +332,7 @@ func _entry_rows(entry: Dictionary) -> Array:
 			uvs.append((image_rect.position + frame.position + uv) / Vector2(2048, 2048))
 			colors.append(
 				Color(
-					clampf(height / HEIGHT_RANGE, 0, 1),
+					(height + 32.0) / HEIGHT_RANGE,
 					fposmod(entry.phase, TAU) / TAU,
 					fposmod(entry.phase * 0.7, TAU) / TAU,
 					weight
@@ -357,11 +380,18 @@ func _build_cached_mesh(entries: Array) -> ArrayMesh:
 	arrays[Mesh.ARRAY_TEX_UV] = uvs
 	arrays[Mesh.ARRAY_COLOR] = colors
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+	var bounds := Rect2(vertices[0], Vector2.ZERO)
+	for vertex in vertices:
+		bounds = bounds.expand(vertex)
+	bounds = bounds.grow(256)
+	mesh.custom_aabb = AABB(
+		Vector3(bounds.position.x, bounds.position.y, -1), Vector3(bounds.size.x, bounds.size.y, 2)
+	)
 	return mesh
 
 
 func project_pixel(pixel: Vector2, feet_y: float) -> Vector2:
-	return pixel + Vector2(0.85, 1.48) * (feet_y - pixel.y)
+	return pixel + (world.shadows.slope + Vector2(0, 1)) * (feet_y - pixel.y)
 
 
 func release_render_targets() -> void:

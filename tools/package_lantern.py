@@ -30,6 +30,9 @@ def main():
     foundation = json.loads((ROOT/'docs/evidence/lantern-foundation/result.json').read_text())
     if not foundation.get('passed') or foundation['game_sha256'] != game_digest():
         raise RuntimeError('Foundation persistence/day-night/UI evidence is missing, failed or stale')
+    celestial = json.loads((ROOT/'docs/evidence/lantern-celestial/result.json').read_text())
+    if not celestial.get('passed') or celestial['game_sha256'] != game_digest():
+        raise RuntimeError('Celestial continuity/night contrast evidence is missing, failed or stale')
     output = ROOT/'artifacts/lantern'
     output.mkdir(parents=True,exist_ok=True)
     archive = output/'Lantern-Valley-Godot-Project.zip'
@@ -42,11 +45,12 @@ def main():
         bundle.writestr('LanternValley/MOTION_VALIDATION.json',json.dumps(motion,indent=2)+'\n')
         bundle.writestr('LanternValley/PERFORMANCE_VALIDATION.json',json.dumps(performance,indent=2)+'\n')
         bundle.writestr('LanternValley/FOUNDATION_VALIDATION.json',json.dumps(foundation,indent=2)+'\n')
+        bundle.writestr('LanternValley/CELESTIAL_VALIDATION.json',json.dumps(celestial,indent=2)+'\n')
         bundle.writestr('LanternValley/CONTACT_VALIDATION.json',json.dumps(contact,indent=2)+'\n')
         bundle.writestr('LanternValley/VALIDATION.json',json.dumps(evidence,indent=2)+'\n')
     sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     archive.with_suffix('.zip.sha256').write_text(f'{sha}  {archive.name}\n')
-    pictures = output/'Lantern-Valley-0.2.1-Screenshots.zip'
+    pictures = output/'Lantern-Valley-0.3.0-Screenshots.zip'
     with zipfile.ZipFile(pictures,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as bundle:
         for name in ['01-village-player-shadows','02-forest-player-leaves',
                      '03-farm-player-shadows','04-received-shadow','05-wildlife-player-shadows']:

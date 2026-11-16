@@ -51,3 +51,10 @@ original. No Undertale story, sprites, soundtrack or fonts were copied.
 Implementation references: Godot documentation (data paths, saving games, 2D
 lighting), Pixelbook/Pixnote pixel-animation guides; research and specific
 engineering decisions are recorded in `docs/evidence/lantern-foundation/AUDIT.md`.
+
+## Celestial update 0.3.0
+
+`assets/story/01-arrival.png`, `02-bell.png`, `03-letter.png`, `04-first-light.png`
+are AI-generated illustrations. The first used valley-memory as reference; all
+subsequent scenes referenced 01-arrival to retain the same hooded protagonist.
+Celestial motion is an original analytic stylisation, not real-world ephemerides.

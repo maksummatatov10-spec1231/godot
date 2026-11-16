@@ -3,6 +3,9 @@ extends Node2D
 ## Project the actual current texture/region, not a generic oval or baked blob.
 const INK = preload("res://scripts/cast_shadow.gdshader")
 const PROJECTION = Transform2D(Vector2(1, 0), Vector2(-0.85, -0.48), Vector2.ZERO)
+var slope := Vector2(0.85, 0.48)
+var opacity := 0.38
+var softness := 0.0
 var world: Node2D
 var casters: Array[Dictionary] = []
 var moving: Array[Dictionary] = []
@@ -32,6 +35,9 @@ func register(
 ) -> Sprite2D:
 	var silhouette := Sprite2D.new()
 	add_child(silhouette)
+	RenderingServer.canvas_item_set_custom_rect(
+		silhouette.get_canvas_item(), true, source.get_rect().grow(512)
+	)
 	var entry := {
 		"source": source,
 		"foot": foot,
@@ -76,6 +82,13 @@ func sync(entry: Dictionary) -> void:
 
 
 func _process(_delta: float) -> void:
+	var light: Dictionary = world.foundation.clock.celestial()
+	slope = light.slope
+	opacity = light.opacity
+	softness = light.softness
+	RenderingServer.global_shader_parameter_set(
+		"shadow_light", Vector4(slope.x, slope.y, opacity, softness)
+	)
 	var view: Rect2 = world.world_view_rect()
 	var first := (view.position / 32.0).floor() * 32.0
 	var requested := Rect2(first, ((view.end - first) / 32.0).ceil() * 32.0).grow(32.0)
@@ -85,7 +98,7 @@ func _process(_delta: float) -> void:
 		for entry in casters:
 			if entry.follows:
 				continue
-			entry.light_bounds = light_depth.projected_bounds(entry)
+			entry.light_bounds = light_depth.swept_bounds(entry)
 			entry.shadow.visible = entry.light_bounds.intersects(visibility_rect)
 		visible_leaves.clear()
 		visible_fireflies.clear()
@@ -99,7 +112,7 @@ func _process(_delta: float) -> void:
 	for entry in moving:
 		if is_instance_valid(entry.source):
 			refresh_contact(entry)
-			entry.light_bounds = light_depth.projected_bounds(entry)
+			entry.light_bounds = light_depth.swept_bounds(entry)
 			if entry.light_bounds.intersects(visibility_rect):
 				sync(entry)
 			else:
@@ -141,13 +154,13 @@ func _draw() -> void:
 		return
 	for leaf in visible_leaves:
 		var sample: Vector3 = world.leaf_sample(leaf)
-		var p := Vector2(sample.x, sample.y) + Vector2(0.85, 0.48) * sample.z
+		var p := Vector2(sample.x, sample.y) + slope * sample.z
 		if not visibility_rect.has_point(p):
 			continue
 		var phase := fposmod(world.elapsed + leaf.z, 12.0) / 12.0
 		var alpha := smoothstep(0.0, 0.08, phase) * (1.0 - smoothstep(0.82, 1.0, phase))
 		draw_set_transform(p, 0.0, Vector2(1, 0.45))
-		draw_circle(Vector2.ZERO, 1.5, Color(0.075, 0.12, 0.18, alpha * 0.19))
+		draw_circle(Vector2.ZERO, 1.5, Color(0.075, 0.12, 0.18, alpha * 0.19 * opacity / 0.38))
 	draw_set_transform(Vector2.ZERO)
 
 

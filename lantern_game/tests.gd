@@ -407,15 +407,15 @@ func check_shadow_receivers() -> void:
 	var top := foot - Vector2(0, 30)
 	var projected: Vector2 = depth.project_pixel(top, foot.y)
 	check(
-		projected.is_equal_approx(Vector2(125.5, 114.4)),
-		"Billboard top projects down-right in shared light space"
+		projected.is_equal_approx(foot + game.shadows.slope * 30.0),
+		"Billboard top follows current celestial slope in shared light space"
 	)
 	check(
 		depth.project_pixel(foot, foot.y) == foot, "Feet remain attached to ground in light space"
 	)
 	# Two elevations on the SAME sunlight ray share q, allowing a depth comparison.
 	var receiver_height := 10.0
-	var receiver_pixel := projected - Vector2(0.85, 1.48) * receiver_height
+	var receiver_pixel: Vector2 = projected - (game.shadows.slope + Vector2(0, 1)) * receiver_height
 	check(
 		depth.project_pixel(receiver_pixel, receiver_pixel.y + receiver_height).is_equal_approx(
 			projected
@@ -465,7 +465,7 @@ func check_local_shadows() -> void:
 	# Local light crop must include the ray of any visible elevated receiver.
 	for point in [screen.position, screen.end, screen.get_center()]:
 		for height in [0.0, 32.0, 72.0, 80.0]:
-			var q: Vector2 = point + Vector2(0.85, 1.48) * height
+			var q: Vector2 = point + (game.shadows.slope + Vector2(0, 1)) * height
 			check(
 				rect.has_point(q), "Receiver lookup includes maximum height and screen boundaries"
 			)

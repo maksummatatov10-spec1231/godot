@@ -1,25 +1,30 @@
 extends Node
 # gdlint: disable=max-public-methods,max-line-length
 ## Menus/story, durable state and one screen-space time grade. World simulation stays separate.
-const STORY_ART = preload("res://assets/story/valley-memory.png")
+const STORY_ART = [
+	preload("res://assets/story/01-arrival.png"),
+	preload("res://assets/story/02-bell.png"),
+	preload("res://assets/story/03-letter.png"),
+	preload("res://assets/story/04-first-light.png")
+]
 const Clock = preload("res://scripts/day_clock.gd")
 const Store = preload("res://scripts/save_store.gd")
 const STORY = [
 	[
-		"КОГДА ТРОПЫ ПОМНИЛИ",
-		"Когда-то долину узнавали по огням.\nОни встречали рыбаков у озера и провожали путников через лес."
+		"ДОЛИНА НА РАССВЕТЕ",
+		"Перед рассветом ты спускаешься в долину.\nКогда-то её огни встречали рыбаков и провожали путников через лес."
 	],
 	[
 		"ПОСЛЕДНИЙ КОЛОКОЛ",
-		"Однажды колокол прозвучал в пустой деревне.\nНаутро люди начали забывать имена тех, кого ждали домой."
+		"На площади тихо. Здесь колокол прозвучал в последний раз.\nС тех пор люди забывают имена тех, кого ждут домой."
 	],
 	[
 		"СВЕТ, КОТОРЫЙ ОСТАЛСЯ",
-		"Старый фонарщик ушёл искать причину — и не вернулся.\nНа его пороге остался фонарь. Огонь внутри не погас."
+		"У двери фонарщика ты находишь письмо: «Не дай тропам погаснуть».\nОн ушёл искать причину — и не вернулся."
 	],
 	[
 		"ТВОЯ ДОРОГА",
-		"Сегодня этот фонарь у тебя.\nНайди Странника на площади. Возможно, он ещё помнит, с чего всё началось."
+		"Ты подносишь свой фонарь к первому огню. День начинается.\nНайди Странника на площади — возможно, он ещё помнит причину."
 	]
 ]
 var world: Node2D
@@ -245,12 +250,12 @@ func _render_story() -> void:
 	_clear()
 	world.mode = "intro"
 	var image := TextureRect.new()
-	image.texture = STORY_ART
+	image.texture = STORY_ART[story_page]
 	image.position = Vector2(0, 0)
 	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	image.set_deferred("size", Vector2(640, 235))
 	image.clip_contents = true
-	image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	world.menu_root.add_child(image)
 	var dark := ColorRect.new()
 	dark.color = Color("0c1520")
@@ -292,7 +297,7 @@ func complete_intro() -> void:
 		"y": world.map.spawn[1],
 		"facing": 0,
 		"equipped": 0,
-		"hour": 7.5,
+		"hour": Clock.START_HOUR,
 		"day": 1,
 		"play_seconds": 0,
 		"intro_done": true,
@@ -371,7 +376,7 @@ func show_menu(which: String) -> void:
 	subtitle.position = Vector2(32, 82)
 	world.menu_root.add_child(subtitle)
 	var picture := TextureRect.new()
-	picture.texture = STORY_ART
+	picture.texture = STORY_ART[0]
 	picture.position = Vector2(32, 113)
 	picture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	picture.set_deferred("size", Vector2(316, 178))

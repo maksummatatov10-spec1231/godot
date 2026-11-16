@@ -164,7 +164,7 @@ class LanternAssets(unittest.TestCase):
         self.assertIn('texture(static_depth, light_uv).r',shader)
         self.assertIn('texture(moving_depth, light_uv).r',shader)
         self.assertIn('obstruction - height',shader)
-        self.assertIn('world_pixel + vec2(0.85, 1.48) * height',shader)
+        self.assertIn('world_pixel + (shadow_light.xy + vec2(0.0, 1.0)) * height',shader)
         self.assertNotIn('texture(TEXTURE, UV) * COLOR',shader)
         depth=(GAME/'scripts/light_depth.gd').read_text()
         self.assertIn('rows.sort_custom',depth)

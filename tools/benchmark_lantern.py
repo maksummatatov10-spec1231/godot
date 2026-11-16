@@ -92,13 +92,13 @@ def main():
         run(['xvfb-run', '-a', '-s', '-screen 0 1280x720x24', engine,
              '--path', str(GAME), '--audio-driver', 'Dummy', '--fixed-fps', '30',
              '--resolution', '1280x720', '--script', str(ROOT / 'tools/lantern_locality.gd')],
-            directory / 'render.log', 'LANTERN_LOCALITY_OK 6', LOCALITY_DIR=str(directory))
+            directory / 'render.log', 'LANTERN_LOCALITY_OK 24', LOCALITY_DIR=str(directory))
         pairs = json.loads((directory / 'capture.json').read_text())['pairs']
         differences = {name: changed_pixels(directory / f'{name}-local.png',
                                            directory / f'{name}-reference.png') for name in pairs}
         # Pixel-centred lookup must be independent of the crop. No missing
         # shadow pixel is tolerated; threshold 12 ignores tiny sunlight rounding.
-        if len(differences) != 6 or max(differences.values()) != 0:
+        if len(differences) != 24 or max(differences.values()) != 0:
             raise RuntimeError(f'Camera culling changes visible output: {differences}')
         report['local_vs_full_world_changed_pixels_over_12'] = differences
     if report['game_sha256'] != game_digest():

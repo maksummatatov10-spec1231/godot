@@ -58,29 +58,31 @@ func run() -> void:
 		["crop-boundary-left", Vector2(672, 640), 1.0],
 		["crop-boundary-right", Vector2(673, 641), 1.0],
 	]
-	for view in views:
-		var name: String = view[0]
-		game.camera.position = view[1]
-		game.camera.zoom = Vector2.ONE * view[2]
-		game.camera.force_update_scroll()
-		game.hero.position = view[1] + Vector2(0, 12)
-		game.hero.animate()
-		depth.world = game
-		game.shadows.visibility_rect = Rect2()
-		game.shadows._process(0)
-		await shot(name + "-local")
-		# Full-world light coordinates, all ground silhouettes and particles. No
-		# temporal/pose difference: any missing on-screen caster causes a pixel diff.
-		depth.world = reference
-		depth.update(game.shadows.casters, game.elapsed)
-		for entry in game.shadows.casters:
-			game.shadows.sync(entry)
-		game.shadows.visibility_rect = Rect2(-128, -128, 1792, 1408)
-		game.shadows.visible_leaves.assign(game.leaves)
-		game.shadows.visible_fireflies.assign(game.fireflies)
-		await shot(name + "-reference")
-		captures.append(name)
-		print("LOCALITY ", name)
+	for hour in [6.25, 12.0, 17.0, 23.0]:
+		game.foundation.clock.hour = hour
+		for view in views:
+			var name: String = "%s-%04d" % [view[0], int(hour * 100)]
+			game.camera.position = view[1]
+			game.camera.zoom = Vector2.ONE * view[2]
+			game.camera.force_update_scroll()
+			game.hero.position = view[1] + Vector2(0, 12)
+			game.hero.animate()
+			depth.world = game
+			game.shadows.visibility_rect = Rect2()
+			game.shadows._process(0)
+			await shot(name + "-local")
+			# Full-world light coordinates, all ground silhouettes and particles. No
+			# temporal/pose difference: any missing on-screen caster causes a pixel diff.
+			depth.world = reference
+			depth.update(game.shadows.casters, game.elapsed)
+			for entry in game.shadows.casters:
+				game.shadows.sync(entry)
+			game.shadows.visibility_rect = Rect2(-128, -128, 1792, 1408)
+			game.shadows.visible_leaves.assign(game.leaves)
+			game.shadows.visible_fireflies.assign(game.fireflies)
+			await shot(name + "-reference")
+			captures.append(name)
+			print("LOCALITY ", name)
 	reference.free()
 	depth.world = game
 	var file := FileAccess.open(output.path_join("capture.json"), FileAccess.WRITE)

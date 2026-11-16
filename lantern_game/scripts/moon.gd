@@ -6,10 +6,12 @@ var foundation: Node
 func _draw() -> void:
 	if foundation.world.mode != "play":
 		return
-	var strength: float = foundation.clock.darkness()
+	var orbit: Dictionary = foundation.clock.celestial()
+	var strength: float = foundation.clock.darkness() * smoothstep(0.0, 0.12, orbit.moon_altitude)
 	if strength < 0.03:
 		return
-	var center := Vector2(588, 34)
+	var angle: float = orbit.moon_angle
+	var center := Vector2(320 - 260 * cos(angle), 92 - 64 * sin(angle))
 	for i in range(4, 0, -1):
 		draw_circle(center, 10.0 + i * 5.0, Color(0.60, 0.76, 0.95, strength * 0.018))
 	draw_circle(center, 10, Color(0.78, 0.86, 0.92, strength * 0.85))

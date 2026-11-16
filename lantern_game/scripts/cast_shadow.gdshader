@@ -3,6 +3,7 @@ render_mode unshaded;
 uniform float crown_height = 32.0;
 uniform float feet_local_y = 0.0;
 global uniform float wind_time;
+global uniform vec4 shadow_light;
 uniform bool wind = false;
 
 void vertex() {
@@ -14,9 +15,24 @@ void vertex() {
             + sin(wind_time * 0.63 + phase * 0.7) * 0.65;
         VERTEX.x += breeze * height_weight * height_weight;
     }
+    // MODEL_MATRIX still holds the cached baseline transform. Recover its foot
+    // and signed height, then apply today's solar/lunar ground displacement.
+    vec2 foot = (MODEL_MATRIX * vec4(0.0, feet_local_y, 0.0, 1.0)).xy;
+    vec2 baseline = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
+    float height = (baseline.y - foot.y) / 0.48;
+    vec2 projected = baseline + (shadow_light.xy - vec2(0.85, 0.48)) * height;
+    VERTEX = (inverse(MODEL_MATRIX) * vec4(projected, 0.0, 1.0)).xy;
 }
 
 void fragment() {
     float silhouette = texture(TEXTURE, UV).a;
-    COLOR = vec4(0.075, 0.12, 0.18, silhouette * 0.38);
+    if (shadow_light.w > 0.01) {
+        vec2 pixel = TEXTURE_PIXEL_SIZE;
+        float nearby = texture(TEXTURE, UV + vec2(pixel.x, 0.0)).a
+            + texture(TEXTURE, UV - vec2(pixel.x, 0.0)).a
+            + texture(TEXTURE, UV + vec2(0.0, pixel.y)).a
+            + texture(TEXTURE, UV - vec2(0.0, pixel.y)).a;
+        silhouette = mix(silhouette, silhouette * 0.6 + nearby * 0.1, shadow_light.w);
+    }
+    COLOR = vec4(0.075, 0.12, 0.18, silhouette * shadow_light.z);
 }
