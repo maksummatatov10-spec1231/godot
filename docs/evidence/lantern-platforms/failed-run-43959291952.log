@@ -1,0 +1,1157 @@
+android-smoke	Set up job	﻿2026-11-16T21:28:57.0390653Z Current runner version: '2.338.2'
+android-smoke	Set up job	2026-11-16T21:28:57.0412058Z ##[group]Runner Image Provisioner
+android-smoke	Set up job	2026-11-16T21:28:57.0412872Z Hosted Compute Agent
+android-smoke	Set up job	2026-11-16T21:28:57.0413434Z Version: 20261103.629
+android-smoke	Set up job	2026-11-16T21:28:57.0414010Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+android-smoke	Set up job	2026-11-16T21:28:57.0414648Z Build Date: 2026-11-03T17:26:59Z
+android-smoke	Set up job	2026-11-16T21:28:57.0415443Z Worker ID: {53f03571-5854-4888-b7da-46f8a673c74e}
+android-smoke	Set up job	2026-11-16T21:28:57.0416080Z Region: westus2
+android-smoke	Set up job	2026-11-16T21:28:57.0416585Z Cloud: Azure
+android-smoke	Set up job	2026-11-16T21:28:57.0417080Z ##[endgroup]
+android-smoke	Set up job	2026-11-16T21:28:57.0418205Z ##[group]Operating System
+android-smoke	Set up job	2026-11-16T21:28:57.0418802Z Ubuntu
+android-smoke	Set up job	2026-11-16T21:28:57.0419301Z 24.04.5
+android-smoke	Set up job	2026-11-16T21:28:57.0419750Z LTS
+android-smoke	Set up job	2026-11-16T21:28:57.0420268Z ##[endgroup]
+android-smoke	Set up job	2026-11-16T21:28:57.0420772Z ##[group]Runner Image
+android-smoke	Set up job	2026-11-16T21:28:57.0421373Z Image: ubuntu-24.04
+android-smoke	Set up job	2026-11-16T21:28:57.0421899Z Version: 20261111.370.1
+android-smoke	Set up job	2026-11-16T21:28:57.0422746Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.370/images/ubuntu/Ubuntu2404-Readme.md
+android-smoke	Set up job	2026-11-16T21:28:57.0424557Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.370
+android-smoke	Set up job	2026-11-16T21:28:57.0425684Z ##[endgroup]
+android-smoke	Set up job	2026-11-16T21:28:57.0426724Z ##[group]GITHUB_TOKEN Permissions
+android-smoke	Set up job	2026-11-16T21:28:57.0428581Z Actions: read
+android-smoke	Set up job	2026-11-16T21:28:57.0429125Z Contents: write
+android-smoke	Set up job	2026-11-16T21:28:57.0429612Z Metadata: read
+android-smoke	Set up job	2026-11-16T21:28:57.0430195Z ##[endgroup]
+android-smoke	Set up job	2026-11-16T21:28:57.0431909Z Secret source: Actions
+android-smoke	Set up job	2026-11-16T21:28:57.0432809Z Cache mode: write
+android-smoke	Set up job	2026-11-16T21:28:57.0433417Z Prepare workflow directory
+android-smoke	Set up job	2026-11-16T21:28:57.0693032Z Prepare all required actions
+android-smoke	Set up job	2026-11-16T21:28:57.0732221Z Getting action download info
+android-smoke	Set up job	2026-11-16T21:28:57.4961802Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+android-smoke	Set up job	2026-11-16T21:28:57.5894158Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+android-smoke	Set up job	2026-11-16T21:28:57.6932278Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+android-smoke	Set up job	2026-11-16T21:28:58.1115488Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+android-smoke	Set up job	2026-11-16T21:28:58.3819032Z Download action repository 'reactivecircus/android-emulator-runner@v2' (SHA:a421e43855164a8197daf9d8d40fe71c6996bb0d)
+android-smoke	Set up job	2026-11-16T21:28:58.5849882Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+android-smoke	Set up job	2026-11-16T21:28:59.0940330Z Complete job name: android-smoke
+android-smoke	Run actions/checkout@v4	﻿2026-11-16T21:28:59.1870353Z ##[group]Run actions/checkout@v4
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1871524Z with:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1872294Z   ref: 8ca6a68d28ae4f797e0aab352a161b100814269d
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1873285Z   fetch-depth: 0
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1874114Z   repository: maksummatatov10-spec1231/godot
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1881630Z   token: ***
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1882337Z   ssh-strict: true
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1883056Z   ssh-user: git
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1883816Z   persist-credentials: true
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1884767Z   clean: true
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1885521Z   sparse-checkout-cone-mode: true
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1886385Z   fetch-tags: false
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1887129Z   show-progress: true
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1887886Z   lfs: false
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1888585Z   submodules: false
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1889331Z   set-safe-directory: true
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1890172Z   allow-unsafe-pr-checkout: false
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.1891254Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5634855Z Syncing repository: maksummatatov10-spec1231/godot
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5637637Z ##[group]Getting Git version info
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5639008Z Working directory is '/home/runner/work/godot/godot'
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5640692Z [command]/usr/bin/git version
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5716397Z git version 2.56.1
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5734620Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5747224Z Temporarily overriding HOME='/home/runner/work/_temp/c6145283-46e1-4547-85d9-de34d815e304' before making global git config changes
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5750854Z Adding repository directory to the temporary git global config as a safe directory
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5754056Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/godot/godot
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5803372Z Deleting the contents of '/home/runner/work/godot/godot'
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5808541Z ##[group]Initializing the repository
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5811221Z [command]/usr/bin/git init /home/runner/work/godot/godot
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5923264Z hint: Using 'master' as the name for the initial branch. This default branch name
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5925591Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5927159Z hint: to use in all of your new repositories, which will suppress this warning,
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5928512Z hint: call:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5929184Z hint:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5930138Z hint: 	git config --global init.defaultBranch <name>
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5931598Z hint:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5932960Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5935144Z hint: 'development'. The just-created branch can be renamed via this command:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5936829Z hint:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5937784Z hint: 	git branch -m <name>
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5938703Z hint:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5939767Z hint: Disable this message with "git config set advice.defaultBranchName false"
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5941497Z Initialized empty Git repository in /home/runner/work/godot/godot/.git/
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.5944912Z [command]/usr/bin/git remote add origin https://github.com/maksummatatov10-spec1231/godot
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6071384Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6072729Z ##[group]Disabling automatic garbage collection
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6074909Z [command]/usr/bin/git config --local gc.auto 0
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6106695Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6107907Z ##[group]Setting up auth
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6112484Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6151447Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6562285Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6616183Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6820076Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.6856479Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.7058604Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.7102890Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.7104234Z ##[group]Fetching the repository
+android-smoke	Run actions/checkout@v4	2026-11-16T21:28:59.7113335Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3237260Z From https://github.com/maksummatatov10-spec1231/godot
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3238059Z  * [new branch]      arena/449f84de-godot  -> origin/arena/449f84de-godot
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3238624Z  * [new branch]      main                  -> origin/main
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3239031Z  * [new tag]         assetprog             -> assetprog
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3239524Z  * [new tag]         lantern-valley-v0.1.0 -> lantern-valley-v0.1.0
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3240051Z  * [new tag]         lantern-valley-v0.1.1 -> lantern-valley-v0.1.1
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3240492Z  * [new tag]         lantern-valley-v0.1.2 -> lantern-valley-v0.1.2
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3240923Z  * [new tag]         lantern-valley-v0.1.3 -> lantern-valley-v0.1.3
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3241771Z  * [new tag]         lantern-valley-v0.1.4 -> lantern-valley-v0.1.4
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3242622Z  * [new tag]         lantern-valley-v0.1.5 -> lantern-valley-v0.1.5
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3243166Z  * [new tag]         lantern-valley-v0.1.6 -> lantern-valley-v0.1.6
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3243668Z  * [new tag]         lantern-valley-v0.2.0 -> lantern-valley-v0.2.0
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3244189Z  * [new tag]         lantern-valley-v0.2.1 -> lantern-valley-v0.2.1
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3244862Z  * [new tag]         warden-forest-v0.1.0  -> warden-forest-v0.1.0
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3245491Z  * [new tag]         warden-forest-v0.2.0  -> warden-forest-v0.2.0
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3246133Z  * [new tag]         warden-forest-v0.3.0-preview.1 -> warden-forest-v0.3.0-preview.1
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3246936Z  * [new tag]         warden-forest-v0.3.1-performance -> warden-forest-v0.3.1-performance
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3279279Z [command]/usr/bin/git rev-parse --verify --quiet 8ca6a68d28ae4f797e0aab352a161b100814269d^{object}
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3286343Z 8ca6a68d28ae4f797e0aab352a161b100814269d
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3287708Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3288285Z ##[group]Determining the checkout info
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3289134Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3294417Z [command]/usr/bin/git sparse-checkout disable
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3393686Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3427714Z ##[group]Checking out the ref
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:08.3431145Z [command]/usr/bin/git checkout --progress --force 8ca6a68d28ae4f797e0aab352a161b100814269d
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0022734Z Note: switching to '8ca6a68d28ae4f797e0aab352a161b100814269d'.
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0023326Z 
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0023579Z You are in 'detached HEAD' state. You can look around, make experimental
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0024280Z changes and commit them, and you can discard any commits you make in this
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0025095Z state without impacting any branches by switching back to a branch.
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0026701Z 
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0026876Z If you want to create a new branch to retain commits you create, you may
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0027360Z do so (now or later) by using -c with the switch command. Example:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0027577Z 
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0027697Z   git switch -c <new-branch-name>
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0027898Z 
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0027992Z Or undo this operation with:
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0028132Z 
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0028208Z   git switch -
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0028323Z 
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0028498Z Turn off this advice by setting config variable advice.detachedHead to false
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0029003Z 
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0029206Z HEAD is now at 8ca6a68 Record 2D village physics and full-map close-up evidence [skip ci]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0085255Z ##[endgroup]
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0133021Z [command]/usr/bin/git log -1 --format=%H
+android-smoke	Run actions/checkout@v4	2026-11-16T21:29:09.0163000Z 8ca6a68d28ae4f797e0aab352a161b100814269d
+android-smoke	Run actions/setup-python@v5	﻿2026-11-16T21:29:09.1282984Z ##[group]Run actions/setup-python@v5
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1283244Z with:
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1283427Z   python-version: 3.11
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1283644Z   check-latest: false
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1285719Z   token: ***
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1285910Z   update-environment: true
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1286121Z   allow-prereleases: false
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1286313Z   freethreaded: false
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.1286498Z ##[endgroup]
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.2776189Z ##[group]Installed versions
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.2850086Z (node:2137) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.2850911Z (Use `node --trace-deprecation ...` to show where the warning was created)
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.2851464Z Successfully set up CPython (3.11.18)
+android-smoke	Run actions/setup-python@v5	2026-11-16T21:29:09.2851896Z ##[endgroup]
+android-smoke	Run actions/setup-java@v4	﻿2026-11-16T21:29:09.3059997Z ##[group]Run actions/setup-java@v4
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3060331Z with:
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3060540Z   distribution: temurin
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3060812Z   java-version: 17
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3061023Z   java-package: jdk
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3061282Z   check-latest: false
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3061680Z   server-id: github
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3061903Z   server-username: GITHUB_ACTOR
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3062279Z   server-password: GITHUB_TOKEN
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3062565Z   overwrite-settings: true
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3062841Z   job-status: success
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3065897Z   token: ***
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3066079Z env:
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3066308Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3066700Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3067052Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3067533Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3068131Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3068828Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.3069324Z ##[endgroup]
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4468021Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4476477Z ##[group]Installed distributions
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4764048Z Resolved Java 17.0.21+9 from tool-cache
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4764509Z Setting Java 17.0.21+9 as the default
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4772644Z (node:2145) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4773403Z (Use `node --trace-deprecation ...` to show where the warning was created)
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4775410Z Creating toolchains.xml for JDK version 17 from temurin
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4829902Z Writing to /home/runner/.m2/toolchains.xml
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4830294Z 
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4830496Z Java configuration:
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4830859Z   Distribution: temurin
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4831162Z   Version: 17.0.21+9
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4831580Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4831940Z 
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4832349Z ##[endgroup]
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4842610Z Creating settings.xml with server-id: github
+android-smoke	Run actions/setup-java@v4	2026-11-16T21:29:09.4871022Z Writing to /home/runner/.m2/settings.xml
+android-smoke	Run pip install Pillow==13.0.0	﻿2026-11-16T21:29:09.5089328Z ##[group]Run pip install Pillow==13.0.0
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5089649Z ^[[36;1mpip install Pillow==13.0.0^[[0m
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5124921Z shell: /usr/bin/bash -e {0}
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5125290Z env:
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5125631Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5126239Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5126808Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5127315Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5127804Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5128312Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5128874Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5129507Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:09.5129979Z ##[endgroup]
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:11.0548063Z Collecting Pillow==13.0.0
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:11.1104036Z   Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:11.1219429Z Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:11.3248258Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 38.4 MB/s  0:00:00
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:11.4880547Z Installing collected packages: Pillow
+android-smoke	Run pip install Pillow==13.0.0	2026-11-16T21:29:11.7348307Z Successfully installed Pillow-13.0.0
+android-smoke	Run actions/download-artifact@v4	﻿2026-11-16T21:29:11.7846202Z ##[group]Run actions/download-artifact@v4
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7846467Z with:
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7846656Z   name: lantern-app-candidates
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7846884Z   merge-multiple: false
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7847104Z   repository: maksummatatov10-spec1231/godot
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7847517Z   run-id: 43959291952
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7847702Z env:
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7847921Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7848261Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7848599Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7848907Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7849207Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7849515Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7849854Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7850272Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.7850574Z ##[endgroup]
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.9076874Z Downloading single artifact
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.9213055Z (node:2197) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:11.9213867Z (Use `node --trace-deprecation ...` to show where the warning was created)
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:12.1893459Z Preparing to download the following artifacts:
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:12.1894370Z - lantern-app-candidates (ID: 14273651696, Size: 240875224, Expected Digest: sha256:55f7e2c8a1233f34182c3ea7e593679b5d971c7698a59d065089ee0ba094c35a)
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:12.4757617Z Redirecting to blob download url: https://productionresultssa32.blob.core.windows.net/actions-results/2c096b03-b49a-47d7-a92a-6c517ac04def/workflow-job-run-11dd815c-376d-53ee-be0f-c03815de5a5e/artifacts/5c4adeba66530a4c4cf16191b2b4e3dde8adea751605590d05c8fa4dfc58c143.zip
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:12.4759313Z Starting download of artifact to: /home/runner/work/godot/godot
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:12.8490103Z (node:2197) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:19.4109789Z SHA256 digest of downloaded artifact is 55f7e2c8a1233f34182c3ea7e593679b5d971c7698a59d065089ee0ba094c35a
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:19.4110582Z Artifact download completed successfully.
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:19.4110980Z Total of 1 artifact(s) downloaded
+android-smoke	Run actions/download-artifact@v4	2026-11-16T21:29:19.4115847Z Download artifact has finished successfully
+android-smoke	KVM access and Mesa software graphics for the Android emulator	﻿2026-11-16T21:29:19.4255454Z ##[group]Run sudo apt-get update
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4255790Z ^[[36;1msudo apt-get update^[[0m
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4256155Z ^[[36;1msudo apt-get install -y libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xvfb xauth^[[0m
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4256685Z ^[[36;1mXvfb :99 -screen 0 1920x1080x24 -ac > docs/evidence/lantern-platforms/android-xvfb.log 2>&1 &^[[0m
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4257264Z ^[[36;1mecho 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules^[[0m
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4257706Z ^[[36;1msudo udevadm control --reload-rules^[[0m
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4257974Z ^[[36;1msudo udevadm trigger --name-match=kvm^[[0m
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4276505Z shell: /usr/bin/bash -e {0}
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4276732Z env:
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4276966Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4277334Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4277688Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4278035Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4278341Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4278659Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4279003Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4279395Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4279698Z ##[endgroup]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.4894104Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.5170308Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.5237977Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.5251483Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.5307593Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.5317703Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.6084281Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [702 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.6255662Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [772 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7061538Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1450 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7135711Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [315 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7155743Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1713 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7255506Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [345 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7295608Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1883 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7369830Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [430 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7386429Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.6 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.7980358Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1195 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.8037787Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [238 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.8065555Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1229 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.8588512Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [248 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.8613406Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1788 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.8686957Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [411 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:19.8713366Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.7 kB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:26.2295763Z Fetched 13.1 MB in 1s (11.8 MB/s)
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.1441005Z Reading package lists...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.1770041Z Reading package lists...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.3770244Z Building dependency tree...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.3776406Z Reading state information...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5225045Z libgl1-mesa-dri is already the newest version (25.2.8-0ubuntu0.24.04.4).
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5225597Z libgl1-mesa-dri set to manually installed.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5226033Z libglx-mesa0 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5226463Z libglx-mesa0 set to manually installed.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5226861Z xvfb is already the newest version (2:21.1.12-1ubuntu1.9).
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5227276Z xauth is already the newest version (1:1.1.2-1build1).
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5227635Z xauth set to manually installed.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5227951Z The following NEW packages will be installed:
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5228315Z   mesa-vulkan-drivers
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5393751Z 0 upgraded, 1 newly installed, 0 to remove and 21 not upgraded.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5394279Z Need to get 17.5 MB of archives.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5394906Z After this operation, 98.5 MB of additional disk space will be used.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.5395276Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:27.6418528Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-vulkan-drivers amd64 25.2.8-0ubuntu0.24.04.4 [17.5 MB]
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.2496946Z Fetched 17.5 MB in 0s (35.3 MB/s)
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.2744226Z Selecting previously unselected package mesa-vulkan-drivers:amd64.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3030825Z (Reading database ... 
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3031375Z (Reading database ... 5%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3031853Z (Reading database ... 10%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3032161Z (Reading database ... 15%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3032469Z (Reading database ... 20%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3032741Z (Reading database ... 25%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3032936Z (Reading database ... 30%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3033164Z (Reading database ... 35%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3033358Z (Reading database ... 40%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3033648Z (Reading database ... 45%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3033907Z (Reading database ... 50%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.3230156Z (Reading database ... 55%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.4573737Z (Reading database ... 60%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.6116051Z (Reading database ... 65%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.7553050Z (Reading database ... 70%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:28.9386706Z (Reading database ... 75%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.0759745Z (Reading database ... 80%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.2400022Z (Reading database ... 85%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.5449847Z (Reading database ... 90%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.6554430Z (Reading database ... 95%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.6554979Z (Reading database ... 100%
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.6555406Z (Reading database ... 216752 files and directories currently installed.)
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.6597001Z Preparing to unpack .../mesa-vulkan-drivers_25.2.8-0ubuntu0.24.04.4_amd64.deb ...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:29.6813676Z Unpacking mesa-vulkan-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:30.2868913Z Setting up mesa-vulkan-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:30.2981464Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2225219Z 
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2225784Z Running kernel seems to be up-to-date.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2226018Z 
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2226118Z No services need to be restarted.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2226279Z 
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2226375Z No containers need to be restarted.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2226526Z 
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2226641Z No user sessions are running outdated binaries.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2226823Z 
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:31.2227011Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+android-smoke	KVM access and Mesa software graphics for the Android emulator	2026-11-16T21:29:32.0720143Z KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	﻿2026-11-16T21:29:32.1053899Z ##[group]Run reactivecircus/android-emulator-runner@v2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1054212Z with:
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1054392Z   api-level: 35
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1054576Z   arch: x86_64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1054974Z   target: google_apis
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1055176Z   profile: pixel_2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1055369Z   emulator-boot-timeout: 300
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1055587Z   disable-animations: true
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1056005Z   emulator-options: -no-window -gpu host -feature -Vulkan -no-snapshot -noaudio -no-boot-anim -camera-back none -no-metrics
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1056672Z   script: bash -o pipefail -c 'python tools/smoke_lantern_android.py 2>&1 | tee docs/evidence/lantern-platforms/android-driver.log'
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1057094Z   cores: 2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1057261Z   avd-name: test
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1057454Z   force-avd-creation: true
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1057682Z   emulator-port: 5554
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1057891Z   disable-spellchecker: false
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1058121Z   disable-linux-hw-accel: auto
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1058358Z   enable-hw-keyboard: false
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1058559Z   channel: stable
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1058741Z env:
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1058962Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1059306Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1059647Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1059963Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1060263Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1060563Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1060908Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1061475Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1061787Z   LIBGL_ALWAYS_SOFTWARE: 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1061987Z   DISPLAY: :99
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1062162Z ##[endgroup]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1542541Z ##[group]Configure emulator
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1544394Z API level: 35
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1544798Z System image API level: 35
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1545135Z target: google_apis
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1545581Z CPU architecture: x86_64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1545935Z Hardware profile: pixel_2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1549751Z Cores: 2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1550011Z RAM size: 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1550259Z Heap size: 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1550528Z SD card path or size: 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1550821Z Disk size: 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1551057Z AVD name: test
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1551331Z force avd creation: true
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1551659Z Emulator boot timeout: 300
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1551967Z emulator port: 5554
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1552643Z emulator options: -no-window -gpu host -feature -Vulkan -no-snapshot -noaudio -no-boot-anim -camera-back none -no-metrics
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1553417Z disable animations: true
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1553745Z disable spellchecker: false
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1554106Z disable Linux hardware acceleration: false
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1554490Z enable hardware keyboard: false
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1554941Z Channel: 0 (stable)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1555205Z Script:
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1555813Z bash -o pipefail -c 'python tools/smoke_lantern_android.py 2>&1 | tee docs/evidence/lantern-platforms/android-driver.log'
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1556519Z Pre emulator launch script:
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1556982Z ##[endgroup]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1557280Z ##[group]Install Android SDK
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:32.1605602Z [command]/usr/bin/sh -c \yes | sdkmanager --licenses > /dev/null
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:38.0012910Z Installing latest build tools, platform tools, and platform.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:38.0024156Z [command]/usr/bin/sh -c \sdkmanager --install 'build-tools;37.0.0' platform-tools 'platforms;android-35'> /dev/null
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:39.3289062Z Installing latest emulator.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:39.3299311Z [command]/usr/bin/sh -c \sdkmanager --install emulator --channel=0 > /dev/null
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:51.8136047Z Installing system images.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:29:51.8147126Z [command]/usr/bin/sh -c \sdkmanager --install 'system-images;android-35;google_apis;x86_64' --channel=0 > /dev/null
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:25.3273124Z ##[endgroup]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:25.3276754Z ##[group]Create AVD
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:25.3277070Z Creating AVD.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:25.3297187Z [command]/usr/bin/sh -c \echo no | avdmanager create avd --force -n test --package 'system-images;android-35;google_apis;x86_64' --device 'pixel_2'
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.0679595Z Loading local repository...                                                     
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.0699648Z [=========                              ] 25% Loading local repository...       
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.0700302Z [=========                              ] 25% Fetch remote repository...        
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.0700912Z [=======================================] 100% Fetch remote repository...       
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.2999279Z Auto-selecting single ABI x86_64
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9240115Z [command]/usr/bin/sh -c \printf 'hw.cpu.ncore=2\n' >> /home/runner/.android/avd/test.avd/config.ini
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9260564Z ##[endgroup]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9262744Z ##[group]Launch Emulator
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9263088Z Starting emulator.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9274467Z [command]/usr/bin/sh -c \/usr/local/lib/android/sdk/emulator/emulator -port 5554 -avd test -no-window -gpu host -feature -Vulkan -no-snapshot -noaudio -no-boot-anim -camera-back none -no-metrics &
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9387135Z INFO         | Android emulator version 37.2.13.0 (build_id 16740729) (CL:N/A)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9387672Z INFO         | Graphics backend: gfxstream
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9388294Z INFO         | Found systemPath /usr/local/lib/android/sdk/system-images/android-35/google_apis/x86_64/
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9820656Z INFO         | Saving last run QEMU version for the AVD to 2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9821388Z INFO         | Feature 'Vulkan' (21) is overridden to 'disabled'
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9821947Z INFO         | Increasing RAM size to 2560MB
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9822530Z INFO         | Guest GLES Driver: Auto (ext controls)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9823244Z ERROR        | Your GPU cannot be used for hardware rendering. Consider using software rendering.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9824086Z INFO         | emuglConfig_init: vulkan_mode_selected:host gles_mode_selected:host
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9824887Z INFO         | Checking system compatibility:
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9825386Z INFO         |   Checking: hasSufficientDiskSpace
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9825961Z INFO         |      Ok: Disk space requirements to run avd: `test` are met
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9826529Z INFO         |   Checking: hasSufficientHwGpu
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9827081Z INFO         |      Ok: Hardware GPU requirements to run avd: `test` are passed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9827658Z INFO         |   Checking: hasSufficientSystem
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9828153Z INFO         |      Ok: System requirements to run avd: `test` are met
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:26.9829375Z WARNING      | Feature QuickbootFileBacked is disabled due to stability issues, if you really want that, the environment variable ANDROID_EMU_FORCE_QUICKBOOT_FILE_BACKED need to set to 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6085122Z ERROR        | Unable to connect to adb daemon on port: 5037
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6112725Z INFO         | Storing crashdata in: /tmp/android-runner/emu-crash-37.2.13.db, detection is enabled for process: 2980
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6124045Z INFO         | Initializing gfxstream backend
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6125678Z INFO         | startOpenglesRendererImpl: gpu info
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6126369Z INFO         | 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6127674Z INFO         | SharedLibrary::open for [libX11]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6128201Z WARNING      | Could not open libX11.so, try libX11.so.6
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6128756Z INFO         | SharedLibrary::open for [libX11.so.6]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6129261Z INFO         | SharedLibrary::open for [libX11-xcb]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6129791Z WARNING      | Could not open libX11-xcb.so, try libX11-xcb.so.1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6130601Z INFO         | SharedLibrary::open for [libX11-xcb.so.1]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:27.6138984Z INFO         | SharedLibrary::open for [libGL.so.1]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.7347077Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.7371418Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.8363052Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.8625635Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.8864447Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.9744906Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.9745589Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.9749701Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.9753720Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:31.9785480Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0125040Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0125940Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0129678Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0133673Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0160443Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0186793Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0188323Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0193147Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0198523Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0244393Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0980025Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0983747Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0986587Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0989400Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.0994420Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1041256Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1072986Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1075351Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1080920Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1086602Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1136314Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1165840Z INFO         | Graphics Adapter Vendor Google (Mesa)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1166588Z INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (llvmpipe (LLVM 20.1.2, 256 bits))
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1167449Z INFO         | Graphics API Version OpenGL ES 3.0 (4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1170008Z INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1172005Z INFO         | Graphics Device Extensions N/A
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1174969Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1177308Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1182990Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1189602Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1238449Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1274091Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1276208Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1281625Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1287360Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1336327Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1370185Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1372407Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1378289Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1383962Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1433749Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1469226Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1470936Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1476553Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1481973Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1531205Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1570860Z INFO         | Sending adb public key [QAAAAMETeVS/Ay9uUZyjKxMw66jjBV+hOjgraFEwO+gu91QygEX0VOZEwzPxBD0ZfkajmGAmrUkyKECwWPkkw6Cf/gdUjw0qB1X4dsNlBeGK+NfmlYKD5lMiSfVYvaqHJIRT+dhTNKtdPD6+DOmEu0ycBOCCyo6mhrSI7xJaU/JenKcAoF6HFhhIeTc3n7pEQmUQs9DuRdq2udbDoG3NzQ6Anr9yS7RzpjmAVyy/sgT0PaH1R7VWz99wL1cWVSQxv+nxFaiX5chl+ofJneGzJhuKTu0lThOtXUcnfeZXlszOAfsZ2SIEoWK4n5vk+aAdq/8dmFT+L81K5jfl/ws5Fh4xzaJJC+vq3mFrrYKsWXotM9jZpYDr3ISWatlptOLvPKM9ak7/Av6TfeUcCBC7TIUbhbL3LrOtWzwHAZ6d4Sy/p6gsjcbliVHGzxETgpiGUXJDIn7LD88fTNHHORG5gyrnyV/ArUvbJGH9NoI4wU6jcuOuFJXGCWosswof/v/Pcqfecz4Ou038sn4ss41EIyvGR+av2gNONNdo00TpGb9PhVMxKTHUTpHHXaAbuLIbSGlo9iV+coWzdK4/wxj9vq+PQzCv73r32Jy4YNRyIUEtGg7nC2M1zPwImiVXr5eX9o/W9ALeps2TaCWGyF7ZZ3NfqcZmzSuPVzgm/qMT1iMG8vC2ya+vlgEAAQA= runner@unknown]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1575933Z INFO         | Userspace boot properties:
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1576601Z INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1577238Z INFO         |   androidboot.dalvik.vm.heapsize=576m
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1577725Z INFO         |   androidboot.debug.hwui.renderer=skiagl
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1578222Z INFO         |   androidboot.debug.sf.nobootanimation=1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1578674Z INFO         |   androidboot.hardware=ranchu
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1579115Z INFO         |   androidboot.hardware.gltransport=pipe
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1579519Z INFO         |   androidboot.logcat=*:V
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1580085Z INFO         |   androidboot.opengles.version=196609
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1580534Z INFO         |   androidboot.qemu=1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1584191Z INFO         |   androidboot.qemu.adb.pubkey=QAAAAMETeVS/Ay9uUZyjKxMw66jjBV+hOjgraFEwO+gu91QygEX0VOZEwzPxBD0ZfkajmGAmrUkyKECwWPkkw6Cf/gdUjw0qB1X4dsNlBeGK+NfmlYKD5lMiSfVYvaqHJIRT+dhTNKtdPD6+DOmEu0ycBOCCyo6mhrSI7xJaU/JenKcAoF6HFhhIeTc3n7pEQmUQs9DuRdq2udbDoG3NzQ6Anr9yS7RzpjmAVyy/sgT0PaH1R7VWz99wL1cWVSQxv+nxFaiX5chl+ofJneGzJhuKTu0lThOtXUcnfeZXlszOAfsZ2SIEoWK4n5vk+aAdq/8dmFT+L81K5jfl/ws5Fh4xzaJJC+vq3mFrrYKsWXotM9jZpYDr3ISWatlptOLvPKM9ak7/Av6TfeUcCBC7TIUbhbL3LrOtWzwHAZ6d4Sy/p6gsjcbliVHGzxETgpiGUXJDIn7LD88fTNHHORG5gyrnyV/ArUvbJGH9NoI4wU6jcuOuFJXGCWosswof/v/Pcqfecz4Ou038sn4ss41EIyvGR+av2gNONNdo00TpGb9PhVMxKTHUTpHHXaAbuLIbSGlo9iV+coWzdK4/wxj9vq+PQzCv73r32Jy4YNRyIUEtGg7nC2M1zPwImiVXr5eX9o/W9ALeps2TaCWGyF7ZZ3NfqcZmzSuPVzgm/qMT1iMG8vC2ya+vlgEAAQA= runner@unknown
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1588353Z INFO         |   androidboot.qemu.avd_name=test
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1588708Z INFO         |   androidboot.qemu.camera_hq_edge_processing=0
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1589074Z INFO         |   androidboot.qemu.camera_protocol_ver=1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1589426Z INFO         |   androidboot.qemu.cpuvulkan.version=4206592
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1589809Z INFO         |   androidboot.qemu.gltransport.drawFlushInterval=800
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1590180Z INFO         |   androidboot.qemu.gltransport.name=pipe
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1590509Z INFO         |   androidboot.qemu.hwcodec.avcdec=2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1590820Z INFO         |   androidboot.qemu.hwcodec.hevcdec=2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1591121Z INFO         |   androidboot.qemu.hwcodec.vpxdec=2
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1591512Z INFO         |   androidboot.qemu.settings.system.screen_off_timeout=2147483647
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1591911Z INFO         |   androidboot.qemu.skin=1080x1920
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1592206Z INFO         |   androidboot.qemu.virtiowifi=1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1592685Z INFO         |   androidboot.qemu.vsync=60
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1593064Z INFO         |   androidboot.serialno=EMULATOR37X2X13X0
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1593712Z INFO         |   androidboot.vbmeta.digest=b3271ba499104f4631ae3723913d5c12574e01715fce5b82d60beed097ead264
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1594356Z INFO         |   androidboot.vbmeta.hash_alg=sha256
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1594905Z INFO         |   androidboot.vbmeta.size=6720
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1595307Z INFO         |   androidboot.veritymode=enforcing
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.1738374Z WARNING: cannnot unmap ptr 0x7f2db4e01000 as it is in the protected range from 0x7f2d14e00000 to 0x7f2db5000000
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:32.2053453Z INFO         | Monitoring duration of emulator setup.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.2207885Z INFO         | Activated packet streamer for bluetooth emulation
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.2208652Z INFO         | Successfully initialized netsim WiFi
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.2255451Z INFO         | Setting display: 0 configuration to: 1080x1920, dpi: 420x420 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.2256017Z INFO         | setDisplayActiveConfig: id:0, 1080x1920
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.2256423Z INFO         | emulatorSetupEnvironment: Environment scene is not required
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.2313901Z USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.2314975Z WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:33.3418264Z WARNING      | Failed to process .ini file /home/runner/.android/emu-update-last-check.ini for reading.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:36.9313197Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:36.9340269Z * daemon not running; starting now at tcp:5037
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:36.9989512Z * daemon started successfully
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:36.9990262Z adb: device offline
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:36.9996840Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:39.0056137Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:39.0085346Z adb: device offline
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:39.0105633Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:41.0123554Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:41.0159168Z adb: device offline
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:41.0165538Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.0204006Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.0245966Z adb: device offline
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.0249700Z The process '/usr/local/lib/android/sdk/platform-tools/adb' failed with exit code 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.4480548Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.4483543Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.4488643Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.4496322Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.4548239Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:43.8655998Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.2352089Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.2412040Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.2652062Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.2864096Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.2908031Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.2909270Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.3596907Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.3644524Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.4023899Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.4615994Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.4665620Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.4759512Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.5506385Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.5575655Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.5793149Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.6525836Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.6576039Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.6704454Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.7776009Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.7825603Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.7995828Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.8217273Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.8390386Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.8898073Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.8956541Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.9165808Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.9456030Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.9757995Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.9796912Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:44.9997667Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.0231377Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.0237999Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.0292101Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.0479987Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.0601749Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.0610635Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.0806521Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.1275366Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.1318018Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.1656406Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.2037935Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.2316369Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.2671479Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.2673086Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.2987170Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.2993635Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.3411780Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.3559136Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.3957300Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.4074527Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.4489795Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.4499625Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.4892541Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.4902070Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.5569686Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.5860870Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.6484036Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.6757472Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.7458611Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.7478095Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.8085513Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.8096018Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.8933418Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.8971988Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:45.9114595Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.0351002Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.0499665Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.1797707Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.1931097Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.2247438Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.2278132Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.2282184Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.2541179Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.2545540Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.2949213Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.2954967Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.3314388Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.3322211Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.3764860Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.3774487Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.4270019Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.4280722Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.5051329Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.5066148Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.5765966Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.5776098Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.6076123Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.6084011Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.6363272Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.6369513Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.6772514Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.6779988Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.7160579Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.7168203Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.7610418Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.7617019Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.8065708Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.8072047Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.8868317Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.8879430Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.9543885Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.9551784Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.9753959Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:46.9760497Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0231372Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0239705Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0288199Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0503864Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0505991Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0513497Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0699928Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0704847Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0717605Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0937138Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.0945930Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.1122853Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.1126749Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.1475147Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.1483355Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.1831825Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.1839910Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.2263542Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.2271637Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.2588671Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.2595724Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.2977939Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.2991311Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.3614079Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.3625583Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.4249722Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.4261105Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.4891046Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.4899041Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.6012487Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.6032752Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.6968493Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.6985488Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.7997471Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.8015852Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.9037260Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:47.9046535Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.0188062Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.0202889Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.2048770Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.2061884Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.4116347Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.4128588Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.4528309Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.4535642Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.4861569Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.4869155Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.5378498Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.5388358Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.5871351Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.5879754Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.6569415Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.6578920Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.7363820Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.7372163Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.8614054Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.8625683Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.9749229Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:48.9759509Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.0221757Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.0228585Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.0632659Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.0638433Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.0749175Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.0978640Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.1274327Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.1283944Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.1856656Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.1861427Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.2571413Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.2579833Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.3286494Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.3294535Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.4534263Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.4551380Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.5668676Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.5685466Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.6541808Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.6778450Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.7507867Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.7718067Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.8042506Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.8303114Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.9351709Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:49.9850158Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.0815470Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.1277275Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.1787906Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.2228608Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.3050752Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.3290508Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.4127468Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.4345190Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.4910353Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.5471774Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.6805147Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.7240624Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.8024245Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.8296076Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.8865261Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:50.9461255Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.0486911Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.0633759Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.1036185Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.1229894Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.1916295Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.2064432Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.3687580Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.3844383Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.4195722Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.4454161Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.4813389Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.5129079Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.5493699Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.5899159Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.6549818Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.7144408Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.7699699Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.7706649Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.8227702Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.8236152Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.9318596Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:51.9329514Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.0343053Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.0350618Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.1319075Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.1326553Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.2123402Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.2138308Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.3424166Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.3437857Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.4683959Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.4685908Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.5128820Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.5167535Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.5579166Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.6007689Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.6049441Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.6187108Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.6527300Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.6565822Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.6708604Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.7684929Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.7691890Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:52.9793613Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.0016107Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.1260559Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.1700515Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.2369349Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.2382075Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.4642359Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.4693515Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.5129469Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.8164415Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:53.8184898Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.0772644Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.0827090Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.1227244Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.3854919Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.3875840Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.5134902Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.5390479Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.6595142Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.6604283Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.8358879Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:54.8803195Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.0669921Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.0698864Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.1720518Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.1994954Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.2067480Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.2490519Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.3825954Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.3831327Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.5544091Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.5787097Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.7601039Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.7624372Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:55.9709291Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.0183389Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.2402332Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.2420957Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.4823567Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.5261549Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.7153148Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.7168136Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.8729692Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:56.8731368Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:57.0252182Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:57.0271781Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:57.2092987Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:57.2309718Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:59.2359661Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:30:59.2581946Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.5517136Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.5545817Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.5577330Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.5595895Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.5596709Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.6445758Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.6736177Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.6773675Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.6914981Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7215437Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7226712Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7227683Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7255564Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7307428Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7450240Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7946352Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.7965895Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.8075884Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.8105998Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.8135350Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.8136217Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.8163305Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:00.8195388Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.2674232Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.2969582Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.3687528Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.3689723Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.3698225Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.3706382Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.3790114Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.4907418Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.5222329Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.5263445Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.5422959Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.5433916Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.5732371Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:01.5733035Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.0387859Z INFO         | Boot completed in 36074 ms
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.0389175Z INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.2993413Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell getprop sys.boot_completed
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.3545594Z 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.3558513Z Emulator booted.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.3579805Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell input keyevent 82
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.3930507Z Disabling animations.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.3948960Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell settings put global window_animation_scale 0.0
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.4281489Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell settings put global transition_animation_scale 0.0
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.4751934Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 shell settings put global animator_duration_scale 0.0
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.5046217Z ##[endgroup]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:03.5063201Z [command]/usr/bin/sh -c bash -o pipefail -c 'python tools/smoke_lantern_android.py 2>&1 | tee docs/evidence/lantern-platforms/android-driver.log'
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.1713063Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.3175044Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.3192996Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.3217249Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.3219813Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.3442429Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.5988494Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7070668Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7089855Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7095221Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7596202Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7636478Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7791303Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7802410Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7810745Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7847250Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:04.7850753Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.0300488Z All files should be loaded. Notifying the device.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.1454295Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2094923Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2127270Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2132549Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2137831Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2597695Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2645128Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2650348Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2665904Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2695522Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.2837890Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.4156765Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.4465966Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.4709114Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.5590215Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.5637274Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.5642120Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.5846473Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6061725Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6075430Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6549259Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6550391Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6554057Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6559789Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6636269Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.6877604Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.7248543Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.7249457Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.7250175Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.7250873Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.7299407Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.8168206Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.8213515Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:05.8382516Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.0696670Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.0898586Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.2937538Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.2962662Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.3670432Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.3714394Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.3932957Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.4933945Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.4993482Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.5188658Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:06.5396244Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:07.6262612Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:07.6420914Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:07.6422875Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:07.6428470Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:07.6435155Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:07.6491552Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.4265341Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.4308869Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.4497744Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.5106822Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.5156187Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.5346334Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.5613225Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.5617989Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.5857739Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.6276029Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.7037412Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.7181710Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.8431564Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.8906274Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.9330641Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:08.9551595Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.3592100Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.3606375Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.3768535Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.4003516Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.4004600Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.4836633Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.4935467Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:10.7728914Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4949272Z args: [-p, org.lanternvalley.game.smoke, -c, android.intent.category.LAUNCHER, 1]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4950530Z  arg: "-p"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4950873Z  arg: "org.lanternvalley.game.smoke"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4951225Z  arg: "-c"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4951527Z  arg: "android.intent.category.LAUNCHER"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4951878Z  arg: "1"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4952320Z data="org.lanternvalley.game.smoke"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.4952820Z data="android.intent.category.LAUNCHER"
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.7352211Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.7405844Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.7409768Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:11.7453204Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:12.0038503Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:12.0120202Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.2838555Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.2839358Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.2839954Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.2865542Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.2905710Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.3299921Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.3303422Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.3326703Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.3366548Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.3371171Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.3999295Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.4050945Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.4089247Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.4093050Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:13.6101246Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:14.4242931Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:14.4467670Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:16.8066547Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:16.8084035Z libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2894512Z Traceback (most recent call last):
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2905574Z   File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 93, in <module>
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2907330Z     main()
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2908025Z   File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 48, in main
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2908723Z     text = wait_for('LANTERN_ANDROID_SMOKE_OK')
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2909223Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2909895Z   File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 28, in wait_for
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2910579Z     text = logs()
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2910977Z            ^^^^^^
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2911624Z   File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 22, in logs
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2912765Z     return adb('logcat', '-d', '-v', 'brief')
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2913305Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2914118Z   File "/home/runner/work/godot/godot/tools/smoke_lantern_android.py", line 18, in adb
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2915234Z     return subprocess.check_output(['adb', *map(str, args)], timeout=120, text=not binary)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2915979Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.2917305Z   File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/subprocess.py", line 466, in check_output
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3449387Z     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3450805Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3451830Z   File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/subprocess.py", line 571, in run
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3452638Z     raise CalledProcessError(retcode, process.args,
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3453442Z subprocess.CalledProcessError: Command '['adb', 'logcat', '-d', '-v', 'brief']' returned non-zero exit status 255.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3554814Z ##[error]The process '/usr/bin/sh' failed with exit code 1
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3556702Z ##[group]Terminate Emulator
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3569638Z [command]/usr/local/lib/android/sdk/platform-tools/adb -s emulator-5554 emu kill
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3611143Z OK: killing emulator, bye bye
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3611616Z OK
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3616356Z ##[endgroup]
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3618851Z INFO         | Wait for emulator (pid 2980) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3619924Z 
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3859344Z USER_INFO    | Snapshots have been disabled by the user, save request is ignored.
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:17.3865073Z INFO         | Saving snapshot 'default_boot' took 0 ms
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:18.2216793Z ERROR        | stop: Not implemented
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:18.2217444Z WARNING      | Emulator client has not yet been configured.. Call configure me first!
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:18.2344628Z INFO         | removeAll
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:18.2896840Z WARNING      | Netsim Wifi dns:///localhost:37753 is gone due to Stream removed (CANCELLED)
+android-smoke	Actual Android runtime, OS swipe, Back and background-save/resume	2026-11-16T21:31:18.2926403Z INFO         | ipv6:%5B::1%5D:37753: Got goaway [2] err=UNAVAILABLE:GOAWAY received; Error code: 2; Debug Text: Cancelling all calls {http2_error:2}
+android-smoke	Record Android evidence on the same branch	﻿2026-11-16T21:31:19.3514644Z ##[group]Run git config user.name 'github-actions[bot]'
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3515564Z ^[[36;1mgit config user.name 'github-actions[bot]'^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3515938Z ^[[36;1mgit config user.email '41898282+github-actions[bot]@users.noreply.github.com'^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3516307Z ^[[36;1mgit add docs/evidence/lantern-platforms^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3516605Z ^[[36;1mif git diff --cached --quiet; then exit 0; fi^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3516973Z ^[[36;1mgit commit -m 'Record Android emulator input and lifecycle evidence [skip ci]'^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3517332Z ^[[36;1mgit fetch origin arena/449f84de-godot^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3517620Z ^[[36;1mgit rebase --autostash origin/arena/449f84de-godot^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3517915Z ^[[36;1mgit push origin HEAD:arena/449f84de-godot^[[0m
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3536370Z shell: /usr/bin/bash -e {0}
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3536598Z env:
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3536840Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3537200Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3537575Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3537887Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3538195Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3538505Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3538848Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3539227Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3539561Z   ANDROID_AVD_HOME: /home/runner/.android/avd
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:19.3539795Z ##[endgroup]
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.0137867Z [detached HEAD c351252] Record Android emulator input and lifecycle evidence [skip ci]
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.0138613Z  5 files changed, 5692 insertions(+), 18491 deletions(-)
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.0139167Z  create mode 100644 docs/evidence/lantern-platforms/android-driver.log
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.0139798Z  create mode 100644 docs/evidence/lantern-platforms/android-xvfb.log
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.2577509Z From https://github.com/maksummatatov10-spec1231/godot
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.2578053Z  * branch            arena/449f84de-godot -> FETCH_HEAD
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.2886113Z Rebasing (1/1)
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:20.2886553Z Successfully rebased and updated detached HEAD.
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:21.6120894Z To https://github.com/maksummatatov10-spec1231/godot
+android-smoke	Record Android evidence on the same branch	2026-11-16T21:31:21.6121473Z    bb74b09..e30536f  HEAD -> arena/449f84de-godot
+android-smoke	Run actions/upload-artifact@v4	﻿2026-11-16T21:31:21.6907052Z ##[group]Run actions/upload-artifact@v4
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6907486Z with:
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6907774Z   name: lantern-android-evidence
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6908140Z   path: docs/evidence/lantern-platforms/
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6908536Z   if-no-files-found: warn
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6908861Z   compression-level: 6
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6909157Z   overwrite: false
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6909462Z   include-hidden-files: false
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6909777Z env:
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6910123Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6910693Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6911233Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6911707Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6912209Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6912686Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6913272Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6913873Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.21-9/x64
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6914837Z   ANDROID_AVD_HOME: /home/runner/.android/avd
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.6915210Z ##[endgroup]
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.8290813Z (node:3277) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.8291542Z (Use `node --trace-deprecation ...` to show where the warning was created)
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.8410914Z With the provided path, there will be 45 files uploaded
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.8415108Z Artifact name is valid!
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:21.8415689Z Root directory input is valid!
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:22.1889074Z Beginning upload of artifact content to blob storage
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:22.2985886Z (node:3277) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:23.0318243Z Uploaded bytes 1643147
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:23.1105239Z Finished uploading artifact content to blob storage!
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:23.1106101Z SHA256 digest of uploaded artifact zip is ce63b4339b4976fba10b8f00f178f8a731f2bcc7fec8a9840f83780a096bceb3
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:23.1107239Z Finalizing artifact upload
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:23.5028811Z Artifact lantern-android-evidence.zip successfully finalized. Artifact ID 14274081416
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:23.5029836Z Artifact lantern-android-evidence has been successfully uploaded! Final size is 1643147 bytes. Artifact ID is 14274081416
+android-smoke	Run actions/upload-artifact@v4	2026-11-16T21:31:23.5035076Z Artifact download URL: https://github.com/maksummatatov10-spec1231/godot/actions/runs/43959291952/artifacts/14274081416
+android-smoke	Post Run actions/setup-java@v4	﻿2026-11-16T21:31:23.5263602Z Post job cleanup.
+android-smoke	Post Run actions/setup-java@v4	2026-11-16T21:31:23.6578017Z (node:3290) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+android-smoke	Post Run actions/setup-java@v4	2026-11-16T21:31:23.6578694Z (Use `node --trace-deprecation ...` to show where the warning was created)
+android-smoke	Post Run actions/checkout@v4	﻿2026-11-16T21:31:23.6777573Z Post job cleanup.
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7563698Z [command]/usr/bin/git version
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7603292Z git version 2.56.1
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7636286Z Temporarily overriding HOME='/home/runner/work/_temp/84072e45-2892-40f6-83ff-dc61a8910f38' before making global git config changes
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7637039Z Adding repository directory to the temporary git global config as a safe directory
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7640985Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/godot/godot
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7676020Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7706591Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7935480Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7957263Z http.https://github.com/.extraheader
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7967213Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.7998604Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.8257744Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+android-smoke	Post Run actions/checkout@v4	2026-11-16T21:31:23.8310176Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+android-smoke	Complete job	﻿2026-11-16T21:31:23.8710068Z Cleaning up orphan processes
+android-smoke	Complete job	2026-11-16T21:31:23.8993021Z Terminate orphan process: pid (2654) (Xvfb)
+android-smoke	Complete job	2026-11-16T21:31:23.9056305Z Terminate orphan process: pid (3085) (adb)
+android-smoke	Complete job	2026-11-16T21:31:23.9103338Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-java@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
