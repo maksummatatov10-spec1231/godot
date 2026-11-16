@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "game_sha256": "09394c7cd1cb839dae398593156e2e2244ef81768e399f01b6c28ecb66bc1b45",
+  "real_render": true,
+  "player_visible": true,
+  "physical_gpu_benchmark": false,
+  "images": 6,
+  "facade_receiver_changed_pixels": 327,
+  "hero_receiver_changed_pixels": 2224,
+  "difference_threshold": 12,
+  "fixed_camera": true,
+  "unchanged_time_and_pose": true,
+  "wildlife_portrait": "Existing game actors staged for a readable close-up, not painted in"
+}

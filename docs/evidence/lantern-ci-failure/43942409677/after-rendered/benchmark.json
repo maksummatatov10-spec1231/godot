@@ -1,0 +1,84 @@
+{
+	"physical_gpu_benchmark": false,
+	"rendered": true,
+	"views": [
+		{
+			"draw_calls_median": 150.0,
+			"rendered_frame_ms_median": 30.427,
+			"rendered_frame_ms_p95": 32.164,
+			"samples": 120,
+			"shadow_cpu_ms_median": 2.641,
+			"shadow_cpu_ms_p95": 3.453,
+			"shadow_work": {
+				"active_moving_casters": 16,
+				"active_static_casters": 242,
+				"active_static_tiles": 15,
+				"cached_static_tiles": 20,
+				"depth_pixels": 786432,
+				"depth_size": [
+					768,
+					512
+				],
+				"moving_mesh_rebuilds": 143,
+				"pose_templates_built": 442,
+				"registered_casters": 561,
+				"shared_ground_materials": 11,
+				"shared_receiver_materials": 11,
+				"visible_leaf_emitters": 55
+			},
+			"view": "village"
+		},
+		{
+			"draw_calls_median": 377.0,
+			"rendered_frame_ms_median": 37.311,
+			"rendered_frame_ms_p95": 40.481,
+			"samples": 120,
+			"shadow_cpu_ms_median": 2.475,
+			"shadow_cpu_ms_p95": 2.74,
+			"shadow_work": {
+				"active_moving_casters": 21,
+				"active_static_casters": 199,
+				"active_static_tiles": 20,
+				"cached_static_tiles": 34,
+				"depth_pixels": 800768,
+				"depth_size": [
+					736,
+					544
+				],
+				"moving_mesh_rebuilds": 283,
+				"pose_templates_built": 607,
+				"registered_casters": 561,
+				"shared_ground_materials": 11,
+				"shared_receiver_materials": 11,
+				"visible_leaf_emitters": 160
+			},
+			"view": "forest"
+		},
+		{
+			"draw_calls_median": 256.0,
+			"rendered_frame_ms_median": 31.275,
+			"rendered_frame_ms_p95": 33.328,
+			"samples": 120,
+			"shadow_cpu_ms_median": 1.768,
+			"shadow_cpu_ms_p95": 2.121,
+			"shadow_work": {
+				"active_moving_casters": 13,
+				"active_static_casters": 169,
+				"active_static_tiles": 16,
+				"cached_static_tiles": 41,
+				"depth_pixels": 753664,
+				"depth_size": [
+					736,
+					512
+				],
+				"moving_mesh_rebuilds": 423,
+				"pose_templates_built": 676,
+				"registered_casters": 561,
+				"shared_ground_materials": 11,
+				"shared_receiver_materials": 11,
+				"visible_leaf_emitters": 91
+			},
+			"view": "farm"
+		}
+	]
+}
