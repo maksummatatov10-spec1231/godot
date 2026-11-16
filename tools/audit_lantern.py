@@ -45,6 +45,8 @@ def main():
     log = (output / 'render.log').read_text()
     passed = code == 0 and 'AUDIT_CAPTURE_OK' in log and 'ERROR' not in log and 'leaked' not in log
     if not passed:
+        detail=log[-6000:].replace('%','%25').replace('\r','%0D').replace('\n','%0A')
+        print(f'::error title=Lantern audit exit {code}::{detail}',flush=True)
         print(log[-6000:])
         return 1
     coverage = json.loads((output / 'coverage.json').read_text())
