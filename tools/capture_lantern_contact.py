@@ -49,7 +49,8 @@ def main():
             raise RuntimeError(f'Missing {gait} articulation: {motion}')
         changes[gait] = motion
         frames[0].save(OUTPUT / f'wildlife-{gait}.gif', save_all=True,
-                       append_images=frames[1:], duration=80, loop=0, optimize=True, disposal=2)
+                       append_images=frames[1:], duration=80 if gait == 'idle' else 40,
+                       loop=0, optimize=True, disposal=2)
         for image in frames:
             image.close()
     report.update(passed=True, images=77, directional_views=4,

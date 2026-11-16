@@ -16,12 +16,16 @@
 ## Original work
 
 Map layout/assembly, continuous farm fence/corner posts, wooden crates, shore platform,
-lantern posts, counter details, baked directional shadows, sunlight shader, fountain,
+lantern posts, counter details, live projected shadows, sunlight shader, fountain,
 fox/rabbit pixel sheets, synthesised woodland audio,
 action tones, interface, lighting/leaf effects, code and Russian story were created
 for this project. Wildlife sheets and fountain follow the source palette; they are
 not claimed to be original Ninja Adventure assets. Generated images are reproducible
-with `tools/build_lantern_map.py` from the parent repository. Audio is simple original
+with `tools/build_lantern_map.py` from the parent repository. The replacement 0.1.6
+wildlife sheets (32px, four directions, idle/walk/bound, twelve phases per cycle)
+are original CC0-1.0 work, reproducible independently with
+`tools/build_lantern_wildlife.py`; layout metadata is `assets/world/wildlife.json`.
+Inspected external wildlife references were NOT incorporated into these sheets. Audio is simple original
 noise/chirp synthesis, not a field recording or licensed soundtrack.
 
 ## Dialogue controls research
