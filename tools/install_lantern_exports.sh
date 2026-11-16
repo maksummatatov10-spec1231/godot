@@ -23,6 +23,7 @@ chmod +x "$folder/${engine%.zip}"
 echo "GODOT4_BIN=$folder/${engine%.zip}" >> "$GITHUB_ENV"
 # SDK-provided tools are used for export/signature/manifest checks; no Gradle/NDK build.
 "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'build-tools;35.0.1' 'platforms;android-35'
+"$ANDROID_HOME/platform-tools/adb" start-server
 mkdir -p "$HOME/.config/godot"
 python - <<'PY'
 from pathlib import Path

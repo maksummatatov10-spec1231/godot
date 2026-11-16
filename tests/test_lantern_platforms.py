@@ -44,3 +44,18 @@ class PlatformPackaging(unittest.TestCase):
     def test_unknown_platform_rejected(self):
         with self.assertRaises(ValueError):
             build_platform_archive(self.base, self.root / 'bad.zip', 'ios', 'hash')
+
+
+class AndroidExportConfiguration(unittest.TestCase):
+    def test_android_texture_export_prerequisite(self):
+        root = Path(__file__).resolve().parents[1]
+        project = (root / 'lantern_game/project.godot').read_text()
+        self.assertIn('textures/vram_compression/import_etc2_astc=true', project)
+        self.assertIn('renderer/rendering_method.mobile="gl_compatibility"', project)
+
+    def test_release_export_and_no_unnecessary_network_permission(self):
+        root = Path(__file__).resolve().parents[1]
+        presets = (root / 'lantern_game/export_presets.cfg').read_text()
+        self.assertNotIn('permissions/internet=true', presets)
+        self.assertIn('tests.gd,*_tests.gd,export_presets.cfg', presets)
+        self.assertIn("'--export-release'", (root / 'tools/build_lantern_apps.py').read_text())

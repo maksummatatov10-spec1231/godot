@@ -57,6 +57,9 @@ func run() -> void:
 	game.touch_controls.finish_edit(false)
 	# Same shared renderer/profile used on Android; separate emulator job proves OS APK.
 	game.platform_options.mobile = true
+	game.platform_options.economical = true
+	game.platform_options.frame_cap = 60
+	game.platform_options.vsync = true
 	game.platform_options.show_touch = true
 	root.content_scale_mode = Window.CONTENT_SCALE_MODE_VIEWPORT
 	game.resume()
