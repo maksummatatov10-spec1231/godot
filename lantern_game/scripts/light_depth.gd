@@ -169,17 +169,17 @@ func _select_tiles() -> void:
 			if not static_bins.has(cell):
 				continue
 			if not static_tiles.has(cell):
-				var tile_mesh := MeshInstance2D.new()
+				var created_tile := MeshInstance2D.new()
 				var ink := ShaderMaterial.new()
 				ink.shader = DEPTH_SHADER
 				ink.set_shader_parameter("clip_enabled", true)
 				ink.set_shader_parameter("clip_rect", Vector4(x * TILE, y * TILE, TILE, TILE))
-				tile_mesh.material = ink
-				tile_mesh.texture = atlas
-				tile_mesh.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-				static_view.add_child(tile_mesh)
-				tile_mesh.mesh = _build_cached_mesh(static_bins[cell])
-				static_tiles[cell] = tile_mesh
+				created_tile.material = ink
+				created_tile.texture = atlas
+				created_tile.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+				static_view.add_child(created_tile)
+				created_tile.mesh = _build_cached_mesh(static_bins[cell])
+				static_tiles[cell] = created_tile
 			var tile_mesh: MeshInstance2D = static_tiles[cell]
 			tile_mesh.position = -light_rect.position
 			tile_mesh.show()

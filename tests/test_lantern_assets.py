@@ -211,6 +211,10 @@ class LanternAssets(unittest.TestCase):
             self.assertIn('feet_local_y',shader)
             self.assertIn('feet_local_y - VERTEX.y',shader)
 
+    def test_confusable_local_declarations_are_errors(self):
+        project=(GAME/'project.godot').read_text()
+        self.assertIn('gdscript/warnings/confusable_local_declaration=2',project)
+
     def test_no_mix_with_3d_project(self):
         self.assertNotIn('forest_game',(GAME/'project.godot').read_text())
         self.assertEqual(self.map['spawn'],[776,658])

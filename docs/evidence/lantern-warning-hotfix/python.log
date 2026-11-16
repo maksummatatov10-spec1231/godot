@@ -1,0 +1,17 @@
+----------------------------------------------------------------------
+Ran 78 tests in 0.710s
+
+OK
+EDITOR_CAPTURE_OK /tmp/tmp27b3437p/editor.png
+{
+  "zip": "/tmp/tmpghcsp0we/release/game.zip",
+  "bytes": 940,
+  "files": 3,
+  "sha256": "28a516d1630d85dc75032cf0ec9eb794b785ea8f6e0e269879acc1b245cd9042"
+}
+{
+  "zip": "/tmp/tmp3r35gizp/release/game.zip",
+  "bytes": 731,
+  "files": 2,
+  "sha256": "b0b167ecac2166757d775fba7000fdc824e1367b870d723f8ee93881666854a5"
+}
