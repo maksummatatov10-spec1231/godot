@@ -91,6 +91,7 @@ func run() -> void:
 	assert(game.foundation.save_game())
 	game.foundation.disabled_io = true
 	await shot("06-pause-save")
+	game.foundation.clock.enabled = true
 	game._open_submenu("settings", "pause")
 	await shot("07-settings")
 	game._open_submenu("controls", "pause")

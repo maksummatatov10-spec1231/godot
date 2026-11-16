@@ -1,0 +1,92 @@
+[
+  {
+    "path": "lantern_game/assets/world/crate.png",
+    "before_sha256": "38ee2b9a2206e4e8a5effe6a52e96608234fe70d72af673b1b73f44fa7c34b84",
+    "after_sha256": "dfcdfc3147551cbc46278cafdc544775b88e970f77007578c0c4833e5fd9c00c",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fence_h.png",
+    "before_sha256": "6487db2c419da9db4cee882b1f376bd1ec5e4ad1024001e60f3a5bf56684e5f3",
+    "after_sha256": "eda661bb45414bb41503b684665c376b5b75d635c7f4d8cb4025156df5b58d1b",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fence_h_left.png",
+    "before_sha256": "4d6a5cbc6dc107eb726042ec656b7637186ac4353bffb46e8607baa767c5979c",
+    "after_sha256": "a8d0dd1f1d2236196be8142aca514c0d612fc8411aad08a1d866e535b0c5ce70",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fence_h_right.png",
+    "before_sha256": "b3b8440769b7aec8ec57f4c08bbc03ae78cd00773d16eeb15f050e03ded943fc",
+    "after_sha256": "524f7887a419b0bc479aa5e560593b4c12ba5ea596c7c73b237dd13d4a6c7f4a",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fence_v.png",
+    "before_sha256": "389390f62cffcfd7a7e3997d6f31c6bb0b195ad9797ace655e1fc2355abb8a53",
+    "after_sha256": "b2b8dc802034226607acd0bd76f1d45278ee9f4efe0fc036a710fa1a74ab46b1",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fence_v_top.png",
+    "before_sha256": "8079641da7014fc16c8d74a3ee528b8d70df76956a8df1417eb7c33e9d9dd095",
+    "after_sha256": "06943672ab51f1f5c2f03a939a117af54eae11b78f9993caf9d06b0719d55da0",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fence_v_bottom.png",
+    "before_sha256": "1131246417233e360bf8bdb369c7360c9c3a78611427c33dfede773d9fa741dd",
+    "after_sha256": "b3c4b74b7c265e0644818f6b6dc29234f0853c0f282fb1652e1698bed7bba1d5",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fencepost.png",
+    "before_sha256": "d74c33599e9889bb5cc68c4ae0aa285e2f66f82d17a533c35e6da73fb5df6ae5",
+    "after_sha256": "9b18fc1e3b3736a9c16e5b9f73e5ab337aed1b8a155202e578524e9b2f933afa",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/fox.png",
+    "before_sha256": "a9951b38a1c574950de9bf9483ae3be8bd43213a3ef107dedb2099bdfd06ee01",
+    "after_sha256": "ab9ec57eaaa7fb6ad651adcbdce34a5f55cfd64e3464a16d52dc7e299c866f29",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/rabbit.png",
+    "before_sha256": "4547a6800af1f2d63e19bd0f4a0883590dac08e0e054775ac113c99f6aae7efc",
+    "after_sha256": "41b0d32611dc0097510e3600bcbca9208eb3c5c5916333973ff726bcbe607a81",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/ground.png",
+    "before_sha256": "634efcda4ffbc1cb96d070348f16eca5f5a8ed66b60ab1302e7311c6301a035e",
+    "after_sha256": "e471956af38b5b92a37ac2490da20f50aaef4298dc70d7a4a059c60ecaf971c5",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/lantern.png",
+    "before_sha256": "c62374fd98605fe4bc7d260d40d7876a45570dc25f4180cf139b834d059113c5",
+    "after_sha256": "932693605520119ef1be5552f0b78b4470cddcdb399c3cc36dcf21bea43c4deb",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/seedling.png",
+    "before_sha256": "65dc1214a8fee728957e5f2e8476debf92182d0d8a3ee873c9782560bbdf4c39",
+    "after_sha256": "df51eed2117837f763cf792b425ade133cb741246c8ce13bbb7d39f12d4386ba",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/stall.png",
+    "before_sha256": "c74fc536525cb22ba24ab51ab53272a94899a2b32000cacdfa518e524ea95678",
+    "after_sha256": "17ef3cb1355eb1da040f2edacb0a0c638afbdff2c0cbd46bd88495e7118bddd2",
+    "changed": true
+  },
+  {
+    "path": "lantern_game/assets/world/well.png",
+    "before_sha256": "7dcf8bc197d64b5ec9602d2e02d47c63814869ed1da2324a70513ed93a71e15b",
+    "after_sha256": "93a0b90e1be84742346ec4e797d6fa7031c767c2a7a050daa03ec4a6f1819215",
+    "changed": true
+  }
+]
