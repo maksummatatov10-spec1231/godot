@@ -87,6 +87,7 @@ func setup(owner_world: Node2D) -> void:
 		if sprite is Sprite2D and sprite.get_meta("art", "") == "well.png":
 			decor.append({"sprite": sprite, "width": 32.0, "height": 32.0})
 	get_tree().auto_accept_quit = false
+	get_tree().quit_on_go_back = false
 
 
 func _process(delta: float) -> void:
@@ -523,7 +524,7 @@ func _settings(box: VBoxContainer) -> Control:
 			persist_options()
 	)
 	box.add_child(speed)
-	_button(box, "Окно / полный экран", world._toggle_fullscreen)
+	_button(box, "Экран и управление", world.platform_options.show_settings)
 	_button(box, "Назад", func(): show_menu(world.returning_to))
 	return volume
 

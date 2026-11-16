@@ -33,6 +33,9 @@ def main():
     celestial = json.loads((ROOT/'docs/evidence/lantern-celestial/result.json').read_text())
     if not celestial.get('passed') or celestial['game_sha256'] != game_digest():
         raise RuntimeError('Celestial continuity/night contrast evidence is missing, failed or stale')
+    platforms = json.loads((ROOT/'docs/evidence/lantern-platforms/result.json').read_text())
+    if not platforms.get('passed') or platforms['game_sha256'] != game_digest():
+        raise RuntimeError('Platform analog/auto-run/FullHD evidence is missing, failed or stale')
     output = ROOT/'artifacts/lantern'
     output.mkdir(parents=True,exist_ok=True)
     archive = output/'Lantern-Valley-Godot-Project.zip'
@@ -46,11 +49,12 @@ def main():
         bundle.writestr('LanternValley/PERFORMANCE_VALIDATION.json',json.dumps(performance,indent=2)+'\n')
         bundle.writestr('LanternValley/FOUNDATION_VALIDATION.json',json.dumps(foundation,indent=2)+'\n')
         bundle.writestr('LanternValley/CELESTIAL_VALIDATION.json',json.dumps(celestial,indent=2)+'\n')
+        bundle.writestr('LanternValley/PLATFORMS_VALIDATION.json',json.dumps(platforms,indent=2)+'\n')
         bundle.writestr('LanternValley/CONTACT_VALIDATION.json',json.dumps(contact,indent=2)+'\n')
         bundle.writestr('LanternValley/VALIDATION.json',json.dumps(evidence,indent=2)+'\n')
     sha = hashlib.sha256(archive.read_bytes()).hexdigest()
     archive.with_suffix('.zip.sha256').write_text(f'{sha}  {archive.name}\n')
-    pictures = output/'Lantern-Valley-0.3.0-Screenshots.zip'
+    pictures = output/'Lantern-Valley-0.4.0-Screenshots.zip'
     with zipfile.ZipFile(pictures,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as bundle:
         for name in ['01-village-player-shadows','02-forest-player-leaves',
                      '03-farm-player-shadows','04-received-shadow','05-wildlife-player-shadows']:
@@ -63,6 +67,12 @@ def main():
         for name in ['orbit-0000.png', 'orbit-0625.png', 'orbit-0800.png', 'orbit-1200.png',
                      'orbit-1400.png', 'orbit-1600.png', 'celestial-cycle.gif']:
             bundle.write(ROOT/'docs/evidence/lantern-celestial'/name, name)
+        for item in platforms['capture']['images']:
+            name = item['name'] + '.png'
+            bundle.write(ROOT/'docs/evidence/lantern-platforms'/name, name)
+    from package_lantern_platforms import package_profiles
+    profiles = package_profiles(archive, output, game_digest())
+    print('LANTERN_PROFILES_OK', profiles)
     print('LANTERN_PACKAGE_OK',archive,archive.stat().st_size,sha)
     print('LANTERN_SCREENSHOTS_OK',pictures)
 

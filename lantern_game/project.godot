@@ -3,7 +3,8 @@ config_version=5
 
 [application]
 config/name="Фонарщик — Тихая долина"
-config/version="0.3.0"
+config/version="0.4.0"
+config/icon="res://assets/app-icon.svg"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="LanternValley"
 run/main_scene="res://main.tscn"
@@ -13,9 +14,14 @@ config/description="A quiet village, an old traveller, and the light between the
 [display]
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/size/min_width=960
+window/size/min_height=540
+window/handheld/orientation=4
+window/vsync/vsync_mode=0
 
 [rendering]
 renderer/rendering_method="gl_compatibility"
@@ -47,3 +53,10 @@ shadow_light={
 "type": "vec4",
 "value": Vector4(0.85, 0.48, 0.38, 0)
 }
+
+[input_devices]
+pointing/emulate_touch_from_mouse=false
+pointing/emulate_mouse_from_touch=true
+
+[lantern]
+platform="pc"

@@ -48,6 +48,8 @@ var returning_to := "main"
 var capture_path := ""
 var capture_running := false
 var foundation := preload("res://scripts/foundation.gd").new()
+var platform_options := preload("res://scripts/platform_options.gd").new()
+var touch_controls := preload("res://scripts/touch_controls.gd").new()
 
 
 func _ready() -> void:
@@ -58,6 +60,8 @@ func _ready() -> void:
 	seed(317)
 	_configure_input()
 	_load_settings()
+	add_child(platform_options)
+	platform_options.setup(self)
 	map = JSON.parse_string(FileAccess.get_file_as_string("res://assets/world/map.json"))
 	var ground := Sprite2D.new()
 	ground.texture = load("res://assets/world/ground.png")
@@ -170,7 +174,16 @@ func _ready() -> void:
 	_build_ui()
 	add_child(foundation)
 	foundation.setup(self)
+	var touch_layer := CanvasLayer.new()
+	touch_layer.layer = 20
+	add_child(touch_layer)
+	touch_layer.add_child(touch_controls)
+	touch_controls.setup(self)
 	show_menu("main")
+	if OS.has_feature("android_smoke"):
+		var smoke := preload("res://scripts/android_smoke.gd").new()
+		add_child(smoke)
+		smoke.call_deferred("run", self)
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture-dir="):
 			capture_path = arg.trim_prefix("--capture-dir=")
@@ -381,6 +394,16 @@ func use_ability() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.echo:
 		return
+	if mode == "touch_layout":
+		if event.is_action_pressed("pause") or event.is_action_pressed("cancel"):
+			touch_controls.finish_edit(false)
+		return
+	if (
+		mode == "platform_settings"
+		and (event.is_action_pressed("pause") or event.is_action_pressed("cancel"))
+	):
+		platform_options.close_settings()
+		return
 	if foundation.handle(event):
 		return
 	if mode == "confirm":
@@ -539,6 +562,7 @@ func _build_ui() -> void:
 
 
 func show_menu(which: String) -> void:
+	touch_controls.release_all()
 	foundation.show_menu(which)
 
 
@@ -549,6 +573,7 @@ func resume() -> void:
 
 
 func begin_dialogue() -> void:
+	touch_controls.release_all()
 	mode = "dialogue"
 	dialog_page = 0
 	dialog_root.show()
@@ -614,3 +639,29 @@ func _toggle_fullscreen() -> void:
 
 func world_view_rect() -> Rect2:
 	return get_viewport().get_canvas_transform().affine_inverse() * get_viewport_rect()
+
+
+func movement_input() -> Vector2:
+	var keyboard := Input.get_vector("left", "right", "up", "down")
+	return (keyboard + touch_controls.movement).limit_length()
+
+
+func running() -> bool:
+	return platform_options.auto_run or Input.is_action_pressed("run")
+
+
+func _notification(what: int) -> void:
+	if not is_instance_valid(touch_controls) or platform_options.world == null:
+		return
+	if what in [NOTIFICATION_APPLICATION_FOCUS_OUT, NOTIFICATION_APPLICATION_PAUSED]:
+		touch_controls.release_all()
+		if platform_options.mobile and not capture_running:
+			if foundation.session_started:
+				foundation.save_game(true)
+			if mode in ["play", "dialogue"]:
+				show_menu("pause")
+	elif what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		var event := InputEventAction.new()
+		event.action = "pause"
+		event.pressed = true
+		_unhandled_input(event)

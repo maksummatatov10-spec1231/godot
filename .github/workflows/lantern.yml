@@ -12,9 +12,11 @@ on:
       - tools/lantern_contact.gd
       - tools/lantern_foundation.gd
       - tools/lantern_celestial.gd
+      - tools/lantern_platforms.gd
       - tools/validate_lantern_drivers.gd
       - tests/test_lantern_assets.py
       - tests/test_lantern_performance.py
+      - tests/test_lantern_platforms.py
       - .github/workflows/lantern.yml
   workflow_dispatch:
     inputs:
@@ -26,12 +28,16 @@ on:
         description: Record screenshots and physics evidence on the current branch
         type: boolean
         default: false
-      publish:
-        description: Validate, record evidence and publish the standalone source ZIP
-        type: boolean
-        default: false
+      release_run:
+        description: Publish all assets from an already successful validation run ID (leave empty to validate/build)
+        type: string
+        default: ''
+concurrency:
+  group: lantern-validation-${{ github.ref }}
+  cancel-in-progress: false
 permissions:
   contents: write
+  actions: read
 jobs:
   intake:
     if: github.event_name == 'workflow_dispatch' && inputs.intake && github.ref_name == 'arena/449f84de-godot'
@@ -57,9 +63,11 @@ jobs:
           git rebase --autostash origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
   village:
-    if: (github.event_name == 'push' || inputs.validate || inputs.publish) && github.ref_name == 'arena/449f84de-godot'
+    if: (github.event_name == 'push' || inputs.validate) && !inputs.release_run && github.ref_name == 'arena/449f84de-godot'
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
+    outputs:
+      sha: ${{ steps.revision.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -90,12 +98,16 @@ jobs:
       - name: Asset and syntax regressions
         run: |
           python -m unittest discover -s tests -q
-          gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd lantern_game/foundation_tests.gd tools/lantern_foundation.gd lantern_game/celestial_tests.gd tools/lantern_celestial.gd
-          gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd lantern_game/foundation_tests.gd tools/lantern_foundation.gd lantern_game/celestial_tests.gd tools/lantern_celestial.gd
+          gdlint lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd lantern_game/foundation_tests.gd tools/lantern_foundation.gd lantern_game/celestial_tests.gd tools/lantern_celestial.gd lantern_game/platform_tests.gd lantern_game/profile_tests.gd tools/lantern_platforms.gd
+          gdformat --check lantern_game/scripts lantern_game/tests.gd tools/lantern_audit.gd tools/lantern_motion.gd tools/lantern_beauty.gd tools/lantern_benchmark.gd tools/lantern_locality.gd tools/validate_lantern_drivers.gd tools/lantern_contact.gd lantern_game/foundation_tests.gd tools/lantern_foundation.gd lantern_game/celestial_tests.gd tools/lantern_celestial.gd lantern_game/platform_tests.gd lantern_game/profile_tests.gd tools/lantern_platforms.gd
       - name: Actual physics, menus and rendered collision screenshots
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
         run: python tools/capture_lantern.py
+      - name: FullHD, analog touch, auto-run and configurable layout
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: python tools/capture_lantern_platforms.py
       - name: Full-map close-up audit with per-object and per-road coverage
         env:
           LIBGL_ALWAYS_SOFTWARE: '1'
@@ -129,26 +141,22 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact docs/evidence/lantern-foundation docs/evidence/lantern-celestial lantern_game
+          git add docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact docs/evidence/lantern-foundation docs/evidence/lantern-celestial docs/evidence/lantern-platforms lantern_game
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Record 2D village physics and full-map close-up evidence [skip ci]'
           git fetch origin arena/449f84de-godot
           git rebase --autostash origin/arena/449f84de-godot
           git push origin HEAD:arena/449f84de-godot
+      - id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Package evidence-matched standalone project
         run: python tools/package_lantern.py
-      - name: Publish first playable source project
-        if: inputs.publish
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create lantern-valley-v0.3.0 artifacts/lantern/Lantern-Valley-0.3.0-Screenshots.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip artifacts/lantern/Lantern-Valley-Godot-Project.zip.sha256 docs/evidence/lantern/02-village.png docs/evidence/lantern/03-village-collisions.png docs/evidence/lantern-motion/sunlight-wind-wildlife.gif docs/evidence/lantern-beauty/01-village-player-shadows.png docs/evidence/lantern-beauty/02-forest-player-leaves.png docs/evidence/lantern-beauty/04-received-shadow.png docs/evidence/lantern-beauty/05-wildlife-player-shadows.png docs/evidence/lantern-contact/wildlife-direction-3.png docs/evidence/lantern-contact/wildlife-walk.gif docs/evidence/lantern-foundation/day-night.gif docs/evidence/lantern-foundation/03-village-night.png docs/evidence/lantern-foundation/01-first-menu.png --target "$(git rev-parse HEAD)" --title 'Фонарщик — Тихая долина 0.3.0' --notes-file lantern_game/README.md --prerelease
       - name: Preserve failure diagnostics on this branch
         if: failure() && github.event_name == 'workflow_dispatch'
         run: |
           folder="docs/evidence/lantern-ci-failure/${{ github.run_id }}"
           mkdir -p "$folder"
-          for source in docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact docs/evidence/lantern-foundation docs/evidence/lantern-celestial; do
+          for source in docs/evidence/lantern docs/evidence/lantern-audit/after docs/evidence/lantern-motion docs/evidence/lantern-beauty docs/evidence/lantern-performance docs/evidence/lantern-contact docs/evidence/lantern-foundation docs/evidence/lantern-celestial docs/evidence/lantern-platforms; do
             label=$(echo "$source" | tr / _)
             mkdir -p "$folder/$label"
             cp "$source"/*.log "$source"/result.json "$folder/$label/" || true
@@ -174,4 +182,155 @@ jobs:
             docs/evidence/lantern-contact/
             docs/evidence/lantern-foundation/
             docs/evidence/lantern-celestial/
+            docs/evidence/lantern-platforms/
             artifacts/lantern/
+  applications:
+    needs: village
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.village.outputs.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: pip install -r requirements-dev.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: lantern-village-evidence-and-project
+      - name: Official verified engine/templates and Android toolchain
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash tools/install_lantern_exports.sh
+      - name: Cache preview-only Android signing identity (never a production key)
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/lantern-preview.keystore
+          key: lantern-preview-signing-v1-${{ github.repository_id }}
+      - name: Select private signing secrets or cached preview key
+        env:
+          KEYSTORE_B64: ${{ secrets.LANTERN_ANDROID_KEYSTORE_B64 }}
+          SIGN_USER: ${{ secrets.LANTERN_ANDROID_KEYSTORE_USER || 'androiddebugkey' }}
+          SIGN_PASSWORD: ${{ secrets.LANTERN_ANDROID_KEYSTORE_PASSWORD || 'android' }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.android"
+          if [ -n "$KEYSTORE_B64" ]; then
+            signing="$RUNNER_TEMP/lantern-release.keystore"
+            printf '%s' "$KEYSTORE_B64" | base64 --decode > "$signing"
+          else
+            signing="$HOME/.android/lantern-preview.keystore"
+            if [ ! -f "$signing" ]; then
+              keytool -genkeypair -noprompt -keystore "$signing" -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=Lantern Valley Preview,O=Development,C=NL'
+            fi
+          fi
+          echo "GODOT_ANDROID_KEYSTORE_RELEASE_PATH=$signing" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_RELEASE_USER=$SIGN_USER" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD=$SIGN_PASSWORD" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_DEBUG_PATH=$signing" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_DEBUG_USER=$SIGN_USER" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD=$SIGN_PASSWORD" >> "$GITHUB_ENV"
+      - name: Release-mode PC/Android exports, APK signature, manifest and ABI validation
+        run: python tools/build_lantern_apps.py
+      - name: Record binary validation on the same branch
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/evidence/lantern-platforms
+          git commit -m 'Record PC and Android release-mode export validation [skip ci]'
+          git fetch origin arena/449f84de-godot
+          git rebase --autostash origin/arena/449f84de-godot
+          git push origin HEAD:arena/449f84de-godot
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lantern-app-candidates
+          path: |
+            artifacts/lantern/
+            docs/evidence/lantern-platforms/
+  android-smoke:
+    needs: [village, applications]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.village.outputs.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: pip install Pillow==13.0.0
+      - uses: actions/download-artifact@v4
+        with:
+          name: lantern-app-candidates
+      - name: KVM access for the Android emulator
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Actual Android runtime, OS swipe, Back and background-save/resume
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          profile: pixel_2
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          script: python tools/smoke_lantern_android.py
+      - name: Record Android evidence on the same branch
+        if: always() && github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/evidence/lantern-platforms
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Record Android emulator input and lifecycle evidence [skip ci]'
+          git fetch origin arena/449f84de-godot
+          git rebase --autostash origin/arena/449f84de-godot
+          git push origin HEAD:arena/449f84de-godot
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lantern-android-evidence
+          path: docs/evidence/lantern-platforms/
+
+  publish:
+    if: github.event_name == 'workflow_dispatch' && inputs.release_run != '' && github.ref_name == 'arena/449f84de-godot'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/449f84de-godot
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: lantern-app-candidates
+          run-id: ${{ inputs.release_run }}
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: lantern-android-evidence
+          path: docs/evidence/lantern-platforms/
+          run-id: ${{ inputs.release_run }}
+          github-token: ${{ github.token }}
+      - name: Publish only the complete, verified PC and Android set
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VALIDATION_RUN: ${{ inputs.release_run }}
+        run: python tools/publish_lantern.py

@@ -58,3 +58,10 @@ engineering decisions are recorded in `docs/evidence/lantern-foundation/AUDIT.md
 are AI-generated illustrations. The first used valley-memory as reference; all
 subsequent scenes referenced 01-arrival to retain the same hooded protagonist.
 Celestial motion is an original analytic stylisation, not real-world ephemerides.
+
+## Platform controls 0.4.0
+
+Analog touch controls, layout editor, auto-run/platform settings and lantern app-icon.svg
+are original project code/art. Layout was informed by the user-provided mobile-control
+reference, not copied Undertale game graphics. Export instructions follow the official
+Godot 4.7 Android documentation (OpenJDK17 / Android SDK35 / build-tools35.0.1).

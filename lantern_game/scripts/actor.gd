@@ -123,8 +123,8 @@ func player_step(delta: float) -> void:
 		if timer <= 0.0:
 			state = "idle"
 		return
-	var movement := Input.get_vector("left", "right", "up", "down")
-	velocity = movement * (112.0 if Input.is_action_pressed("run") else 76.0)
+	var movement: Vector2 = world.movement_input()
+	velocity = movement * (112.0 if world.running() else 76.0)
 	state = "walk" if movement.length() > 0.1 else "idle"
 	if movement.length() > 0.1:
 		facing = direction_row(movement)
@@ -166,7 +166,7 @@ func animate() -> void:
 		var row := 0
 		var column := facing
 		if state == "walk":
-			row = 1 + int(clock * (15.0 if Input.is_action_pressed("run") else 10.0)) % 4
+			row = 1 + int(clock * (15.0 if world.running() else 10.0)) % 4
 		elif state == "attack":
 			row = 8 + clampi(int((0.34 - timer) * 12.0), 0, 3)
 		elif state == "surprise":
