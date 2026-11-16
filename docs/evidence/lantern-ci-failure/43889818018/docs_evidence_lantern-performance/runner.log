@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/runner/work/godot/godot/tools/benchmark_lantern.py", line 113, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/godot/godot/tools/benchmark_lantern.py", line 102, in main
+    raise RuntimeError(f'Camera culling changes visible output: {differences}')
+RuntimeError: Camera culling changes visible output: {'village': 0, 'forest-edge': 14, 'farm': 0, 'facade': 57, 'crop-boundary-left': 0, 'crop-boundary-right': 0}

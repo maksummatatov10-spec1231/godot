@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "baseline_commit": "15892813fe0437e4739049159ec854c2cd322b4a",
+  "game_sha256": "aee54226d1fac0f7950bb518eb8cc162efc65db077ff6bccde71e47d4407e9b0",
+  "physical_gpu_benchmark": false,
+  "cpu_only": false,
+  "method": "20 warm-ups + 120 samples/view; identical scene/camera/player animation",
+  "renderer": "Compatibility / Mesa software"
+}
