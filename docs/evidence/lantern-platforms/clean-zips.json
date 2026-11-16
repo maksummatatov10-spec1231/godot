@@ -1,10 +1,10 @@
 {
   "passed": true,
-  "game_sha256": "ab7f793ec7f0fa79d06d38ee8d5bcdd2b58327988994dcc6e37e6c1cdfd8f6bd",
+  "game_sha256": "331b4e2123135e907c713e2489d5fb11f03ddb770425b47dccc10548a7f7905b",
   "profiles": {
     "pc": {
-      "bytes": 12919212,
-      "sha256": "618ba3332d4ff31f68f5b079e40bd940c457460d190bc1ebac8777f807f39448",
+      "bytes": 12919320,
+      "sha256": "a8daf0d1b88f948ae0a2fa025f744f1ba0c00a952ccb49a133ae664a9afdc548",
       "source_files_identical": 171,
       "checks": {
         "profile": true,
@@ -16,8 +16,8 @@
       }
     },
     "android": {
-      "bytes": 12919466,
-      "sha256": "ceea1f3a4469cdc55b86f50ed9c1ec75eaa40813eb168ed7a5bf93d6e99b9cb3",
+      "bytes": 12919577,
+      "sha256": "50ebf996eb97f017a2423239c8e42378faadc93a612c4d1dbcffac59db5a1972",
       "source_files_identical": 171,
       "checks": {
         "profile": true,
