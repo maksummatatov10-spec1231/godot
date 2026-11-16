@@ -1,7 +1,7 @@
 {
   "passed": true,
   "baseline_commit": "15892813fe0437e4739049159ec854c2cd322b4a",
-  "game_sha256": "331b4e2123135e907c713e2489d5fb11f03ddb770425b47dccc10548a7f7905b",
+  "game_sha256": "ab7f793ec7f0fa79d06d38ee8d5bcdd2b58327988994dcc6e37e6c1cdfd8f6bd",
   "physical_gpu_benchmark": false,
   "cpu_only": false,
   "method": "20 warm-ups + 120 samples/view; identical scene/camera/player animation",
@@ -15,8 +15,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 6.021,
-        "shadow_cpu_ms_p95": 6.317,
+        "shadow_cpu_ms_median": 5.536,
+        "shadow_cpu_ms_p95": 5.671,
         "view": "village"
       },
       {
@@ -24,8 +24,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 6.288,
-        "shadow_cpu_ms_p95": 6.453,
+        "shadow_cpu_ms_median": 5.546,
+        "shadow_cpu_ms_p95": 5.749,
         "view": "forest"
       },
       {
@@ -33,8 +33,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 5.874,
-        "shadow_cpu_ms_p95": 6.18,
+        "shadow_cpu_ms_median": 5.54,
+        "shadow_cpu_ms_p95": 5.689,
         "view": "farm"
       }
     ]
@@ -45,29 +45,29 @@
     "views": [
       {
         "draw_calls_median": 2288.0,
-        "rendered_frame_ms_median": 50.897,
-        "rendered_frame_ms_p95": 51.947,
+        "rendered_frame_ms_median": 51.091,
+        "rendered_frame_ms_p95": 53.504,
         "samples": 120,
-        "shadow_cpu_ms_median": 6.999,
-        "shadow_cpu_ms_p95": 7.139,
+        "shadow_cpu_ms_median": 6.927,
+        "shadow_cpu_ms_p95": 7.295,
         "view": "village"
       },
       {
         "draw_calls_median": 2282.0,
-        "rendered_frame_ms_median": 51.753,
-        "rendered_frame_ms_p95": 54.061,
+        "rendered_frame_ms_median": 52.461,
+        "rendered_frame_ms_p95": 54.45,
         "samples": 120,
-        "shadow_cpu_ms_median": 6.96,
-        "shadow_cpu_ms_p95": 7.303,
+        "shadow_cpu_ms_median": 6.897,
+        "shadow_cpu_ms_p95": 7.166,
         "view": "forest"
       },
       {
         "draw_calls_median": 2442.0,
-        "rendered_frame_ms_median": 52.548,
-        "rendered_frame_ms_p95": 55.793,
+        "rendered_frame_ms_median": 53.559,
+        "rendered_frame_ms_p95": 55.492,
         "samples": 120,
-        "shadow_cpu_ms_median": 7.008,
-        "shadow_cpu_ms_p95": 7.344,
+        "shadow_cpu_ms_median": 6.89,
+        "shadow_cpu_ms_p95": 7.194,
         "view": "farm"
       }
     ]
@@ -81,8 +81,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.563,
-        "shadow_cpu_ms_p95": 1.737,
+        "shadow_cpu_ms_median": 1.486,
+        "shadow_cpu_ms_p95": 1.654,
         "shadow_work": {
           "active_moving_casters": 16,
           "active_static_casters": 242,
@@ -107,8 +107,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.501,
-        "shadow_cpu_ms_p95": 1.689,
+        "shadow_cpu_ms_median": 1.416,
+        "shadow_cpu_ms_p95": 1.585,
         "shadow_work": {
           "active_moving_casters": 21,
           "active_static_casters": 199,
@@ -133,8 +133,8 @@
         "rendered_frame_ms_median": 0.0,
         "rendered_frame_ms_p95": 0.0,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.02,
-        "shadow_cpu_ms_p95": 1.192,
+        "shadow_cpu_ms_median": 0.945,
+        "shadow_cpu_ms_p95": 1.107,
         "shadow_work": {
           "active_moving_casters": 13,
           "active_static_casters": 169,
@@ -162,11 +162,11 @@
     "views": [
       {
         "draw_calls_median": 150.0,
-        "rendered_frame_ms_median": 35.506,
-        "rendered_frame_ms_p95": 38.363,
+        "rendered_frame_ms_median": 36.26,
+        "rendered_frame_ms_p95": 37.79,
         "samples": 120,
-        "shadow_cpu_ms_median": 2.527,
-        "shadow_cpu_ms_p95": 3.364,
+        "shadow_cpu_ms_median": 2.43,
+        "shadow_cpu_ms_p95": 3.149,
         "shadow_work": {
           "active_moving_casters": 16,
           "active_static_casters": 242,
@@ -188,11 +188,11 @@
       },
       {
         "draw_calls_median": 377.0,
-        "rendered_frame_ms_median": 44.778,
-        "rendered_frame_ms_p95": 46.352,
+        "rendered_frame_ms_median": 46.942,
+        "rendered_frame_ms_p95": 48.428,
         "samples": 120,
-        "shadow_cpu_ms_median": 2.4,
-        "shadow_cpu_ms_p95": 2.62,
+        "shadow_cpu_ms_median": 2.396,
+        "shadow_cpu_ms_p95": 2.554,
         "shadow_work": {
           "active_moving_casters": 21,
           "active_static_casters": 199,
@@ -214,11 +214,11 @@
       },
       {
         "draw_calls_median": 256.0,
-        "rendered_frame_ms_median": 37.575,
-        "rendered_frame_ms_p95": 39.006,
+        "rendered_frame_ms_median": 38.393,
+        "rendered_frame_ms_p95": 39.364,
         "samples": 120,
-        "shadow_cpu_ms_median": 1.741,
-        "shadow_cpu_ms_p95": 2.074,
+        "shadow_cpu_ms_median": 1.73,
+        "shadow_cpu_ms_p95": 1.999,
         "shadow_work": {
           "active_moving_casters": 13,
           "active_static_casters": 169,
@@ -241,9 +241,9 @@
     ]
   },
   "shadow_cpu_speedup": {
-    "village": 3.85,
-    "forest": 4.19,
-    "farm": 5.76
+    "village": 3.73,
+    "forest": 3.92,
+    "farm": 5.86
   },
   "local_vs_full_world_changed_pixels_over_12": {
     "village-0625": 0,
