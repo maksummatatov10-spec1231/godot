@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "game_sha256": "080a23cea8baa6ea4ec073bbb7e83cd2e27da4cabfeca8b9d7ada453cfa6adb4",
+  "apks": {
+    "Lantern-Valley-Android.apk": {
+      "bytes": 59201251,
+      "sha256": "7305ac0f6f5bdcfe6c895b4270b958157de816a0ac817f993a5c0aede585be6a",
+      "package": "org.lanternvalley.game",
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a"
+      ],
+      "signature_verified": true,
+      "signing_certificate_sha256": "55a291c6aabc7556d2a1a4f52b69e1d2b739de55dc11059f04665fd93a1a4588"
+    },
+    "Lantern-Valley-Android-Smoke.apk": {
+      "bytes": 34645566,
+      "sha256": "406af682fff7480dba221b23ba6375c514d9c29c555b4a4baf89aea3a66bae16",
+      "package": "org.lanternvalley.game.smoke",
+      "abis": [
+        "x86_64"
+      ],
+      "signature_verified": true,
+      "signing_certificate_sha256": "55a291c6aabc7556d2a1a4f52b69e1d2b739de55dc11059f04665fd93a1a4588"
+    }
+  },
+  "native_windows_tested": false,
+  "signing": "private configured key or cached non-production preview key; no private key distributed"
+}

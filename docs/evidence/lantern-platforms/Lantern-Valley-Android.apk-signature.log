@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Lantern Valley Preview, O=Development, C=NL
+Signer #1 certificate SHA-256 digest: 55a291c6aabc7556d2a1a4f52b69e1d2b739de55dc11059f04665fd93a1a4588
+Signer #1 certificate SHA-1 digest: 588226224901b825989c402867de10388300781d
+Signer #1 certificate MD5 digest: d659cf2a65a45312fd9b98c1de6e48a6
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: cbf1e1b12dcacd9e4bf7357b21f5b8d6a0c9b2f7bc513a19acd8e8c43d8ece06
+Signer #1 public key SHA-1 digest: 34c77d26d05a0d679cc8624e24badea26d2eb5f0
+Signer #1 public key MD5 digest: 1886269940074691101e621c3b9a0892
