@@ -4,29 +4,29 @@
 	"views": [
 		{
 			"draw_calls_median": 2288.0,
-			"rendered_frame_ms_median": 43.532,
-			"rendered_frame_ms_p95": 44.53,
+			"rendered_frame_ms_median": 45.69,
+			"rendered_frame_ms_p95": 48.47,
 			"samples": 120,
-			"shadow_cpu_ms_median": 5.821,
-			"shadow_cpu_ms_p95": 5.95,
+			"shadow_cpu_ms_median": 6.797,
+			"shadow_cpu_ms_p95": 7.252,
 			"view": "village"
 		},
 		{
 			"draw_calls_median": 2282.0,
-			"rendered_frame_ms_median": 44.291,
-			"rendered_frame_ms_p95": 45.476,
+			"rendered_frame_ms_median": 47.418,
+			"rendered_frame_ms_p95": 49.975,
 			"samples": 120,
-			"shadow_cpu_ms_median": 5.789,
-			"shadow_cpu_ms_p95": 5.925,
+			"shadow_cpu_ms_median": 6.906,
+			"shadow_cpu_ms_p95": 7.434,
 			"view": "forest"
 		},
 		{
 			"draw_calls_median": 2442.0,
-			"rendered_frame_ms_median": 44.855,
-			"rendered_frame_ms_p95": 45.998,
+			"rendered_frame_ms_median": 48.029,
+			"rendered_frame_ms_p95": 50.773,
 			"samples": 120,
-			"shadow_cpu_ms_median": 5.824,
-			"shadow_cpu_ms_p95": 5.997,
+			"shadow_cpu_ms_median": 6.826,
+			"shadow_cpu_ms_p95": 7.22,
 			"view": "farm"
 		}
 	]
