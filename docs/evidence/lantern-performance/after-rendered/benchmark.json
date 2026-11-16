@@ -4,11 +4,11 @@
 	"views": [
 		{
 			"draw_calls_median": 150.0,
-			"rendered_frame_ms_median": 45.071,
-			"rendered_frame_ms_p95": 46.897,
+			"rendered_frame_ms_median": 34.338,
+			"rendered_frame_ms_p95": 35.53,
 			"samples": 120,
-			"shadow_cpu_ms_median": 2.813,
-			"shadow_cpu_ms_p95": 3.963,
+			"shadow_cpu_ms_median": 1.789,
+			"shadow_cpu_ms_p95": 2.617,
 			"shadow_work": {
 				"active_moving_casters": 16,
 				"active_static_casters": 242,
@@ -30,11 +30,11 @@
 		},
 		{
 			"draw_calls_median": 377.0,
-			"rendered_frame_ms_median": 56.805,
-			"rendered_frame_ms_p95": 58.851,
+			"rendered_frame_ms_median": 43.989,
+			"rendered_frame_ms_p95": 45.076,
 			"samples": 120,
-			"shadow_cpu_ms_median": 2.707,
-			"shadow_cpu_ms_p95": 2.981,
+			"shadow_cpu_ms_median": 1.763,
+			"shadow_cpu_ms_p95": 1.957,
 			"shadow_work": {
 				"active_moving_casters": 21,
 				"active_static_casters": 199,
@@ -56,11 +56,11 @@
 		},
 		{
 			"draw_calls_median": 256.0,
-			"rendered_frame_ms_median": 47.202,
-			"rendered_frame_ms_p95": 49.532,
+			"rendered_frame_ms_median": 36.116,
+			"rendered_frame_ms_p95": 37.259,
 			"samples": 120,
-			"shadow_cpu_ms_median": 1.946,
-			"shadow_cpu_ms_p95": 2.402,
+			"shadow_cpu_ms_median": 1.27,
+			"shadow_cpu_ms_p95": 1.532,
 			"shadow_work": {
 				"active_moving_casters": 13,
 				"active_static_casters": 169,
